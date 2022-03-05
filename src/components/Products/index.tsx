@@ -76,25 +76,20 @@ export default function Product({
       className={`${productClass} w-1/2 ${styles.product} hover:shadow-lg rounded-lg p-2`}
     >
       <DynamicProductMetatags product={product} />
-      <div className="flex flex-col card product-card p-1 p-md-2">
+      <div className="flex flex-col card product-card p-1 md:p-2">
         <div className="flex items-center justify-between">
           {product.rrp && (
             <div className="discount-price mt-2">
               {discountPrice(product)} %
             </div>
           )}
-          <Tooltip text="Add to Wishlist">
-            <button className="bg-gray-200 hover:bg-red-500 hover:text-white rounded-full h-8 w-8 btn-sm flex items-center justify-center">
-              <AiOutlineHeart />
-            </button>
-          </Tooltip>
         </div>
         <Link href={linkURL} passHref>
           <a onClick={algoliaClickedProductAfterSearch} className="productLink">
             <div
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              className={`${styles.productImage} lg:h-72 md:h-56`}
+              className={`${styles.productImage} h-48 lg:h-72 md:h-56`}
             >
               <Image
                 height={300}
@@ -162,10 +157,7 @@ export default function Product({
 
           @media (max-width: 768px) {
             .card.product-card {
-              min-height: 380px;
-            }
-            .product {
-              min-height: 380px;
+              height: 350px;
             }
             .productLink img {
               margin: auto;

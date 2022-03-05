@@ -20,7 +20,7 @@ export default function PopularCategory({ category }: PopularCategoryProps) {
   const selectedFooterCategory = useMarketplaceCategory();
   const mobileView = useMediaQuery("(max-width:768px)");
   const size = mobileView
-    ? { height: 300, width: 300 }
+    ? { height: 200, width: 300 }
     : { height: 200, width: 250 };
 
   return (

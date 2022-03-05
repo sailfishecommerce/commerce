@@ -48,7 +48,7 @@ export function NotAuthorizedView({
         <Tooltip text="Sign-in / Sign-up ">
           <div className="navbar-tool-text flex flex-col me-2 items-start">
             <span className="text-xs">Hello, Sign in</span>
-            <h6 className="text-base">My Account</h6>
+            <h6 className="lg:text-base text-sm">My Account</h6>
           </div>
         </Tooltip>
       </a>
@@ -81,14 +81,14 @@ export function AuthorizedView({
     <div className="flex items-center ms-5 me-0">
       <AiOutlineUser />
       <div className="text flex flex-col">
-        <a className="navbar-tool cursor-pointer ms-1 me-n1 me-lg-2">
+        <a className="cursor-pointer ms-1 me-n1 me-lg-2">
           <span className="navbar-tool-tooltip">
             Welcome {userDetail.firstName}
           </span>
-          <div className="navbar-tool-text ms-n3">
-            <div className="flex flex-col me-3">
+          <div className="mx-3">
+            <div className="flex flex-col mr-3">
               <span>Hello,</span>{" "}
-              <span className="fs-sm text-accent font-bold">
+              <span className="text-blue-500 font-bold">
                 {`${userDetail.lastName} ${userDetail.firstName}`}{" "}
               </span>
             </div>
@@ -97,9 +97,9 @@ export function AuthorizedView({
         <a
           onClick={userLogout}
           href="#"
-          className="navbar-tool logout-user cursor-pointer ms-1 me-n1 me-lg-2"
+          className="logout-user cursor-pointer ms-1 me-n1 me-lg-2"
         >
-          <span className="navbar-tool-tooltip">Logout</span>
+          <span className="mx-1">Logout</span>
           <p className="logout mb-0 fs-xs">Logout</p>
         </a>
       </div>
