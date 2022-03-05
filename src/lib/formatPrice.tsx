@@ -34,7 +34,7 @@ function FormatCurrency({
   const productItemPrice = isProduct ? priceRate : nPrice;
   const itemPrice = formatPrice(productItemPrice);
   return (
-    <span className={`${className} text-blue-600`}>
+    <span className={`${className} text-blue-600 text-sm md:text-lg`}>
       {currencySymbolFormatter(selectedCurrency[0])}
       {itemPrice}
     </span>

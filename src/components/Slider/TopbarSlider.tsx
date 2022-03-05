@@ -8,7 +8,7 @@ const sliderArray: any = sliderContent;
 export default function TopbarSlider() {
   return (
     <div className="header-slider">
-      <Splide        
+      <Splide
         options={{
           type: "loop",
           height: "3rem",
@@ -25,7 +25,9 @@ export default function TopbarSlider() {
                 src={content.icon}
                 alt={content.text}
               />
-              <p className="text-white text-center my-0 mx-2">{content.text}</p>
+              <p className="text-white text-center my-0 mx-1 md:mx-2 text-sm ">
+                {content.text}
+              </p>
             </div>
           </SplideSlide>
         ))}

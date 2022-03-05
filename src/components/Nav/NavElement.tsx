@@ -132,44 +132,34 @@ export function NavbarDropdown({
     setDropdownStatus(!dropdownStatus);
   }
   return (
-    <>
-      <div
-        onClick={onClickHandler}
-        className="bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-4 ms-1 flex items-center"
-      >
-        <div className="flex flex-col relative">
-          <div
-            onClick={toggleSlideCartMobile}
-            className="absolute justify-center bg-red-200 rounded-full h-6 w-6 -mt-8 mr-4 flex items-center"
-          >
-            {cart?.items?.length > 0 && (
-              <span className="text-white">{cart?.items?.length}</span>
-            )}
-          </div>
-          <BsCart4 fontSize={24} />
+    <div
+      onClick={onClickHandler}
+      className="bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center"
+    >
+      <div className="flex flex-col relative">
+        <div
+          onClick={toggleSlideCartMobile}
+          className="absolute justify-center bg-red-200 rounded-full h-6 w-6 -mt-8 mr-4 flex items-center"
+        >
+          {cart?.items?.length > 0 && (
+            <span className="text-white">{cart?.items?.length}</span>
+          )}
         </div>
-        <div className="flex price-overview flex-col">
-          <span className="text-xs">My Cart</span>
-          <a className="navbar-tool-text">
-            {cart?.grandTotal ? (
-              <FormattedPrice price={cart?.grandTotal} />
-            ) : (
-              <FormattedPrice price={0} />
-            )}
-          </a>
-        </div>
-        {dropdownStatus && cart?.items.length > 0 && (
-          <HeaderCartDropdown cart={cart} />
-        )}
+        <BsCart4 fontSize={24} />
       </div>
-      <style jsx>
-        {`
-          .price-overview {
-            width: 90px;
-            margin-left: 20px;
-          }
-        `}
-      </style>
-    </>
+      <div className="flex price-overview flex-col">
+        <span className="text-xs">My Cart</span>
+        <a className="navbar-tool-text">
+          {cart?.grandTotal ? (
+            <FormattedPrice price={cart?.grandTotal} />
+          ) : (
+            <FormattedPrice price={0} />
+          )}
+        </a>
+      </div>
+      {dropdownStatus && cart?.items.length > 0 && (
+        <HeaderCartDropdown cart={cart} />
+      )}
+    </div>
   );
 }

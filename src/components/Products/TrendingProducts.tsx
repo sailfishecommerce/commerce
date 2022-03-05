@@ -20,7 +20,7 @@ function TrendingProductsCatalog() {
 
   return (
     <section className="container md:pt-3 pb-0 md:mb-3">
-      <h2 className="text-center lg:text-3xl sm:text-xl font-bold capitalize">
+      <h2 className="text-center  lg:text-3xl text-xl font-bold capitalize">
         Trending products
       </h2>
       {liveHealthyProductStatus === "error" ? (
