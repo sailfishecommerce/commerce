@@ -33,8 +33,8 @@ export default function TopFooter() {
   }
 
   return (
-    <div className="w-full bg-gray-700 justify-center flex py-6">
-      <div className="container flex">
+    <div className="w-full bg-gray-700 justify-center flex py-6 px-6 lg:px-0">
+      <div className="container flex flex-wrap lg:flex-row">
         {footerContent.section1.map((content, index) => {
           return content.group ? (
             <FooterLink

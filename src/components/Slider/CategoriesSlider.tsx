@@ -10,7 +10,7 @@ export default function CategoriesSlider() {
   const sliceCategories = (category: any[]) => category.slice(12);
 
   return (
-    <div className="lg:w-2/3 md:w-full">
+    <div className="lg:w-2/3 w-full">
       {status === "error" ? (
         "error loading categories"
       ) : status === "loading" ? (
@@ -20,12 +20,12 @@ export default function CategoriesSlider() {
           className="lg:px-12 px-4"
           options={{
             type: "loop",
-            perPage: 2,
+            perPage: 1,
             gap: "1rem",
             autoplay: true,
             breakpoints: {
               450: {
-                perPage: 2,
+                perPage: 1,
                 gap: "1rem",
               },
               600: {

@@ -14,8 +14,8 @@ export default function PopularCategories() {
 
   return (
     <div className="container flex justify-start">
-      <section className="lg:w-2/3 mb-8 md:w-5/6 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
-        <div className="flex popularCategoriesRow w-full">
+      <section className="w-full lg:w-2/3 mb-8 md:w-5/6 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
+        <div className="flex flex-col md:flex-row popularCategoriesRow w-full mx-10">
           {status === "error" ? (
             "Unable to fetch"
           ) : status === "loading" ? (

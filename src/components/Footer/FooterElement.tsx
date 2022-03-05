@@ -36,7 +36,7 @@ function FooterWidgetLink({
 
 export default function FooterLink({ content, multiple, onClickHandler }: any) {
   return (
-    <div className="w-1/3">
+    <div className="w-1/2 lg:w-1/3">
       {multiple ? (
         content.group.map((groupedContent: any, index: number) => (
           <FooterWidgetLink

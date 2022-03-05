@@ -10,13 +10,13 @@ const CurrencyDropdown = dynamic(
 
 export function FooterBottomSocials() {
   return (
-    <div className="w-1/5 flex flex-col items-cemter">
-      <div className="mb-3 w-2/3 flex items-center justify-between">
+    <div className=" w-full lg:w-1/5 flex flex-col items-center lg:items-end">
+      <div className="mb-3 flex items-center justify-between">
         {footerBottomContent.social.map((data, index) => (
           <a key={`${data.name}-${index}`} href={data.link}>
             <Icons
               icon={data.name}
-              className="hover:text-red-500 text-white"
+              className="hover:text-red-500 text-white ml-2"
               size={25}
             />
           </a>
@@ -24,7 +24,6 @@ export function FooterBottomSocials() {
       </div>
       <div className="imgContainer mb-4">
         <Image
-          className="d-inline-block"
           src="/cards-alt.webp"
           width={200}
           height={35}
@@ -51,8 +50,8 @@ export function FooterBottomSocials() {
 export function FooterBottomWidgets() {
   return (
     <>
-      <div className="flex flex-col w-2/5">
-        <div className="flex items-center mb-4 w-full">
+      <div className="flex flex-col w-full lg:w-2/5 items-center">
+        <div className="flex justify-center lg:justify-start items-center mb-4 w-full">
           <Logo />
           <CurrencyDropdown />
         </div>
@@ -79,9 +78,9 @@ export function FooterBottomWidgets() {
 
 export function FooterBottomFeatures() {
   return (
-    <div className="flex justify-center  text-white py-6">
+    <div className="flex flex-wrap lg:flex-row justify-center text-white py-6">
       {footerBottomContent.features.map((content) => (
-        <div key={content.title} className="w-1/4">
+        <div key={content.title} className="w-1/2 md:w-1/4">
           <div className="flex">
             <Icons
               className="text-red-500 hover:text-red-300 mr-4"
