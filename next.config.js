@@ -19,7 +19,12 @@ module.exports = withBundleAnalyzer({
         source: "/:path*",
         headers: nextSafe({
           contentSecurityPolicy: {
-            "style-src": ["'self'", "https://fonts.googleapis.com"],
+            "style-src": [
+              "'self'",
+              "https://fonts.googleapis.com",
+              "https://cdn.jsdelivr.net",
+              "https://en.trustmate.io",
+            ],
             "default-src": [
               "'self'",
               "https://sailfish-e-commerce-limited.swell.store",
@@ -31,6 +36,7 @@ module.exports = withBundleAnalyzer({
               "https://czt5ma7jlj-2.algolianet.com",
               "https://czt5ma7jlj-dsn.algolia.net",
               "https://czt5ma7jlj-3.algolianet.com",
+              "https://insights.algolia.io",
             ],
             "font-src": ["'self'", "https://fonts.gstatic.com/"],
             "script-src": [
