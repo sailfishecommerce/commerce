@@ -18,10 +18,12 @@ export default function ProductReviews({ product }: Props) {
       <Script
         src={`https://en.trustmate.io/api/widget/95d50730-e6a5-4465-b950-3fab710cf306/script?product=/products/${product.slug}`}
         strategy="afterInteractive"
+        id="products-widget-script"
       />
       <Script
         src="https://en.trustmate.io/api/widget/5c6b265a-9520-4676-9d01-2ecfca53d95c/script"
         strategy="afterInteractive"
+        id="trustmate-widget-script"
       />
       <div className="container pt-md-2" id="reviews">
         <div className="row pt-4">

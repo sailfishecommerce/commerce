@@ -21,6 +21,7 @@ export default function ProductGallery({ product }: Props) {
       <Script
         src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/lib/js/lightgallery.min.js"
         strategy="afterInteractive"
+        id="lightgalleryScript"
       />
       <div className="w-2/3 lg:pr-0 lg:pt-4">
         <ProductGalleryView product={product} />
