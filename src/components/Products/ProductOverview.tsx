@@ -6,6 +6,7 @@ import ProductDescription from "@/components/Products/ProductDescription";
 import ProductGalleryDetails from "@/components/Products/ProductGalleryDetails";
 import RelatedProductSlider from "@/components/Slider/RelatedProductSlider";
 import SpinnerRipple from "@/components/Loader/SpinnerLoader";
+import ProductReviews from "@/components/Products/ProductReviews";
 
 interface ProductOverviewProps {
   pageProduct?: any;
@@ -21,6 +22,7 @@ export default function ProductOverview({ pageProduct }: ProductOverviewProps) {
       <ProductBanner product={pageProduct} />
       <ProductGalleryDetails product={pageProduct} />
       <ProductDescription product={pageProduct} />
+      <ProductReviews product={pageProduct} />
       {status === "error" ? (
         ""
       ) : status === "loading" ? (

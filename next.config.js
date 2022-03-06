@@ -31,8 +31,10 @@ module.exports = withBundleAnalyzer({
             "font-src": ["'self'", "https://fonts.gstatic.com/"],
             "script-src": [
               "'self'",
+              "'nonce-QRTYPCVBFGXZ'",
               "https://en.trustmate.io",
-              "'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",
+              "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",
+              "'sha256-FohP1sOiMQlzLevJvZ2zFcokm2ikklyNloIpwT8uKqU='",
             ],
             "img-src": [
               "'self'",
@@ -42,6 +44,7 @@ module.exports = withBundleAnalyzer({
             ],
           },
           isDev,
+          permissionsPolicy: false,
         }),
       },
     ];
