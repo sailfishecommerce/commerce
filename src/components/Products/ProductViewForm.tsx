@@ -23,8 +23,6 @@ export default function ProductViewForm({
     return style;
   }, []);
 
-  console.log("algoliaEvent", algoliaEvent);
-
   const { addItemToCart, loadingState } = useShoppingCart();
 
   function algoliaViewHandler() {

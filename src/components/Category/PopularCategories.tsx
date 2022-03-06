@@ -7,8 +7,6 @@ export default function PopularCategories() {
   const [data, status] = useCategoryData();
   const mobileView = useMediaQuery("(max-width:768px)");
 
-  console.log("mobileView", mobileView);
-
   const topCategories = data?.results?.filter(
     (category: { topId: string }) => !category.topId
   );

@@ -3658,6 +3658,11 @@ negotiator@^0.6.2, negotiator@^0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
+next-safe@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/next-safe/-/next-safe-3.2.1.tgz#76bb6deb2b11a39318e5b962a6da4e57584bf77f"
+  integrity sha512-2BBbnendVIlbUjrvV/N6cotuba71i2IIczo0dqmpZu9oSl2PlN6hYML22fidcqXZILwghyXULIy4lxyAgPz+Xg==
+
 next@12.0.7:
   version "12.0.7"
   resolved "https://registry.yarnpkg.com/next/-/next-12.0.7.tgz#33ebf229b81b06e583ab5ae7613cffe1ca2103fc"

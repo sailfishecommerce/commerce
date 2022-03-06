@@ -11,6 +11,7 @@ export default function Logo() {
           height={50}
           width={150}
           layout="responsive"
+          priority={true}
         />
       </a>
     </Link>
