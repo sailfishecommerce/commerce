@@ -13,7 +13,7 @@ export default function RewardChat() {
   return (
     <>
       <div className="reward-chat-box">
-        <div className="chat-header flex align-items-center justify-between">
+        <div className="chat-header flex items-center justify-between">
           <div className="flex flex-col">
             <h6 className="mt-2">Welcome to</h6>
             <h4>Sailfish + Rewards</h4>

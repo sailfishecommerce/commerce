@@ -37,7 +37,7 @@ export default function SlideCartProduct({
         >
           <span>&times;</span>
         </button>
-        <div className="flex align-items-center">
+        <div className="flex items-center">
           <Link href={`/products/${item.product.slug}`} passHref>
             <a className="flex-shrink-0">
               <img
@@ -60,8 +60,8 @@ export default function SlideCartProduct({
                 </p>
               )}
             </div>
-            <div className="flex align-items-center my-2">
-              <div className="widget-product-meta flex align-items-center">
+            <div className="flex items-center my-2">
+              <div className="widget-product-meta flex items-center">
                 <span className="text-accent me-2">
                   <FormattedPrice price={item.price} />
                 </span>
@@ -75,7 +75,7 @@ export default function SlideCartProduct({
           </div>
         </div>
       </div>
-      <div className="cartItem flex align-items-center justify-between">
+      <div className="cartItem flex items-center justify-between">
         <CartControl item={item} />
         {item.options &&
           item.options.map((item: any, index: number) => (

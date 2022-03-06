@@ -1,11 +1,12 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { memo } from "react";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 import { useCategoryData } from "@/hooks/useCategoryData";
-import Category from "../Category";
+import Category from "@/components/Category";
 import LoadCategory from "@/components/Loader/LoadCategory";
 
-export default function CategoriesSlider() {
+function CategoriesSliderComponent() {
   const [categories, status] = useCategoryData();
   const sliceCategories = (category: any[]) => category.slice(12);
 
@@ -20,7 +21,7 @@ export default function CategoriesSlider() {
           className="lg:px-12 px-4"
           options={{
             type: "loop",
-            perPage: 1,
+            perPage: 2,
             gap: "1rem",
             autoplay: true,
             breakpoints: {
@@ -51,3 +52,5 @@ export default function CategoriesSlider() {
     </div>
   );
 }
+const CategoriesSlider = memo(CategoriesSliderComponent);
+export default CategoriesSlider;

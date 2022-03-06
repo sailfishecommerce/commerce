@@ -1,11 +1,13 @@
+import { memo } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
+
 import sliderContent from "@/json/topbar-slider.json";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 const sliderArray: any = sliderContent;
 
-export default function TopbarSlider() {
+function TopbarSliderComponent() {
   return (
     <div className="header-slider">
       <Splide
@@ -35,3 +37,6 @@ export default function TopbarSlider() {
     </div>
   );
 }
+
+const TopbarSlider = memo(TopbarSliderComponent);
+export default TopbarSlider;

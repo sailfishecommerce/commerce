@@ -30,7 +30,7 @@ export default function SlideCart(props: slideCartProps) {
 
   return (
     <div>
-      <div className="slidecart flex align-items-center h-full position-fixed top-0 w-full justify-between right">
+      <div className="slidecart flex items-center h-full position-fixed top-0 w-full justify-between right">
         <div
           onClick={props.toggle}
           className="overlay slidecartOverlay w-3/4 h-screen cursor-pointer"
@@ -57,7 +57,7 @@ export default function SlideCart(props: slideCartProps) {
                 <CartDiscount cartItem={0} />
                 <ClearCart />
                 <div className="mt-6">
-                  <h5 className="mt-5 mb-2 subtotal flex align-items-center">
+                  <h5 className="mt-5 mb-2 subtotal flex items-center">
                     Subtotal:{" "}
                     <span className="mx-2">
                       {cart ? <FormattedPrice price={cart.subTotal} /> : "0.00"}
@@ -80,7 +80,7 @@ export default function SlideCart(props: slideCartProps) {
               </div>
             </div>
           ) : (
-            <div className="emptyCart text-center flex flex-col justify-content-center align-items-center">
+            <div className="emptyCart text-center flex flex-col justify-content-center items-center">
               <i className="fas fa-shopping-cart my-2 fa-3x rounded-full bg-gray-200 text-red-400 flex text-white"></i>
               <p className="font-bold text-2xl">Your cart is empty </p>
             </div>

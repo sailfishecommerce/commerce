@@ -68,7 +68,7 @@ export default function Product({
   const productClass = homepage
     ? "lg:w-1/4"
     : slider
-    ? "md:w-full"
+    ? "w-full"
     : "lg:w-1/3 md:w-1/4";
 
   return (

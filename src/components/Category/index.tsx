@@ -1,5 +1,6 @@
 import Link from "next/link";
 import RatingStar from "@/components/Rating/RatingStar";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import styles from "@/styles/ui.module.css";
 import Image from "@/components/Image";
 
@@ -16,15 +17,25 @@ interface CategoryProps {
   };
 }
 export default function Category({ category }: CategoryProps): JSX.Element {
+  const mobileView = useMediaQuery("(max-width:768px)");
+  const imageSize = mobileView
+    ? {
+        height: 250,
+        width: 350,
+      }
+    : {
+        height: 320,
+        width: 450,
+      };
   return (
     <div className="category">
       {category?.images && (
         <Link href={`/shop/product-type/${category.slug}`} passHref>
-          <a className={styles.categoryLink}>
+          <a className={`${styles.categoryLink} m-auto flex justify-center`}>
             <Image
-              height={320}
-              width={450}
-              className="rounded-lg"
+              height={imageSize.height}
+              width={imageSize.width}
+              className="rounded-lg m-auto flex justify-center"
               src={category.images[0].file.url}
               alt={category.name}
               blurDataURL={category.images[0].file.url}

@@ -32,7 +32,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
       >
         <span>&times;</span>
       </button>
-      <div className="flex align-items-center">
+      <div className="flex items-center">
         <Link href={`/products/${cart.product.slug}`} passHref>
           <a className="flex-shrink-0">
             <Image

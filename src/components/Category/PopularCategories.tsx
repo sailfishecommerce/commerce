@@ -7,6 +7,8 @@ export default function PopularCategories() {
   const [data, status] = useCategoryData();
   const mobileView = useMediaQuery("(max-width:768px)");
 
+  console.log("mobileView", mobileView);
+
   const topCategories = data?.results?.filter(
     (category: { topId: string }) => !category.topId
   );
@@ -17,9 +19,9 @@ export default function PopularCategories() {
     category !== undefined ? category.slice(12, max) : [];
 
   return (
-    <div className="container flex justify-start">
-      <section className="w-4/5 m-auto lg:w-2/3 mb-8 md:w-5/6 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
-        <div className="flex flex-col md:flex-row popularCategoriesRow w-full mx-0">
+    <div className="container flex justify-start mx-auto lg:place-self-start">
+      <section className="w-4/5 mx-auto md:mx-0 lg:w-2/3 mb-8 md:w-5/6 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
+        <div className="flex flex-col md:flex-row w-full mx-0">
           {status === "error" ? (
             "Unable to fetch"
           ) : status === "loading" ? (
@@ -34,13 +36,6 @@ export default function PopularCategories() {
             )
           )}
         </div>
-        <style jsx>
-          {`
-            .popularCategories {
-              z-index: 2000;
-            }
-          `}
-        </style>
       </section>
     </div>
   );

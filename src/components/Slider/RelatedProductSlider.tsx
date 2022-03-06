@@ -2,12 +2,13 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Product from "@/components/Products";
 
 import "@splidejs/splide/dist/css/splide.min.css";
+import { memo } from "react";
 
 interface RelatedProductSliderProps {
   relatedProducts: any[];
 }
 
-export default function RelatedProductSlider({
+function RelatedProductSliderComponent({
   relatedProducts,
 }: RelatedProductSliderProps) {
   return (
@@ -43,3 +44,7 @@ export default function RelatedProductSlider({
     </div>
   );
 }
+
+const RelatedProductSlider = memo(RelatedProductSliderComponent);
+
+export default RelatedProductSlider;

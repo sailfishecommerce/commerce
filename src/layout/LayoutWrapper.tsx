@@ -8,12 +8,10 @@ import useScroll from "@/hooks/useScroll";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { toggleAuthModal } from "@/redux/ui-slice";
 import useModal from "@/hooks/useModal";
+import LayoutMetatag from "@/components/Metatag/LayoutMetatag";
 import displayAppModal from "@/lib/displayAppModal";
 import "react-toastify/dist/ReactToastify.css";
 
-const LayoutMetatag = dynamic(
-  () => import("@/components/Metatag/LayoutMetatag")
-);
 const Reward = dynamic(() => import("@/components/Rewards"));
 const SlideCart = dynamic(() => import("@/components/Cart/SlideCart"));
 const NextNProgress = dynamic(() => import("@/components/Loader/NProgress"));

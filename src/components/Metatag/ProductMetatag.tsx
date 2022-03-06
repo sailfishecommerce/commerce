@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { memo } from "react";
 
 interface Props {
   pageProduct: {
@@ -15,7 +16,7 @@ interface Props {
   };
 }
 
-export default function ProductMetatag({ pageProduct }: Props) {
+ function ProductMetatagComponent({ pageProduct }: Props) {
   const productDescription = pageProduct.description.replace(
     /<\/?[^>]+(>|$)/g,
     ""
@@ -65,3 +66,7 @@ export default function ProductMetatag({ pageProduct }: Props) {
     </Head>
   );
 }
+
+const ProductMetatag = memo(ProductMetatagComponent);
+
+export default ProductMetatag;

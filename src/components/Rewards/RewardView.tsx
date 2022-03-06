@@ -29,8 +29,8 @@ export default function RewardView({ content }: Props) {
   return (
     <>
       <div className="rewards-list">
-        <div className="header flex justify-between align-items-center">
-          <span className="flex align-items-center">
+        <div className="header flex justify-between items-center">
+          <span className="flex items-center">
             <i
               onClick={() => viewRewardDetails("default")}
               className="ci-arrow-left mr-4"
@@ -43,10 +43,7 @@ export default function RewardView({ content }: Props) {
           <h4>{content.title}</h4>
           <ul className="list">
             {content.items.map((item: any) => (
-              <li
-                key={item.text1}
-                className="list-item flex align-items-center"
-              >
+              <li key={item.text1} className="list-item flex items-center">
                 <img src={item.icon} className="mr-3" alt={item.text1} />
                 <span className="flex flex-col">
                   <h6>{item.text1}</h6>

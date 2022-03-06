@@ -55,7 +55,7 @@ export function CartCounter({ counterType }: any) {
 
   const optionsClassName = counterType?.box
     ? "mb-3 align-items-end"
-    : "mb-3 align-items-center";
+    : "mb-3 items-center";
   return (
     <form onSubmit={onSubmitHandler}>
       {selectedQty && (
@@ -84,12 +84,12 @@ export function CartCounter({ counterType }: any) {
             </select>
           </div>
         ) : (
-          <div className="cartCounter w-50 flex align-items-center mb-0">
+          <div className="cartCounter w-50 flex items-center mb-0">
             <button
               onClick={() => updateCounter("decrement")}
               type="button"
               aria-label="Remove Item"
-              className="p-2 flex align-items-center justify-content-center btn btn-danger text-white"
+              className="p-2 flex items-center justify-content-center btn btn-danger text-white"
             >
               <i className="fas fa-minus mb-0"></i>
             </button>
@@ -102,7 +102,7 @@ export function CartCounter({ counterType }: any) {
               onClick={() => updateCounter("increment")}
               type="button"
               aria-label="Add Item"
-              className={`p-2 flex align-items-center justify-content-center btn btn-success text-white`}
+              className={`p-2 flex items-center justify-content-center btn btn-success text-white`}
             >
               <i className="fas fa-plus"></i>
             </button>

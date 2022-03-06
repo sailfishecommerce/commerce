@@ -24,7 +24,7 @@ export function CartControl({ item }: cartControlProps) {
   }
   return (
     <div>
-      <div className="flex align-items-center">
+      <div className="flex items-center">
         <label
           htmlFor="itemQuantity"
           className="itemQuantity fw-normal me-1 text-muted"
@@ -81,7 +81,7 @@ export function ClearCart() {
     <div className="flex mt-4 mb-0">
       <button
         onClick={() => deleteCart.mutate(cart.id)}
-        className="btn-link btn-danger rounded-2 px-2 py-1 m-auto justify-content-center flex align-items-center remove"
+        className="btn-link btn-danger rounded-2 px-2 py-1 m-auto justify-content-center flex items-center remove"
       >
         <MdOutlineDelete fontSize={25} className="mr-2" />
         <p className="mb-0">Clear Cart</p>

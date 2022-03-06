@@ -9,7 +9,7 @@ export default function ProductdetailsView({ product }: any) {
   return (
     <div className="col-lg-5 pt-4 pt-lg-0">
       <div className="product-details ms-auto pb-3">
-        <div className="flex justify-between align-items-center mb-2">
+        <div className="flex justify-between items-center mb-2">
           <Rating product={productToView} />
           <button
             className="btn-wishlist"
@@ -21,8 +21,8 @@ export default function ProductdetailsView({ product }: any) {
             <i className="ci-heart"></i>
           </button>
         </div>
-        <div className="price-group mb-2 flex justify-between align-items-center">
-          <div className="flex price align-items-center">
+        <div className="price-group mb-2 flex justify-between items-center">
+          <div className="flex price items-center">
             <div className="text-accent me-2 fs-lg">
               <FormattedPrice price={productToView.price} isProduct />
             </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
 
 import {
@@ -23,9 +23,7 @@ const DynamicContactModal = dynamic(
 export default function ProductDetail({ product }: Props) {
   const [modal, setModal] = useState(false);
 
-  function toggleModal() {
-    setModal(!modal);
-  }
+  const toggleModal = useCallback(() => setModal(!modal), [modal]);
 
   return (
     <div className="w-1/3 pt-4 lg:pt-0">
