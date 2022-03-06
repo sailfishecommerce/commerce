@@ -3,7 +3,7 @@ import { Menu } from "react-instantsearch-dom";
 interface Props {
   title: string;
   attribute: "product_type";
-  defaultRefinement?: string[];
+  defaultRefinement?: string;
 }
 
 export default function CustomMenu({
@@ -15,11 +15,15 @@ export default function CustomMenu({
     <>
       <div className="menu">
         <h5 className="mb-2 text-xl font-medium">{title}</h5>
-        <Menu
-          searchable={true}
-          attribute={attribute}
-          defaultRefinement={defaultRefinement}
-        />
+        {defaultRefinement ? (
+          <Menu
+            searchable={true}
+            attribute={attribute}
+            defaultRefinement={defaultRefinement}
+          />
+        ) : (
+          <Menu searchable={true} attribute={attribute} />
+        )}
       </div>
     </>
   );
