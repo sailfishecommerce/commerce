@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <StyleRegistry registry={registry}>
       <Head>
         <meta property="csp-nonce" content={nonce} />
+        {styles}
       </Head>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>

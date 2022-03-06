@@ -1,8 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
-
-class MyDocument extends Document {  
+class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
@@ -12,7 +11,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
             crossOrigin="true"
           />
-          <meta property="csp-nonce" content={this.props.nonce} />
         </Head>
         <Script
           onLoad={() => console.log("vbout-loaded")}
