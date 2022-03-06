@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Script from "next/script";
+// import Script from "next/script";
 
 export default function LayoutMetatag() {
   return (
     <>
-      <Script strategy="afterInteractive" id="vboutTrackingCodeScript">
+      {/* <Script strategy="afterInteractive" id="vboutTrackingCodeScript">
         {`
           var _vbset = _vbset || [];
           _vbset.push(['_account', 'VBT-43304-6887']);
@@ -15,7 +15,7 @@ export default function LayoutMetatag() {
             vbt.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.vbt.io/tracker?_account='+_vbset[0][1]+'&_domain='+_vbset[1][1];var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vbt, s);
           })();
         `}
-      </Script>
+      </Script> */}
       <Head>
         <meta name="robots" content="noindex" />
         <meta charSet="utf-8" />
