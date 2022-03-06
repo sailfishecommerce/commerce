@@ -6,14 +6,19 @@ import { useEffect } from "react";
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
-import Script from "next/script";
 import type { AppProps } from "next/app";
 import "@/styles/index.css";
 import { ReactQueryDevtools } from "react-query/devtools";
-
+import { StyleRegistry, createStyleRegistry } from "styled-jsx";
+import { v4 as uuidv4 } from "uuid";
+import Head from "next/head";
 import store from "@/redux/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const nonce = Buffer.from(uuidv4()).toString("base64");
+  const registry = createStyleRegistry();
+  const styles = registry.styles({ nonce });
+
   useEffect(() => {
     AOS.init({
       startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
@@ -26,7 +31,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const queryClient = new QueryClient();
   return (
-    <>
+    <StyleRegistry registry={registry}>
+      <Head>
+        <meta property="csp-nonce" content={nonce} />
+      </Head>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <PersistGate loading={null} persistor={persistor}>
@@ -35,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </Provider>
-    </>
+    </StyleRegistry>
   );
 }
 
