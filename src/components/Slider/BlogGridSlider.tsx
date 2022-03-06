@@ -2,12 +2,13 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Link from "next/link";
 import { GiAlarmClock } from "react-icons/gi";
+import { memo } from "react";
 import { BiMessageRoundedDots } from "react-icons/bi";
 
 import carouselContent from "@/json/blog-grid-carousel.json";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-export default function BlogGridSlider() {
+function BlogGridSliderComponent() {
   return (
     <div className="pt-5 relative">
       <div className="tns-controls" id="blog-grid-controls">
@@ -92,3 +93,6 @@ export default function BlogGridSlider() {
     </div>
   );
 }
+
+const BlogGridSlider = memo(BlogGridSliderComponent);
+export default BlogGridSlider;

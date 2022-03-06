@@ -4,8 +4,9 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "@/components/Image";
 import brands from "@/json/shop-by-brand.json";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { memo } from "react";
 
-export default function ShopByBrand() {
+function ShopByBrandComponent() {
   const tabWidth = useMediaQuery("(max-width:768px)");
 
   const imageSize = tabWidth
@@ -58,3 +59,6 @@ export default function ShopByBrand() {
     </section>
   );
 }
+
+const ShopByBrand = memo(ShopByBrandComponent);
+export default ShopByBrand;
