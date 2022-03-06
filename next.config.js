@@ -27,6 +27,10 @@ module.exports = withBundleAnalyzer({
             "connect-src": [
               "'self'",
               "https://sailfish-e-commerce-limited.swell.store",
+              "https://czt5ma7jlj-1.algolianet.com",
+              "https://czt5ma7jlj-2.algolianet.com",
+              "https://czt5ma7jlj-dsn.algolia.net",
+              "https://czt5ma7jlj-3.algolianet.com",
             ],
             "font-src": ["'self'", "https://fonts.gstatic.com/"],
             "script-src": [
