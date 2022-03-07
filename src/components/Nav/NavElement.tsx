@@ -1,9 +1,10 @@
 import dynamic from "next/dynamic";
-import FormattedPrice from "@/lib/formatPrice";
 import { AiOutlineUser, AiOutlineMenu } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
-import Tooltip from "@/components/Tooltip";
 import { useState } from "react";
+
+import Tooltip from "@/components/Tooltip";
+import FormattedPrice from "@/lib/formatPrice";
 
 const HeaderCartDropdown = dynamic(
   () => import("@/components/Dropdown/CartDropdown")
@@ -16,18 +17,9 @@ interface AuthorizedViewProps {
 export function NavToggler() {
   return (
     <>
-      <button
-        className="navbar-toggler"
-        type="button"
-        aria-label="nav-bar"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <AiOutlineMenu className="hidden" />
-      </button>
       <a className="navbar-tool navbar-stuck-toggler ms-5" href="#">
         <Tooltip text="Expand menu">
-          <AiOutlineMenu />
+          <AiOutlineMenu className="text-2xl" />
         </Tooltip>
       </a>
     </>
