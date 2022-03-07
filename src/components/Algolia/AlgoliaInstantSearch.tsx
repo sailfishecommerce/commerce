@@ -1,7 +1,7 @@
+import algoliasearch from "algoliasearch";
 import { InstantSearch } from "react-instantsearch-dom";
 import { PropsWithChildren } from "react";
 
-import searchClient from "@/lib/algoliaConfig";
 import { useAppDispatch } from "@/redux/store";
 import { updateQuery } from "@/redux/algolia-slice";
 
@@ -9,6 +9,11 @@ export default function AlgoliaInstantSearch({
   children,
 }: PropsWithChildren<{}>) {
   const dispatch = useAppDispatch();
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
 
   const optimizedSearchClient = {
     ...searchClient,

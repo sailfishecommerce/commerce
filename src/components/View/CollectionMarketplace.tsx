@@ -1,15 +1,17 @@
-import dynamic from "next/dynamic";
+import algoliasearch from "algoliasearch";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 import { Configure } from "react-instantsearch-dom";
 import Link from "next/link";
+import { InstantSearch } from "react-instantsearch-dom";
 
+import useAlgoliaSearch from "@/hooks/useAlgoliaSearch";
 import AlgoliaCurrentRefinement from "@/components/Algolia/AlgoliaCurrentRefinement";
 import ShopViewCategories from "@/components/View/ShopViewCategories";
 import ShopBannerToolbar from "@/components/Banner/ShopBannerToolbar";
 import InfiniteProductHits from "@/components/Algolia/InfiniteHits";
 
-const AlgoliaInstantSearch = dynamic(
-  () => import("@/components/Algolia/AlgoliaInstantSearch")
-);
+const DEBOUNCE_TIME = 700;
 
 interface MarketplaceProps {
   collection?: {
@@ -21,8 +23,37 @@ interface MarketplaceProps {
 export default function CollectionMarketplace({
   collection,
 }: MarketplaceProps) {
+  const router = useRouter();
+  const { searchStateToUrl, urlToSearchState, createURL } = useAlgoliaSearch();
+  const { asPath } = router;
+  const [searchState, setSearchState] = useState<any>(urlToSearchState(asPath));
+  const debouncedSetStateRef: any = useRef(null);
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
+
+  const onSearchStateChange = (updatedSearchState: string) => {
+    clearTimeout(debouncedSetStateRef.current);
+    const href = searchStateToUrl(updatedSearchState);
+
+    debouncedSetStateRef.current = setTimeout(() => {
+      router.push(href, href, {
+        shallow: true,
+      });
+    }, DEBOUNCE_TIME);
+
+    setSearchState(updatedSearchState);
+  };
   return (
-    <AlgoliaInstantSearch>
+    <InstantSearch
+      indexName="New_Livehealthy_products_index"
+      searchClient={searchClient}
+      onSearchStateChange={onSearchStateChange}
+      searchState={searchState}
+      createURL={createURL}
+    >
       <Configure
         hitsPerPage={15}
         clickAnalytics
@@ -63,6 +94,6 @@ export default function CollectionMarketplace({
           <hr className="mb-2" />
         </section>
       </div>
-    </AlgoliaInstantSearch>
+    </InstantSearch>
   );
 }

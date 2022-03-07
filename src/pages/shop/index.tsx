@@ -1,9 +1,9 @@
+import algoliasearch from "algoliasearch";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 
 import Applayout from "@/layout/Applayout";
 import ShopView from "@/components/View/ShopView";
-import searchClient from "@/lib/algoliaConfig";
 import useAlgoliaSearch from "@/hooks/useAlgoliaSearch";
 
 const DEBOUNCE_TIME = 700;
@@ -14,6 +14,11 @@ export default function Shop() {
   const { asPath } = router;
   const [searchState, setSearchState] = useState<any>(urlToSearchState(asPath));
   const debouncedSetStateRef: any = useRef(null);
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
 
   const onSearchStateChange = (updatedSearchState: string) => {
     clearTimeout(debouncedSetStateRef.current);

@@ -1,9 +1,19 @@
-import aa from "search-insights";
+import dynamic from "next/dynamic";
 import { useAppSelector } from "./useRedux";
 
 export default function useAlgoliaEvents() {
   const { userToken }: any = useAppSelector((state) => state.user);
-  function initializeAlgolia() {
+
+  function searchInsight() {
+    const aa: any = dynamic((): any =>
+      import("search-insights").then(() =>
+        console.log("aa search-insight loaded")
+      )
+    );
+    return aa;
+  }
+
+  function initializeAlgolia(aa) {
     aa("init", {
       appId: `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
       apiKey: `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`,
@@ -12,7 +22,8 @@ export default function useAlgoliaEvents() {
   }
 
   function itemViewed(eventName: string, objectIDs: string[] | any) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("viewedObjectIDs", {
       eventName,
       userToken,
@@ -22,7 +33,8 @@ export default function useAlgoliaEvents() {
   }
 
   function filterViewed(filters: string[]) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("viewedFilters", {
       eventName: "filter_viewed",
       userToken,
@@ -32,7 +44,8 @@ export default function useAlgoliaEvents() {
   }
 
   function filterClicked(filters: string[]) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("clickedFilters", {
       eventName: "filter_clicked",
       userToken,
@@ -42,7 +55,8 @@ export default function useAlgoliaEvents() {
   }
 
   function productAddedToCart(objectIDs: string[] | any) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("convertedObjectIDs", {
       eventName: "product_added_to_cart",
       userToken,
@@ -52,7 +66,8 @@ export default function useAlgoliaEvents() {
   }
 
   function clickedItem(eventName: string, objectIDs: string[]) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("clickedObjectIDs", {
       eventName,
       userToken,
@@ -66,7 +81,8 @@ export default function useAlgoliaEvents() {
     queryID: string,
     objectIDs: string[]
   ) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("convertedObjectIDsAfterSearch", {
       eventName,
       userToken,
@@ -82,7 +98,8 @@ export default function useAlgoliaEvents() {
     positions: number[],
     eventName: string
   ) {
-    initializeAlgolia();
+    const { aa } = searchInsight();
+    initializeAlgolia(aa);
     aa("clickedObjectIDsAfterSearch", {
       index: "New_Livehealthy_products_index",
       userToken,

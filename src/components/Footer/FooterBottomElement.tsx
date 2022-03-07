@@ -8,20 +8,26 @@ const CurrencyDropdown = dynamic(
   () => import("@/components/Dropdown/CurrencyDropdown")
 );
 
+export function FooterSocialIcons() {
+  return (
+    <div className="mb-3 flex items-center justify-between">
+      {footerBottomContent.social.map((data, index) => (
+        <a key={`${data.name}-${index}`} href={data.link}>
+          <Icons
+            icon={data.name}
+            className="hover:text-red-500 text-white ml-2"
+            size={25}
+          />
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export function FooterBottomSocials() {
   return (
     <div className=" w-full lg:w-1/5 flex flex-col items-center lg:items-end">
-      <div className="mb-3 flex items-center justify-between">
-        {footerBottomContent.social.map((data, index) => (
-          <a key={`${data.name}-${index}`} href={data.link}>
-            <Icons
-              icon={data.name}
-              className="hover:text-red-500 text-white ml-2"
-              size={25}
-            />
-          </a>
-        ))}
-      </div>
+      <FooterSocialIcons />
       <div className="imgContainer mb-4">
         <Image
           src="/cards-alt.webp"

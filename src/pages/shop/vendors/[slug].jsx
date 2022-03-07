@@ -9,7 +9,6 @@ import toTitleCase, {
   replaceSpaceWithHypen,
 } from "@/lib/formatString";
 import ShopView from "@/components/View/ShopView";
-import searchClient from "@/lib/algoliaConfig";
 import useAlgoliaSearch from "@/hooks/useAlgoliaSearch";
 import { updateDefaultRefinement } from "@/redux/algolia-slice";
 import { useAppDispatch } from "@/hooks/useRedux";
@@ -17,7 +16,6 @@ import { useAppDispatch } from "@/hooks/useRedux";
 const DEBOUNCE_TIME = 700;
 
 export default function Vendors({ vendor }) {
-  console.log("vendor", vendor);
   const router = useRouter();
   const { slug } = router?.query;
   const { searchStateToUrl, urlToSearchState, createURL } = useAlgoliaSearch();
@@ -25,6 +23,11 @@ export default function Vendors({ vendor }) {
   const [searchState, setSearchState] = useState(urlToSearchState(asPath));
   const debouncedSetStateRef = useRef(null);
   const dispatch = useAppDispatch();
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
 
   const onSearchStateChange = (updatedSearchState) => {
     clearTimeout(debouncedSetStateRef.current);

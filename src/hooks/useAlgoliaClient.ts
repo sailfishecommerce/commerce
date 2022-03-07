@@ -1,7 +1,7 @@
+import algoliasearch from "algoliasearch";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import searchClient from "@/lib/algoliaConfig";
 import { useAppDispatch } from "@/redux/store";
 import { updateQuery } from "@/redux/algolia-slice";
 import { useAppSelector } from "@/hooks/useRedux";
@@ -11,6 +11,11 @@ export default function useAlgoliaClient() {
   const [querylength, setQueryLength] = useState(null);
   const dispatch = useAppDispatch();
   const { userDetail }: any = useAppSelector((state) => state.auth);
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
 
   const algoliasearchClient = {
     ...searchClient,
