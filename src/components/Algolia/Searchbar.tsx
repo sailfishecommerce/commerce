@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useState, memo } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
-import NewAlgoliaInstantSearch from "@/components/Algolia/NewAlgoliaInstantSearch";
+import AlgoliaInstantSearch from "@/components/Algolia/AlgoliaInstantSearch";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { updateQuery } from "@/redux/algolia-slice";
@@ -30,7 +30,7 @@ function SearchBarComponent() {
 
   return (
     <>
-      <NewAlgoliaInstantSearch>
+      <AlgoliaInstantSearch>
         <Configure clickAnalytics distinct enablePersonalization />
         <div className="searchBox relative">
           <div className={inputContainerClassName}>
@@ -46,7 +46,7 @@ function SearchBarComponent() {
           </div>
           {searching && <SearchbarHits />}
         </div>
-      </NewAlgoliaInstantSearch>
+      </AlgoliaInstantSearch>
       <style jsx>
         {`
           .searchBox {

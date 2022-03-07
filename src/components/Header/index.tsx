@@ -3,9 +3,9 @@ import Nav from "@/components/Nav";
 
 export default function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <Topbar />
       <Nav />
-    </div>
+    </header>
   );
 }

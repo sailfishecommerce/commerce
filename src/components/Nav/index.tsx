@@ -1,8 +1,10 @@
-import SearchBar from "@/components/Algolia/Searchbar";
+import dynamic from "next/dynamic";
 import useScroll from "@/hooks/useScroll";
 import Logo from "@/components/Logo";
 import Navmenu from "@/components/Nav/Navmenu";
 import useMediaQuery from "@/hooks/useMediaQuery";
+
+const SearchBar = dynamic(() => import("@/components/Algolia/Searchbar"));
 
 export default function Nav() {
   const { scroll } = useScroll();

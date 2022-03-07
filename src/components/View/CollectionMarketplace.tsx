@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { Configure } from "react-instantsearch-dom";
 import Link from "next/link";
 
@@ -5,7 +6,10 @@ import AlgoliaCurrentRefinement from "@/components/Algolia/AlgoliaCurrentRefinem
 import ShopViewCategories from "@/components/View/ShopViewCategories";
 import ShopBannerToolbar from "@/components/Banner/ShopBannerToolbar";
 import InfiniteProductHits from "@/components/Algolia/InfiniteHits";
-import { AlgoliaView } from "@/components/Algolia/AlgoliaInstantSearch";
+
+const AlgoliaInstantSearch = dynamic(
+  () => import("@/components/Algolia/AlgoliaInstantSearch")
+);
 
 interface MarketplaceProps {
   collection?: {
@@ -18,7 +22,7 @@ export default function CollectionMarketplace({
   collection,
 }: MarketplaceProps) {
   return (
-    <AlgoliaView>
+    <AlgoliaInstantSearch>
       <Configure
         hitsPerPage={15}
         clickAnalytics
@@ -59,6 +63,6 @@ export default function CollectionMarketplace({
           <hr className="mb-2" />
         </section>
       </div>
-    </AlgoliaView>
+    </AlgoliaInstantSearch>
   );
 }

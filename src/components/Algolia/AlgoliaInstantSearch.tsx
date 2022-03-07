@@ -1,4 +1,3 @@
-import algoliasearch from "algoliasearch";
 import { InstantSearch } from "react-instantsearch-dom";
 import { PropsWithChildren } from "react";
 
@@ -11,10 +10,10 @@ export default function AlgoliaInstantSearch({
 }: PropsWithChildren<{}>) {
   const dispatch = useAppDispatch();
 
-  const algoliasearchClient = {
+  const optimizedSearchClient = {
     ...searchClient,
     search(requests: any) {
-      if (requests.every(({ params }: any) => !params?.query?.length)) {
+      if (requests.every(({ params }: any) => !params.query.length)) {
         dispatch(updateQuery(requests[0].params?.query));
 
         return Promise.resolve({
@@ -34,23 +33,7 @@ export default function AlgoliaInstantSearch({
   return (
     <InstantSearch
       indexName="New_Livehealthy_products_index"
-      searchClient={algoliasearchClient}
-    >
-      {children}
-    </InstantSearch>
-  );
-}
-
-export function AlgoliaView({ children }: PropsWithChildren<{}>) {
-  const searchClient = algoliasearch(
-    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
-    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
-  );
-
-  return (
-    <InstantSearch
-      indexName="New_Livehealthy_products_index"
-      searchClient={searchClient}
+      searchClient={optimizedSearchClient}
     >
       {children}
     </InstantSearch>
