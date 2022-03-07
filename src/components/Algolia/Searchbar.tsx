@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { useState, memo } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
-
 import { useAppDispatch } from "@/hooks/useRedux";
 import { updateQuery } from "@/redux/algolia-slice";
 

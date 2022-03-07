@@ -5,6 +5,7 @@ const Lightbox = dynamic(() => import("react-image-lightbox"));
 
 import { productType } from "@/types";
 import Image from "@/components/Image";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import "react-image-lightbox/style.css";
 
 interface Props {
@@ -14,6 +15,17 @@ interface Props {
 export default function ProductGalleryView({ product }: Props) {
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const mobileView = useMediaQuery("(max-width:768px)");
+
+  const imageView = mobileView
+    ? {
+        height: 90,
+        width: 90,
+      }
+    : {
+        height: 150,
+        width: 150,
+      };
 
   const activethumbnailImg = (index: number) =>
     activeImage === index ? "active" : "";
@@ -38,8 +50,8 @@ export default function ProductGalleryView({ product }: Props) {
   };
 
   return (
-    <div className="product-gallery w-full flex">
-      <div className="product-gallery-preview order-2 w-4/5">
+    <div className="product-gallery w-full flex flex-col md:flex-row">
+      <div className="product-gallery-preview lg:order-2 w-full md:w-4/5">
         <div
           onClick={onImgClick}
           className="product-gallery-preview-item active"
@@ -74,7 +86,7 @@ export default function ProductGalleryView({ product }: Props) {
           />
         )}
       </div>
-      <div className="product-gallery-thumblist order-1 w-1/5">
+      <div className="product-gallery-thumblist flex flex-row w-full lg:flex-col lg:order-1 lg:w-1/5">
         {images?.map((image: any, index) => (
           <a
             className={`product-thumblist-item items-center justify-center flex hover:border-gray-300 hover:border-2 ${activethumbnailImg(
@@ -84,8 +96,8 @@ export default function ProductGalleryView({ product }: Props) {
             key={index}
           >
             <Image
-              height={150}
-              width={150}
+              height={imageView.height}
+              width={imageView.width}
               src={image.file.url}
               alt={product.image_alt_text[index]}
             />

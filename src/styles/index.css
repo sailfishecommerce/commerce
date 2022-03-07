@@ -238,6 +238,11 @@ span.ais-Menu-label {
   margin-bottom: 6px;
 }
 
+.carousel-container .carousel-inner .track {
+  display: flex;
+  width: 350px;
+}
+
 /* slider blog */
 /* .blog-entry-meta-label {
   position: absolute;

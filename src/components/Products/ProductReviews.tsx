@@ -1,12 +1,5 @@
 import Script from "next/script";
 import { productType } from "@/types";
-// import dynamic from "next/dynamic";
-// import ProductReviewView from "./ProductReviewView";
-
-// const ProductReviewForm = dynamic(() => import("@/components/Form/ProductReviewForm"));
-// const ProductReviewSort = dynamic(
-// () => import("@/components/Form/ProductReviewSort")
-// );
 
 interface Props {
   product: productType;
@@ -25,13 +18,6 @@ export default function ProductReviews({ product }: Props) {
         id="trustmate-widget-script"
       />
       <div className="container pt-md-2" id="reviews">
-        {/* <div className="row pt-4">
-          <div className="col-md-7">
-            <ProductReviewSort />
-            <ProductReviewView />
-          </div>
-          <ProductReviewForm />
-        </div> */}
         <div className="flex">
           <div id="95d50730-e6a5-4465-b950-3fab710cf306"></div>
           <div id="5c6b265a-9520-4676-9d01-2ecfca53d95c"></div>

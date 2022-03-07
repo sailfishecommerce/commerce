@@ -26,14 +26,14 @@ export default function ProductDetail({ product }: Props) {
   const toggleModal = useCallback(() => setModal(!modal), [modal]);
 
   return (
-    <div className="w-1/3 pt-4 lg:pt-0">
+    <div className="w-full lg:w-1/3 pt-4 lg:pt-0">
       <DynamicContactModal
         show={modal}
         onHide={toggleModal}
         productName={product.name}
       />
       <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center">
+        <div className="flex items-center flex-col md:flex-row">
           <span className="text-blue-800 font-bold text-xl mx-1">
             <FormattedPrice
               className="lg:text-xl"
@@ -56,7 +56,7 @@ export default function ProductDetail({ product }: Props) {
         <Rating product={product} />
       </div>
       <ProductForm product={product} />
-      <div className="flex my-2 items-center justify-between">
+      <div className="flex my-2 flex-col md:flex-row items-center justify-between">
         <Link
           href={`/shop/vendors/${replaceSpaceWithHypen(product.vendor)}`}
           passHref

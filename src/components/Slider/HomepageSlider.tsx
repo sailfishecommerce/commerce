@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { memo } from "react";
 
+import useMediaQuery from "@/hooks/useMediaQuery";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 import Image from "@/components/Image";
@@ -9,6 +10,18 @@ import sliderContent from "@/json/homepage-slider.json";
 import styles from "@/styles/HomepageSlider.module.css";
 
 function SliderItem({ item }): JSX.Element {
+  const mobileView = useMediaQuery("(max-width:768px)");
+
+  const imgSize = mobileView
+    ? {
+        height: 250,
+        width: 300,
+      }
+    : {
+        height: 300,
+        width: 400,
+      };
+
   return (
     <>
       <SplideSlide>
@@ -20,8 +33,8 @@ function SliderItem({ item }): JSX.Element {
               <Image
                 src={item.sliderImg}
                 alt={item.sliderTitle}
-                height={300}
-                width={400}
+                height={imgSize.height}
+                width={imgSize.width}
                 layout="responsive"
                 size="true"
                 priority={true}
@@ -58,7 +71,7 @@ function SliderItem({ item }): JSX.Element {
 function HomepageSliderComponent() {
   return (
     <>
-      <section className={`${styles.carousel} carousel mb-4 mb-lg-5 w-100`}>
+      <section className={`${styles.carousel} carousel mb-4 lg:mb-5 w-100`}>
         <Splide
           options={{
             autoplay: true,

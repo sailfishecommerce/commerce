@@ -17,7 +17,7 @@ function ProductGalleryDetailsContainer({
   children,
 }: PropsWithChildren<containerProps>) {
   return (
-    <div className="container m-auto flex bg-white shadow-lg rounded-lg mb-5 -mt-20 p-12">
+    <div className="container m-auto flex flex-col md:flex-row bg-white shadow-lg rounded-lg mb-5 -mt-20 p-12">
       {children}
     </div>
   );

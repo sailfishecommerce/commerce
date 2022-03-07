@@ -16,7 +16,7 @@ export function PaymentNote() {
     <div className="payment-partners flex flex-col mt-5">
       <img
         src="/payment-card.png"
-        className="payment-card"
+        className="payment-card w-32 mx-auto"
         alt="we are accept visa, mastercard cards and bank transfers"
       />
       <div className="secured-by flex items-center mt-2">
@@ -35,13 +35,6 @@ export function PaymentNote() {
           documentation might be requested{" "}
         </p>
       </div>
-      <style jsx>
-        {`
-          img.payment-card {
-            width: 120px;
-          }
-        `}
-      </style>
     </div>
   );
 }
@@ -153,8 +146,8 @@ export function ProductQuantityCounter({
   }
 
   return (
-    <div className="flex items-center mb-2">
-      <div className="cartCounter w-50 flex items-center mb-0">
+    <div className="flex items-center justify-between mb-2">
+      <div className="cartCounter w-1/2 lg:w-50 flex items-center mb-0">
         <button
           aria-label="Remove"
           onClick={() => updateCounter("decrement")}

@@ -88,12 +88,15 @@ export default function RewardCard({ card }: Props) {
           font-size: 15px;
           font-weight: 500;
         }
+
+        .button-view button {
+        }
         .button-view button {
           margin: auto;
           border: none;
           color: white;
           background-color: #f79f24;
-          padding: 10px;
+          padding: 8px;
           border-radius: 5px;
           font-size: 13px;
           margin-bottom: 10px;
@@ -151,7 +154,8 @@ export default function RewardCard({ card }: Props) {
         }
         @media (max-width: 768px) {
           .reward-card {
-            width: 250px;
+            width: 300px;
+            padding: 20px;
           }
         }
       `}</style>

@@ -61,6 +61,10 @@ export default function RewardChat() {
             padding: 20px;
             height: 600px;
             overflow-y: scroll;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
           }
           @media (max-width: 768px) {
             .chat-header {
