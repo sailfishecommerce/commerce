@@ -19,8 +19,8 @@ export default function ContactUs() {
       <ContactBanner />
       <ContactusCard />
       <DynamicPartnerOutlet />
-      <div className="w-full flex m-auto justify-between" id="map">
-        <DynamicContactMap />
+      <div className="w-full flex-col lg:flex-row flex m-auto justify-between" id="map">
+        <DynamicContactMap / >
         <DynamicContactForm />
       </div>
     </Applayout>

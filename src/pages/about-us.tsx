@@ -5,7 +5,6 @@ import aboutUsContent from "@/json/about-us.json";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 const Aboutus = dynamic(() => import("@/components/Aboutus"));
-// const AboutusForm = dynamic(() => import("@/components/Form/AboutusForm"));
 
 export default function About() {
   return (
@@ -15,7 +14,7 @@ export default function About() {
           <Aboutus key={content.title} content={content} />
         ))}
         <hr />
-        <section className="container m-auto py-3 lg:py-5 mt-4 mb-3">
+        <section className="container m-auto p-4 lg:py-5 mt-4 mb-3">
           <h2 className="text-2xl font-semibold my-2">
             {aboutUsContent.coreTeam.title}
           </h2>

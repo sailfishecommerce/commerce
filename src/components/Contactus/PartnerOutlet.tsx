@@ -4,19 +4,21 @@ import Icons from "@/components/Icons";
 export default function PartnerOutlet() {
   return (
     <section className="container mx-auto pt-4 md:mt-4 mb-10">
-      <h2 className="text-lg lg:text-3xl font-medium text-center mb-3">
+      <h2 className="text-xl mb-0 lg:text-3xl font-medium text-center md:mb-3">
         Partner outlet stores
       </h2>
-      <div className="flex flew-wrap w-full justify-center">
+      <div className="flex flew-wrap w-full justify-center flex-col md:flex-row items-center">
         {partnerContent.outlet.map((content) => (
           <div
             key={content.address}
-            className="md:w-1/3 sm:w-1/2 mx-4 shadow-md hover:shadow-lg rounded-b-lg"
+            className="md:w-1/3 w-5/6 sm:w-1/2 mx-4 my-4 md:my-4 shadow-md hover:shadow-lg rounded-b-lg"
           >
             <div>
               <img className="rounded-t-lg" src={content.image} alt="Orlando" />
               <div className="p-4">
-                <h6 className="text-lg font-base ">{content.address}</h6>
+                <h6 className="lg:text-lg font-base text-md">
+                  {content.address}
+                </h6>
                 <ul className="mb-0">
                   {content.info.map((content) => (
                     <li
@@ -31,19 +33,19 @@ export default function PartnerOutlet() {
                       <div className="flex flex-col">
                         <span className="text-md">{content.action}</span>
                         {content.action === "Find us" ? (
-                          <a className="text-md" href="#">
+                          <a className="text-sm md:text-md" href="#">
                             {content.text}
                           </a>
                         ) : content.action === "Call us" ? (
                           <a
-                            className="text-md"
+                            className="text-sm md:text-md"
                             href={`tel:${content.text.replace(" ", "")}`}
                           >
                             {content.text}
                           </a>
                         ) : (
                           <a
-                            className="text-md"
+                            className="text-sm md:text-md"
                             href={`mailto:${content.text}`}
                           >
                             {content.text}

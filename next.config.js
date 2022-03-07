@@ -61,6 +61,7 @@ module.exports = withBundleAnalyzer({
               "https://pcdn.piiojs.com",
               "https://en.trustmate.io",
             ],
+            "frame-src": "https://www.google.com/",
           },
           isDev,
           permissionsPolicy: false,

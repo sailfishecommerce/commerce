@@ -22,14 +22,18 @@ export default function Aboutus({ content }: contentProps) {
     content.imgPosition === "left" ? "md:order-2" : "md:order-1";
 
   return (
-    <section className="flex items-center">
-      <div className={`about-us-bg w-1/2 bg-position-center ${imageOrder}`}>
+    <section className="flex flex-col md:flex-row items-center">
+      <div
+        className={`about-us-bg w-full md:w-1/2 bg-position-center ${imageOrder}`}
+      >
         <img src={content.image} />
       </div>
-      <div className={`w-1/2 py-5 px-24 ${textOrder}`}>
+      <div
+        className={`w-full md:w-1/2 py-5 px-4 lg:px-24 md:order-2 ${textOrder}`}
+      >
         <div className="content-text mx-auto lg:py-5">
           <h2 className="text-2xl font-medium pb-3">{content.title}</h2>
-          <p className="pb-3 text-lg">{content.text}</p>
+          <p className="pb-3 text-md md:text-lg">{content.text}</p>
           {content.buttons?.map((button) => (
             <Link key={button.color} href={button.link} passHref>
               <button

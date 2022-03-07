@@ -262,3 +262,9 @@ span.ais-Menu-label {
     min-height: 500px;
   }
 }
+
+@media (max-width: 768px) {
+  .related-products ul.splide__list {
+    height: 230px;
+  }
+}
