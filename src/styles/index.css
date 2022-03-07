@@ -138,6 +138,14 @@ ul.ais-RefinementList-list .ais-RefinementList-count {
   font-size: 14px;
 }
 
+li.ais-Menu-item.ais-Menu-item--selected .ais-Menu-label {
+  font-weight: bold;
+}
+li.ais-Menu-item.ais-Menu-item--selected {
+  color: red;
+  font-weight: bold;
+}
+
 .tags ul {
   max-height: 270px;
   overflow: auto;
