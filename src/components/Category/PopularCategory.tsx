@@ -20,8 +20,8 @@ export default function PopularCategory({ category }: PopularCategoryProps) {
   const selectedFooterCategory = useMarketplaceCategory();
   const mobileView = useMediaQuery("(max-width:768px)");
   const size = mobileView
-    ? { height: 200, width: 300 }
-    : { height: 200, width: 250 };
+    ? { height: 250, width: 300 }
+    : { height: 250, width: 320 };
 
   return (
     <div className="popularCategory w-full lg:w-1/3 px-1 mx-0">
@@ -40,7 +40,6 @@ export default function PopularCategory({ category }: PopularCategoryProps) {
             loading="lazy"
             className="d-block rounded mx-1 mb-3"
             layout="responsive"
-            size="true"
           />
           <h3 className="fs-base pt-1 mb-0">{category.name}</h3>
         </a>

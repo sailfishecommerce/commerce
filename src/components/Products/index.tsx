@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import { AiOutlineHeart } from "react-icons/ai";
 
 import Image from "@/components/Image";
 import { ProductProps } from "@/types";
@@ -10,7 +9,6 @@ import { replaceSpaceWithHypen } from "@/lib/formatString";
 import discountPrice from "@/lib/discountPrice";
 import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
 import ProductPriceView from "@/components/Products/ProductPriceView";
-import Tooltip from "@/components/Tooltip";
 import styles from "@/styles/ui.module.css";
 
 const DynamicProductViewForm = dynamic(
@@ -60,8 +58,6 @@ export default function Product({
         [product.__position],
         "product clicked after search"
       );
-    } else {
-      return null;
     }
   }
 
@@ -89,7 +85,7 @@ export default function Product({
             <div
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              className={`${styles.productImage} h-48 lg:h-72 md:h-56`}
+              className="h-48 lg:h-72 md:h-56"
             >
               <Image
                 height={300}

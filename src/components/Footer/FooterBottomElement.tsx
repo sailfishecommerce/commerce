@@ -12,13 +12,13 @@ export function FooterSocialIcons() {
   return (
     <div className="mb-3 flex items-center justify-between">
       {footerBottomContent.social.map((data, index) => (
-        <a key={`${data.name}-${index}`} href={data.link}>
+        <span key={`${data.name}-${index}`}>
           <Icons
             icon={data.name}
             className="hover:text-red-500 text-white ml-2"
             size={25}
           />
-        </a>
+        </span>
       ))}
     </div>
   );

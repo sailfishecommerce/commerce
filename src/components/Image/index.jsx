@@ -4,7 +4,6 @@ import useInView from "react-cool-inview";
 
 const Image = (props) => {
   const [loading, setLoading] = useState(props.loading);
-
   const { observe, inView } = useInView({
     unobserveOnEnter: true,
     rootMargin: "30px",
@@ -33,13 +32,15 @@ const Image = (props) => {
     }
   }, [props.loading, props.priority]);
 
+  const imageStyle = props.layout === "responsive" ? "block" : "";
+
   const styles = props?.size
     ? { width: "unset", height: "unset" }
     : { width: `${props.width}px`, height: `${props.height}px` };
 
   return (
-    <div className="lazyImageWrapper" style={styles} ref={observe}>
-      {inView && <NextImage loading={loading} {...props} />}
+    <div className={imageStyle} style={styles} ref={observe}>
+      {inView && <NextImage {...props} loading={loading} />}
     </div>
   );
 };
