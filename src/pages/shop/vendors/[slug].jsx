@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 
 import fetchAllSwellProducts from "@/lib/processPageproduct";
 import Metatag from "@/components/Metatag";
@@ -8,59 +7,14 @@ import toTitleCase, {
   replaceHypenWithSpace,
   replaceSpaceWithHypen,
 } from "@/lib/formatString";
-import ShopView from "@/components/View/ShopView";
-import useAlgoliaSearch from "@/hooks/useAlgoliaSearch";
-import { updateDefaultRefinement } from "@/redux/algolia-slice";
-import { useAppDispatch } from "@/hooks/useRedux";
 
-const DEBOUNCE_TIME = 700;
+const ShopView = dynamic(() => import("@/components/View/ShopView"));
 
 export default function Vendors({ vendor }) {
-  const router = useRouter();
-  const { slug } = router?.query;
-  const { searchStateToUrl, urlToSearchState, createURL } = useAlgoliaSearch();
-  const { asPath } = router;
-  const [searchState, setSearchState] = useState(urlToSearchState(asPath));
-  const debouncedSetStateRef = useRef(null);
-  const dispatch = useAppDispatch();
-
-  const searchClient = algoliasearch(
-    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
-    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
-  );
-
-  const onSearchStateChange = (updatedSearchState) => {
-    clearTimeout(debouncedSetStateRef.current);
-    const href = searchStateToUrl(updatedSearchState);
-
-    debouncedSetStateRef.current = setTimeout(() => {
-      router.push(href, href, {
-        shallow: true,
-      });
-    }, DEBOUNCE_TIME);
-
-    setSearchState(updatedSearchState);
-  };
-  console.log("router", router);
-
-  useEffect(() => {
-    if (slug.includes(vendor.toLowerCase())) {
-      dispatch(updateDefaultRefinement(vendor));
-    } else {
-      dispatch(updateDefaultRefinement(null));
-    }
-  }, []);
-
   return (
     <Applayout title="Live healthy Store - Quality Australian Products - Free Shipping to HK">
       <Metatag />
-      <ShopView
-        searchClient={searchClient}
-        indexName="New_Livehealthy_products_index"
-        searchState={searchState}
-        onSearchStateChange={onSearchStateChange}
-        createURL={createURL}
-      />
+      <ShopView vendor={vendor} />
     </Applayout>
   );
 }

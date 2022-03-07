@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { InstantSearch } from "react-instantsearch-dom";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import algoliasearch from "algoliasearch/lite";
 import Link from "next/link";
 import { Configure } from "react-instantsearch-dom";
 
@@ -7,25 +10,63 @@ import AlgoliaCurrentRefinement from "@/components/Algolia/AlgoliaCurrentRefinem
 import ShopViewCategories from "@/components/View/ShopViewCategories";
 import ShopBannerToolbar from "@/components/Banner/ShopBannerToolbar";
 import InfiniteProductHits from "@/components/Algolia/InfiniteHits";
+import useAlgoliaSearch from "@/hooks/useAlgoliaSearch";
+import {
+  updateDefaultRefinement,
+  updateDefaultMenuRefinement,
+} from "@/redux/algolia-slice";
+import { useAppDispatch } from "@/hooks/useRedux";
 
 interface ShopViewProps {
-  searchState: any;
-  onSearchStateChange: (updatedSearchState: string) => void;
-  createURL: (state: any) => void;
-  indexName: string;
-  searchClient: any;
+  vendor?: string;
+  menu?: string;
 }
 
-export default function ShopView({
-  searchState,
-  onSearchStateChange,
-  createURL,
-  indexName,
-  searchClient,
-}: ShopViewProps) {
+const DEBOUNCE_TIME = 700;
+
+export default function ShopView({ vendor, menu }: ShopViewProps) {
+  const router = useRouter();
+  const { slug } = router?.query;
+  const { searchStateToUrl, urlToSearchState, createURL } = useAlgoliaSearch();
+  const { asPath } = router;
+  const [searchState, setSearchState] = useState(urlToSearchState(asPath));
+  const debouncedSetStateRef = useRef(null);
+  const dispatch = useAppDispatch();
+
+  const searchClient = algoliasearch(
+    `${process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}`,
+    `${process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}`
+  );
+
+  const onSearchStateChange = (updatedSearchState) => {
+    clearTimeout(debouncedSetStateRef.current);
+    const href = searchStateToUrl(updatedSearchState);
+
+    debouncedSetStateRef.current = setTimeout(() => {
+      router.push(href, href, {
+        shallow: true,
+      });
+    }, DEBOUNCE_TIME);
+
+    setSearchState(updatedSearchState);
+  };
+  console.log("router", router);
+
+  useEffect(() => {
+    if (vendor && slug.includes(vendor.toLowerCase())) {
+      dispatch(updateDefaultRefinement(vendor));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (menu && slug.includes(menu.toLowerCase())) {
+      dispatch(updateDefaultMenuRefinement(menu));
+    }
+  }, []);
+
   return (
     <InstantSearch
-      indexName={indexName}
+      indexName="New_Livehealthy_products_index"
       searchClient={searchClient}
       onSearchStateChange={onSearchStateChange}
       searchState={searchState}

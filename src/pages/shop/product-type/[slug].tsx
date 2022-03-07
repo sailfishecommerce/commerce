@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
+
 import Applayout from "@/layout/Applayout";
 import { categoryType } from "@/types";
-import CollectionMarketplace from "@/components/View/CollectionMarketplace";
 import getStoreCategories from "@/lib/getStoreCategories";
 import CategoryMetatag from "@/components/Metatag/CategoryMetatag";
+
+const ShopView = dynamic(() => import("@/components/View/ShopView"));
 
 interface collectionProps {
   collection: categoryType;
@@ -13,7 +16,7 @@ export default function Category({ collection }: collectionProps): JSX.Element {
       title={`${collection.name} | Free Delivery to HK | Live healthy Online Store`}
     >
       <CategoryMetatag collection={collection} />
-      <CollectionMarketplace collection={collection} />
+      <ShopView menu={collection.name} />
     </Applayout>
   );
 }

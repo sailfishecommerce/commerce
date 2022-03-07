@@ -8,6 +8,7 @@ const algoliaSlice = createSlice({
     query: null,
     closeSearchView: false,
     defaultRefinement: null,
+    defaultMenuRefinement: null,
   },
   reducers: {
     updateSearchData(state, action: PayloadAction<any>) {
@@ -25,6 +26,9 @@ const algoliaSlice = createSlice({
     updateDefaultRefinement(state, action: PayloadAction<string>) {
       state.defaultRefinement = action.payload;
     },
+    updateDefaultMenuRefinement(state, action: PayloadAction<string>) {
+      state.defaultMenuRefinement = action.payload;
+    },
   },
 });
 
@@ -34,5 +38,6 @@ export const {
   closeSearch,
   updateQuery,
   updateDefaultRefinement,
+  updateDefaultMenuRefinement,
 } = algoliaSlice.actions;
 export default algoliaSlice.reducer;

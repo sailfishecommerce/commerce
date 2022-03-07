@@ -1,5 +1,4 @@
 import { CustomRangeSlider } from "@/components/Algolia/AlgoliaPriceRange";
-import AttributeRefinementList from "@/components/Algolia/AttributeRefinementList";
 import { RatingsList } from "@/components/Algolia/RatingsRefinementList";
 import CustomRefinementList from "@/components/Algolia/CustomRefinementList";
 import CustomMenu from "@/components/Algolia/CustomMenu";

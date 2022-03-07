@@ -4,7 +4,6 @@ import { RefinementList } from "react-instantsearch-dom";
 interface Props {
   title: string;
   attribute: "vendor" | "tags";
-  defaultRefinement?: string[];
 }
 
 export default function CustomRefinementList({ title, attribute }: Props) {
@@ -15,7 +14,7 @@ export default function CustomRefinementList({ title, attribute }: Props) {
       {defaultRefinement && attribute === "vendor" ? (
         <RefinementList
           searchable={true}
-          attribute={attribute}  
+          attribute={attribute}
           showMoreLimit={100}
           showMore={true}
           defaultRefinement={[defaultRefinement]}
