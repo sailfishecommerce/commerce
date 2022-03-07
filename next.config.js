@@ -29,6 +29,8 @@ module.exports = withBundleAnalyzer({
             "default-src": [
               "'self'",
               "https://sailfish-e-commerce-limited.swell.store",
+              "https://en.trustmate.io",
+              "https://cdn.jsdelivr.net",
             ],
             "connect-src": [
               "'self'",
@@ -39,7 +41,11 @@ module.exports = withBundleAnalyzer({
               "https://czt5ma7jlj-3.algolianet.com",
               "https://insights.algolia.io",
             ],
-            "font-src": ["'self'", "https://fonts.gstatic.com/"],
+            "font-src": [
+              "'self'",
+              "https://fonts.gstatic.com/",
+              "https://cdn.jsdelivr.net",
+            ],
             "script-src": [
               "'self'",
               "'nonce-QRTYPCVBFGXZ'",
@@ -52,6 +58,7 @@ module.exports = withBundleAnalyzer({
               "data:",
               "https://cdn.schema.io",
               "https://pcdn.piiojs.com",
+              "https://en.trustmate.io",
             ],
           },
           isDev,
