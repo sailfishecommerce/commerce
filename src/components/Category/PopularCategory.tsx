@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { memo } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 import Image from "@/components/Image";
@@ -16,7 +17,7 @@ interface PopularCategoryProps {
   };
 }
 
-export default function PopularCategory({ category }: PopularCategoryProps) {
+function PopularCategoryComponent({ category }: PopularCategoryProps) {
   const selectedFooterCategory = useMarketplaceCategory();
   const mobileView = useMediaQuery("(max-width:768px)");
   const size = mobileView
@@ -69,3 +70,7 @@ export default function PopularCategory({ category }: PopularCategoryProps) {
     </div>
   );
 }
+
+const PopularCategory = memo(PopularCategoryComponent)
+
+export default PopularCategory;

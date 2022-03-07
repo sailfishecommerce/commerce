@@ -61,6 +61,7 @@ export default function FormattedPrice({
           isProduct={isProduct}
           currencies={currencyList}
           currency={currency}
+          className={className}
         />
       )}
     </>

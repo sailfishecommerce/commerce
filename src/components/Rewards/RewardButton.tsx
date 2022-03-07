@@ -63,6 +63,9 @@ export default function RewardButton({ showChat, onClick }: Props) {
             height: 25px;
             width: 25px;
           }
+          button.rewardButton {
+            bottom: -50px;
+          }
         }
       `}</style>
     </>

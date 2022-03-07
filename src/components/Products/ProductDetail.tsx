@@ -35,12 +35,20 @@ export default function ProductDetail({ product }: Props) {
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center">
           <span className="text-blue-800 font-bold text-xl mx-1">
-            <FormattedPrice price={product.price} isProduct />
+            <FormattedPrice
+              className="lg:text-xl"
+              price={product.price}
+              isProduct
+            />
           </span>
           {product.rrp && (
             <span className="text-blue-800 text-xl mx-1">
               <del>
-                <FormattedPrice price={product.rrp} isProduct />
+                <FormattedPrice
+                  className="lg:text-xl"
+                  price={product.rrp}
+                  isProduct
+                />
               </del>
             </span>
           )}
