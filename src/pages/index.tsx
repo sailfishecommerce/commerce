@@ -11,7 +11,7 @@ export default function Home() {
     <Applayout title="Live healthy Store - Quality Australian Products - Free Shipping to HK">
       <HomepageSlider />
       <PopularCategories />
-      {/* <TrendingProducts /> */}
+      <TrendingProducts />
       <ShopFromCategories />
       <ShopByBrand />
       <BlogBanner />

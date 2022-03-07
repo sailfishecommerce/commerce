@@ -29,12 +29,11 @@ export default function Product({
 }: ProductProps) {
   const { itemViewed, clickedItemAfterSearch } = useAlgoliaEvents();
   const [inHover, setHover] = useState(false);
+  const mobileView = useMediaQuery("(max-width:768px)");
 
   function productViewHandler() {
     itemViewed("product_viewed", [product.objectID]);
   }
-
-  const mobileView = useMediaQuery("(max-width:768px)");
 
   const linkURL =
     algoliaEvent === "search"
@@ -61,8 +60,18 @@ export default function Product({
     }
   }
 
+  const imgSize = mobileView
+    ? {
+        height: 150,
+        width: 150,
+      }
+    : {
+        height: 300,
+        width: 300,
+      };
+
   const productClass = homepage
-    ? "lg:w-1/4"
+    ? "lg:w-1/4 sm:w-full"
     : slider
     ? "w-full"
     : "lg:w-1/3 md:w-1/4";
@@ -85,11 +94,11 @@ export default function Product({
             <div
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              className="h-48 lg:h-72 md:h-56"
+              className="lg:h-72 lg:80"
             >
               <Image
-                height={300}
-                width={300}
+                height={imgSize.height}
+                width={imgSize.width}
                 src={productImage}
                 alt={imageAlt}
                 placeholder="blur"
