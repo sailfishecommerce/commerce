@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { MdCancel } from "react-icons/md";
+import { BsArrowLeft } from "react-icons/bs";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { updateStage, updateWidget } from "@/redux/reward-slice";
@@ -31,23 +33,28 @@ export default function RewardView({ content }: Props) {
       <div className="rewards-list">
         <div className="header flex justify-between items-center">
           <span className="flex items-center">
-            <i
+            <BsArrowLeft
+              className="text-2xl font-bold cursor-pointer mx-1"
               onClick={() => viewRewardDetails("default")}
-              className="ci-arrow-left mr-4"
-            ></i>
-            <h6>Sailfish + Rewards</h6>
+            />
+            <h4 className="text-xl font-bold mx-4">Sailfish + Rewards</h4>
           </span>
-          <i onClick={closeWidget} className="ci-close"></i>
+          <MdCancel
+            className="text-2xl font-bold hover:text-red-500"
+            onClick={closeWidget}
+          />
         </div>
-        <div className="content">
-          <h4>{content.title}</h4>
+        <div className="content px-4">
+          <h4 className="text-center font-semibold mt-1 text-xl">
+            {content.title}
+          </h4>
           <ul className="list">
             {content.items.map((item: any) => (
-              <li key={item.text1} className="list-item flex items-center">
+              <li key={item.text1} className="flex items-center">
                 <img src={item.icon} className="mr-3" alt={item.text1} />
-                <span className="flex flex-col">
-                  <h6>{item.text1}</h6>
-                  <p>{item.text2}</p>
+                <span className="flex flex-col my-1">
+                  <h6 className="text-lg font-medium">{item.text1}</h6>
+                  <p className="text-md my-1">{item.text2}</p>
                 </span>
               </li>
             ))}
@@ -59,13 +66,16 @@ export default function RewardView({ content }: Props) {
           <p className="signin text-center">
             Already have an account?{" "}
             <Link href="/">
-              <a>Sign in</a>
+              <a className="signin-text text-red-500 font-bold">Sign in</a>
             </Link>
           </p>
         </div>
       </div>
       <style jsx>
         {`
+          .signin-text {
+            color: #f79f24;
+          }
           .rewards-list .header {
             background: linear-gradient(
               135.19deg,
@@ -106,16 +116,13 @@ export default function RewardView({ content }: Props) {
             padding: 10px;
             border-radius: 5px;
             font-size: 13px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             display: flex;
           }
           .content button:hover {
             opacity: 0.8;
           }
-          .content h4 {
-            font-size: 16px;
-            margin: 15px 0px 20px 40px;
-          }
+
           .header span h6 {
             margin-bottom: 0;
             color: white;

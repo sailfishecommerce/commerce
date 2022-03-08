@@ -1,4 +1,6 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { MdCancel } from "react-icons/md";
+
+import { useAppDispatch } from "@/hooks/useRedux";
 import rewardContent from "@/json/reward.json";
 import { updateWidget } from "@/redux/reward-slice";
 import RewardCard from "./RewardCard";
@@ -15,10 +17,13 @@ export default function RewardChat() {
       <div className="reward-chat-box">
         <div className="chat-header flex items-center justify-between">
           <div className="flex flex-col">
-            <h6 className="mt-2">Welcome to</h6>
-            <h4>Sailfish + Rewards</h4>
+            <h6 className="mt-2 font-bold text-xl">Welcome to</h6>
+            <h4 className="text-xl font-bold">Sailfish + Rewards</h4>
           </div>
-          <i onClick={closeWidget} className="ci-close"></i>
+          <MdCancel
+            className="text-2xl font-bold hover:text-red-500 cursor-pointer"
+            onClick={closeWidget}
+          />
         </div>
         <div className="reward-card-group">
           {rewardContent.cards.map((card) => (

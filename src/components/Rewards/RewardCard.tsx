@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { updateStage } from "@/redux/reward-slice";
@@ -54,7 +55,7 @@ export default function RewardCard({ card }: Props) {
                       <img className="icon" src={link.icon} alt="icon" />
                       <p>{link.title}</p>
                     </div>
-                    <i className="ci-arrow-right"></i>
+                    <BsArrowRight color="#f79f24" />
                   </li>
                 ))
               : card.type === "referrals" &&
