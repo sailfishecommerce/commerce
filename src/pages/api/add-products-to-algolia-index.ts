@@ -20,11 +20,9 @@ export default function AddProductToAlgoliaIndiceHandler(
           autoGenerateObjectIDIfNotExist: true,
         })
         .then((response) => {
-          console.log("response algolia", response);
           return res.status(200).json(response);
         })
         .catch((error) => {
-          console.log("error algolia", error);
           return res.status(400).json(error);
         });
     }

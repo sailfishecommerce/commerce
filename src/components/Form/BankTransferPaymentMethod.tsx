@@ -25,7 +25,6 @@ export default function BankTransferPaymentMethod() {
         );
       })
       .catch((error) => {
-        // console.error("error sendBankTransfer", error);
         hasError(loading, "an error occured");
       });
   }

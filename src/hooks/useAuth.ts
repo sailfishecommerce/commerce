@@ -23,7 +23,6 @@ export default function useAuth() {
         if (response) {
           isSuccessful(toastId, `Welcome back, ${values.email}`);
           formik.resetForm();
-          console.log("login response", response);
           formik.setSubmitting(false);          
           dispatch(authorizeUser(response));
           queryClient.invalidateQueries("userdetails");
@@ -51,7 +50,6 @@ export default function useAuth() {
         } else {
           isSuccessful(toastId, `${values.email}, sign up successful`);
           dispatch(authorizeUser(response));
-          console.log("response createUserAccount", response);
           formik.resetForm();
           queryClient.invalidateQueries("userdetails");
           !notModal && dispatch(toggleAuthModal());

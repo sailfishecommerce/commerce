@@ -12,7 +12,6 @@ export default function useCategory() {
     });
   }
   async function getACategory(categoryIdOrSlug: string) {
-    console.log("categoryIdOrSlug", categoryIdOrSlug);
     return await swell.categories.get(categoryIdOrSlug);
   }
   async function getProductsInACategory(slug: string) {

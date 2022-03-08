@@ -25,7 +25,6 @@ export default async function createSwellProductHandler(
         .eachPage(
           function page(records, fetchNextPage) {
             try {
-              console.log("records", records);
               records.forEach(function (record) {
                 const recordData = {
                   id: record.id,

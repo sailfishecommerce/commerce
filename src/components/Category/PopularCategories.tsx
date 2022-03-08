@@ -1,10 +1,10 @@
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useCategoryData } from "@/hooks/useCategory";
 import PopularCategory from "@/components/Category/PopularCategory";
 import LoadingPopularCategory from "@/components/Loader/PopularCategoryLoader";
 
-export default function PopularCategories() {
+function PopularCategoriesComponent() {
   const [data, status] = useCategoryData();
   const mobileView = useMediaQuery("(max-width:950px)");
 
@@ -42,3 +42,6 @@ export default function PopularCategories() {
     </div>
   );
 }
+
+const PopularCategories = memo(PopularCategoriesComponent);
+export default PopularCategories;

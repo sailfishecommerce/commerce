@@ -8,7 +8,6 @@ export default function useInfiniteScroll(products: []) {
   const loader = useRef(null);
 
   function handleObserver(entities: any) {
-    console.log("entities", entities);
     const target = entities[0];
     if (target.isIntersecting) {
       setCurrentViewIndex(productCount);

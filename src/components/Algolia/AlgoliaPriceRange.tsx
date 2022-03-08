@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { connectRange } from "react-instantsearch-dom";
+import dynamic from "next/dynamic";
+const Nouislider = dynamic(() => import("nouislider-react"));
 import { useEffect, useState } from "react";
-import Nouislider from "nouislider-react";
 
 import "nouislider/distribute/nouislider.css";
 

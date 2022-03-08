@@ -2,9 +2,12 @@ import dynamic from "next/dynamic";
 
 import Applayout from "@/layout/Applayout";
 import TrendingProducts from "@/components/Products/TrendingProducts";
-import HomepageSlider from "@/components/Slider/HomepageSlider";
 import BlogBanner from "@/components/Blog/BlogBanner";
 import PopularCategories from "@/components/Category/PopularCategories";
+
+const HomepageSlider = dynamic(
+  () => import("@/components/Slider/HomepageSlider")
+);
 
 const ShopFromCategories = dynamic(
   () => import("@/components/Category/ShopFromCategories")

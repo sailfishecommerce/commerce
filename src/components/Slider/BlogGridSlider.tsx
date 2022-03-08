@@ -1,14 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Link from "next/link";
 import { GiAlarmClock } from "react-icons/gi";
 import { memo } from "react";
 import { BiMessageRoundedDots } from "react-icons/bi";
 
 import carouselContent from "@/json/blog-grid-carousel.json";
+import useSplide from "@/hooks/useSplide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 function BlogGridSliderComponent() {
+  const { Splide, SplideSlide } = useSplide();
   return (
     <div className="pt-5 relative blogGrid">
       <Splide

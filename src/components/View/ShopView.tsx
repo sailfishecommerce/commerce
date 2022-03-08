@@ -50,7 +50,6 @@ export default function ShopView({ vendor, menu }: ShopViewProps) {
 
     setSearchState(updatedSearchState);
   };
-  console.log("router", router);
 
   useEffect(() => {
     if (vendor && slug.includes(vendor.toLowerCase())) {

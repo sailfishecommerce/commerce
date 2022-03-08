@@ -1,10 +1,6 @@
-import { useRouter } from "next/router";
 import qs from "qs";
 
 export default function useAlgoliaSearch() {
-  const router = useRouter();
-
-  console.log("router", router);
 
   function getCategorySlug(name: string) {
     return name.split(" ").map(encodeURIComponent).join("+");

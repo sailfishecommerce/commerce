@@ -31,14 +31,12 @@ export default function useAirwallexPayment() {
     const paymentDetails = formatIntentData(cart, paymentForm);
     createAccessToken()
       .then(({ data }) => {
-        console.log("data createAccessToken", data);
         return createPaymentIntent({
           auth: data.token,
           paymentDetails,
         });
       })
       .then(({ data }: any) => {
-        console.log("createPaymentIntent response", data);
         dispatch(
           updatePaymentIntent({
             clientSecret: data.client_secret,
@@ -47,7 +45,6 @@ export default function useAirwallexPayment() {
         );
       })
       .catch((error) => {
-        console.log("error", error.response?.data);
         toast.error(error.response?.data?.message);
       });
   }

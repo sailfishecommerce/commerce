@@ -20,7 +20,7 @@ export default async function fetchProductsHandler(
           return res.status(200).send(response.results);
         })
         .catch((error: any) => {
-          console.log("error", error);
+          console.log("error", error?.message);
         });
     }
   }

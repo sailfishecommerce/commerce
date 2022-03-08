@@ -27,7 +27,6 @@ export default function uploadImageHander(
               width: info.width,
               height: info.height,
             };
-            console.log("thenUmage", imageData);
             return imageData;
           })
           .catch((error: any) => console.log("error", error));

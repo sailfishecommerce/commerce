@@ -57,7 +57,6 @@ export default function useMutationAction() {
   function useEmptyCart() {
     return useMutation(emptyCart, {
       onSuccess: (data) => {
-        console.log("cleared cart", data);
         queryClient.invalidateQueries("cart");
         toast.success("cart cleared");
       },
@@ -67,12 +66,10 @@ export default function useMutationAction() {
   function useDeleteCart() {
     return useMutation(deleteCart, {
       onSuccess: (data) => {
-        console.log("delete cart result success", data);
         queryClient.invalidateQueries("cart");
         toast.success("cart deleted");
       },
       onError: (data) => {
-        console.log("delete cart result error", data);
         toast.error("error deleting cart");
       },
     });

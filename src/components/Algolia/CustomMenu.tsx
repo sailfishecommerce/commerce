@@ -8,7 +8,6 @@ interface Props {
 
 export default function CustomMenu({ title, attribute }: Props) {
   const { defaultMenuRefinement } = useAppSelector((state) => state.algolia);
-  console.log("defaultMenuRefinement", defaultMenuRefinement);
   return (
     <>
       <div className="menu">

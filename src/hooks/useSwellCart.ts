@@ -42,20 +42,12 @@ export default function useSwellCart() {
     });
   }
 
-  async function updateAllCartItem(data: any[]) {
-    return await swell.cart.setItems(data);
-  }
-
   async function removeCartItem(product: { id: string }) {
     return await swell.cart.removeItem(product.id);
   }
 
   async function emptyCart() {
     return await swell.cart.setItems([]);
-  }
-
-  async function recoverCart(checkoutId: string) {
-    return await swell.cart.recover(checkoutId);
   }
 
   async function submitOrder() {
@@ -68,33 +60,8 @@ export default function useSwellCart() {
     });
   }
 
-  async function updateCartBilling(cartDetails: cartDetailsType) {
-    return await swell.cart.update({
-      billing: {
-        name: cartDetails.name,
-        address1: cartDetails.address1,
-        address2: cartDetails.address2,
-        city: cartDetails.city,
-        state: cartDetails.state,
-        zip: cartDetails.zip,
-        country: cartDetails.country,
-        card: {
-          token: cartDetails.token,
-        },
-      },
-    });
-  }
-
   async function applyGiftCode(code: string) {
     return await swell.cart.applyCoupon(code);
-  }
-
-  async function updateCartAccount(account: {
-    email: string;
-    email_optin?: boolean;
-    password?: string;
-  }) {
-    await swell.cart.update(account);
   }
 
   async function updateCartAccountID(account_id: string) {
@@ -108,17 +75,13 @@ export default function useSwellCart() {
     getACart,
     addToCart,
     updateCartItem,
-    updateAllCartItem,
     removeCartItem,
     updateCartItemQuantity,
     emptyCart,
-    recoverCart,
     submitOrder,
     applyGiftCode,
     deleteCart,
-    updateCartBilling,
     addToCartModal,
-    updateCartAccount,
     updateCartAccountID,
     updateCart,
   };

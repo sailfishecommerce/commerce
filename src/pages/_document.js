@@ -13,7 +13,6 @@ class MyDocument extends Document {
           />
         </Head>
         <Script
-          onLoad={() => console.log("vbout-loaded")}
           strategy="lazyOnload"
           id="vboutTrackingCodeScript"
           nonce="QRTYPCVBFGXZ"

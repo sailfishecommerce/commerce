@@ -17,7 +17,6 @@ export default async function compressImageHandler(
           }),
         ],
       }).then((response: any) => {
-        console.log("response", response);
         return res.send(response);
       });
     }

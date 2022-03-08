@@ -4,6 +4,5 @@ export default function discountPrice(product: any) {
   const productPriceRatio = priceDifference / rrp;
 
   const productDiscount = productPriceRatio * 100;
-  // console.log("productDiscount", productDiscount);
   return productDiscount.toFixed(1);
 }
