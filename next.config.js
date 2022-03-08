@@ -49,6 +49,7 @@ module.exports = withBundleAnalyzer({
             "script-src": [
               "'self'",
               "'unsafe-inline'",
+              "'unsafe-eval'",
               "'nonce-QRTYPCVBFGXZ'",
               "https://en.trustmate.io",
               "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",

@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useCategoryData } from "@/hooks/useCategory";
 import PopularCategory from "@/components/Category/PopularCategory";
@@ -6,7 +7,6 @@ import LoadingPopularCategory from "@/components/Loader/PopularCategoryLoader";
 export default function PopularCategories() {
   const [data, status] = useCategoryData();
   const mobileView = useMediaQuery("(max-width:950px)");
-  const xsmobileView = useMediaQuery("(max-width:375px)");
 
   const topCategories = data?.results?.filter(
     (category: { topId: string }) => !category.topId
@@ -14,8 +14,11 @@ export default function PopularCategories() {
   // get two categories if mobile or 3 categories
   const numberOfCategories = mobileView ? 14 : 15;
 
-  const getFewCategories = (category: any[], max) =>
-    category !== undefined ? category.slice(12, max) : [];
+  const getFewCategories = useCallback(
+    (category: any[], max) =>
+      category !== undefined ? category.slice(12, max) : [],
+    []
+  );
 
   return (
     <div className="container flex justify-start mx-auto lg:place-self-start">

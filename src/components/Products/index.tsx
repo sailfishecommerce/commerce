@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import dynamic from "next/dynamic";
 
 import Image from "@/components/Image";
@@ -20,7 +20,7 @@ const DynamicProductMetatags = dynamic(
 );
 declare function tcjs(trigger: string, type: string, name: string): any;
 
-export default function Product({
+function ProductComponent({
   product,
   forCategory,
   algoliaEvent,
@@ -35,21 +35,24 @@ export default function Product({
     itemViewed("product_viewed", [product.objectID]);
   }
 
+  const productDiscount = useCallback((price) => discountPrice(price), []);
+
   const linkURL =
     algoliaEvent === "search"
       ? `/products/${product.slug}?query-id=${product.__queryID}`
       : `/products/${product.slug}`;
 
-  const productImage =
-    inHover && product.images.length > 1
+  const productImage = useCallback(() => {
+    return inHover && product.images.length > 1
       ? product.images[1]?.file?.url
       : product.images[0]?.file?.url;
+  }, [inHover]);
 
   const imageAlt = product.image_alt_text
     ? product.image_alt_text[0]
     : product.name;
 
-  function algoliaClickedProductAfterSearch() {
+  const algoliaClickedProductAfterSearch = useCallback(() => {
     if (algoliaEvent) {
       clickedItemAfterSearch(
         product.__queryID,
@@ -58,7 +61,7 @@ export default function Product({
         "product clicked after search"
       );
     }
-  }
+  }, []);
 
   const imgSize = mobileView
     ? {
@@ -85,7 +88,7 @@ export default function Product({
         <div className="flex items-center justify-between absolute top-0 left-0 z-10">
           {product.rrp && (
             <div className="discount-price mt-2">
-              {discountPrice(product)} %
+              {productDiscount(product)} %
             </div>
           )}
         </div>
@@ -179,3 +182,5 @@ export default function Product({
 }
 
 // Product.whyDidYouRender = true;
+const Product = memo(ProductComponent);
+export default Product;

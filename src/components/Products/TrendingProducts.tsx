@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 import Product from "@/components/Products";
@@ -13,10 +13,10 @@ function TrendingProductsCatalog() {
   const { liveHealthyProduct, liveHealthyProductStatus } =
     useLiveHealthyProduct();
 
-  function updateProductSize(productData: any[]) {
+  const updateProductSize = useCallback((productData: any[]) => {
     const productSize = mobileView ? productData.slice(0, 14) : productData;
     return productSize;
-  }
+  }, []);
 
   return (
     <section className="container md:pt-3 pb-0 md:mb-3">

@@ -74,7 +74,7 @@ function HomepageSliderComponent() {
       <section className={`${styles.carousel} carousel mb-4 lg:mb-5 w-100`}>
         <Splide
           options={{
-            autoplay: false,
+            autoplay: true,
             type: "loop",
           }}
           className={styles.slider}

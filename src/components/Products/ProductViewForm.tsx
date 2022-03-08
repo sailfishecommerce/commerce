@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import { ProductProps } from "@/types";
 import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
 import useShoppingCart from "@/hooks/useShoppingCart";
@@ -7,7 +7,7 @@ import useEvent from "@/hooks/useEvent";
 import { useAppDispatch } from "@/redux/store";
 import { quickViewModal } from "@/redux/ui-slice";
 
-export default function ProductViewForm({
+function ProductViewFormComonent({
   product,
   algoliaEvent,
   forCategory,
@@ -25,7 +25,7 @@ export default function ProductViewForm({
 
   const { addItemToCart, loadingState } = useShoppingCart();
 
-  function algoliaViewHandler() {
+  const algoliaViewHandler = useCallback(() => {
     dispatch(quickViewModal(product));
     if (algoliaEvent === "search") {
       convertedItemAfterSearch("quick_view_after_search", product.__queryID, [
@@ -34,7 +34,7 @@ export default function ProductViewForm({
     } else {
       algoliaQuickViewEvent(product);
     }
-  }
+  }, [algoliaEvent]);
 
   function onSubmitHandler(e: any) {
     e.preventDefault();
@@ -136,3 +136,6 @@ export default function ProductViewForm({
     </div>
   );
 }
+
+const ProductViewForm = memo(ProductViewFormComonent);
+export default ProductViewForm;
