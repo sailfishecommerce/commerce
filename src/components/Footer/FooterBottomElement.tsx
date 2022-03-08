@@ -57,7 +57,7 @@ export function FooterBottomWidgets() {
   return (
     <>
       <div className="flex flex-col w-full lg:w-2/5 items-center">
-        <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5">
+        <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5 lg:w-1/2">
           <Logo />
           <CurrencyDropdown />
         </div>
