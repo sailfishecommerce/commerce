@@ -13,8 +13,8 @@ export default function Nav() {
   const largerDeviceWidth = useMediaQuery("(min-width:768px)");
 
   return (
-    <nav className="nav bg-white w-full md:h-32 flex items-center border-b-2 shadow-sm pb-4">
-      <div className="container m-auto flex flex-col md:flex-row  md:items-center justify-between">
+    <nav className="nav bg-white w-full py-4 md:h-32 flex items-center border-b-2 shadow-sm pb-4">
+      <div className="container m-auto flex flex-col md:flex-row items-center justify-between">
         <Logo />
         {largerDeviceWidth && <SearchBar />}
         <Navmenu />

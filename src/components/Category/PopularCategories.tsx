@@ -6,6 +6,7 @@ import LoadingPopularCategory from "@/components/Loader/PopularCategoryLoader";
 export default function PopularCategories() {
   const [data, status] = useCategoryData();
   const mobileView = useMediaQuery("(max-width:950px)");
+  const xsmobileView = useMediaQuery("(max-width:375px)");
 
   const topCategories = data?.results?.filter(
     (category: { topId: string }) => !category.topId
@@ -18,8 +19,8 @@ export default function PopularCategories() {
 
   return (
     <div className="container flex justify-start mx-auto lg:place-self-start">
-      <section className="w-4/5 mx-auto lg:mx-0 lg:w-2/3 mb-8 md:w-10/12 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
-        <div className="flex flex-col md:flex-row w-full mx-0">
+      <section className="w-5/6 mx-auto lg:mx-0 lg:w-2/3 mb-8 md:w-10/12 shadow-lg flex bg-white -mt-32 relative p-4 rounded-lg">
+        <div className="flex flex-col items-center justify-center md:flex-row w-full mx-0">
           {status === "error" ? (
             "Unable to fetch"
           ) : status === "loading" ? (

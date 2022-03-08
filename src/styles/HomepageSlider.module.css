@@ -16,6 +16,13 @@
   width: 50%;
 }
 
+@media (max-width: 768px) and (min-width: 600px) {
+  div.imageContainer {
+    height: unset;
+    width: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .carouselImg {
     height: 100%;

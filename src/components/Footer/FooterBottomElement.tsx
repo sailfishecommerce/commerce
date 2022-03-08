@@ -26,7 +26,7 @@ export function FooterSocialIcons() {
 
 export function FooterBottomSocials() {
   return (
-    <div className=" w-full lg:w-1/5 flex flex-col items-center lg:items-end">
+    <div className="w-full md:w-1/2 lg:w-1/5 flex flex-col items-center lg:items-end">
       <FooterSocialIcons />
       <div className="imgContainer mb-4">
         <Image
@@ -57,7 +57,7 @@ export function FooterBottomWidgets() {
   return (
     <>
       <div className="flex flex-col w-full lg:w-2/5 items-center">
-        <div className="flex justify-center lg:justify-start items-center mb-4 w-full">
+        <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5">
           <Logo />
           <CurrencyDropdown />
         </div>
@@ -89,9 +89,8 @@ export function FooterBottomFeatures() {
         <div key={content.title} className="w-1/2 md:w-1/4">
           <div className="flex">
             <Icons
-              className="text-red-500 hover:text-red-300 mr-4"
+              className="text-red-500 hover:text-red-300 mr-4 text-4xl"
               icon={content.icon}
-              size={30}
             />
             <div className="ps-3">
               <h6 className="fs-base text-white mb-1">{content.title}</h6>

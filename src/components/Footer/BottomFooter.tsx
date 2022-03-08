@@ -10,7 +10,7 @@ export default function BottomFooter() {
       <div className="container flex  flex-col m-auto justify-center">
         <FooterBottomFeatures />
         <hr className="hr-light mb-5" />
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
           <FooterBottomWidgets />
           <FooterBottomSocials />
         </div>

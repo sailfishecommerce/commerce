@@ -19,10 +19,9 @@ interface PopularCategoryProps {
 
 function PopularCategoryComponent({ category }: PopularCategoryProps) {
   const selectedFooterCategory = useMarketplaceCategory();
-  const tabView = useMediaQuery("(max-width:768px)");
   const mobileView = useMediaQuery("(max-width:768px)");
   const size = mobileView
-    ? { height: 250, width: 300 }
+    ? { height: 250, width: 315 }
     : { height: 250, width: 320 };
 
   return (
@@ -30,7 +29,7 @@ function PopularCategoryComponent({ category }: PopularCategoryProps) {
       <Link href={`/shop/product-type/${category.slug}`} passHref>
         <a
           onClick={() => selectedFooterCategory(category.name)}
-          className="imgLink flex flex-col text-center text-decoration-none"
+          className="imgLink flex w-full flex-col text-center text-decoration-none"
         >
           <Image
             height={size.height}
@@ -40,7 +39,8 @@ function PopularCategoryComponent({ category }: PopularCategoryProps) {
             placeholder="blur"
             blurDataURL={category.images[0].file.url}
             loading="lazy"
-            className="d-block rounded mx-1 mb-3"
+            size={true}
+            className="block rounded-lg mx-1 mb-3"
             layout="responsive"
           />
           <h3 className="fs-base pt-1 mb-0">{category.name}</h3>
