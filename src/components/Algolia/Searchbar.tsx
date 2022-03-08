@@ -38,7 +38,7 @@ function SearchBarComponent() {
           <div className={inputContainerClassName}>
             <SearchBox
               translations={{
-                placeholder: "Search for products...",
+                placeholder: "Search for over 10,000 products...",
               }}
               autoFocus={false}
               showLoadingIndicator

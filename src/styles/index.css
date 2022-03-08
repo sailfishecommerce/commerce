@@ -257,4 +257,7 @@ span.ais-Menu-label {
     display: flex;
     width: 350px;
   }
+  .header-slider ul.splide__pagination {
+    display: none;
+  }
 }

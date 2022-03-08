@@ -9,7 +9,7 @@ const sliderArray: any = sliderContent;
 
 function TopbarSliderComponent() {
   return (
-    <div className="header-slider">
+    <div className="header-slider flex items-center mx-auto w-full md:w-1/4 justify-center">
       <Splide
         options={{
           type: "loop",
@@ -21,14 +21,15 @@ function TopbarSliderComponent() {
         {sliderArray.map((content: any, index: number) => (
           <SplideSlide key={index}>
             <div className="item slider-container flex items-center m-auto justify-center">
-              <Image
-                height={45}
-                width={45}
-                src={content.icon}
-                alt={content.text}
-                layout="fixed"
-              />
-              <p className="text-white text-center my-0 mx-1 md:mx-2 text-sm ">
+              <div className="w-1/5">
+                <Image
+                  height={50}
+                  width={50}
+                  src={content.icon}
+                  alt={content.text}
+                />
+              </div>
+              <p className="text-white w-full font-bold text-center my-0 mb-0 mx-1 md:mx-2 text-md md:text-sm ">
                 {content.text}
               </p>
             </div>

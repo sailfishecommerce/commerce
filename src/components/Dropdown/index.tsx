@@ -21,8 +21,8 @@ export default function index({
         <div className="dropdown relative">
           <button
             onClick={onClickHandler}
-            className={`${className} px-4 ml-2 lg:px-6
-          py-2.5          
+            className={`${className} px-2 ml-2 lg:px-4
+          py-2          
           text-white
           font-medium
           text-xs

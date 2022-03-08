@@ -17,16 +17,15 @@ function CurrencyDropdownComponent() {
 
   function DropdownText() {
     return (
-      <div className="flex items-center">
+      <div className="items-center flex">
         <Image
           className="mr-2"
           src="/flags/en.webp"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
           alt="en"
-          layout="responsive"
         />
-        {`En / ${currency}`}
+        <p className="ml-4">{`En / ${currency}`}</p>
       </div>
     );
   }
@@ -50,7 +49,7 @@ function CurrencyDropdownComponent() {
   ) : currencyList === null ? (
     <p>loading currencies...</p>
   ) : (
-    <Dropdown dropdownText={<DropdownText />}>
+    <Dropdown className="hidden md:flex" dropdownText={<DropdownText />}>
       {currencyList &&
         currencyList?.map((item, index) => (
           <DropdownItem onClick={selectCurrency} key={index}>
