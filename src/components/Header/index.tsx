@@ -1,7 +1,8 @@
 import Topbar from "@/components/Header/Topbar";
 import Nav from "@/components/Nav";
+import { memo } from "react";
 
-export default function Header() {
+function HeaderComponent() {
   return (
     <header className="header">
       <Topbar />
@@ -9,3 +10,6 @@ export default function Header() {
     </header>
   );
 }
+const Header = memo(HeaderComponent);
+
+export default Header;

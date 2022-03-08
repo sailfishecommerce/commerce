@@ -1,13 +1,14 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import LayoutWrapper from "@/layout/LayoutWrapper";
 
 const TrustmateWidget = dynamic(
   () => import("@/components/Widget/TrustmateWidget")
 );
+
+const Header = dynamic(() => import("@/components/Header"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 interface Applayout {
   title: string;
