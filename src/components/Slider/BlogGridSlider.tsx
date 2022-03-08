@@ -10,21 +10,28 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 function BlogGridSliderComponent() {
   return (
-    <div className="pt-5 relative">
-      <div className="tns-controls" id="blog-grid-controls">
-        <button aria-label="Prev" type="button">
-          <i className="ci-arrow-left"></i>
-        </button>
-        <button aria-label="Next" type="button">
-          <i className="ci-arrow-right"></i>
-        </button>
-      </div>
+    <div className="pt-5 relative blogGrid">
       <Splide
+        className="px-4"
         options={{
           perPage: 2,
           rewind: true,
           autoplay: true,
           type: "loop",
+          breakpoints: {
+            450: {
+              perPage: 1,
+              gap: "1rem",
+            },
+            600: {
+              perPage: 2,
+              gap: "1.5rem",
+            },
+            1200: {
+              perPage: 2,
+              gap: "1.5rem",
+            },
+          },
         }}
       >
         {carouselContent.map((content) => (

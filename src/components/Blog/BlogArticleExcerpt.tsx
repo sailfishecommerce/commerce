@@ -20,13 +20,13 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
   return (
     <>
       {content.image ? (
-        <article key={content.title} className="w-1/3 px-2">
+        <article key={content.title} className="px-4 py-2 w-full md:w-1/2 lg:w-1/3 md:px-2">
           <Link href="/blog-single" passHref>
             <a className="blog-entry-thumb">
               <img className="rounded-t-lg" src={content.image} alt="Post" />
             </a>
           </Link>
-          <div className="border-2 border-gray-100 border-t-0 rounded-t-none p-6 rounded-lg mb-4">
+          <div className="border-2 w-full border-gray-100 border-t-0 rounded-t-none p-6 rounded-lg mb-4">
             <div>
               <h2 className="text-lg font-bold">
                 <Link href="/blog-single" passHref>
@@ -77,8 +77,11 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
           </div>
         </article>
       ) : (
-        <article key={content.title} className="w-1/3 px-2">
-          <div className="card border-2 border-gray-100 p-6 rounded-lg">
+        <article
+          key={content.title}
+          className="px-4 py-2 w-full md:w-1/2 lg:w-1/3 md:px-2"
+        >
+          <div className="card w-full border-2 border-gray-100 p-6 rounded-lg">
             {content.image && (
               <Link href="/blog-single" passHref>
                 <a className="blog-entry-thumb">

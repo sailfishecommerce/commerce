@@ -243,6 +243,10 @@ span.ais-Menu-label {
   width: 350px;
 }
 
+.blogGrid .splide__track {
+  margin-right: unset;
+}
+
 /* slider blog */
 /* .blog-entry-meta-label {
   position: absolute;

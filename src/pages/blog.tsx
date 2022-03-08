@@ -18,7 +18,7 @@ export default function Blog() {
   return (
     <Applayout title="Blog Gist">
       <div className="bg-gray-100 py-4 w-full">
-        <div className="container m-auto flex justify-between py-2 lg:py-3">
+        <div className="container px-4 m-auto flex justify-between py-2 lg:py-3">
           <div className="lg:order-2 mb-3 lg:mb-0 lg:pt-2">
             <nav aria-label="breadcrumb">
               <ol className="flex lg:flex-nowrap justify-center lg:justify-content-start">
@@ -38,11 +38,11 @@ export default function Blog() {
             </nav>
           </div>
           <div className="order-1 text-center lg:text-start">
-            <h1 className="text-3xl mb-0">Blog</h1>
+            <h1 className="lg:text-3xl text-2xl mb-0">Blog</h1>
           </div>
         </div>
       </div>
-      <div className="container pb-5 mb-2 md:mb-4">
+      <div className="container mx-auto items-center justify-center pb-5 mb-2 md:mb-4">
         <BlogSlider />
         <hr className="mt-5" />
         <div className="pt-5 md:mt-2">
