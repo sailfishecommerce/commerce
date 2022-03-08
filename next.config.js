@@ -11,6 +11,9 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ["cdn.schema.io"],
   },
+  optimization: {
+    mergeDuplicateChunks: true,
+  },
   reactStrictMode: true,
   staticPageGenerationTimeout: 240,
   async headers() {

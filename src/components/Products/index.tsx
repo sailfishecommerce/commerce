@@ -18,8 +18,6 @@ const DynamicProductViewForm = dynamic(
 const DynamicProductMetatags = dynamic(
   () => import("@/components/Metatag/ProductMeta")
 );
-declare function tcjs(trigger: string, type: string, name: string): any;
-
 function ProductComponent({
   product,
   forCategory,
@@ -42,11 +40,10 @@ function ProductComponent({
       ? `/products/${product.slug}?query-id=${product.__queryID}`
       : `/products/${product.slug}`;
 
-  const productImage = useCallback(() => {
-    return inHover && product.images.length > 1
+  const productImage =
+    inHover && product.images.length > 1
       ? product.images[1]?.file?.url
       : product.images[0]?.file?.url;
-  }, [inHover]);
 
   const imageAlt = product.image_alt_text
     ? product.image_alt_text[0]

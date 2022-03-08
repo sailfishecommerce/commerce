@@ -39,7 +39,7 @@ function PopularCategoryComponent({ category }: PopularCategoryProps) {
             placeholder="blur"
             blurDataURL={category.images[0].file.url}
             loading="lazy"
-            size={true}
+            size="true"
             className="block rounded-lg mx-1 mb-3"
             layout="responsive"
           />
