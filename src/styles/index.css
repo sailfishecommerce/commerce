@@ -238,27 +238,9 @@ span.ais-Menu-label {
   margin-bottom: 6px;
 }
 
-.carousel-container .carousel-inner .track {
-  display: flex;
-  width: 350px;
-}
-
 .blogGrid .splide__track {
   margin-right: unset;
 }
-
-/* slider blog */
-/* .blog-entry-meta-label {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.375rem 0.625rem;
-  border-radius: 0.25rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #4b566b;
-  text-decoration: none !important;
-  z-index: 5;
-} */
 
 /* media query */
 @media (min-width: 768px) {
@@ -270,5 +252,9 @@ span.ais-Menu-label {
 @media (max-width: 768px) {
   .related-products ul.splide__list {
     height: 230px;
+  }
+  .carousel-container .carousel-inner .track {
+    display: flex;
+    width: 350px;
   }
 }

@@ -14,7 +14,7 @@ export default function BottomFooter() {
           <FooterBottomWidgets />
           <FooterBottomSocials />
         </div>
-        <div className="pb-4 text-gray-400 text-center lg:text-start text-xs">
+        <div className="pb-4 text-gray-400 text-center lg:text-left text-xs">
           © All rights reserved. Made by{" "}
           <a className="text-red-500" href="#" target="_blank" rel="noreferrer">
             Bandicoot Studio

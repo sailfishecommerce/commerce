@@ -37,7 +37,7 @@ export default function Blog() {
               </ol>
             </nav>
           </div>
-          <div className="order-1 text-center lg:text-start">
+          <div className="order-1 text-center lg:text-left">
             <h1 className="lg:text-3xl text-2xl mb-0">Blog</h1>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function ProductPriceView({ product }: any) {
           </div>
         </li>
         {product.rrp && (
-          <li className="text-start">
+          <li className="text-left">
             <del className="text-md text-blue-800">
               <FormattedPrice price={product.rrp} isProduct />
             </del>

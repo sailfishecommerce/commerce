@@ -22,7 +22,7 @@ export default function Footernewsletter() {
               Subscribe
             </button>
           </div>
-          <div className="text-center md:text-start text-gray-200 mt-1">
+          <div className="text-center md:text-left text-gray-200 mt-1">
             *Subscribe to our newsletter to receive early discount offers,
             updates and new products info.
           </div>

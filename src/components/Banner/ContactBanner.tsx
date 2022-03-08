@@ -23,7 +23,7 @@ export default function ContactBanner() {
             </ol>
           </nav>
         </div>
-        <div className="lg:order-1 lg:pr-4 text-center lg:text-start">
+        <div className="lg:order-1 lg:pr-4 text-center lg:text-left">
           <h1 className="md:text-2xl text-lg mb-0 text-gray-600">
             Contacts us
           </h1>

@@ -28,7 +28,7 @@ function RelatedProductSliderComponent({
               perPage: 3,
               gap: "1.5rem",
             },
-            1200: {
+            1400: {
               perPage: 4,
               gap: "2.5rem",
             },

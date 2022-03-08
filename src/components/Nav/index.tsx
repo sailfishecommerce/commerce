@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <nav className="nav bg-white w-full md:h-32 flex items-center border-b-2 shadow-sm pb-4">
-      <div className="container m-auto flex flex-col md:flex-row justify-between">
+      <div className="container m-auto flex flex-col md:flex-row  md:items-center justify-between">
         <Logo />
         {largerDeviceWidth && <SearchBar />}
         <Navmenu />

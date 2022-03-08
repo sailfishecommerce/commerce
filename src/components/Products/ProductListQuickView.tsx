@@ -24,7 +24,7 @@ export default function ProductListQuickView({ product }: ProductProps) {
   return (
     <div className="flex mt-4 items-center justify-between">
       <ProductListForm product={product} />
-      <div className="text-start">
+      <div className="text-left">
         <a
           className="hover:text-red-500 cursor-pointer"
           onClick={quickViewHandler}
