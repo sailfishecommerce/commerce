@@ -8,8 +8,8 @@ export default function Logo() {
         <Image
           src="/logo.webp"
           alt="Bandicoot"
-          height={50}
-          width={150}
+          height={70}
+          width={200}
           layout="responsive"
           priority={true}
         />

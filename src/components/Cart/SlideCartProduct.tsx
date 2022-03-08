@@ -19,11 +19,7 @@ export default function SlideCartProduct({
   loadingState(removeCartItem, `${item.product.name} removed from cart`);
 
   function removeItemFromCart() {
-    removeCartItem.mutate(item);
-    // removeVboutCartItem({
-    //   cartId: cart.id,
-    //   productId: item.id,
-    // });
+    removeCartItem.mutate(item);   
   }
 
   return (

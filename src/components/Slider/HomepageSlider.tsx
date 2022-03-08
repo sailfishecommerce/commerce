@@ -36,7 +36,6 @@ function SliderItem({ item }): JSX.Element {
                 height={imgSize.height}
                 width={imgSize.width}
                 layout="responsive"
-                size="true"
                 priority={true}
               />
             </div>

@@ -20,7 +20,7 @@ function CurrencyDropdownComponent() {
       <div className="flex items-center">
         <Image
           className="mr-2"
-          src="/img/flags/en.png"
+          src="/flags/en.webp"
           width={40}
           height={40}
           alt="en"

@@ -23,9 +23,10 @@ function TopbarSliderComponent() {
             <div className="item slider-container flex items-center m-auto justify-center">
               <Image
                 height={45}
-                width={50}
+                width={45}
                 src={content.icon}
                 alt={content.text}
+                layout="fixed"
               />
               <p className="text-white text-center my-0 mx-1 md:mx-2 text-sm ">
                 {content.text}

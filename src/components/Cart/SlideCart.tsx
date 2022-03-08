@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
 import { useAppDispatch } from "@/hooks/useRedux";
@@ -36,9 +35,9 @@ export default function SlideCart(props: slideCartProps) {
           className="overlay slidecartOverlay w-3/4 h-screen cursor-pointer"
         />
         <div
-          data-aos="fade-left"
-          data-aos-duration="500"
-          data-aos-easing="ease-in-back"
+          // data-aos="fade-left"
+          // data-aos-duration="500"
+          // data-aos-easing="ease-in-back"
           className={`cart bg-white fixed flex flex-col right-0 ${cartStyle} px-2`}
         >
           {cart?.items?.length > 0 ? (
@@ -70,7 +69,7 @@ export default function SlideCart(props: slideCartProps) {
                     aria-label="Proceed to Checkout"
                     disabled={disableBtn}
                     onClick={toggleCheckoutModal}
-                    className="btn btn-outline-primary d-block w-100 proceedBtn"
+                    className="w-100 proceedBtn"
                     type="button"
                   >
                     <img alt="checkout icon" src="/icons/checkoutIcon.svg" />{" "}

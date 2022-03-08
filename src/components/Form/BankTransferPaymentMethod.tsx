@@ -1,18 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import checkoutFormContent from "@/json/checkout-form.json";
 import { sendBankTransfer } from "@/hooks/useVbout";
 import { useAppSelector } from "@/hooks/useRedux";
 import { useToast } from "@/hooks";
+import BankTransferList from "@/components/Form/BankTransferList";
 
 export default function BankTransferPaymentMethod() {
   const [bank, setBank] = useState("");
   const { paymentForm }: any = useAppSelector((state) => state.payment);
   const { isLoading, hasError, isSuccessful } = useToast();
 
-  function setBankHandler(e: any) {
-    setBank(e.target.value);
-  }
+  const setBankHandler = useCallback((e: any) => setBank(e.target.value), []);
 
   function submitHandler(e: any) {
     e.preventDefault();
@@ -62,35 +60,11 @@ export default function BankTransferPaymentMethod() {
               <tbody>
                 {checkoutFormContent.bankTransfer.content.map(
                   (content: any, index: number) => (
-                    <tr key={index} className="border-b-4">
-                      <td className="flex items-center my-1">
-                        <input
-                          type="radio"
-                          name="bankTransfer"
-                          onChange={setBankHandler}
-                          value={content.vboutListCode}
-                          required
-                        />
-                        <div className="flex items-center">
-                          <img
-                            src={content.flag}
-                            alt={content.country}
-                            height="30px"
-                            width="30px"
-                            className="mx-3"
-                          />
-                          <div className="currency flex flex-col">
-                            <h6 className="font-bold">
-                              {content.currencyCode}
-                            </h6>
-                            <p className="text-muted">{content.currency}</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p className="mb-0">{content.country}</p>
-                      </td>
-                    </tr>
+                    <BankTransferList
+                      key={index}
+                      content={content}
+                      onChange={setBankHandler}
+                    />
                   )
                 )}
               </tbody>
