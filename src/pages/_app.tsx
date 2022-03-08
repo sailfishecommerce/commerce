@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import type { AppProps } from "next/app";
-import { ReactQueryDevtools } from "react-query/devtools";
 import store from "@/redux/store";
 import "@/styles/index.css";
 
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <PersistGate loading={null} persistor={persistor}>
           <Component {...pageProps} />
         </PersistGate>
-        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </Provider>
   );

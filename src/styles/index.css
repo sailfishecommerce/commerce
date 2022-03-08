@@ -23,6 +23,10 @@ ul.splide__pagination {
   margin: 0px;
 }
 
+.header-slider .splide__track {
+  margin-right: unset;
+}
+
 .carousel .splide__pagination {
   display: none;
 }

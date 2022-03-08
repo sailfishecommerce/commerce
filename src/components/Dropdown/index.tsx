@@ -1,11 +1,11 @@
-import { PropsWithChildren, useState } from "react";
+import { memo, PropsWithChildren, useState } from "react";
 
 interface Props {
   dropdownText: string | JSX.Element;
   className?: string;
 }
 
-export default function index({
+function DropdownComponent({
   dropdownText,
   children,
   className,
@@ -17,11 +17,10 @@ export default function index({
   }
   return (
     <div className="flex justify-center">
-      <div>
-        <div className="dropdown relative">
-          <button
-            onClick={onClickHandler}
-            className={`${className} px-2 ml-2 lg:px-4
+      <div className="dropdown relative">
+        <button
+          onClick={onClickHandler}
+          className={`${className} px-2 ml-2 lg:px-4
           py-2          
           text-white
           font-medium
@@ -43,30 +42,30 @@ export default function index({
           items-center
           whitespace-nowrap
         `}
-            type="button"
-            id="dropdownMenuButton1"
-            aria-expanded="false"
+          type="button"
+          id="dropdownMenuButton1"
+          aria-expanded="false"
+        >
+          {dropdownText}
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="caret-down"
+            className="w-2 ml-2"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
           >
-            {dropdownText}
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="caret-down"
-              className="w-2 ml-2"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
-            >
-              <path
-                fill="currentColor"
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              ></path>
-            </svg>
-          </button>
-          {active && (
-            <ul
-              className="
+            <path
+              fill="currentColor"
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            ></path>
+          </svg>
+        </button>
+        {active && (
+          <ul
+            className="
           min-w-max
           absolute
           bg-white
@@ -83,16 +82,18 @@ export default function index({
           bg-clip-padding
           border-none
         "
-              aria-labelledby="dropdownMenuButton1"
-            >
-              {children}
-            </ul>
-          )}
-        </div>
+            aria-labelledby="dropdownMenuButton1"
+          >
+            {children}
+          </ul>
+        )}
       </div>
     </div>
   );
 }
+
+const Dropdown = memo(DropdownComponent);
+export default Dropdown;
 
 interface DropdownItem {
   onClick: (e?: any) => void;

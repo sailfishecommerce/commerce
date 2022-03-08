@@ -4,18 +4,17 @@ import ContentLoader from "react-content-loader";
 
 function PopularCategoryLoader(props: any) {
   const loaderStyle = useMemo(() => ({ width: "100%" }), []);
-  const mobileView = useMediaQuery("(max-width:768px)");
-
+  const { mobileView } = props;
   const contentLoaderSize = mobileView
-    ? { height: 350, width: 400 }
+    ? { height: 250, width: 400 }
     : { height: 200, width: 200 };
 
   const viewBox = mobileView ? "0 0 100 100" : "0 0 200 150";
 
   const loaderSize = mobileView
     ? {
-        first: { x: 10, y: 90, rx: 3, ry: 3, width: "80%", height: 6 },
-        second: { x: 0, y: 0, rx: 0, ry: 0, width: "100%", height: "85%" },
+        first: { x: 10, y: 80, rx: 3, ry: 3, width: "80%", height: 6 },
+        second: { x: 0, y: 0, rx: 0, ry: 0, width: "100%", height: "75%" },
       }
     : {
         first: { x: 48, y: 125, rx: 3, ry: 3, width: "60%", height: 6 },
@@ -57,12 +56,14 @@ function PopularCategoryLoader(props: any) {
 }
 
 export default function LoadingPopularCategory() {
-  const newPopularCategories = new Array(3).fill(0);
+  const mobileView = useMediaQuery("(max-width:768px)");
+  const nbCategories = mobileView ? 2 : 3;
+  const newPopularCategories = new Array(nbCategories).fill(0);
 
   return (
     <div className="flex flex-col w-full md:flex-row items-center justify-center">
-      {newPopularCategories.map((category, index) => (
-        <PopularCategoryLoader key={index} />
+      {newPopularCategories.map((_, index) => (
+        <PopularCategoryLoader key={index} mobileView={mobileView} />
       ))}
     </div>
   );

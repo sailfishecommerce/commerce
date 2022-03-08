@@ -59,7 +59,7 @@ export function FooterBottomWidgets() {
       <div className="flex flex-col w-full lg:w-2/5 items-center">
         <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5 lg:w-full">
           <Logo />
-          <CurrencyDropdown />
+          <CurrencyDropdown className="mr-2" />
         </div>
         <p className="text-gray-400 leading-loose text-sm">
           Sailfish eCommerce Limited is a Hong Kong registered company. Launched

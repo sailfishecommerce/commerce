@@ -15,21 +15,21 @@ function TopbarSliderComponent() {
           type: "loop",
           height: "3rem",
           direction: "ttb",
-          autoplay: true,
+          autoplay: false,
         }}
       >
         {sliderArray.map((content: any, index: number) => (
           <SplideSlide key={index}>
             <div className="item slider-container flex items-center m-auto justify-center">
-              <div className="w-1/5">
-                <Image
-                  height={50}
-                  width={50}
-                  src={content.icon}
-                  alt={content.text}
-                />
-              </div>
-              <p className="text-white w-full font-bold text-center my-0 mb-0 mx-1 md:mx-2 text-md md:text-sm ">
+              {/* <div className="w-1/5"> */}
+              <Image
+                height={50}
+                width={50}
+                src={content.icon}
+                alt={content.text}
+              />
+              {/* </div> */}
+              <p className="text-white font-bold text-center my-0 mb-0 mx-0 md:mx-2 text-sm md:text-sm ">
                 {content.text}
               </p>
             </div>

@@ -7,7 +7,11 @@ import { updateCurrency } from "@/redux/currency-language-slice";
 import useCurrency, { useCurrencies } from "@/hooks/useCurrency";
 import { useToast } from "@/hooks";
 
-function CurrencyDropdownComponent() {
+interface Props {
+  className?: string;
+}
+
+function CurrencyDropdownComponent({ className }: Props) {
   const dispatch = useAppDispatch();
   const { isLoading, isSuccessful, hasError } = useToast();
   const { selectCurrencies } = useCurrency();
@@ -18,14 +22,16 @@ function CurrencyDropdownComponent() {
   function DropdownText() {
     return (
       <div className="items-center flex">
-        <Image
-          className="mr-2"
-          src="/flags/en.webp"
-          width={30}
-          height={30}
-          alt="en"
-        />
-        <p className="ml-4">{`En / ${currency}`}</p>
+        <div className={className}>
+          <Image
+            className="mr-2"
+            src="/flags/en.webp"
+            width={30}
+            height={30}
+            alt="en"
+          />
+        </div>
+        <p className="m-0 text-xs md:text-sm md:ml-4">{`En / ${currency}`}</p>
       </div>
     );
   }
@@ -49,7 +55,7 @@ function CurrencyDropdownComponent() {
   ) : currencyList === null ? (
     <p>loading currencies...</p>
   ) : (
-    <Dropdown className="hidden md:flex" dropdownText={<DropdownText />}>
+    <Dropdown dropdownText={<DropdownText />}>
       {currencyList &&
         currencyList?.map((item, index) => (
           <DropdownItem onClick={selectCurrency} key={index}>
