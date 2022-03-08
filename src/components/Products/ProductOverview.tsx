@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { useQuery } from "react-query";
 
 import useSwellProducts from "@/hooks/useSwellProducts";
@@ -6,7 +7,10 @@ import ProductDescription from "@/components/Products/ProductDescription";
 import ProductGalleryDetails from "@/components/Products/ProductGalleryDetails";
 import RelatedProductSlider from "@/components/Slider/RelatedProductSlider";
 import SpinnerRipple from "@/components/Loader/SpinnerLoader";
-import ProductReviews from "@/components/Products/ProductReviews";
+
+const ProductReviews = dynamic(
+  () => import("@/components/Products/ProductReviews")
+);
 
 interface ProductOverviewProps {
   pageProduct?: any;

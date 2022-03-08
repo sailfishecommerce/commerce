@@ -1,10 +1,18 @@
+import dynamic from "next/dynamic";
+
 import Applayout from "@/layout/Applayout";
-import BlogBanner from "@/components/Blog/BlogBanner";
-import PopularCategories from "@/components/Category/PopularCategories";
-import ShopFromCategories from "@/components/Category/ShopFromCategories";
 import TrendingProducts from "@/components/Products/TrendingProducts";
 import HomepageSlider from "@/components/Slider/HomepageSlider";
-import ShopByBrand from "@/components/Slider/ShopByBrandSlider";
+import BlogBanner from "@/components/Blog/BlogBanner";
+import PopularCategories from "@/components/Category/PopularCategories";
+
+const ShopFromCategories = dynamic(
+  () => import("@/components/Category/ShopFromCategories")
+);
+
+const ShopByBrand = dynamic(
+  () => import("@/components/Slider/ShopByBrandSlider")
+);
 
 export default function Home() {
   return (

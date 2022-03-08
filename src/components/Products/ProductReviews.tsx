@@ -1,10 +1,11 @@
 import Script from "next/script";
+import { memo } from "react";
 import { productType } from "@/types";
 
 interface Props {
   product: productType;
 }
-export default function ProductReviews({ product }: Props) {
+function ProductReviewsComponent({ product }: Props) {
   return (
     <div className="border-top my-lg-3 py-5 w-100">
       <Script
@@ -26,3 +27,5 @@ export default function ProductReviews({ product }: Props) {
     </div>
   );
 }
+const ProductReviews = memo(ProductReviewsComponent);
+export default ProductReviews;
