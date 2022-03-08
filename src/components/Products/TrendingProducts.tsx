@@ -28,18 +28,20 @@ function TrendingProductsCatalog() {
       ) : liveHealthyProductStatus === "loading" ? (
         <LoadProducts />
       ) : (
-        <div className="flex flex-wrap pt-4 mx-2">
-          {updateProductSize(liveHealthyProduct.data).map(
-            (product: productType) => (
-              <Product
-                key={product.id}
-                product={product}
-                algoliaEvent="click"
-                homepage
-              />
-            )
-          )}
-          <div className="my-4 m-auto">
+        <div className="flex-col">
+          <div className="flex flex-wrap pt-4 mx-2">
+            {updateProductSize(liveHealthyProduct.data).map(
+              (product: productType) => (
+                <Product
+                  key={product.id}
+                  product={product}
+                  algoliaEvent="click"
+                  homepage
+                />
+              )
+            )}
+          </div>
+          <div className="my-4 flex justify-center m-auto">
             <Link href="/shop" passHref>
               <a className="bg-red-500 items-center flex text-center p-2 border-2 rounded-lg text-white hover:border-red-500 hover:bg-white hover:text-red-500">
                 More products

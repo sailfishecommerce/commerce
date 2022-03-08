@@ -19,13 +19,14 @@ interface PopularCategoryProps {
 
 function PopularCategoryComponent({ category }: PopularCategoryProps) {
   const selectedFooterCategory = useMarketplaceCategory();
+  const tabView = useMediaQuery("(max-width:768px)");
   const mobileView = useMediaQuery("(max-width:768px)");
   const size = mobileView
     ? { height: 250, width: 300 }
     : { height: 250, width: 320 };
 
   return (
-    <div className="popularCategory w-full lg:w-1/3 px-1 mx-0">
+    <div className="popularCategory w-full md:w-1/2 lg:w-1/3 px-1 mx-0">
       <Link href={`/shop/product-type/${category.slug}`} passHref>
         <a
           onClick={() => selectedFooterCategory(category.name)}
@@ -71,6 +72,6 @@ function PopularCategoryComponent({ category }: PopularCategoryProps) {
   );
 }
 
-const PopularCategory = memo(PopularCategoryComponent)
+const PopularCategory = memo(PopularCategoryComponent);
 
 export default PopularCategory;

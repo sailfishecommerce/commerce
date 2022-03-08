@@ -26,7 +26,7 @@ function SliderItem({ item }): JSX.Element {
     <>
       <SplideSlide>
         <div className="sliderItem w-full h-full">
-          <div className="container m-auto flex items-center h-full">
+          <div className="container m-auto flex flex-col lg:flex-row items-center h-full">
             <div
               className={`${styles.imageContainer} w-1/2 lg:order-2 lg:mx-4 flex-shrink-0 justify-between items-center lg:ps-4`}
             >
@@ -40,18 +40,18 @@ function SliderItem({ item }): JSX.Element {
                 priority={true}
               />
             </div>
-            <div className="w-1/2 text-white flex flex-col py-5 px-4 lg:mb-5 lg:order-1">
-              <h3 className="text-light text-2xl font-light pb-1 from-start">
+            <div className="w-full md:w-1/2 items-center lg:items-start text-white flex flex-col py-5 md:px-1 lg:px-4 lg:mb-5 lg:order-1">
+              <h3 className="text-lg md:text-2xl pb-1 from-start">
                 {item.sliderCaption}
               </h3>
-              <h2 className="font-semibold my-2 text-4xl from-start delay-1">
+              <h2 className="font-semibold md:my-2 text-xl md:text-3xl lg:text-4xl from-start delay-1">
                 {item.sliderTitle}
               </h2>
-              <p className="font-medium text-xl py-2 from-start delay-2">
+              <p className="font-medium text-md md:text-lg lg:text-xl md:py-2 from-start text-center delay-2">
                 {item.sliderDescription}
               </p>
               <Link href="/shop" passHref>
-                <a className="scale-up mt-2 w-1/4 flex items-center justify-center delay-4 p-3 border-2 border-red-500 text-white font-bold rounded-lg hover:text-white hover:bg-red-500">
+                <a className="scale-up mt-2 w-3/7 md:w-2/5 lg:w-1/4 flex items-center justify-center delay-4 p-3 border-2 border-red-500 text-white font-bold rounded-lg hover:text-white hover:bg-red-500">
                   Shop Now
                 </a>
               </Link>

@@ -71,18 +71,18 @@ export default function Product({
       };
 
   const productClass = homepage
-    ? "lg:w-1/4 sm:w-full"
+    ? "lg:w-1/4 md:w-1/3 sm:w-full w-1/2"
     : slider
     ? "w-full"
-    : "lg:w-1/3 md:w-1/4";
+    : "lg:w-1/3 md:w-1/4 w-1/2";
 
   return (
     <div
-      className={`${productClass} w-1/2 ${styles.product} hover:shadow-lg rounded-lg p-2`}
+      className={`${productClass} relative ${styles.product} hover:shadow-lg rounded-lg p-2`}
     >
       <DynamicProductMetatags product={product} />
-      <div className="flex flex-col card product-card p-1 md:p-2">
-        <div className="flex items-center justify-between">
+      <div className="flex relative flex-col card product-card p-1 md:p-2">
+        <div className="flex items-center justify-between absolute top-0 left-0 z-10">
           {product.rrp && (
             <div className="discount-price mt-2">
               {discountPrice(product)} %
@@ -161,9 +161,6 @@ export default function Product({
           }
 
           @media (max-width: 768px) {
-            .card.product-card {
-              height: 350px;
-            }
             .productLink img {
               margin: auto;
               display: flex;
