@@ -38,7 +38,7 @@ export function Input({ formContent }: InputProps) {
   return (
     <div className={`${formContent.className} flex flex-col`}>
       <input
-        className="border-2 border-gray-200 rounded-md"
+        className="border border-gray-200 rounded-md px-2 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
         type={formContent.type}
         placeholder={formContent.placeholder}
         required
@@ -70,7 +70,7 @@ export function AddressInputGroup({ formik }: Props): JSX.Element {
                 </label>
                 <input
                   value={formik.values[formInput.name]}
-                  className="border-2 border-gray-200 rounded-md h-10"
+                  className="border border-gray-200 rounded-md h-10 px-2 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
                   onChange={updateInput}
                   name={formInput.name}
                 />
@@ -82,7 +82,7 @@ export function AddressInputGroup({ formik }: Props): JSX.Element {
             </div>
           ))}
         </div>
-      ))}      
+      ))}
     </div>
   );
 }

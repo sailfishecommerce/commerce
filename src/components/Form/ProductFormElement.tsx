@@ -8,7 +8,7 @@ export function ProductColorOption({
     <div key={option.id}>
       <div className="fs-sm mb-4 flex items-center">
         <span className="text-heading fw-medium me-1">Color:</span>
-        <span className="text-muted flex items-center" id="colorOptionText">
+        <span className="text-gray-500 flex items-center" id="colorOptionText">
           {option?.values?.map((value: any, index: number) => {
             return option.values.length - 1 === index ? (
               <div key={value.id}>{value.name}</div>

@@ -44,7 +44,7 @@ export default function BlogListArticle() {
               </Link>
             )}
             <div className="flex justify-between mb-1">
-              <div className="fs-sm text-muted pe-2 mb-2">
+              <div className="fs-sm text-gray-500 pe-2 mb-2">
                 in{" "}
                 {content.tags.map((tag) => (
                   <a href="#" key={tag} className="blog-entry-meta-link">

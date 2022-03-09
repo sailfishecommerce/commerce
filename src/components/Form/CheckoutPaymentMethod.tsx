@@ -21,7 +21,7 @@ export default function CheckoutPaymentMethod() {
 
   return (
     <div className="accordion-item">
-      <h2 className="h6 pb-3 mb-2 accordion-header">
+      <h2 className="h6 pb-3 mb-2 accordion-header bg-gray-100">
         <a
           className={accordion.headClassName}
           href={accordion.href}

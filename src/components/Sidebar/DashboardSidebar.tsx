@@ -47,7 +47,9 @@ export default function DashboardSidebar() {
           {dashboardSidebarContent.map((sidebarContent) => (
             <div key={sidebarContent.name} className="flex flex-col">
               <div className="bg-secondary px-4 py-3">
-                <h3 className="fs-sm mb-0 text-muted">{sidebarContent.name}</h3>
+                <h3 className="fs-sm mb-0 text-gray-500">
+                  {sidebarContent.name}
+                </h3>
               </div>
               <ul className="list-unstyled mb-0">
                 {sidebarContent.content.map((content: contentType) => (
@@ -56,7 +58,7 @@ export default function DashboardSidebar() {
                       <a className="nav-link-style flex items-center px-4 py-3">
                         <i className={` ${content.icon} opacity-60 mx-2`}></i>
                         {content.name}
-                        <span className="fs-sm text-muted ms-auto">
+                        <span className="fs-sm text-gray-500 ms-auto">
                           {content?.count}
                         </span>
                       </a>

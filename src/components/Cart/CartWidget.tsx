@@ -53,7 +53,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
             <span className="text-accent mx-2">
               <FormattedPrice price={cart?.price} />
             </span>
-            <span className="text-muted">x {cart.quantity}</span>
+            <span className="text-gray-500">x {cart.quantity}</span>
           </div>
         </div>
       </div>

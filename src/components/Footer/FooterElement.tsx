@@ -15,7 +15,7 @@ function FooterWidgetLink({
     : (contentLink: any) => onClickHandler(contentLink);
   return (
     <div className="pb-2 mb-4">
-      <h3 className="text-gray-300 text-xl font-bold">{groupedContent.name}</h3>
+      <h3 className="text-gray-500 text-xl font-bold">{groupedContent.name}</h3>
       <ul className="text-gray-400 ">
         {groupedContent.links.map((contentLink: any, index: number) => (
           <li key={index} className="widget-list-item">

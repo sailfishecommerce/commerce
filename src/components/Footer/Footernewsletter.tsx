@@ -2,10 +2,10 @@ export default function Footernewsletter() {
   return (
     <div className="w-full lg:w-1/3">
       <div className=" pb-2 mb-4">
-        <h3 className="text-xl text-gray-300 font-bold">Stay informed</h3>
+        <h3 className="text-xl text-gray-500 font-bold">Stay informed</h3>
         <div className="subscription-form validate flex flex-col">
           <div className="flex my-2">
-            <i className="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+            <i className="ci-mail position-absolute top-50 translate-middle-y text-gray-500 fs-base ms-3"></i>
             <input
               className="rounded-l-full p-2 px-4 border-0 w-44 md:w-60"
               type="email"

@@ -43,7 +43,7 @@ export function Input({ content, formik, className }: Props) {
       )}
       {content.inputText !== "password" ? (
         <input
-          className="border-2 border-gray-200 rounded-md h-10"
+          className="border border-gray-200 px-2 rounded-md h-10 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
           type={content.inputText}
           id={content.id}
           name={content.name}

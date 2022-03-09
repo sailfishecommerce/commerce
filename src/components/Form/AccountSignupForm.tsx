@@ -11,7 +11,7 @@ export default function AccountSignupForm() {
   return (
     <div className="col-md-6 pt-4 mt-3 mt-md-0">
       <h2 className="h4 mb-3">No account? Sign up</h2>
-      <p className="fs-sm text-muted mb-4">
+      <p className="fs-sm text-gray-500 mb-4">
         Registration takes less than a minute but gives you full control over
         your orders.
       </p>

@@ -24,7 +24,7 @@ export function TrendingBlogPost() {
                 <a>{content.title}</a>
               </Link>
             </h6>
-            <span className="fs-ms text-muted">
+            <span className="fs-ms text-gray-500">
               by{" "}
               <a href="#" className="blog-entry-meta-link">
                 {content.author}
@@ -62,7 +62,7 @@ export function BlogCategories() {
               href="#"
             >
               <span>{category.name}</span>
-              <span className="fs-xs text-muted ms-3">{category.count}</span>
+              <span className="fs-xs text-gray-500 ms-3">{category.count}</span>
             </a>
           </li>
         ))}

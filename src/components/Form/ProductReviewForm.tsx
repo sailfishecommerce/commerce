@@ -38,7 +38,7 @@ export default function ProductReviewForm() {
                 ></textarea>
               )}
               <div className="invalid-feedback">field must not be empty!</div>
-              <small className="form-text text-muted">
+              <small className="form-text text-gray-500">
                 {formInput.helperText}
               </small>
             </div>

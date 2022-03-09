@@ -36,7 +36,7 @@ export default function OrderTracking() {
                         <i className={content.icon}></i>
                       </div>
                       <div className="ps-3">
-                        <div className="media-tab-subtitle text-muted fs-xs mb-1">
+                        <div className="media-tab-subtitle text-gray-500 fs-xs mb-1">
                           {content.step}
                         </div>
                         <h6 className="media-tab-title text-nowrap mb-0">

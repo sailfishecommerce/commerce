@@ -113,7 +113,7 @@ export default function SearchLocationInput({ formik }) {
         placeholder="Address - Line 1"
         value={formik.values.address1}
         name="address1"
-        className="border-2 border-gray-200 rounded-md h-10 px-4"
+        className="border border-gray-200 rounded-md h-10 px-2 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
         autoComplete="true"
       />
       <p className="text-danger errorText">

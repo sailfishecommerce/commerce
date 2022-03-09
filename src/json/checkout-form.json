@@ -53,35 +53,35 @@
   "bankTransfer": {
     "content": [
       {
-        "flag": "/logo/ukFlag.webp",
+        "flag": "/flags/ukFlag.webp",
         "currencyCode": "GBP",
         "currency": "Great Britain Pound",
         "vboutListCode": "55747",
         "country": "United Kingdom"
       },
       {
-        "flag": "/logo/europeFlag.png",
+        "flag": "/flags/europeFlag.png",
         "currencyCode": "EUR",
         "currency": "Euro",
         "vboutListCode": "55748",
         "country": "Estonia (Europe)"
       },
       {
-        "flag": "/logo/australia.webp",
+        "flag": "/flags/australia.webp",
         "currencyCode": "AUD",
         "currency": "Australian Dollar",
         "vboutListCode": "55746",
         "country": "Australia"
       },
       {
-        "flag": "/logo/usaFlag.svg",
+        "flag": "/flags/usaFlag.svg",
         "currencyCode": "USD",
         "currency": "United States Dollar",
         "vboutListCode": "55580",
         "country": "United States"
       },
       {
-        "flag": "/logo/hongkongFlag.png",
+        "flag": "/flags/hongkongFlag.png",
         "currencyCode": "HKD",
         "currency": "Hong Kong Dollar",
         "vboutListCode": "55745",

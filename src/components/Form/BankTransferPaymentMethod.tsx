@@ -29,7 +29,7 @@ export default function BankTransferPaymentMethod() {
 
   return (
     <div className="accordion-item">
-      <h3 className="accordion-header">
+      <h3 className="accordion-header bg-gray-100">
         <a
           className="accordion-button collapsed"
           href="#points"
@@ -48,11 +48,11 @@ export default function BankTransferPaymentMethod() {
           Please select your preferred country and currency pair for payment to
           our bank accounts
         </p>
-        <div className="accordion-body">
+        <div className="accordion-body my-4 border rounded-md p-4">
           <form onSubmit={submitHandler}>
-            <table className="manualTransfer mb-3">
+            <table className="manualTransfer mb-3 w-full">
               <thead>
-                <tr className="border-b-4">
+                <tr className="border-b">
                   <th>CURRENCY</th>
                   <th>BANK LOCATION</th>
                 </tr>
@@ -72,7 +72,7 @@ export default function BankTransferPaymentMethod() {
             <button
               type="submit"
               aria-label="Submit"
-              className="btn btn-outline-primary flex m-auto"
+              className="border-2 border-red-500 rounded-md p-2 mx-auto flex my-4 hover:bg-red-500 hover:text-white"
             >
               Submit
             </button>

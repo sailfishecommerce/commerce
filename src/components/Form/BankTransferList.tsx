@@ -1,6 +1,6 @@
 export default function BankTransferList({ content, onChange }) {
   return (
-    <tr className="border-b-4">
+    <tr className="border-b hover:text-red-500">
       <td className="flex items-center my-1">
         <input
           type="radio"
@@ -19,7 +19,7 @@ export default function BankTransferList({ content, onChange }) {
           />
           <div className="currency flex flex-col">
             <h6 className="font-bold">{content.currencyCode}</h6>
-            <p className="text-muted">{content.currency}</p>
+            <p>{content.currency}</p>
           </div>
         </div>
       </td>

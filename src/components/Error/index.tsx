@@ -31,7 +31,7 @@ export default function Error404() {
                       <i className="ci-home text-primary h4 mb-0"></i>
                       <div className="ps-3">
                         <h5 className="fs-sm mb-0">Homepage</h5>
-                        <span className="text-muted fs-ms">
+                        <span className="text-gray-500 fs-ms">
                           Return to homepage
                         </span>
                       </div>
@@ -47,7 +47,7 @@ export default function Error404() {
                     <i className="ci-search text-success h4 mb-0"></i>
                     <div className="ps-3">
                       <h5 className="fs-sm mb-0">Search</h5>
-                      <span className="text-muted fs-ms">
+                      <span className="text-gray-500 fs-ms">
                         Find with advanced search
                       </span>
                     </div>
@@ -63,7 +63,7 @@ export default function Error404() {
                       <i className="ci-help text-info h4 mb-0"></i>
                       <div className="ps-3">
                         <h5 className="fs-sm mb-0">Help &amp; Support</h5>
-                        <span className="text-muted fs-ms">
+                        <span className="text-gray-500 fs-ms">
                           Visit our help center
                         </span>
                       </div>

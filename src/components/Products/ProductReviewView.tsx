@@ -17,12 +17,12 @@ export default function ProductReviewView() {
               />
               <div className="ps-3">
                 <h6 className="fs-sm mb-0">{review.name}</h6>
-                <span className="fs-ms text-muted">{review.date}</span>
+                <span className="fs-ms text-gray-500">{review.date}</span>
               </div>
             </div>
             <div>
               <RatingStar rate={review.rating} />
-              <div className="fs-ms text-muted">{review.note}</div>
+              <div className="fs-ms text-gray-500">{review.note}</div>
             </div>
           </div>
           <p className="fs-md mb-2">{review.text}</p>

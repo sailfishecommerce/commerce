@@ -32,7 +32,7 @@ function OrderSummaryItem({ item }: any) {
           <span className="text-accent mx-2">
             <FormattedPrice price={item.price} />
           </span>
-          <span className="text-muted">x {item.quantity}</span>
+          <span className="text-gray-500">x {item.quantity}</span>
         </div>
       </div>
     </div>

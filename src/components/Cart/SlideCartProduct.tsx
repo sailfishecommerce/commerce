@@ -61,7 +61,7 @@ export default function SlideCartProduct({
                 <span className="text-accent mx-2">
                   <FormattedPrice price={item.price} />
                 </span>
-                <span className="text-muted">x {item.quantity}</span>
+                <span className="text-gray-500">x {item.quantity}</span>
                 <span className="mx-1">= </span>
                 <span className="text-accent mx-2">
                   <FormattedPrice price={item.priceTotal} />
@@ -76,7 +76,7 @@ export default function SlideCartProduct({
         {item.options &&
           item.options.map((item: any, index: number) => (
             <p
-              className="small text-muted mx-2 mb-0 border px-2 rounded"
+              className="small text-gray-500 mx-2 mb-0 border px-2 rounded"
               key={`item.name-${index}`}
             >
               {item.name} | {item.value}{" "}

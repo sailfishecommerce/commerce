@@ -8,7 +8,7 @@ export default function AboutusForm() {
       <div className="col-md-6 px-3 px-md-5 py-5 order-md-1">
         <div className="text-content mx-auto py-lg-5">
           <h2 className="h3 mb-2">We are hiring new talents</h2>
-          <p className="fs-sm text-muted pb-2">
+          <p className="fs-sm text-gray-500 pb-2">
             If you want to be part of our team please submit you CV using the
             form below:
           </p>

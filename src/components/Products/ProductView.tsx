@@ -21,7 +21,7 @@ export function PaymentNote() {
       />
       <div className="secured-by flex items-center mt-2">
         <i className="fas fa-lock mx-2"></i>
-        <p className="text-muted mx-2 mb-0">
+        <p className="text-gray-500 mx-2 mb-0">
           Transactions secured by Stripe & Airwallex
         </p>
       </div>

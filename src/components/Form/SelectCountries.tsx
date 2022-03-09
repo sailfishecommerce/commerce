@@ -48,8 +48,23 @@ export default function SelectCountries({
         {content.label}
       </label>
       <select
-        className="border-2 border-gray-200 rounded-md h-10 px-0 mr-4 text-md"
+        className="form-select appearance-none
+        block
+        w-96
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding bg-no-repeat
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
         id="checkout-country"
+        aria-label="select countries"
         name="country"
         onChange={selectHandler}
       >
@@ -60,18 +75,11 @@ export default function SelectCountries({
           </option>
         ))}
       </select>
-      <p className="brandContainer text-danger">
+      <p className="text-red-500">
         {formik.errors["country"] &&
           formik.touched["country"] &&
           formik.errors["country"]}
       </p>
-      <style jsx>
-        {`
-          .brandContainer {
-            width: 150px;
-          }
-        `}
-      </style>
     </div>
   );
 }

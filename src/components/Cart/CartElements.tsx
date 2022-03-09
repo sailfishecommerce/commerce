@@ -27,7 +27,7 @@ export function CartControl({ item }: cartControlProps) {
       <div className="flex items-center">
         <label
           htmlFor="itemQuantity"
-          className="itemQuantity fw-normal me-1 text-muted"
+          className="itemQuantity fw-normal me-1 text-gray-500"
         >
           Quantity:
         </label>

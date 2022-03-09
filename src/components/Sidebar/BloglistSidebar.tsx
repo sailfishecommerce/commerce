@@ -33,7 +33,9 @@ export default function BloglistSidebar() {
           <div className="blogBg bg-size-cover bg-position-center rounded-3 py-5 mx-lg-2">
             <div className="py-5 px-4 text-center">
               <h5 className="mb-2">Your Add Banner Here</h5>
-              <p className="fs-sm text-muted">Hurry up to reserve your spot</p>
+              <p className="fs-sm text-gray-500">
+                Hurry up to reserve your spot
+              </p>
               <a className="btn btn-primary btn-shadow btn-sm" href="#">
                 Contact us
               </a>
