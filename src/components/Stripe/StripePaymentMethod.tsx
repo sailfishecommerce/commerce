@@ -1,4 +1,4 @@
-import { useRef, MutableRefObject } from "react";
+import { useRef, MutableRefObject, useEffect } from "react";
 
 import useStripeElement from "@/hooks/useStripeElement";
 import { Button } from "@/components/UIElement";
@@ -20,7 +20,12 @@ function PaymentInput({ inputRef }: PaymentInputType): JSX.Element {
 }
 
 export default function StripePaymentMethod() {
-  useStripeElement();
+  const { createStripeElement } = useStripeElement();
+
+  useEffect(() => {
+    createStripeElement();
+  }, []);
+
   const { paymentForm }: any = useAppSelector((state) => state.payment);
   const inputRef = useRef(null);
 

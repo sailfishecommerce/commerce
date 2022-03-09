@@ -1,15 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
-import swellClientInit from "@/lib/config";
+import useSwell from "@/hooks/useSwell";
 
 const inputClasses = { base: "form-control StripeElement" };
 
 export default function useStripeElement() {
-  const { swell, initializeSwell } = swellClientInit();
+  const { swellInit } = useSwell();
 
-  initializeSwell();
-
-  useEffect(() => {
+  async function createStripeElement() {
+    const { swell } = await swellInit();
     swell.payment.createElements({
       card: {
         elementId: "#card-element-id",
@@ -22,5 +19,7 @@ export default function useStripeElement() {
         },
       },
     });
-  }, []);
+  }
+
+  return { createStripeElement };
 }

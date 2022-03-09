@@ -1,4 +1,4 @@
-import { useCategoryData } from "@/hooks/useCategory";
+import useCategoryData from "@/hooks/useCategoryData";
 import { contentLinkType } from "@/types";
 import { addCategoryView } from "@/hooks/useVbout";
 import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";

@@ -34,7 +34,7 @@ export default function CartDropdown({ cart }: Props) {
             <i className="ci-arrow-right ms-1 me-n1"></i>
           </a>
         </div>
-        <Link href="/checkout" passHref>
+        <Link href="/checkout" prefetch={false} passHref>
           <button
             disabled={disableBtn}
             className="btn btn-primary btn-sm d-block w-100"

@@ -1,10 +1,10 @@
-import swellClientInit from "@/lib/config";
+import useSwell from "@/hooks/useSwell";
 
 export default function useOrder() {
-  const { swell, initializeSwell } = swellClientInit();
-  initializeSwell();
+  const { swellInit } = useSwell();
 
   async function getLastOrderDetails() {
+    const { swell } = await swellInit();
     return await swell.cart.getOrder();
   }
   return {

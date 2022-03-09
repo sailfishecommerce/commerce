@@ -1,6 +1,6 @@
 import axios from "axios";
-import swellClientInit from "@/lib/config";
 import { useQuery } from "react-query";
+import useSwell from "@/hooks/useSwell";
 
 type filterType = {
   page: number;
@@ -15,32 +15,36 @@ type filterType = {
 };
 
 export default function useSwellProducts() {
-  const { swell, initializeSwell } = swellClientInit();
-  initializeSwell();
+  const { swellInit } = useSwell();
 
   async function listProducts() {
+    const { swell } = await swellInit();
     return await swell.products.list({
       limit: 25,
       page: 1,
     });
   }
   async function allProducts() {
+    const { swell } = await swellInit();
     return await swell.products.list();
   }
 
   async function filterProducts(filter: filterType) {
+    const { swell } = await swellInit();
     return await swell.products.list({
       ...filter,
     });
   }
 
   async function getProductsInCategory(category: string) {
+    const { swell } = await swellInit();
     return await swell.products.list({
       category,
     });
   }
 
   async function getAllAttributes() {
+    const { swell } = await swellInit();
     return await swell.attributes.list({
       limit: 25,
       page: 1,

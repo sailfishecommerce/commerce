@@ -53,6 +53,8 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.17.2",
+    "@cerner/duplicate-package-checker-webpack-plugin": "^2.3.0",
     "@types/node": "^17.0.0",
     "@types/react": "^17.0.37",
     "@welldone-software/why-did-you-render": "^6.2.3",

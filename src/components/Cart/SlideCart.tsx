@@ -64,7 +64,7 @@ export default function SlideCart(props: slideCartProps) {
                   </h5>
                   <hr />
                 </div>
-                <Link href="/checkout" passHref>
+                <Link href="/checkout" prefetch={false} passHref>
                   <button
                     aria-label="Proceed to Checkout"
                     disabled={disableBtn}

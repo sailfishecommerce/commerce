@@ -1,16 +1,17 @@
-import swellClientInit from "@/lib/config";
-import { cartDetailsType, productOptionType, productType } from "@/types";
+import { productOptionType, productType } from "@/types";
 import axios from "axios";
+import useSwell from "@/hooks/useSwell";
 
 export default function useSwellCart() {
-  const { swell, initializeSwell } = swellClientInit();
-  initializeSwell();
+  const { swellInit } = useSwell();
 
   async function getACart() {
+    const { swell } = await swellInit();
     return await swell.cart.get();
   }
 
   async function addToCart(product: productType, quantity: number) {
+    const { swell } = await swellInit();
     return await swell.cart.addItem({
       product_id: product.id,
       quantity,
@@ -22,6 +23,7 @@ export default function useSwellCart() {
     productQuantity: any,
     productOptions: productOptionType
   ) {
+    const { swell } = await swellInit();
     return await swell.cart.addItem({
       product_id: product.id,
       quantity: productQuantity,
@@ -30,6 +32,7 @@ export default function useSwellCart() {
   }
 
   async function updateCartItem(product: any) {
+    const { swell } = await swellInit();
     return await swell.cart.updateItem(product.id, product.updateData);
   }
 
@@ -37,20 +40,24 @@ export default function useSwellCart() {
     product: productType,
     quantity: number
   ) {
+    const { swell } = await swellInit();
     return await swell.cart.updateItem(product.id, {
       quantity,
     });
   }
 
   async function removeCartItem(product: { id: string }) {
+    const { swell } = await swellInit();
     return await swell.cart.removeItem(product.id);
   }
 
   async function emptyCart() {
+    const { swell } = await swellInit();
     return await swell.cart.setItems([]);
   }
 
   async function submitOrder() {
+    const { swell } = await swellInit();
     return await swell.cart.submitOrder();
   }
 
@@ -61,13 +68,16 @@ export default function useSwellCart() {
   }
 
   async function applyGiftCode(code: string) {
+    const { swell } = await swellInit();
     return await swell.cart.applyCoupon(code);
   }
 
   async function updateCartAccountID(account_id: string) {
+    const { swell } = await swellInit();
     await swell.cart.update({ account_id });
   }
   async function updateCart(account: any) {
+    const { swell } = await swellInit();
     await swell.cart.update(account);
   }
 

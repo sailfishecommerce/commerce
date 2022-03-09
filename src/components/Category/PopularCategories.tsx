@@ -1,6 +1,6 @@
 import { memo, useCallback } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { useCategoryData } from "@/hooks/useCategory";
+import useCategoryData from "@/hooks/useCategoryData";
 import PopularCategory from "@/components/Category/PopularCategory";
 import LoadingPopularCategory from "@/components/Loader/PopularCategoryLoader";
 

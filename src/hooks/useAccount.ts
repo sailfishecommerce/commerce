@@ -1,5 +1,5 @@
 import { useQueryClient } from "react-query";
-import swellClientInit from "@/lib/config";
+import useSwell from "@/hooks/useSwell";
 
 type checkoutData = {
   firstName: string;
@@ -29,12 +29,11 @@ type createUserAccountAtCheckoutData = checkoutData & {
 };
 
 export default function useAccount() {
-  const { swell, initializeSwell } = swellClientInit();
-  initializeSwell();
-
-  const queryClient = useQueryClient();
+  const { swellInit } = useSwell();
 
   async function createUserAccount(userDetails: userDetailsType) {
+    const { swell } = await swellInit();
+
     const { firstName, lastName, email, password } = userDetails;
     return await swell.account.create({
       firstName,
@@ -45,19 +44,27 @@ export default function useAccount() {
   }
 
   async function signedUserDetails() {
+    const { swell } = await swellInit();
+
     return await swell.account.get();
   }
 
   async function loginUser(userLogin: userLoginType) {
     const { email, password } = userLogin;
+    const { swell } = await swellInit();
+
     return await swell.account.login(email, password);
   }
 
   async function logoutUser() {
+    const { swell } = await swellInit();
+
     return await swell.account.logout();
   }
 
   async function forgotPassword(email: string) {
+    const { swell } = await swellInit();
+
     return await swell.account.recover({
       email,
       reset_url: `https://livehealthy.hk/password-reset?key={reset_key}`,
@@ -65,10 +72,14 @@ export default function useAccount() {
   }
 
   async function getUserAccount() {
+    const { swell } = await swellInit();
+
     return await swell.account.get();
   }
 
   async function recoverPassword(password: string, reset_key: string) {
+    const { swell } = await swellInit();
+
     return await swell.account.recover({
       password,
       reset_key,
@@ -78,6 +89,8 @@ export default function useAccount() {
   async function createUserAccountAtCheckout(
     data: createUserAccountAtCheckoutData
   ) {
+    const { swell } = await swellInit();
+
     return await swell.account.createAddress({
       name: `${data.firstName} ${data.lastName}`,
       address1: data.address1,
@@ -90,11 +103,14 @@ export default function useAccount() {
   }
 
   function displayUserDetails(): any {
+    const queryClient = useQueryClient();
     const userDetails = queryClient.getQueryData("getAccount");
     return userDetails;
   }
 
   async function createUserAddresstAtCheckout(data: checkoutData) {
+    const { swell } = await swellInit();
+
     return await swell.account.create({
       email: data.email,
       first_name: data.firstName,
@@ -106,6 +122,8 @@ export default function useAccount() {
     data: createUserAccountAtCheckoutData,
     token: string
   ) {
+    const { swell } = await swellInit();
+
     return await swell.cart.update({
       billing: {
         name: `${data.firstName} ${data.lastName}`,

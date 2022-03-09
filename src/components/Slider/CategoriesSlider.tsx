@@ -2,7 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { memo } from "react";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-import { useCategoryData } from "@/hooks/useCategoryData";
+import  useCategoryData  from "@/hooks/useCategoryData";
 import Category from "@/components/Category";
 import LoadCategory from "@/components/Loader/LoadCategory";
 

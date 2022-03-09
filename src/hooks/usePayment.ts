@@ -1,13 +1,11 @@
-import swellClientInit from "@/lib/config";
-
-const inputClasses = { base: "form-control StripeElement" };
+import useSwell from "@/hooks/useSwell";
 
 export default function usePayment() {
-  const { swell, initializeSwell } = swellClientInit();
-
-  initializeSwell();
+  const { swellInit } = useSwell();
 
   async function tokenizePayment() {
+    const { swell } = await swellInit();
+
     return await swell.payment.tokenize({
       card: {
         onError: (err: any) => {
@@ -23,6 +21,8 @@ export default function usePayment() {
   }
 
   async function submitUserOrder() {
+    const { swell } = await swellInit();
+
     return await swell.cart.submitOrder();
   }
 

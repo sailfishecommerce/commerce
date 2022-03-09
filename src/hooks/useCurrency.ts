@@ -2,24 +2,26 @@
 import { QueryClient } from "react-query";
 import { useState } from "react";
 
-import swellClientInit from "@/lib/config";
 import { useAppSelector } from "@/hooks/useRedux";
+import useSwell from "@/hooks/useSwell";
 
 export default function useCurrency() {
-  const { swell, initializeSwell } = swellClientInit();
-  initializeSwell();
+  const { swellInit } = useSwell();
 
   const { currency } = useAppSelector((state) => state.currencyLanguage);
 
   async function listEnabledCurrencies() {
+    const { swell } = await swellInit();
     return await swell.currency.list();
   }
 
   async function selectCurrencies(currency: string) {
+    const { swell } = await swellInit();
     return await swell.currency.select(currency);
   }
 
   async function getSelectedCurrencies() {
+    const { swell } = await swellInit();
     return await swell.currency.selected();
   }
 

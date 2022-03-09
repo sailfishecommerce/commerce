@@ -29,7 +29,7 @@ export default function BottomTab() {
           </span>
           <span className="handheld-toolbar-label">Menu</span>
         </a>
-        <Link href="/checkout" passHref>
+        <Link href="/checkout" prefetch={false} passHref>
           <a className="d-table-cell handheld-toolbar-item">
             <span className="handheld-toolbar-icon">
               <i className="ci-cart"></i>
