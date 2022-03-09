@@ -43,7 +43,7 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
   const { loading, couponInputHandler, onSubmitCoupon } = useCoupon();
 
   return (
-    <aside className="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+    <aside className="w-1/3 pt-4 lg:pt-0 xl:px-5">
       <div className="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
         <div className="py-2 px-xl-2">
           <div className="widget mb-3">
