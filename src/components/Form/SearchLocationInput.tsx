@@ -103,7 +103,7 @@ export default function SearchLocationInput({ formik }) {
   }
 
   return (
-    <div className="mb-1 flex flex-col">
+    <div className="mb-1 flex flex-col px-2">
       <label className="form-label" htmlFor="address1">
         Address 1 *
       </label>

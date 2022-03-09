@@ -1,4 +1,4 @@
-import { useRef, MutableRefObject, useEffect } from "react";
+import { useRef, MutableRefObject, useEffect, memo } from "react";
 
 import useStripeElement from "@/hooks/useStripeElement";
 import { Button } from "@/components/UIElement";
@@ -13,16 +13,18 @@ interface PaymentInputType {
 
 function PaymentInput({ inputRef }: PaymentInputType): JSX.Element {
   return (
-    <div className="mb-0 col-sm-12">
+    <div className="mb-0 w-full">
       <div ref={inputRef} id="card-element-id"></div>
     </div>
   );
 }
 
-export default function StripePaymentMethod() {
+function StripePaymentMethodComponent() {
   const { createStripeElement } = useStripeElement();
 
-  createStripeElement();
+  useEffect(() => {
+    createStripeElement();
+  }, []);
 
   const { paymentForm }: any = useAppSelector((state) => state.payment);
   const inputRef = useRef(null);
@@ -39,26 +41,17 @@ export default function StripePaymentMethod() {
         {inputRef === null && <SpinnerRipple />}
       </div>
       <PaymentInput inputRef={inputRef} />
-      <div className="col-4 mx-auto mt-3">
-        <Button
-          disable={loadingState}
-          className={`${styles.uiElement} btn-outline-primary d-block w-100 mt-0`}
-          text="Submit"
-          onClick={makePaymentHandler}
-          type="submit"
-          loading={loadingState}
-        />
-      </div>
-      <style jsx>
-        {`
-          button.btn {
-            position: relative;
-          }
-          .loading {
-            margin-left: 35px;
-          }
-        `}
-      </style>
+      <Button
+        disable={loadingState}
+        className={`${styles.uiElement} bg-red-500 border-2 border-red-500 hover:text-red-500 text-white w-1/6 h-8 hover:bg-transparent  mx-auto my-2 rounded`}
+        text="Submit"
+        onClick={makePaymentHandler}
+        type="submit"
+        loading={loadingState}
+      />
     </div>
   );
 }
+
+const StripePaymentMethod = memo(StripePaymentMethodComponent);
+export default StripePaymentMethod;

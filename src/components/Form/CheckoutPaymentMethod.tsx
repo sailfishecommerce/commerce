@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from "@/hooks/useRedux";
 import BankTransferPaymentMethod from "@/components/Form/BankTransferPaymentMethod";
 import AirwallexPaymentMethod from "@/components/Airwallex/AirwallexPaymentMethod";
 import PaymentWithStripe from "@/components/Stripe/PaymentWithStripe";
+import Accordion from "@/components/Accordion";
 import { updateFormStage } from "@/redux/payment-slice";
 
 export default function CheckoutPaymentMethod() {
@@ -20,50 +21,15 @@ export default function CheckoutPaymentMethod() {
   }
 
   return (
-    <div className="accordion-item">
-      <h2 className="h6 pb-3 mb-2 accordion-header bg-gray-100">
-        <a
-          className={accordion.headClassName}
-          href={accordion.href}
-          onClick={paymentHandler}
-          data-bs-toggle="collapse"
-        >
-          <span className="badge-custom mx-2">2</span>
-          Choose payment method
-        </a>
-      </h2>
-      <div
-        className={accordion.bodyClassName}
-        id="payment"
-        data-bs-parent="#shipping-form"
-      >
-        <div className="">
-          <div className="accordion-body">
-            <div className="accordion mb-2" id="payment-method">
-              <PaymentWithStripe />
-              <AirwallexPaymentMethod />
-              <BankTransferPaymentMethod />
-            </div>
-          </div>
-        </div>
-      </div>
-      <style jsx>
-        {`
-          .badge-custom {
-            height: 25px;
-            width: 25px;
-            background-color: #fe696a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 14px;
-          }
-        `}
-      </style>
-    </div>
+    <Accordion
+      // onClick={paymentHandler}
+      stage={2}
+      title=" Choose payment method"
+    >
+      <PaymentWithStripe />
+      <AirwallexPaymentMethod />
+      <BankTransferPaymentMethod />
+    </Accordion>
   );
 }
 

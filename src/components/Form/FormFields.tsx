@@ -74,7 +74,7 @@ export function AddressInputGroup({ formik }: Props): JSX.Element {
                   onChange={updateInput}
                   name={formInput.name}
                 />
-                <p className="text-red-500">
+                <p className="text-red-500 text-sm">
                   {formik.errors[formInput.name] &&
                     formik.errors[formInput.name]}
                 </p>

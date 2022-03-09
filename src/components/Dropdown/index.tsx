@@ -35,7 +35,7 @@ function DropdownComponent({
           rounded
           bg-red-500
           shadow-md
-          border-2
+          border
           border-red-900
           hover:bg-red-700 hover:shadow-lg
           focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0

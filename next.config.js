@@ -55,6 +55,8 @@ module.exports = withBundleAnalyzer({
               "https://sailfish-e-commerce-limited.swell.store",
               "https://en.trustmate.io",
               "https://cdn.jsdelivr.net",
+              "https://pci-api-demo.airwallex.com",
+              "https://maps.googleapis.com",
             ],
             "connect-src": [
               "'self'",
@@ -64,6 +66,7 @@ module.exports = withBundleAnalyzer({
               "https://czt5ma7jlj-dsn.algolia.net",
               "https://czt5ma7jlj-3.algolianet.com",
               "https://insights.algolia.io",
+              "'https://maps.googleapis.com",
             ],
             "font-src": [
               "'self'",
@@ -80,7 +83,9 @@ module.exports = withBundleAnalyzer({
               "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",
               "'sha256-FohP1sOiMQlzLevJvZ2zFcokm2ikklyNloIpwT8uKqU='",
               "https://checkout-demo.airwallex.com/assets/elements.bundle.min.js",
-              "https://maps.googleapis.com/maps/api/js?key=AIzaSyAeRHBl4lGET6wuGDXwW-EGnOhsof8xGr8&libraries=places",
+              "https://maps.googleapis.com",
+              "https://sentry.airwallex.com",
+              "https://pci-api-demo.airwallex.com",
             ],
             "img-src": [
               "'self'",
@@ -88,8 +93,13 @@ module.exports = withBundleAnalyzer({
               "https://cdn.schema.io",
               "https://pcdn.piiojs.com",
               "https://en.trustmate.io",
+              "https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png",
             ],
-            "frame-src": "https://www.google.com/",
+            "frame-src": [
+              "https://www.google.com/",
+              "https://checkout-demo.airwallex.com/",
+              "https://js.stripe.com/",
+            ],
           },
           isDev,
           permissionsPolicy: false,
