@@ -32,6 +32,7 @@ module.exports = withBundleAnalyzer({
         "node_modules/regenerator-runtime"
       ),
       deepmerge: path.resolve(__dirname, "node_modules/deepmerge"),
+      "@babel/runtime": path.resolve(__dirname, "node_modules/@babel/runtime"),
     };
 
     return config;
