@@ -38,9 +38,9 @@ export function NotAuthorizedView({
       >
         <AiOutlineUser fontSize={24} className="mr-2" />
         <Tooltip text="Sign-in / Sign-up ">
-          <div className="navbar-tool-text flex flex-col me-2 items-start">
+          <div className="navbar-tool-text w-full flex flex-col me-2 items-start">
             <span className="text-xs">Hello, Sign in</span>
-            <h6 className="lg:text-base text-sm">My Account</h6>
+            <h6 className="text-lg">My Account</h6>
           </div>
         </Tooltip>
       </a>
@@ -128,26 +128,29 @@ export function NavbarDropdown({
       onClick={onClickHandler}
       className="bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center"
     >
-      <div className="flex flex-col relative">
-        <div
-          onClick={toggleSlideCartMobile}
-          className="absolute justify-center bg-red-200 rounded-full h-6 w-6 -mt-8 mr-4 flex items-center"
-        >
-          {cart?.items?.length > 0 && (
-            <span className="text-white">{cart?.items?.length}</span>
-          )}
-        </div>
-        <BsCart4 fontSize={24} />
-      </div>
-      <div className="flex price-overview flex-col">
-        <span className="text-xs">My Cart</span>
-        <a className="navbar-tool-text">
-          {cart?.grandTotal ? (
-            <FormattedPrice price={cart?.grandTotal} />
-          ) : (
-            <FormattedPrice price={0} />
-          )}
-        </a>
+      <div
+        onClick={toggleSlideCartMobile}
+        className="flex price-overview flex-col"
+      >
+        <span className="text-xs md:text-md text-center font-bold">
+          My Cart
+        </span>
+        {cart?.grandTotal ? (
+          <a className="flex items-center">
+            <div className="cart-icon relative flex flex-col">
+              <span className="absolute top-0 right-0 -mt-2 text-white justify-center bg-red-500 rounded-full h-4 w-4 flex items-center">
+                {cart?.items?.length}
+              </span>
+              <BsCart4 fontSize={26} className="mx-2 my-0" />
+            </div>
+            <FormattedPrice
+              className="font-bold w-full"
+              price={cart?.grandTotal}
+            />
+          </a>
+        ) : (
+          <FormattedPrice price={0} />
+        )}
       </div>
       {dropdownStatus && cart?.items.length > 0 && (
         <HeaderCartDropdown cart={cart} />

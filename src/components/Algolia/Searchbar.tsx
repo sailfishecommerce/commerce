@@ -34,16 +34,16 @@ function SearchBarComponent() {
     <>
       <AlgoliaInstantSearch>
         <Configure clickAnalytics distinct enablePersonalization />
-        <div className="searchBox relative">
+        <div className="searchBox relative w-5/12">
           <div className={inputContainerClassName}>
             <SearchBox
               translations={{
                 placeholder: "Search for over 10,000 products...",
               }}
+              className="mx-auto"
               autoFocus={false}
               showLoadingIndicator
               onChange={showSearchResult}
-              className=""
             />
           </div>
           {searching && <SearchbarHits />}
@@ -54,7 +54,6 @@ function SearchBarComponent() {
           .searchBox {
             display: flex;
             flex-direction: column;
-            width: 55%;
             position: relative;
           }
           @media (max-width: 768px) {
