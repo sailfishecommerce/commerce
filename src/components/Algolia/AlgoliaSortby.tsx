@@ -1,4 +1,5 @@
-import Dropdown, { DropdownItem } from "@/components/Dropdown";
+import Dropdown from "@/components/Dropdown";
+import DropdownItem from "@/components/Dropdown/DropdownItem";
 
 import { connectSortBy } from "react-instantsearch-dom";
 
