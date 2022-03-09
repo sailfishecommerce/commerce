@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Logo() {
+interface Props {
+  className: string;
+}
+
+export default function Logo({ className }) {
   return (
     <Link href="/" passHref>
-      <a className="xl:w-1/6 w-1/2 lg:w-1/4">
+      <a className={`${className} xl:w-1/6 lg:w-1/4`}>
         <Image
           src="/logo.webp"
           alt="Bandicoot"

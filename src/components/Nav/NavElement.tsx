@@ -16,13 +16,11 @@ interface AuthorizedViewProps {
 
 export function NavToggler() {
   return (
-    <>
-      <a className="navbar-tool navbar-stuck-toggler ms-5" href="#">
-        <Tooltip text="Expand menu">
-          <AiOutlineMenu className="text-2xl" />
-        </Tooltip>
-      </a>
-    </>
+    <button>
+      <Tooltip text="Expand menu">
+        <AiOutlineMenu className="text-2xl hover:text-red-500" />
+      </Tooltip>
+    </button>
   );
 }
 
@@ -30,30 +28,15 @@ export function NotAuthorizedView({
   toggleAuthModalHandler,
 }: AuthorizedViewProps) {
   return (
-    <>
-      <a
-        className="flex items-center mx-4"
-        href="#"
-        onClick={toggleAuthModalHandler}
-      >
-        <AiOutlineUser fontSize={24} className="mr-2" />
-        <Tooltip text="Sign-in / Sign-up ">
-          <div className="navbar-tool-text w-full flex flex-col me-2 items-start">
-            <span className="text-xs">Hello, Sign in</span>
-            <h6 className="text-lg">My Account</h6>
-          </div>
-        </Tooltip>
-      </a>
-      <style jsx>
-        {`
-          .navbar-tool-text {
-            display: flex;
-            align-items: center;
-            padding-left: 0px;
-          }
-        `}
-      </style>
-    </>
+    <div className="flex items-center" onClick={toggleAuthModalHandler}>
+      <AiOutlineUser fontSize={24} />
+      <Tooltip text="Sign-in / Sign-up ">
+        <div className="w-full flex flex-col items-start">
+          <span className="text-xs">Hello, Sign in</span>
+          <h6 className="text-lg">My Account</h6>
+        </div>
+      </Tooltip>
+    </div>
   );
 }
 
@@ -70,10 +53,10 @@ export function AuthorizedView({
   userDetail,
 }: authorizedViewProps) {
   return (
-    <div className="flex items-center ms-5 me-0">
+    <div className="flex items-center">
       <AiOutlineUser />
       <div className="text flex flex-col">
-        <a className="cursor-pointer ms-1 me-n1 me-lg-2">
+        <div className="cursor-pointer">
           <span className="navbar-tool-tooltip">
             Welcome {userDetail.firstName}
           </span>
@@ -85,21 +68,12 @@ export function AuthorizedView({
               </span>
             </div>
           </div>
-        </a>
-        <a
-          onClick={userLogout}
-          href="#"
-          className="logout-user cursor-pointer ms-1 me-n1 me-lg-2"
-        >
+        </div>
+        <div onClick={userLogout} className="logout-user cursor-pointer">
           <span className="mx-1">Logout</span>
-          <p className="logout mb-0 fs-xs">Logout</p>
-        </a>
+          <p className="logout mb-0 hover:text-red-500">Logout</p>
+        </div>
       </div>
-      <style jsx>{`
-        .logout-user p:hover {
-          color: red;
-        }
-      `}</style>
     </div>
   );
 }
