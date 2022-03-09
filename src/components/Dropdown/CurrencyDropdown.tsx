@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { memo } from "react";
 
-import Dropdown, { DropdownItem } from "@/components/Dropdown";
+import Dropdown from "@/components/Dropdown";
+import DropdownItem from "@/components/Dropdown/DropdownItem";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { updateCurrency } from "@/redux/currency-language-slice";
 import useCurrency, { useCurrencies } from "@/hooks/useCurrency";
