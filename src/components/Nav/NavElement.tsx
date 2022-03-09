@@ -101,14 +101,8 @@ export function NavbarDropdown({
     setDropdownStatus(!dropdownStatus);
   }
   return (
-    <div
-      onClick={onClickHandler}
-      className="relative bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center"
-    >
-      <div
-        onClick={toggleSlideCartMobile}
-        className="flex price-overview flex-col"
-      >
+    <div className="relative bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center">
+      <div onClick={onClickHandler} className="flex price-overview flex-col">
         <span className="text-xs md:text-md text-center font-bold">
           My Cart
         </span>
@@ -130,8 +124,11 @@ export function NavbarDropdown({
         )}
       </div>
       {dropdownStatus && cart?.items.length > 0 && (
-        <div className="absolute -bottom-60 flex items-center justify-center w-full bg-white shadow-lg z-10">
-          <HeaderCartDropdown cart={cart} className="bg-white shadow-lg px-4 rounded-md" />
+        <div className="absolute top-20 flex items-center justify-center w-full bg-white shadow-lg z-10">
+          <HeaderCartDropdown
+            cart={cart}
+            className="bg-white shadow-lg px-4 rounded-md "
+          />
         </div>
       )}
     </div>

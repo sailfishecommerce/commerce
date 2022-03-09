@@ -17,14 +17,14 @@ export default function CartWidget({ cart }: CartWidgetProps) {
   const removeItemFromCart = () => removeCartItem.mutate(cart);
 
   return (
-    <div className="widget-cart-item py-2 border-b-4">
+    <div className="widget-cart-item py-2 border-b-2 relative">
       <button
-        className="btn-close text-danger"
+        className="hover:bg-red-500 flex  justify-center items-center hover:text-white p-1 w-6 h-6 m-auto rounded-full border-2 border-red-500 absolute z-40 right-0 top-10"
         type="button"
         onClick={removeItemFromCart}
         aria-label="remove"
       >
-        <span>&times;</span>
+        <span className="text-3xl -mt-1 leading-none">&times;</span>
       </button>
       <div className="flex items-center">
         <Link href={`/products/${cart.product.slug}`} passHref>
@@ -38,22 +38,35 @@ export default function CartWidget({ cart }: CartWidgetProps) {
           </a>
         </Link>
         <div className="px-2 hover:text-red-500">
-          <h6 className="widget-product-title">
+          <h6 className="widget-product-title w-44 text-sm">
             <Link href={`/products/${cart.product.slug}`} passHref>
-              <a>{cart.product.name}</a>
+              <a className="w-full">{cart.product.name}</a>
             </Link>
           </h6>
-          <div className="widget-product-meta flex align-items-baseline">
-            <span className="text-accent me-2">
-              <FormattedPrice price={cart?.price} />
+          <div className="flex items-center">
+            <span className="text-red-500 font-bold text-sm">
+              <FormattedPrice price={cart?.price} className="lg:text-sm" />
             </span>
             <div className="items-center flex mx-1">
-              <span className="items-center flex mx-1">X</span>
-              <span>{cart.quantity}</span>
+              <span className="items-center flex mx-1 text-2xl my-0">
+                &times;
+              </span>
+              <span className="text-md">{cart.quantity}</span>
             </div>
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+          h6.widget-product-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          h6.widget-product-title a {
+            white-space: nowrap;
+          }
+        `}
+      </style>
     </div>
   );
 }
