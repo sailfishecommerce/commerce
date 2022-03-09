@@ -28,8 +28,11 @@ export function NotAuthorizedView({
   toggleAuthModalHandler,
 }: AuthorizedViewProps) {
   return (
-    <div className="flex items-center" onClick={toggleAuthModalHandler}>
-      <AiOutlineUser fontSize={24} />
+    <div
+      className="flex items-center hover:text-red-500"
+      onClick={toggleAuthModalHandler}
+    >
+      <AiOutlineUser fontSize={24} className="mx-2" />
       <Tooltip text="Sign-in / Sign-up ">
         <div className="w-full flex flex-col items-start">
           <span className="text-xs">Hello, Sign in</span>
@@ -100,7 +103,7 @@ export function NavbarDropdown({
   return (
     <div
       onClick={onClickHandler}
-      className="bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center"
+      className="relative bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center"
     >
       <div
         onClick={toggleSlideCartMobile}
@@ -111,7 +114,7 @@ export function NavbarDropdown({
         </span>
         {cart?.grandTotal ? (
           <a className="flex items-center">
-            <div className="cart-icon relative flex flex-col">
+            <div className="cart-icon relative flex flex-col mr-2">
               <span className="absolute top-0 right-0 -mt-2 text-white justify-center bg-red-500 rounded-full h-4 w-4 flex items-center">
                 {cart?.items?.length}
               </span>
@@ -127,7 +130,9 @@ export function NavbarDropdown({
         )}
       </div>
       {dropdownStatus && cart?.items.length > 0 && (
-        <HeaderCartDropdown cart={cart} />
+        <div className="absolute -bottom-60 flex items-center justify-center w-full bg-white shadow-lg z-10">
+          <HeaderCartDropdown cart={cart} className="bg-white shadow-lg px-4 rounded-md" />
+        </div>
       )}
     </div>
   );

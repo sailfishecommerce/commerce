@@ -8,14 +8,15 @@ import useAirwallexPayment from "@/hooks/useAirwallexPayment";
 
 interface Props {
   cart: cartType;
+  className?: string;
 }
 
-export default function CartDropdown({ cart }: Props) {
+export default function CartDropdown({ cart, className }: Props) {
   const { toggleCart } = useCart();
   const { disableBtn } = useAirwallexPayment();
 
   return (
-    <div className="dropdown-menu dropdown-menu-end">
+    <div className={className}>
       <div className="widget widget-cart px-3 pt-2 pb-3">
         <div className="product-group flex flex-col">
           {cart?.items.map((item: cartType, index: number) => (

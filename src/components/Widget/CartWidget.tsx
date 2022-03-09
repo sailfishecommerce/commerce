@@ -14,13 +14,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
 
   loadingState(removeCartItem, `${cart.product.name} removed`);
 
-  function removeItemFromCart() {
-    removeCartItem.mutate(cart);
-    // removeVboutCartItem({
-    //   cartId: cart.id,
-    //   productId: cart.productId,
-    // });
-  }
+  const removeItemFromCart = () => removeCartItem.mutate(cart);
 
   return (
     <div className="widget-cart-item py-2 border-b-4">
@@ -43,7 +37,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
             />
           </a>
         </Link>
-        <div className="ps-2">
+        <div className="px-2 hover:text-red-500">
           <h6 className="widget-product-title">
             <Link href={`/products/${cart.product.slug}`} passHref>
               <a>{cart.product.name}</a>
@@ -53,7 +47,10 @@ export default function CartWidget({ cart }: CartWidgetProps) {
             <span className="text-accent me-2">
               <FormattedPrice price={cart?.price} />
             </span>
-            <span className="text-muted">x {cart.quantity}</span>
+            <div className="items-center flex mx-1">
+              <span className="items-center flex mx-1">X</span>
+              <span>{cart.quantity}</span>
+            </div>
           </div>
         </div>
       </div>
