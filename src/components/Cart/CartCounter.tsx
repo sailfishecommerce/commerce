@@ -113,7 +113,7 @@ export function CartCounter({ counterType }: any) {
           type="submit"
           aria-label="Add to Cart"
         >
-          <i className="ci-cart fs-lg me-2"></i>
+          <i className="ci-cart fs-lg mx-2"></i>
           Add to Cart
         </button>
       </div>

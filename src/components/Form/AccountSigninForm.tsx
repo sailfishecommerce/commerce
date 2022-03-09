@@ -15,7 +15,7 @@ export default function AccountSigninForm() {
         <div className="card-body">
           <h2 className="h4 mb-1">Sign in</h2>
           <div className="py-3">
-            <h3 className="d-inline-block align-middle fs-base fw-medium mb-2 me-2">
+            <h3 className="d-inline-block align-middle fs-base fw-medium mb-2 mx-2">
               With social account:
             </h3>
             <FooterBottomSocials />
@@ -65,7 +65,7 @@ export default function AccountSigninForm() {
                     className="btn btn-primary"
                     type="submit"
                   >
-                    <i className="ci-sign-in me-2 ms-n21"></i>
+                    <i className="ci-sign-in mx-2 ms-n21"></i>
                     Sign In
                   </button>
                 </div>

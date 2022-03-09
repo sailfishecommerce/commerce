@@ -6,7 +6,7 @@ export default function PaymentWithStripe() {
     <div className="accordion-item">
       <h3 className="accordion-header">
         <a className="accordion-button" href="#card" data-bs-toggle="collapse">
-          <i className="ci-card fs-lg me-2 mt-n1 align-middle"></i>
+          <i className="ci-card fs-lg mx-2 mt-n1 align-middle"></i>
           Pay with Credit Card (powered by Stripe)
         </a>
       </h3>

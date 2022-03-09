@@ -23,7 +23,7 @@ export default function ProductdetailsView({ product }: any) {
         </div>
         <div className="price-group mb-2 flex justify-between items-center">
           <div className="flex price items-center">
-            <div className="text-accent me-2 fs-lg">
+            <div className="text-accent mx-2 fs-lg">
               <FormattedPrice price={productToView.price} isProduct />
             </div>
             {product.rrp && (

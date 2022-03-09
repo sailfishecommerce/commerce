@@ -25,7 +25,7 @@ export default function ShopBannerToolbar() {
       />
       <div className="flex pb-3">
         <span
-          className={`rounded-lg mx-2 bg-white p-2 hover:bg-red-500 hover:text-white ${gridStyle} me-2 cursor-pointer`}
+          className={`rounded-lg mx-2 bg-white p-2 hover:bg-red-500 hover:text-white ${gridStyle} mx-2 cursor-pointer`}
           onClick={() => updateView("grid")}
         >
           <IoGridOutline />

@@ -35,7 +35,7 @@ export default function BankTransferPaymentMethod() {
           href="#points"
           data-bs-toggle="collapse"
         >
-          <i className="ci-gift me-2"></i>
+          <i className="ci-gift mx-2"></i>
           Bank Transfer
         </a>
       </h3>

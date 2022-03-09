@@ -63,7 +63,7 @@ export default function ProductListForm({ product }: ProductProps) {
           ) : option?.name === "Size" ? (
             <div key={option.id} className="flex mb-2">
               <select
-                className="form-select select-size form-select-sm me-2"
+                className="form-select select-size form-select-sm mx-2"
                 onChange={optionHandler}
                 name="Size"
                 required

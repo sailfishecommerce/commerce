@@ -22,7 +22,7 @@ export default function ShippingCheckoutForm(): JSX.Element {
           href="#form1"
           data-bs-toggle="collapse"
         >
-          <span className="badge-custom me-2">1</span>
+          <span className="badge-custom mx-2">1</span>
           Shipping address
         </a>
       </h2>

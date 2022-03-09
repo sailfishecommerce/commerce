@@ -40,7 +40,7 @@ export default function DashboardSidebar() {
             data-bs-toggle="collapse"
             aria-expanded="false"
           >
-            <i className="ci-menu me-2"></i>Account menu
+            <i className="ci-menu mx-2"></i>Account menu
           </a>
         </div>
         <div className="d-lg-block collapse" id="account-menu">
@@ -54,7 +54,7 @@ export default function DashboardSidebar() {
                   <li key={content.name} className="border-b-4 mb-0">
                     <Link href={content.link} passHref>
                       <a className="nav-link-style flex items-center px-4 py-3">
-                        <i className={` ${content.icon} opacity-60 me-2`}></i>
+                        <i className={` ${content.icon} opacity-60 mx-2`}></i>
                         {content.name}
                         <span className="fs-sm text-muted ms-auto">
                           {content?.count}

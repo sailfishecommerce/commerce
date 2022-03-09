@@ -1,4 +1,4 @@
-import  AirwallexDropin  from "@/components/Airwallex/AirwallexDropin";
+import AirwallexDropin from "@/components/Airwallex/AirwallexDropin";
 import { useCart } from "@/hooks";
 import useAirwallexPayment from "@/hooks/useAirwallexPayment";
 import { useAppSelector } from "@/hooks/useRedux";
@@ -25,7 +25,7 @@ export default function AirwallexPaymentMethod() {
           href="#paypal"
           data-bs-toggle="collapse"
         >
-          <i className="ci-paypal me-2 align-middle"></i>
+          <i className="ci-paypal mx-2 align-middle"></i>
           Pay with Airwallex
         </a>
       </h3>

@@ -36,7 +36,7 @@ export default function AccountPasswordRecovery() {
             <ol className="list-unstyled fs-md">
               {passwordResetForm.listView.map((list, index) => (
                 <li key={index}>
-                  <span className="text-primary me-2">{list.count}.</span>
+                  <span className="text-primary mx-2">{list.count}.</span>
                   {list.text}
                 </li>
               ))}

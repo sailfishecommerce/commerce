@@ -29,7 +29,7 @@ function OrderSummaryItem({ item }: any) {
           </Link>
         </h6>
         <div className="widget-product-meta flex align-items-baseline">
-          <span className="text-accent me-2">
+          <span className="text-accent mx-2">
             <FormattedPrice price={item.price} />
           </span>
           <span className="text-muted">x {item.quantity}</span>
@@ -43,9 +43,9 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
   const { loading, couponInputHandler, onSubmitCoupon } = useCoupon();
 
   return (
-    <aside className="w-1/3 pt-4 lg:pt-0 xl:px-5">
-      <div className="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
-        <div className="py-2 px-xl-2">
+    <aside className="w-1/3 -mt-32 pt-4 lg:pt-0 xl:px-5">
+      <div className="bg-white rounded-md shadow-lg p-4">
+        <div className="py-2 xl:px-2">
           <div className="widget mb-3">
             <h2 className="widget-title text-center">Order summary</h2>
             <div className="products-list flex flex-col">
@@ -61,25 +61,25 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
           {cart && (
             <ul className="list-unstyled fs-sm pb-2 border-b-4">
               <li className="flex justify-between items-center">
-                <span className="me-2">Subtotal:</span>
+                <span className="mx-2">Subtotal:</span>
                 <span className="text-end">
                   <FormattedPrice price={cart.subTotal} />
                 </span>
               </li>
               <li className="flex justify-between items-center">
-                <span className="me-2">Shipping:</span>
+                <span className="mx-2">Shipping:</span>
                 <span className="text-end">
                   <FormattedPrice price={cart.shipmentTotal} />
                 </span>
               </li>
               <li className="flex justify-between items-center">
-                <span className="me-2">Taxes:</span>
+                <span className="mx-2">Taxes:</span>
                 <span className="text-end">
                   <FormattedPrice price={cart.taxTotal} />
                 </span>
               </li>
               <li className="flex justify-between items-center">
-                <span className="me-2">Discount:</span>
+                <span className="mx-2">Discount:</span>
                 <span className="text-end">
                   <FormattedPrice price={cart.discountTotal} />
                 </span>

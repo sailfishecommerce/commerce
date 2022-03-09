@@ -19,10 +19,10 @@ export default function Checkout() {
     <Applayout title="Checkout your order">
       <ProductBanner breadcrumb="Checkout" />
       <div className="container checkout-page-content flex mx-auto">
-        <section className="w-2/3 flex flex-col">
+        <div className="w-2/3 flex flex-col bg-white -mt-32">
           <CheckoutWelcomeBanner />
           <CheckoutForm />
-        </section>
+        </div>
         {cart ? (
           <CheckoutSidebar cart={cart} />
         ) : (

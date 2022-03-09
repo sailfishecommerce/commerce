@@ -46,7 +46,7 @@ export default function AccountSignupForm() {
                 className="btn btn-primary"
                 type="submit"
               >
-                <i className="ci-user me-2 ms-n1"></i>
+                <i className="ci-user mx-2 ms-n1"></i>
                 Sign Up
               </button>
             </div>

@@ -42,7 +42,7 @@ export function PopularTags() {
     <div className="widget pb-grid-gutter mx-lg-2">
       <h3 className="widget-title">Popular tags</h3>
       {blogContentData.popularTags.map((tag) => (
-        <a key={tag} className="btn-tag me-2 mb-2" href="#">
+        <a key={tag} className="btn-tag mx-2 mb-2" href="#">
           #{tag}
         </a>
       ))}

@@ -16,7 +16,7 @@ export default function OrderTracking() {
           {contentData.group1.map((content) => (
             <div key={content.title} className="col-md-4 mb-2">
               <div className="bg-secondary h-100 p-4 text-center rounded-3">
-                <span className="fw-medium text-dark me-2">
+                <span className="fw-medium text-dark mx-2">
                   {content.title}:
                 </span>
                 {content.text}

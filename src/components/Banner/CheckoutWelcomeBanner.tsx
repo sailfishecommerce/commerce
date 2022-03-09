@@ -7,7 +7,7 @@ export default function CheckoutWelcomeBanner() {
   const { data: userDetails, status } = useQuery("userdetails", getUserAccount);
 
   return (
-    <div className="mt-5 d-sm-flex justify-between items-center bg-secondary p-4 rounded-3 mb-grid-gutter">
+    <div className="mt-5 flex justify-between items-center bg-gray-100 p-4 rounded-md mb-4">
       {status === "error" ? (
         "unable to fetch user data"
       ) : status === "loading" ? (
@@ -16,8 +16,9 @@ export default function CheckoutWelcomeBanner() {
         <div className="flex items-center">
           {userDetails !== null ? (
             <span className="font-bold ">
-              Hello <span className="text-accent">{userDetails.firstName}</span>
-              , Thanks for choosing Sailfish.
+              Hello{" "}
+              <span className="text-blue-500">{userDetails.firstName}</span>,
+              Thanks for choosing Sailfish.
             </span>
           ) : (
             <span className="guest font-bold text-decoration-underline">

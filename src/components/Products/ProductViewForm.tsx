@@ -90,7 +90,7 @@ function ProductViewFormComonent({
                 <select
                   onChange={optionHandler}
                   name="Size"
-                  className="form-select form-select-sm me-2 mb-2"
+                  className="form-select form-select-sm mx-2 mb-2"
                   required
                 >
                   <option value="">Select Size</option>

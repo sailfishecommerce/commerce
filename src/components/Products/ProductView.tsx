@@ -20,8 +20,8 @@ export function PaymentNote() {
         alt="we are accept visa, mastercard cards and bank transfers"
       />
       <div className="secured-by flex items-center mt-2">
-        <i className="fas fa-lock me-2"></i>
-        <p className="text-muted me-2 mb-0">
+        <i className="fas fa-lock mx-2"></i>
+        <p className="text-muted mx-2 mb-0">
           Transactions secured by Stripe & Airwallex
         </p>
       </div>

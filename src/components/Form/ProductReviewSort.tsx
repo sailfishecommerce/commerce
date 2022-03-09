@@ -6,7 +6,7 @@ export default function ProductReviewSort() {
       <h2 className="h3 mb-4"> Reviews</h2>
       <div className="flex items-center flex-nowrap">
         <label
-          className="fs-sm text-muted text-nowrap me-2 d-none d-sm-block"
+          className="fs-sm text-muted text-nowrap mx-2 d-none d-sm-block"
           htmlFor="sort-reviews"
         >
           Sort by:

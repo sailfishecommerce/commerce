@@ -28,7 +28,7 @@ export default function CheckoutPaymentMethod() {
           onClick={paymentHandler}
           data-bs-toggle="collapse"
         >
-          <span className="badge-custom me-2">2</span>
+          <span className="badge-custom mx-2">2</span>
           Choose payment method
         </a>
       </h2>

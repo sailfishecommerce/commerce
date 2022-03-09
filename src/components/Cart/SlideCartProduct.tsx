@@ -19,7 +19,7 @@ export default function SlideCartProduct({
   loadingState(removeCartItem, `${item.product.name} removed from cart`);
 
   function removeItemFromCart() {
-    removeCartItem.mutate(item);   
+    removeCartItem.mutate(item);
   }
 
   return (
@@ -58,12 +58,12 @@ export default function SlideCartProduct({
             </div>
             <div className="flex items-center my-2">
               <div className="widget-product-meta flex items-center">
-                <span className="text-accent me-2">
+                <span className="text-accent mx-2">
                   <FormattedPrice price={item.price} />
                 </span>
                 <span className="text-muted">x {item.quantity}</span>
                 <span className="mx-1">= </span>
-                <span className="text-accent me-2">
+                <span className="text-accent mx-2">
                   <FormattedPrice price={item.priceTotal} />
                 </span>
               </div>

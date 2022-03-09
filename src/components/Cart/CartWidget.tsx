@@ -50,7 +50,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
             </Link>
           </h6>
           <div className="widget-product-meta flex align-items-baseline">
-            <span className="text-accent me-2">
+            <span className="text-accent mx-2">
               <FormattedPrice price={cart?.price} />
             </span>
             <span className="text-muted">x {cart.quantity}</span>

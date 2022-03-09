@@ -31,17 +31,17 @@ export default function WishlistItem({ content }: Props) {
           </h3>
           {content.brand && (
             <div className="fs-sm">
-              <span className="text-muted me-2">Brand:</span>
+              <span className="text-muted mx-2">Brand:</span>
               {content.brand}
             </div>
           )}
           <div className="fs-sm">
-            <span className="text-muted me-2">Color:</span>
+            <span className="text-muted mx-2">Color:</span>
             {content?.color}
           </div>
           {content.size && (
             <div className="fs-sm">
-              <span className="text-muted me-2">Size:</span>
+              <span className="text-muted mx-2">Size:</span>
               {content.size}
             </div>
           )}
@@ -54,7 +54,7 @@ export default function WishlistItem({ content }: Props) {
           className="btn btn-outline-danger btn-sm"
           type="button"
         >
-          <i className="ci-trash me-2"></i>Remove
+          <i className="ci-trash mx-2"></i>Remove
         </button>
       </div>
       <style jsx>

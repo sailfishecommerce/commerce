@@ -54,7 +54,7 @@ export default function AccountWishlist() {
               </h6>
               <Link href="/account-signin" passHref>
                 <a className="btn btn-primary btn-sm">
-                  <i className="ci-sign-out me-2"></i>Sign out
+                  <i className="ci-sign-out mx-2"></i>Sign out
                 </a>
               </Link>
             </div>
