@@ -76,8 +76,11 @@ module.exports = withBundleAnalyzer({
               "'unsafe-eval'",
               "'nonce-QRTYPCVBFGXZ'",
               "https://en.trustmate.io",
+              "https://js.stripe.com/v3/",
               "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",
               "'sha256-FohP1sOiMQlzLevJvZ2zFcokm2ikklyNloIpwT8uKqU='",
+              "https://checkout-demo.airwallex.com/assets/elements.bundle.min.js",
+              "https://maps.googleapis.com/maps/api/js?key=AIzaSyAeRHBl4lGET6wuGDXwW-EGnOhsof8xGr8&libraries=places",
             ],
             "img-src": [
               "'self'",

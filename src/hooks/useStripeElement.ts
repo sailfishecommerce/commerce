@@ -7,7 +7,7 @@ export default function useStripeElement() {
 
   async function createStripeElement() {
     const { swell } = await swellInit();
-    swell.payment.createElements({
+    return swell.payment.createElements({
       card: {
         elementId: "#card-element-id",
         options: {

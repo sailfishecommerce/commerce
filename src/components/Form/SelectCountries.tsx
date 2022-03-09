@@ -43,14 +43,14 @@ export default function SelectCountries({
   }
 
   return (
-    <div className="flex flex-col w-full mb-2 ml-1">
+    <div className="flex flex-col w-full mb-2 ml-1 pr-3">
       <label className="text-md mb-1" htmlFor="checkout-country">
         {content.label}
       </label>
       <select
         className="form-select appearance-none
         block
-        w-96
+        w-full
         px-3
         py-1.5
         text-base

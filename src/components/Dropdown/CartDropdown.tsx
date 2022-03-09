@@ -21,7 +21,7 @@ export default function CartDropdown({ cart, className }: Props) {
       <div className="widget widget-cart px-3 pt-2 pb-3">
         <div className="product-group flex flex-col">
           {cart?.items.map((item: cartType, index: number) => (
-            <CartWidget key={`item.productId-${index}`} cart={item} />
+            <CartWidget className="w-44" key={`${item.productId}-${index}`} cart={item} />
           ))}
         </div>
         <div className="flex justify-between items-center px-0 py-3">

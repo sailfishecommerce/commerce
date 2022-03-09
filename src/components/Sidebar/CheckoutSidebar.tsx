@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
+import CartWidget from "@/components/Widget/CartWidget";
 import { Button } from "@/components/UIElement";
 import FormattedPrice from "@/lib/formatPrice";
 import { cartType, itemType } from "@/types";
@@ -12,7 +13,7 @@ interface CheckoutSidebarProps {
 
 function OrderSummaryItem({ item }: any) {
   return (
-    <div className="flex items-center py-2 border-b-4">
+    <div className="flex items-center py-2 border-b">
       <Link href={`/products/${item.product.slug}`} passHref>
         <a className="d-block flex-shrink-0">
           <img
@@ -47,19 +48,20 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
       <div className="bg-white rounded-lg shadow-lg p-4">
         <div className="py-2 xl:px-2">
           <div className="widget mb-3">
-            <h2 className="widget-title text-center">Order summary</h2>
+            <h2 className="text-xl font-bold text-center">Order summary</h2>
             <div className="products-list flex flex-col">
               {cart &&
-                cart.items.map((item: itemType, index: number) => (
-                  <OrderSummaryItem
-                    key={`${item.productId}-${index}}`}
-                    item={item}
+                cart.items.map((item, index: number) => (
+                  <CartWidget
+                    className="w-52"
+                    key={`${item.productId}-${index}`}
+                    cart={item}
                   />
                 ))}
             </div>
           </div>
           {cart && (
-            <ul className="list-unstyled fs-sm pb-2 border-b-4">
+            <ul className="list-unstyled fs-sm pb-2 border-b">
               <li className="flex justify-between items-center">
                 <span className="mx-2">Subtotal:</span>
                 <span className="text-end">
@@ -87,23 +89,26 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
             </ul>
           )}
           {cart && (
-            <h3 className="fw-normal text-center my-4">
-              <FormattedPrice price={cart.grandTotal} />
-            </h3>
+            <div className="total text-md font-bold text-xl flex items-center my-4 justify-between">
+              <h3>Total</h3>
+              <h3>
+                <FormattedPrice price={cart.grandTotal} />
+              </h3>
+            </div>
           )}
           <form onSubmit={onSubmitCoupon} className="needs-validation">
             <div className="mb-3">
               <input
-                className="form-control"
+                className="border rounded w-full border-gray-200 px-2 rounded-md h-10 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
                 type="text"
                 onChange={couponInputHandler}
                 placeholder="Promo code"
                 required
               />
-              <div className="invalid-feedback">Please provide promo code.</div>
+              <div className="text-red-500">Please provide promo code.</div>
             </div>
             <Button
-              className="btn btn-outline-primary d-block w-100"
+              className="border w-1/2 border-red-500 hover:bg-red-500 hover:text-white p-2 flex mx-auto rounded-lg"
               loading={loading}
               disable={loading}
               text="Apply promo code"

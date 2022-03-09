@@ -22,9 +22,7 @@ function PaymentInput({ inputRef }: PaymentInputType): JSX.Element {
 export default function StripePaymentMethod() {
   const { createStripeElement } = useStripeElement();
 
-  useEffect(() => {
-    createStripeElement();
-  }, []);
+  createStripeElement();
 
   const { paymentForm }: any = useAppSelector((state) => state.payment);
   const inputRef = useRef(null);
@@ -36,7 +34,7 @@ export default function StripePaymentMethod() {
   }
 
   return (
-    <div className="row px-0 flex flex-col">
+    <div className="px-0 flex flex-col">
       <div className="flex mx-auto justify-center">
         {inputRef === null && <SpinnerRipple />}
       </div>

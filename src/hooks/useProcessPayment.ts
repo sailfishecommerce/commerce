@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import { useAppDispatch } from "@/redux/store";
 import { useRouter } from "next/router";
@@ -11,7 +10,6 @@ import { updateCart } from "@/redux/cart-slice";
 import { createVboutOrder } from "@/hooks/useVbout";
 import useModal from "@/hooks/useModal";
 import { vboutOrderData } from "@/lib/vbout";
-import { useQuery } from "react-query";
 
 export default function useProcessPayment() {
   const router = useRouter();
@@ -19,22 +17,13 @@ export default function useProcessPayment() {
   const { getUserDetails } = useAuth();
   const { onShowModal } = useModal();
 
-  const { getACart, updateCartAccountID } = useSwellCart();
+  const { getACart } = useSwellCart();
   const { useCartData } = useCart();
   const { data: cart } = useCartData();
-  const {
-    updateUserBillingInfo,
-    createUserAddresstAtCheckout,
-    getUserAccount,
-  } = useAccount();
+  const { updateUserBillingInfo, createUserAddresstAtCheckout } = useAccount();
   const dispatch = useAppDispatch();
-  const { data: userDetail, status } = useQuery("userdetails", getUserAccount);
   const [loadingState, setLoadingState] = useState(false);
   const { isLoading, isSuccessful, hasError } = useToast();
-
-  console.log("cart-cart", cart);
-
-  console.log("userDetail-userDetail", userDetail);
 
   function processPayment(data: any, loading: any) {
     function vboutOrder(order: any) {
@@ -46,7 +35,7 @@ export default function useProcessPayment() {
         console.log("tokenPaymentResponse", tokenPaymentResponse);
         if (!tokenPaymentResponse?.code) {
           getACart()
-            .then((response) => {             
+            .then((response) => {
               console.log("response makePayment", response);
               updateUserBillingInfo(data, response.billing.card?.token)
                 .then((response) => {

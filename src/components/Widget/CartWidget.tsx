@@ -7,9 +7,10 @@ import { cartType } from "@/types";
 
 interface CartWidgetProps {
   cart: cartType;
+  className: string;
 }
 
-export default function CartWidget({ cart }: CartWidgetProps) {
+export default function CartWidget({ cart, className }: CartWidgetProps) {
   const { loadingState, removeCartItem } = useShoppingCart();
 
   loadingState(removeCartItem, `${cart.product.name} removed`);
@@ -38,7 +39,7 @@ export default function CartWidget({ cart }: CartWidgetProps) {
           </a>
         </Link>
         <div className="px-2 hover:text-red-500">
-          <h6 className="widget-product-title w-44 text-sm">
+          <h6 className={`widget-product-title ${className} text-sm`}>
             <Link href={`/products/${cart.product.slug}`} passHref>
               <a className="w-full">{cart.product.name}</a>
             </Link>
