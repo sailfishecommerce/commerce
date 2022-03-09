@@ -5,6 +5,7 @@ import { IoRocket } from "react-icons/io5";
 import { RiExchangeDollarLine } from "react-icons/ri";
 import { HiCreditCard } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { BsCart4 } from "react-icons/bs";
 
 interface Props {
   icon: string;
@@ -40,6 +41,8 @@ export default function Icons({ icon, className, size }: Props) {
       return <IoIosArrowBack size={size} className={className} />;
     case "arrow-next":
       return <IoIosArrowForward size={size} className={className} />;
+    case "cart":
+      return <BsCart4 size={size} className={className} />;
     default:
       return null;
   }

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
 import FormattedPrice from "@/lib/formatPrice";
+import Icons from "@/components/Icons";
 
 const HeaderCartDropdown = dynamic(
   () => import("@/components/Dropdown/CartDropdown")
@@ -112,7 +113,7 @@ export function NavbarDropdown({
               <span className="absolute top-0 right-0 -mt-2 text-white justify-center bg-red-500 rounded-full h-4 w-4 flex items-center">
                 {cart?.items?.length}
               </span>
-              <BsCart4 fontSize={26} className="mx-2 my-0" />
+              <Icons icon="cart" className="mx-2 my-0" size={26} />
             </div>
             <FormattedPrice
               className="font-bold w-full"

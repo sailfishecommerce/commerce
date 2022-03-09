@@ -5,6 +5,7 @@ import FormattedPrice from "@/lib/formatPrice";
 import { cartType } from "@/types";
 import CartWidget from "@/components/Widget/CartWidget";
 import useAirwallexPayment from "@/hooks/useAirwallexPayment";
+import Icons from "@/components/Icons";
 
 interface Props {
   cart: cartType;
@@ -23,25 +24,28 @@ export default function CartDropdown({ cart, className }: Props) {
             <CartWidget key={`item.productId-${index}`} cart={item} />
           ))}
         </div>
-        <div className="flex flex-wrap justify-between items-center py-3">
-          <div className="fs-sm me-2 py-2 align-items-baseline">
-            <span className="text-muted">Subtotal:</span>
-            <span className="text-accent fs-base ms-1">
-              <FormattedPrice price={cart?.subTotal} />
+        <div className="flex justify-between items-center px-0 py-3">
+          <div className="flex items-center">
+            <span className="mr-1 font-bold">Subtotal:</span>
+            <span className="font-bold text-red-500 text-md ms-1">
+              <FormattedPrice className="lg:text-sm" price={cart?.subTotal} />
             </span>
           </div>
-          <a onClick={toggleCart} className="btn btn-outline-secondary btn-sm">
+          <button
+            onClick={toggleCart}
+            className="text-sm hover:bg-red-500 flex items-center hover:text-white rounded-md px-1 py-1 border-red-500 border-2 text-red-500 font-bold"
+          >
             Expand cart
-            <i className="ci-arrow-right ms-1 me-n1"></i>
-          </a>
+            <Icons icon="arrow-next" className="ml-1" />
+          </button>
         </div>
         <Link href="/checkout" prefetch={false} passHref>
           <button
             disabled={disableBtn}
-            className="btn btn-primary btn-sm d-block w-100"
+            className="bg-red-500 items-center mx-auto flex rounded-md text-white px-2 py-1 text-sm hover:bg-transparent border-red-500 border-2 hover:text-red-400 font-bold"
           >
-            <i className="ci-card me-2 fs-base align-middle"></i>
             Checkout
+            <Icons icon="cart" className="ml-1" />
           </button>
         </Link>
       </div>
