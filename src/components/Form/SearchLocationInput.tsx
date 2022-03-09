@@ -6,7 +6,7 @@ import { useAppDispatch } from "@/redux/store";
 let autoComplete;
 
 const loadScript = (url, callback) => {
-  let script:any = document.createElement("script"); // create script tag
+  let script: any = document.createElement("script"); // create script tag
   script.type = "text/javascript";
 
   // when script state is ready and loaded or complete we will call callback
@@ -103,7 +103,7 @@ export default function SearchLocationInput({ formik }) {
   }
 
   return (
-    <div className="mb-3">
+    <div className="mb-1 flex flex-col">
       <label className="form-label" htmlFor="address1">
         Address 1 *
       </label>
@@ -113,7 +113,7 @@ export default function SearchLocationInput({ formik }) {
         placeholder="Address - Line 1"
         value={formik.values.address1}
         name="address1"
-        className="form-control"
+        className="border-2 border-gray-200 rounded-md h-10 px-4"
         autoComplete="true"
       />
       <p className="text-danger errorText">

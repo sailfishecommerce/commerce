@@ -47,9 +47,9 @@ export default function ShippingCheckoutForm(): JSX.Element {
                 <div>
                   {checkoutFormContent.personalDetails.content.map(
                     (formRow, index) => (
-                      <div key={index} className="row">
+                      <div key={index} className="flex flex-wrap">
                         {formRow.map((formInput, index) => (
-                          <div key={index} className="col-sm-6">
+                          <div key={index} className="w-1/2">
                             {displayFormElement(formInput, formik)}
                           </div>
                         ))}
@@ -62,7 +62,7 @@ export default function ShippingCheckoutForm(): JSX.Element {
                   aria-label="proceed with shipping"
                   type="submit"
                   disabled={formik.isSubmitting}
-                  className="btn btn-outline-primary flex mt-3 mb-2 mx-auto font-bold"
+                  className="flex border-2 border-red-500 hover:bg-red-500 text-red-500 hover:text-white rounded-md px-2 py-1 mx-auto font-bold"
                 >
                   Proceed
                 </button>

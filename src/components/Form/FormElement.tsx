@@ -8,6 +8,8 @@ const SearchLocationInput = dynamic(
   () => import("@/components/Form/SearchLocationInput")
 );
 
+const Select = dynamic(() => import("@/components/Form/Select"));
+
 type inputContentType = {
   name: string;
   label?: string;
@@ -18,24 +20,11 @@ type inputContentType = {
   withIcon?: boolean;
 };
 
-type selectInputType = {
-  name: string;
-  placeholder: string;
-  selectText: string;
-  type: string;
-  options: { value: string; name: string }[];
-};
-
 interface Props {
   content: inputContentType;
   formik: any;
   className?: string;
   withIcon?: string;
-}
-
-interface SelectProps {
-  content: selectInputType;
-  formik: any;
 }
 
 export function Input({ content, formik, className }: Props) {
@@ -46,15 +35,15 @@ export function Input({ content, formik, className }: Props) {
   const passwordInputType = showPassword ? "text" : "password";
   const inputClassName = className ? className : "mb-3";
   return (
-    <div className={inputClassName}>
+    <div className={`${inputClassName} mb-3 flex flex-col mx-2`}>
       {content.label && (
-        <label className="form-label" htmlFor={content.name}>
+        <label className="text-md mb-1" htmlFor={content.name}>
           {content.label}
         </label>
       )}
       {content.inputText !== "password" ? (
         <input
-          className="form-control"
+          className="border-2 border-gray-200 rounded-md h-10"
           type={content.inputText}
           id={content.id}
           name={content.name}
@@ -89,18 +78,11 @@ export function Input({ content, formik, className }: Props) {
           </label>
         </div>
       )}
-      <p className="text-danger error">
+      <p className="text-red-500 text-sm">
         {formik.errors[content.name] &&
           formik.touched[content.name] &&
           formik.errors[content.name]}
       </p>
-      <style jsx>
-        {`
-          .text-danger.error {
-            font-size: 12px;
-          }
-        `}
-      </style>
     </div>
   );
 }
@@ -109,61 +91,18 @@ export function TextArea({ content, formik }: Props) {
   return (
     <div className="textarea flex flex-col">
       <textarea
-        className="form-control"
+        className="border-2 border-gray-200 rounded-md"
         rows={5}
         onChange={formik.handleChange}
         name={content.name}
         value={formik.values[content.name]}
         placeholder={content.placeholder}
       ></textarea>
-      <p className="text-danger error">
+      <p className="text-red-500 text-sm">
         {formik.errors[content.name] &&
           formik.touched[content.name] &&
           formik.errors[content.name]}
       </p>
-      <style jsx>
-        {`
-          .text-danger.error {
-            font-size: 12px;
-          }
-        `}
-      </style>
-    </div>
-  );
-}
-
-export function Select({ content, formik }: SelectProps) {
-  return (
-    <div className="mb-3">
-      <label className="form-label" htmlFor="checkout-country">
-        {content.placeholder}
-      </label>
-      <select
-        onChange={formik.handleChange}
-        value={formik.values[content.name]}
-        name={content.name}
-        className="form-select"
-        id="checkout-country"
-      >
-        <option>Choose {content.selectText}</option>
-        {content?.options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.name}
-          </option>
-        ))}
-      </select>
-      <p className="text-danger error">
-        {formik.errors[content.name] &&
-          formik.touched[content.name] &&
-          formik.errors[content.name]}
-      </p>
-      <style jsx>
-        {`
-          .text-danger.error {
-            font-size: 12px;
-          }
-        `}
-      </style>
     </div>
   );
 }

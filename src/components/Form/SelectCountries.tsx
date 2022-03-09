@@ -43,12 +43,12 @@ export default function SelectCountries({
   }
 
   return (
-    <div className="mb-3">
-      <label className="form-label" htmlFor="checkout-country">
+    <div className="flex flex-col w-full mb-2 ml-1">
+      <label className="text-md mb-1" htmlFor="checkout-country">
         {content.label}
       </label>
       <select
-        className="form-select"
+        className="border-2 border-gray-200 rounded-md h-10 px-0 mr-4 text-md"
         id="checkout-country"
         name="country"
         onChange={selectHandler}

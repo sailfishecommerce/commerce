@@ -39,7 +39,7 @@ export default function CartDropdown({ cart, className }: Props) {
             <Icons icon="arrow-next" className="ml-1" />
           </button>
         </div>
-        <Link href="/checkout" prefetch={false} passHref>
+        <Link href="/checkout" passHref>
           <button
             disabled={disableBtn}
             className="bg-red-500 items-center w-4/5 cursor-pointer justify-center mx-auto flex rounded-md text-white px-2 py-1 text-sm hover:bg-transparent border-red-500 border-2 hover:text-red-400 font-bold"

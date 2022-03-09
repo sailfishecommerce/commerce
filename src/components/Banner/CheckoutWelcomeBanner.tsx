@@ -7,7 +7,7 @@ export default function CheckoutWelcomeBanner() {
   const { data: userDetails, status } = useQuery("userdetails", getUserAccount);
 
   return (
-    <div className="mt-5 flex justify-between items-center bg-gray-100 p-4 rounded-md mb-4">
+    <div className="flex justify-between items-center bg-gray-100 p-4 rounded-md mb-4">
       {status === "error" ? (
         "unable to fetch user data"
       ) : status === "loading" ? (

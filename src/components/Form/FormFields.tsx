@@ -36,9 +36,9 @@ export function TextArea({ formContent }: TextAreaProps) {
 
 export function Input({ formContent }: InputProps) {
   return (
-    <div className={formContent.className}>
+    <div className={`${formContent.className} flex flex-col`}>
       <input
-        className="form-control"
+        className="border-2 border-gray-200 rounded-md"
         type={formContent.type}
         placeholder={formContent.placeholder}
         required
@@ -61,20 +61,20 @@ export function AddressInputGroup({ formik }: Props): JSX.Element {
   return (
     <div>
       {checkoutFormInputs.map((formRow, index) => (
-        <div key={index} className="row">
+        <div key={index} className="flex flex-wrap">
           {formRow.map((formInput, index) => (
-            <div key={index} className="col-sm-6">
-              <div className="mb-3">
-                <label className="form-label" htmlFor={formInput.name}>
+            <div key={index} className="w-1/2">
+              <div className="mb-3 flex flex-col mx-2">
+                <label className="text-md mb-1" htmlFor={formInput.name}>
                   {formInput.label}
                 </label>
                 <input
                   value={formik.values[formInput.name]}
-                  className="form-control"
+                  className="border-2 border-gray-200 rounded-md h-10"
                   onChange={updateInput}
                   name={formInput.name}
                 />
-                <p className="text-danger text">
+                <p className="text-red-500">
                   {formik.errors[formInput.name] &&
                     formik.errors[formInput.name]}
                 </p>
@@ -82,14 +82,7 @@ export function AddressInputGroup({ formik }: Props): JSX.Element {
             </div>
           ))}
         </div>
-      ))}
-      <style jsx>
-        {`
-          .text {
-            font-size: 12px;
-          }
-        `}
-      </style>
+      ))}      
     </div>
   );
 }

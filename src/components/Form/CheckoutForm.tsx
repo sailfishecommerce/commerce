@@ -4,7 +4,7 @@ import ShippingCheckoutForm from "@/components/Form/ShippingCheckoutForm";
 
 function CheckoutFormComponent() {
   return (
-    <div className="accordion mb-3" id="shipping-form">
+    <div className="flex flex-col px-4" id="shipping-form">
       <ShippingCheckoutForm />
       <CheckoutPaymentMethod />
     </div>
