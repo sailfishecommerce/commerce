@@ -1,4 +1,5 @@
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import RatingStar from "@/components/Rating/RatingStar";
 
 export default function ProductPriceView({ product }: any) {

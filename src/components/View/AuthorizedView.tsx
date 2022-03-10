@@ -1,16 +1,4 @@
-import { AiOutlineUser, AiOutlineMenu } from "react-icons/ai";
-
-import Tooltip from "@/components/Tooltip";
-
-export function NavToggler() {
-  return (
-    <button>
-      <Tooltip text="Expand menu">
-        <AiOutlineMenu className="text-2xl hover:text-red-500" />
-      </Tooltip>
-    </button>
-  );
-}
+import { AiOutlineUser } from "react-icons/ai";
 
 interface authorizedViewProps {
   userLogout: () => void;

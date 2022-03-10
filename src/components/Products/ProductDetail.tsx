@@ -7,7 +7,8 @@ import {
   ShareProductLink,
 } from "@/components/Products/ProductView";
 import { productType } from "@/types";
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import Rating from "@/components/Rating";
 import ProductForm from "../Form/ProductForm";
 import { replaceSpaceWithHypen } from "@/lib/formatString";

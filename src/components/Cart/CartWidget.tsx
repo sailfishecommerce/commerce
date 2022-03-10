@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
 import Image from "@/components/Image";
 import useShoppingCart from "@/hooks/useShoppingCart";
 import { cartType } from "@/types";

@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import CartWidget from "@/components/Widget/CartWidget";
 import { Button } from "@/components/UIElement";
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import { cartType, itemType } from "@/types";
 import useCoupon from "@/hooks/useCoupon";
 

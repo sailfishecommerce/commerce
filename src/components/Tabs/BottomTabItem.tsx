@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cartType } from "@/types";
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
 
 interface Props {
   link?: string;
@@ -9,7 +9,7 @@ interface Props {
   cart?: cartType;
 }
 
-export function BottomTabCartItem({ cart, icon, title }) {
+function BottomTabCartItem({ cart, icon, title }) {
   return (
     <a className="relative flex flex-col justify-center w-1/4 items-center">
       <div className="cart flex relative w-1/3">
@@ -29,7 +29,7 @@ export function BottomTabCartItem({ cart, icon, title }) {
   );
 }
 
-export function BottomTabItemView({ icon, title }) {
+function BottomTabItemView({ icon, title }) {
   const bordered = title === "Menu" ? "border-x" : "";
   return (
     <a
@@ -42,6 +42,7 @@ export function BottomTabItemView({ icon, title }) {
 }
 
 export function BottomTabItem({ link, title, icon, cart }: Props) {
+  console.log("link",  link);
   return (
     <>
       {link ? (

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import RatingStar from "@/components/Rating/RatingStar";
 import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
 import useShoppingCart from "@/hooks/useShoppingCart";

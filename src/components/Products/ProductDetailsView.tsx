@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import Rating from "@/components/Rating";
 import ProductForm from "@/components/Form/ProductForm";
 import discountPrice from "@/lib/discountPrice";

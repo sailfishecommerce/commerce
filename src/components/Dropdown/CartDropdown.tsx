@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import useCart from "@/hooks/useCart";
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import { cartType } from "@/types";
 import CartWidget from "@/components/Widget/CartWidget";
 import useAirwallexPayment from "@/hooks/useAirwallexPayment";
@@ -21,7 +22,11 @@ export default function CartDropdown({ cart, className }: Props) {
       <div className="widget widget-cart px-3 pt-2 pb-3">
         <div className="product-group flex flex-col">
           {cart?.items.map((item: cartType, index: number) => (
-            <CartWidget className="w-44" key={`${item.productId}-${index}`} cart={item} />
+            <CartWidget
+              className="w-44"
+              key={`${item.productId}-${index}`}
+              cart={item}
+            />
           ))}
         </div>
         <div className="flex justify-between items-center px-0 py-3">

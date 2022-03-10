@@ -2,7 +2,8 @@
 import Link from "next/link";
 
 import { CartControl } from "@/components/Cart/CartElements";
-import FormattedPrice from "@/lib/formatPrice";
+import FormattedPrice from "@/components/Price/FormattedPrice";
+
 import { cartType } from "@/types";
 // import { removeVboutCartItem } from "@/hooks/useVbout";
 import useShoppingCart from "@/hooks/useShoppingCart";

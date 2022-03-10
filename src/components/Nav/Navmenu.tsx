@@ -1,15 +1,23 @@
-import { memo } from "react";
 import { useQuery } from "react-query";
+import dynamic from "next/dynamic";
+import { memo } from "react";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { toggleAuthModal, toggleSlideCart } from "@/redux/ui-slice";
 import { useAccount, useAuth, useMediaQuery, useCart } from "@/hooks";
-import {
-  AuthorizedView,
-  NavbarDropdown,
-  NavToggler,
-  NotAuthorizedView,
-} from "@/components/Nav/NavElement";
+import { NavToggler } from "@/components/Nav/NavElement";
+
+const NavbarDropdown = dynamic(
+  () => import("@/components/Dropdown/NavbarDropdown")
+);
+
+const AuthorizedView = dynamic(
+  () => import("@/components/View/AuthorizedView")
+);
+
+const NotAuthorizedView = dynamic(
+  () => import("@/components/View/NotAuthorizedView")
+);
 
 function NavMenuComponent() {
   const { useCartData } = useCart();
