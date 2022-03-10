@@ -15,6 +15,7 @@ module.exports = withBundleAnalyzer({
   optimization: {
     mergeDuplicateChunks: true,
   },
+  swcMinify: true,
   reactStrictMode: true,
   staticPageGenerationTimeout: 240,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
