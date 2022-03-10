@@ -1,54 +1,23 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-
+import { BsShop, BsCart4 } from "react-icons/bs";
+import { TiThMenu } from "react-icons/ti";
 import useCart from "@/hooks/useCart";
-import FormattedPrice from "@/lib/formatPrice";
+import { BottomTabItem } from "./BottomTabItem";
 
 export default function BottomTab() {
   const { useCartData } = useCart();
   const { data: cart } = useCartData();
 
   return (
-    <div className="handheld-toolbar">
-      <div className="d-table table-layout-fixed w-100">
-        <Link href="/shop" passHref>
-          <a className="d-table-cell handheld-toolbar-item">
-            <span className="handheld-toolbar-icon">
-              <i className="ci-store"></i>
-            </span>
-            <span className="handheld-toolbar-label">Shop</span>
-          </a>
-        </Link>
-        <a
-          className="d-table-cell handheld-toolbar-item"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="handheld-toolbar-icon">
-            <i className="ci-menu"></i>
-          </span>
-          <span className="handheld-toolbar-label">Menu</span>
-        </a>
-        <Link href="/checkout" passHref>
-          <a className="d-table-cell handheld-toolbar-item">
-            <span className="handheld-toolbar-icon">
-              <i className="ci-cart"></i>
-              {cart && (
-                <span className="badge bg-primary rounded-pill ms-1">
-                  {" "}
-                  {cart?.items?.length}
-                </span>
-              )}
-            </span>
-            {cart ? (
-              <span className="handheld-toolbar-label flex items-center m-auto justify-center">
-                <FormattedPrice price={cart?.subTotal} />
-              </span>
-            ) : (
-              <p className="handheld-toolbar-label">Cart</p>
-            )}
-          </a>
-        </Link>
+    <div className="mobile-bottom-menu fixed bottom-0 w-full py-3 px-2 bg-white z-40 border-gray-200 border-t">
+      <div className="flex items-center justify-around w-full">
+        <BottomTabItem link="/shop" title="Shop" icon={<BsShop />} />
+        <BottomTabItem title="Menu" icon={<TiThMenu />} />
+        <BottomTabItem
+          link="/checkout"
+          title="Cart"
+          icon={<BsCart4 />}
+          cart={cart}
+        />
       </div>
     </div>
   );

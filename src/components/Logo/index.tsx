@@ -8,7 +8,7 @@ interface Props {
 export default function Logo({ className }) {
   return (
     <Link href="/" passHref>
-      <a className={`${className} xl:w-1/6 lg:w-1/4`}>
+      <a className={`${className} xl:w-1/6 w-1/3`}>
         <Image
           src="/logo.webp"
           alt="Bandicoot"

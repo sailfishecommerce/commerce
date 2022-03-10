@@ -27,7 +27,7 @@ export default function Reward() {
           }
           @media (max-width: 768px) {
             .reward-widget {
-              bottom: 100px;
+              bottom: 120px;
               right: 0px;
             }
           }
