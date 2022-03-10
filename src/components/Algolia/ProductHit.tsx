@@ -22,7 +22,7 @@ export const HitProduct = connectHits(ProductHit);
 
 export function ProductHitList({ hits }: any) {
   return (
-    <div className="flex flex-col w-full ml-4">
+    <div className="flex flex-col w-full md:ml-4">
       {hits.length > 0 ? (
         hits.map((hit: any, index: number) => (
           <ProductList key={index} product={hit} />

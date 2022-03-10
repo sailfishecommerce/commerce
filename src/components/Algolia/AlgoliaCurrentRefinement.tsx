@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { updateDefaultRefinement } from "@/redux/algolia-slice";
-import { useEffect } from "react";
 import { connectCurrentRefinements } from "react-instantsearch-dom";
 
 const CustomCurrentRefinements = ({ items, refine, createURL }: any) => {

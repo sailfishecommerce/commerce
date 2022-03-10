@@ -12,7 +12,7 @@ const SortBy = ({ items, refine, createURL }: any) => {
 
   return (
     <Dropdown className="" dropdownText="Sort by">
-      Sort by
+      <span className="text-center font-bold flex justify-center">Sort by</span>
       {items.map((item: any) => {
         const dropdownClassName = item.isRefined ? "font-bold" : "fst-normal";
         return (

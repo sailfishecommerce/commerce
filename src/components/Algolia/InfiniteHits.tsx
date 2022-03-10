@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { connectInfiniteHits } from "react-instantsearch-dom";
+
 import { ProductHit, ProductHitList } from "@/components/Algolia/ProductHit";
 import { useAppSelector } from "@/hooks/useRedux";
 import { hitType } from "@/types";

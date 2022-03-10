@@ -35,9 +35,12 @@ export default function ProductList({ product }: ProductProps) {
       >
         <i className="ci-heart"></i>
       </button>
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row items-center">
         <Link href={`/products/${product.slug}`} passHref>
-          <a onClick={productViewedHandler} className="product-list-thumb">
+          <a
+            onClick={productViewedHandler}
+            className="product-list-thumb h-1/3 md:h-full"
+          >
             <Image
               height={300}
               width={300}

@@ -7,8 +7,10 @@ export default function ShopBannerToolbar() {
   const dispatch = useAppDispatch();
   const { productView } = useAppSelector((state) => state.shop);
 
-  const gridStyle = productView === "grid" ? "bg-light" : "nav-link-light";
-  const listStyle = productView === "list" ? "bg-light" : "nav-link-light";
+  const gridStyle =
+    productView === "grid" ? "bg-red-500 text-white" : "bg-white text-black";
+  const listStyle =
+    productView === "list" ? "bg-red-500 text-white" : "bg-white text-black";
 
   function updateView(viewType: "grid" | "list") {
     dispatch(updateProductView(viewType));
@@ -25,14 +27,14 @@ export default function ShopBannerToolbar() {
       />
       <div className="flex pb-3">
         <span
-          className={`rounded-lg mx-2 bg-white p-2 hover:bg-red-500 hover:text-white ${gridStyle} mx-2 cursor-pointer`}
+          className={`rounded-lg mx-2 p-2 hover:bg-red-500 hover:text-white ${gridStyle} mx-2 cursor-pointer`}
           onClick={() => updateView("grid")}
         >
           <IoGridOutline className="text-xl" />
         </span>
         <span
           onClick={() => updateView("list")}
-          className={`rounded-lg mx-2 bg-white hover:bg-red-500 hover:text-white p-2 ${listStyle} cursor-pointer`}
+          className={`rounded-lg mx-2 hover:bg-red-500 hover:text-white p-2 ${listStyle} cursor-pointer`}
         >
           <AiOutlineBars className="text-xl" />
         </span>
