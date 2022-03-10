@@ -58,6 +58,7 @@ module.exports = withBundleAnalyzer({
               "https://cdn.jsdelivr.net",
               "https://pci-api-demo.airwallex.com",
               "https://maps.googleapis.com",
+              "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
             ],
             "connect-src": [
               "'self'",
@@ -68,6 +69,8 @@ module.exports = withBundleAnalyzer({
               "https://czt5ma7jlj-3.algolianet.com",
               "https://insights.algolia.io",
               "https://maps.googleapis.com",
+              "https://pci-api-demo.airwallex.com",
+              "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
             ],
             "font-src": [
               "'self'",
@@ -87,6 +90,7 @@ module.exports = withBundleAnalyzer({
               "https://maps.googleapis.com",
               "https://sentry.airwallex.com",
               "https://pci-api-demo.airwallex.com",
+              "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
             ],
             "img-src": [
               "'self'",
@@ -100,6 +104,7 @@ module.exports = withBundleAnalyzer({
               "https://www.google.com/",
               "https://checkout-demo.airwallex.com/",
               "https://js.stripe.com/",
+              "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
             ],
           },
           isDev,

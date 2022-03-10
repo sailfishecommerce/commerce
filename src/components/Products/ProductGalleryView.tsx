@@ -28,7 +28,7 @@ export default function ProductGalleryView({ product }: Props) {
       };
 
   const activethumbnailImg = (index: number) =>
-    activeImage === index ? "active" : "";
+    activeImage === index ? "active border border-red-500" : "";
 
   function updateActiveImage(index: number) {
     setActiveImage(index);
@@ -86,10 +86,10 @@ export default function ProductGalleryView({ product }: Props) {
           />
         )}
       </div>
-      <div className="product-gallery-thumblist flex flex-row w-full lg:flex-col lg:order-1 lg:w-1/5">
+      <div className="product-gallery-thumblist flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5">
         {images?.map((image: any, index) => (
           <a
-            className={`product-thumblist-item items-center justify-center flex hover:border-gray-300 hover:border-2 ${activethumbnailImg(
+            className={`items-center justify-center w-1/3 flex hover:border-gray-300 px-2 hover:border-2 ${activethumbnailImg(
               index
             )}`}
             onClick={() => updateActiveImage(index)}
@@ -100,35 +100,11 @@ export default function ProductGalleryView({ product }: Props) {
               width={imageView.width}
               src={image.file.url}
               alt={product.image_alt_text[index]}
+              size="true"
             />
           </a>
         ))}
       </div>
-      <style jsx>
-        {`
-          .product-thumblist-item {
-            width: 150px;
-          }
-          .product-thumblist-item.active {
-            border: 1px solid red;
-            opacity: 0.8;
-          }
-          .product-gallery-thumblist.order-1 {
-            height: 720px;
-            overflow-y: auto;
-            overflow-x: hidden;
-          }
-          @media (max-width: 768px) {
-            .product-gallery-thumblist.order-1 {
-              display: flex;
-              flex-direction: row;
-              width: 100%;
-              height: unset;
-              overflow-y: unset;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }

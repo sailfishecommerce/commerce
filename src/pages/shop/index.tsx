@@ -1,8 +1,5 @@
-import dynamic from "next/dynamic";
-
 import Applayout from "@/layout/Applayout";
-
-const ShopView = dynamic(() => import("@/components/View/ShopView"));
+import ShopView from "@/components/View/ShopView";
 
 export default function Shop() {
   return (

@@ -14,7 +14,7 @@ export default function ShopBannerToolbar() {
     dispatch(updateProductView(viewType));
   }
   return (
-    <div className="ShopBannerToolbar w-3/4 flex justify-between pt-2 pb-4 place-self-end absolute bottom-0 pl-12">
+    <div className="ShopBannerToolbar w-2/3 mt-6 md:mt-0 mx-auto md:w-3/4 flex justify-between pt-2 pb-4 md:place-self-end md:absolute md:bottom-0 md:pl-12">
       <AlgoliaSortby
         defaultRefinement="New_Livehealthy_products_index"
         items={[
@@ -28,13 +28,13 @@ export default function ShopBannerToolbar() {
           className={`rounded-lg mx-2 bg-white p-2 hover:bg-red-500 hover:text-white ${gridStyle} mx-2 cursor-pointer`}
           onClick={() => updateView("grid")}
         >
-          <IoGridOutline />
+          <IoGridOutline className="text-xl" />
         </span>
         <span
           onClick={() => updateView("list")}
           className={`rounded-lg mx-2 bg-white hover:bg-red-500 hover:text-white p-2 ${listStyle} cursor-pointer`}
         >
-          <AiOutlineBars />
+          <AiOutlineBars className="text-xl" />
         </span>
       </div>
     </div>

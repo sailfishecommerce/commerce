@@ -66,7 +66,7 @@ export default function Accordion({
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body py-4 px-5">{children}</div>
+            <div className="accordion-body py-4 px-2 md:px-5">{children}</div>
           </div>
         )}
       </div>

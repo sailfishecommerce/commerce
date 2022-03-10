@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { InstantSearch } from "react-instantsearch-dom";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import Link from "next/link";
 import { Configure } from "react-instantsearch-dom";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import AlgoliaCurrentRefinement from "@/components/Algolia/AlgoliaCurrentRefinement";
 import ShopViewCategories from "@/components/View/ShopViewCategories";
@@ -26,6 +26,8 @@ const DEBOUNCE_TIME = 700;
 
 export default function ShopView({ vendor, menu }: ShopViewProps) {
   const router = useRouter();
+  const tabWidth = useMediaQuery("(max-width:768px)");
+
   const { slug } = router?.query;
   const { searchStateToUrl, urlToSearchState, createURL } = useAlgoliaSearch();
   const { asPath } = router;
@@ -80,7 +82,7 @@ export default function ShopView({ vendor, menu }: ShopViewProps) {
       <div className="w-full flex bg-gray-700 justify-between h-52">
         <div className="container m-auto mb-3 mb-lg-0 pt-lg-2 flex flex-col h-32 relative">
           <nav className="w-full items-start  justify-start flex bg-gray-700 ">
-            <ol className="text-white lg:flex justify-center lg:justify-start">
+            <ol className="text-white flex items-center md:items-start mx-auto md:mx-0 justify-center lg:justify-start">
               <li className="mb-0">
                 <Link href="/" passHref>
                   <a className="hover:text-red-500">Home</a>
@@ -96,9 +98,9 @@ export default function ShopView({ vendor, menu }: ShopViewProps) {
           <ShopBannerToolbar />
         </div>
       </div>
-      <div className="container flex pb-5 mb-2 mb-md-4">
-        <ShopViewCategories />
-        <section className="w-3/4 flex flex-col">
+      <div className="container flex pb-5 mb-2 md:mb-4">
+        {!tabWidth && <ShopViewCategories />}
+        <section className="w0full md:w-3/4 flex flex-col">
           <div className="flex flex-wrap">
             <InfiniteProductHits minHitsPerPage={9} animation={true} />
           </div>

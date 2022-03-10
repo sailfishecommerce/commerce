@@ -31,6 +31,10 @@ ul.splide__pagination {
   display: none;
 }
 
+.related-products .splide__track {
+  margin-right: unset;
+}
+
 /* style scrollbar */
 body::-webkit-scrollbar,
 .products-list::-webkit-scrollbar,
