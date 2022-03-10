@@ -28,13 +28,13 @@ export default function ShopLoader() {
   const mobileWidth = useMediaQuery("(max-width:500px)");
 
   const mobileStyle = mobileWidth
-    ? "w-full"
+    ? "w-1/2 px-2"
     : tabWidth
-    ? "w-1/2"
+    ? "w-1/2 px-2"
     : "w-1/3 px-2";
 
   return (
-    <div className="flex flex-wrap mt-5 w-full pl-6">
+    <div className="flex flex-wrap mt-5 w-full px-2 md:pl-6">
       {loaderArray.map((_, index: number) => (
         <div key={index} className={mobileStyle}>
           <Loader />
