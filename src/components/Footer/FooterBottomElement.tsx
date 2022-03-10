@@ -58,7 +58,7 @@ export function FooterBottomWidgets() {
     <>
       <div className="flex flex-col w-full lg:w-2/5 items-center">
         <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5 lg:w-full">
-          <Logo />
+          <Logo className="" />
           <CurrencyDropdown className="mr-2" />
         </div>
         <p className="text-gray-400 leading-loose text-sm">
@@ -67,13 +67,15 @@ export function FooterBottomWidgets() {
           preferred choice of Hong Kongers for importing high-quality Australian
           goods.
         </p>
-        <ul className="flex flex-wrap my-2">
+        <ul className="flex flex-wrap my-2 mx-auto md:mx-0 justify-center md:justify-start">
           {footerBottomContent.pageLinks.map((content) => (
             <li
               key={content.name}
-              className="mr-4 text-gray-400 text-sm hover:text-red-500"
+              className="mr-4 text-gray-400 text-sm sm:text-xs hover:text-red-500"
             >
-              <a href={content.link}>{content.name}</a>
+              <a target="_blank" href={content.link}>
+                {content.name}
+              </a>
             </li>
           ))}
         </ul>

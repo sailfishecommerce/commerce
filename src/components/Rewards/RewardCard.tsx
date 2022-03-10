@@ -26,18 +26,23 @@ export default function RewardCard({ card }: Props) {
   }
   return (
     <>
-      <div className="reward-card">
-        <h6 className="title text-center">{card.title}</h6>
+      <div className="w-full shadow border md:text-sm text-sm my-2 rounded-lg p-2 px-4">
+        <h6 className="font-bold text-center">{card.title}</h6>
         <p className="text-center">{card.text}</p>
         {card.type === "button" && (
           <div className="button-view flex flex-col">
             <Link href="/my-account" passHref>
-              <button aria-label="join sailfish rewards">Join Now</button>
+              <button
+                aria-label="join sailfish rewards"
+                className="p-1 my-1 px-2 mx-auto flex justify-center text-white rounded-lg"
+              >
+                Join Now
+              </button>
             </Link>
             <p className="text-center">
               Already have an account ?{" "}
               <Link href="/my-account" passHref>
-                <a>Sign in</a>
+                <a className="text-red-500">Sign in</a>
               </Link>
             </p>
           </div>
@@ -49,25 +54,23 @@ export default function RewardCard({ card }: Props) {
                   <li
                     key={link.title}
                     onClick={() => viewRewardDetails(link.route)}
-                    className="point-list links flex items-center justify-between"
+                    className="text-sm md:text-md border-b my-1 hover:text-red-500 py-1 links flex items-center justify-between"
                   >
                     <div className="flex items-center">
-                      <img className="icon" src={link.icon} alt="icon" />
-                      <p>{link.title}</p>
+                      <img className="icon mx-2" src={link.icon} alt="icon" />
+                      <p className="mb-0">{link.title}</p>
                     </div>
                     <BsArrowRight color="#f79f24" />
                   </li>
                 ))
               : card.type === "referrals" &&
                 card?.links?.map((item, index) => (
-                  <li
-                    key={index}
-                    className="point-list referral flex items-center"
-                  >
+                  <li key={index} className="py-1 flex border-b items-center">
                     <img className="icon" src={item.icon} alt="icon" />
                     <span className="flex flex-col">
-                      <h6>{item.title}</h6>
-                      <p>{item.text}</p>
+                      <h6 className="text-xs text-sm">
+                        {item.title} {item.text}
+                      </h6>
                     </span>
                   </li>
                 ))}
@@ -75,89 +78,8 @@ export default function RewardCard({ card }: Props) {
         )}
       </div>
       <style jsx>{`
-        .menu-link {
-          padding: 0px;
-        }
-        img.icon {
-          height: 40px;
-          width: 40px;
-        }
         .button-view button {
-          width: 90px;
-        }
-        .reward-card h6 {
-          font-size: 15px;
-          font-weight: 500;
-        }
-
-        .button-view button {
-        }
-        .button-view button {
-          margin: auto;
-          border: none;
-          color: white;
           background-color: #f79f24;
-          padding: 8px;
-          border-radius: 5px;
-          font-size: 13px;
-          margin-bottom: 10px;
-        }
-        .button-view button:hover {
-          opacity: 0.8;
-        }
-        .point-list {
-          margin: 0px 0px 10px 15px;
-        }
-        .point-list.justify-between:hover {
-          opacity: 0.5;
-        }
-        .point-list img.icon {
-          margin-right: 20px;
-        }
-        .point-list p {
-          margin-bottom: 0px;
-        }
-        li.point-list.links:first-child {
-          border-bottom: 1px solid #e6e6e6;
-          padding-bottom: 10px;
-        }
-        .reward-card p {
-          font-size: 13px;
-          font-weight: 300;
-        }
-        .reward-card {
-          width: 350px;
-          -webkit-animation: fadeSlideOut 0.2s ease;
-          animation: fadeSlideOut 0.2s ease;
-          -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          transform: translate(-10px);
-          border-radius: 10px;
-          -webkit-animation: fadeSlideIn 0.3s ease;
-          animation: fadeSlideIn 0.3s ease;
-          -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          background-color: #fff;
-          box-shadow: 0 0 13px 0 rgb(0 0 0 / 9%);
-          margin-bottom: 12px;
-          margin-left: 9px;
-          overflow: hidden;
-          padding: 16px 12px;
-          color: black;
-          position: relative;
-        }
-        .referral h6 {
-          margin-bottom: 0px;
-        }
-        @media (max-width: 768px) {
-          .reward-card {
-            width: 300px;
-            padding: 20px;
-          }
         }
       `}</style>
     </>

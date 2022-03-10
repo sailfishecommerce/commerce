@@ -12,27 +12,9 @@ export default function Reward() {
   }
 
   return (
-    <>
-      <div className="reward-widget flex flex-col">
-        {showWidget && rewardsTab(stage)}
-        <RewardButton showChat={showWidget} onClick={displayChat} />
-      </div>
-      <style jsx>
-        {`
-          .reward-widget {
-            position: fixed;
-            z-index: 1000;
-            right: 20px;
-            bottom: 20px;
-          }
-          @media (max-width: 768px) {
-            .reward-widget {
-              bottom: 120px;
-              right: 0px;
-            }
-          }
-        `}
-      </style>
-    </>
+    <div className="reward-widget flex fixed z-50 right-0 bottom-24">
+      {showWidget && rewardsTab(stage)}
+      <RewardButton showChat={showWidget} onClick={displayChat} />
+    </div>
   );
 }

@@ -14,21 +14,22 @@ export default function RewardChat() {
 
   return (
     <>
-      <div className="reward-chat-box">
-        <div className="chat-header flex items-center justify-between">
-          <div className="flex flex-col">
-            <h6 className="mt-2 font-bold text-xl">Welcome to</h6>
-            <h4 className="text-xl font-bold">Sailfish + Rewards</h4>
+      <div className="reward-chat-box rounded-xl bg-white flex flex-col z-30 h-3/5 fixed bottom-28 right-5 w-2/3">
+        <div className="relative flex flex-col justify-center mx-auto items-center">
+          <div className="chat-header rounded-full text-white flex h-1/3 items-center -mt-10 justify-between sticky z-40 -top-5 w-full">
+            <h6 className="mt-2 font-bold text-md lg:text-lg">
+              Welcome to Sailfish + Rewards
+            </h6>
+            <MdCancel
+              className="text-2xl font-bold hover:text-red-500 cursor-pointer"
+              onClick={closeWidget}
+            />
           </div>
-          <MdCancel
-            className="text-2xl font-bold hover:text-red-500 cursor-pointer"
-            onClick={closeWidget}
-          />
-        </div>
-        <div className="reward-card-group">
-          {rewardContent.cards.map((card) => (
-            <RewardCard card={card} key={card.title} />
-          ))}
+          <div className="card-group mt-4 w-4/5 flex flex-col justify-center items-center mx-auto">
+            {rewardContent.cards.map((card) => (
+              <RewardCard card={card} key={card.title} />
+            ))}
+          </div>
         </div>
       </div>
       <style jsx>
@@ -39,60 +40,23 @@ export default function RewardChat() {
               hsla(35, 93%, 55%, 1),
               hsla(35, 100%, 37%, 1)
             );
-            height: 120px;
-            width: 100%;
-            color: white;
-            padding: 20px;
-            padding-left: 30px;
-            border-radius: 30px;
-          }
-          .chat-header h6,
-          .chat-header h4 {
-            color: white;
           }
           .reward-chat-box {
-            background-color: white;
-            border-radius: 30px;
             box-shadow: 0 0 13px 0 rgb(0 0 0 / 9%);
-            position: fixed;
-            right: 20px;
-            bottom: 100px;
-            width: 400px;
-            z-index: 5000;
-            height: 700px;
             overflow: hidden;
           }
-          .reward-card-group {
-            padding: 20px;
-            height: 600px;
+          .card-group {
             overflow-y: scroll;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
+            overflow-x: auto;
           }
           @media (max-width: 768px) {
             .chat-header {
-              height: 100px;
-              padding: 15px;
+              height: 80px;
+              padding: 10px;
               padding-left: 20px;
               border-radius: 20px;
             }
-            button.rewardButton span img {
-              margin-right: 0px;
-              height: 25px;
-              width: 25px;
-            }
-            .chat-header h6 {
-              font-size: 13px;
-            }
-            .chat-header h4 {
-              color: white;
-              font-size: 14px;
-            }
             .reward-chat-box {
-              width: 80%;
-              height: 60%;
               overflow: scroll;
             }
           }
