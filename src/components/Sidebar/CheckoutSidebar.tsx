@@ -105,7 +105,7 @@ export default function CheckoutSidebar({ cart }: CheckoutSidebarProps) {
                 placeholder="Promo code"
                 required
               />
-              <div className="text-red-500">Please provide promo code.</div>
+              {/* <div className="text-red-500">Please provide promo code.</div> */}
             </div>
             <Button
               className="border w-1/2 border-red-500 hover:bg-red-500 hover:text-white p-2 flex mx-auto rounded-lg"

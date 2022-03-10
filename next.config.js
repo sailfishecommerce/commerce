@@ -66,7 +66,7 @@ module.exports = withBundleAnalyzer({
               "https://czt5ma7jlj-dsn.algolia.net",
               "https://czt5ma7jlj-3.algolianet.com",
               "https://insights.algolia.io",
-              "'https://maps.googleapis.com",
+              "https://maps.googleapis.com",
             ],
             "font-src": [
               "'self'",
