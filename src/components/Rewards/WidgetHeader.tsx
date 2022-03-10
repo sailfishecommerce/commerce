@@ -17,7 +17,7 @@ export default function WidgetHeader({ title, main }) {
 
   return (
     <>
-      <div className="chat-header rounded-lg text-white flex h-20 items-center justify-between sticky z-40 -top-5 w-full px-2">
+      <div className="chat-header rounded-lg text-white flex h-20 items-center justify-between z-40 static top-0 w-full px-2">
         {!main && (
           <BsArrowLeft
             className="text-2xl font-bold cursor-pointer mx-1"

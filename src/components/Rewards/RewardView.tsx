@@ -21,9 +21,11 @@ interface Props {
 export default function RewardView({ content }: Props) {
   return (
     <WidgetView title="Sailfish + Rewards">
-      <div className="rewards-list">
-        <h4 className="text-center font-medium -mt-2 text-lg">{content.title}</h4>
-        <ul className="list">
+      <div className="flex flex-col">
+        <h4 className="text-center font-medium -mt-2 text-lg">
+          {content.title}
+        </h4>
+        <ul className="flex flex-col">
           {content.items.map((item: any) => (
             <li key={item.text1} className="flex items-center border-b">
               <img src={item.icon} className="mr-3" alt={item.text1} />

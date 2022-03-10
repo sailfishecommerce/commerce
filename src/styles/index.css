@@ -36,6 +36,7 @@ body::-webkit-scrollbar,
 .products-list::-webkit-scrollbar,
 .product-gallery-thumblist::-webkit-scrollbar,
 .quickView-description::-webkit-scrollbar,
+.widget-body::-webkit-scrollbar,
 .ais-RefinementList-list::-webkit-scrollbar {
   width: 1em;
 }
@@ -44,6 +45,7 @@ body::-webkit-scrollbar-track,
 .products-list::-webkit-scrollbar-track,
 .product-gallery-thumblist::-webkit-scrollbar-track,
 .quickView-description::-webkit-scrollbar-track,
+.widget-body::-webkit-scrollbar-track,
 .ais-RefinementList-list::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
@@ -52,6 +54,7 @@ body::-webkit-scrollbar-thumb,
 .products-list::-webkit-scrollbar-thumb,
 .product-gallery-thumblist::-webkit-scrollbar-thumb,
 .quickView-description::-webkit-scrollbar-thumb,
+.widget-body::-webkit-scrollbar-thumb,
 .ais-RefinementList-list::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
