@@ -13,7 +13,7 @@ export default function WidgetView({
 }: PropsWithChildren<Props>) {
   return (
     <>
-      <div className="reward-chat-box rounded-xl bg-white flex flex-col z-30 fixed bottom-28 right-5 w-2/3 md:w-1/6">
+      <div className="reward-chat-box rounded-xl bg-white flex flex-col z-30 fixed bottom-28 right-5">
         <div className="content flex flex-col mx-auto items-center w-full px-0">
           <WidgetHeader title={title} main={main} />
           <div className="widget-body w-11/12 ml-3 pt-0 pr-3 flex flex-col justify-center items-center mx-auto">
@@ -26,6 +26,7 @@ export default function WidgetView({
           .reward-chat-box {
             box-shadow: 0 0 13px 0 rgb(0 0 0 / 9%);
             overflow: hidden;
+            width: 400px;
           }
           .content {
             height: 500px;
@@ -33,6 +34,11 @@ export default function WidgetView({
           .widget-body {
             overflow-y: scroll;
             height: 400px;
+          }
+          @media (max-width: 768px) {
+            .reward-chat-box {
+              width: 350px;
+            }
           }
         `}
       </style>
