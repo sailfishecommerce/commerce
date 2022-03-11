@@ -20,9 +20,15 @@ const SpinnerOverlay = dynamic(
   () => import("@/components/Loader/SpinnerOverlay")
 );
 const AuthModal = dynamic(() => import("@/components/Modal/AuthModal"));
+const MobileMenuSidebar = dynamic(
+  () => import("@/components/Sidebar/MobileMenuSidebar")
+);
+
 const QuickViewModal = dynamic(
   () => import("@/components/Modal/QuickViewModal")
 );
+
+// MobileMenuSidebar
 
 export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
   const { toggleCart } = useCart();
@@ -62,6 +68,7 @@ export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
       {modal && displayAppModal(modal, onHideModal)}
       {loading && <SpinnerOverlay />}
       {loadingState && <LoadingBar />}
+      {UI.displayMobileMenu && <MobileMenuSidebar />}
       <NextNProgress color="red" options={{ showSpinner: false }} />
       <ToastContainer />
 

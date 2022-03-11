@@ -6,6 +6,8 @@ const uiSlice = createSlice({
     slideCart: false,
     sidebarRight: false,
     loading: false,
+    mobileMenu: "mobileNav",
+    displayMobileMenu: false,
     modal: false,
     authModal: "AUTHFORM",
     displayModal: {
@@ -50,6 +52,12 @@ const uiSlice = createSlice({
     toggleAuthModal(state) {
       state.displayAuthModal = !state.displayAuthModal;
     },
+    updateMobileMenu(state, action) {
+      state.mobileMenu = action.payload;
+    },
+    toggleMobileMenu(state) {
+      state.displayMobileMenu = !state.displayMobileMenu;
+    },
     toggleAppModal(state, action) {
       state.displayModal.type = action.payload.type;
       if (state.displayModal.type) {
@@ -71,6 +79,7 @@ export const {
   authModalForm,
   updateLoadingAction,
   quickViewModal,
+  updateMobileMenu,
   toggleAuthModal,
   toggleAppModal,
   checkoutModal,

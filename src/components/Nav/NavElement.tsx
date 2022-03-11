@@ -4,9 +4,9 @@ import Tooltip from "@/components/Tooltip";
 
 export function NavToggler() {
   return (
-    <button>
+    <button className="mb-0 mt-2">
       <Tooltip text="Expand menu">
-        <AiOutlineMenu className="text-2xl hover:text-red-500" />
+        <AiOutlineMenu className="hover:text-red-500" size={20} />
       </Tooltip>
     </button>
   );

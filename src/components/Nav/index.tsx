@@ -12,7 +12,7 @@ export default function Nav() {
 
   return (
     <nav className="nav bg-white w-full py-4 md:h-32 flex items-center border-b-2 shadow-sm pb-4">
-      <div className="container m-auto flex flex-row items-center justify-between">
+      <div className="container m-auto flex flex-row items-center justify-between mx-2 md:mx-0">
         <Logo className="lg:w-3/12" />
         {largerDeviceWidth && <SearchBar />}
         <Navmenu />

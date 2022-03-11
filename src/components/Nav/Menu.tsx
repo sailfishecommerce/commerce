@@ -12,9 +12,6 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 const CategoryDropdown = dynamic(
   () => import("@/components/Dropdown/CategoryMenuDropdown")
 );
-const MobileCategoryList = dynamic(
-  () => import("@/components/Dropdown/CategoryMobileDropdown")
-);
 const SearchBar = dynamic(() => import("@/components/Algolia/Searchbar"));
 
 export default function Menu() {
@@ -49,11 +46,7 @@ export default function Menu() {
                 <IoGridOutline className="mx-1" />
                 Collections
               </span>
-              {largerDeviceWidth ? (
-                <CategoryDropdown />
-              ) : (
-                !largerDeviceWidth && toggleCollection && <MobileCategoryList />
-              )}
+              {largerDeviceWidth && <CategoryDropdown />}
             </li>
           </ul>
           <ul className="flex md:flex-row flex-col mx-2">
