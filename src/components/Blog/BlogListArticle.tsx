@@ -18,19 +18,23 @@ export default function BlogListArticle() {
         >
           <div className="blog-start-column">
             <div className="flex items-center fs-sm pb-2 mb-1">
-              <a className="blog-entry-meta-link" href="#">
+              <a
+                aria-label={`${content.author} image`}
+                className="blog-entry-meta-link"
+                href="#"
+              >
                 <div className="blog-entry-author-ava">
                   <img src={content.authorImage} alt={content.author} />
                 </div>
                 {content.author}
               </a>
               <span className="blog-entry-meta-divider"></span>
-              <a className="blog-entry-meta-link" href="#">
+              <a aria-label="date" className="blog-entry-meta-link" href="#">
                 {content.date}
               </a>
             </div>
             <h2 className="h5 blog-entry-title">
-              <Link href="/blog-single" passHref>
+              <Link aria-label={content.title} href="/blog-single" passHref>
                 <a>{content.title}</a>
               </Link>
             </h2>
@@ -38,7 +42,10 @@ export default function BlogListArticle() {
           <div className="blog-end-column">
             {content.image && (
               <Link href="/blog-single" passHref>
-                <a className="blog-entry-thumb mb-3">
+                <a
+                  aria-label={`${content.author} image`}
+                  className="blog-entry-thumb mb-3"
+                >
                   <img src={content.image} alt="Post" />
                 </a>
               </Link>
@@ -47,14 +54,22 @@ export default function BlogListArticle() {
               <div className="fs-sm text-gray-500 pe-2 mb-2">
                 in{" "}
                 {content.tags.map((tag) => (
-                  <a href="#" key={tag} className="blog-entry-meta-link">
+                  <a
+                    aria-label={tag}
+                    href="#"
+                    key={tag}
+                    className="blog-entry-meta-link"
+                  >
                     {tag}
                   </a>
                 ))}
               </div>
               <div className="fs-sm mb-2">
                 <Link href="/blog-single#comments" passHref>
-                  <a className="blog-entry-meta-link text-nowrap">
+                  <a
+                    aria-blabel="comment"
+                    className="blog-entry-meta-link text-nowrap"
+                  >
                     <i className="ci-message"></i>
                     {content.comment}
                   </a>
@@ -64,7 +79,12 @@ export default function BlogListArticle() {
             <p className="fs-sm">
               {content.text}{" "}
               <Link href="/blog-single" passHref>
-                <a className="blog-entry-meta-link fw-medium">[Read more]</a>
+                <a
+                  aria-label="remove more link"
+                  className="blog-entry-meta-link fw-medium"
+                >
+                  [Read more]
+                </a>
               </Link>
             </p>
           </div>

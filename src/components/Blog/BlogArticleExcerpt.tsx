@@ -22,7 +22,7 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
       {content.image ? (
         <article key={content.title} className="px-4 py-2 w-full md:w-1/2 lg:w-1/3 md:px-2">
           <Link href="/blog-single" passHref>
-            <a className="blog-entry-thumb">
+            <a aria-label={content.title} className="blog-entry-thumb">
               <img className="rounded-t-lg" src={content.image} alt="Post" />
             </a>
           </Link>
@@ -47,7 +47,7 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
               </div>
             </div>
             <div className="border-t-2 border-gray-100 mt-6 pt-2 flex items-center justify-between">
-              <a className="flex items-center " href="#">
+              <a aria-label={`${content.author} image`} className="flex items-center " href="#">
                 <div className="blog-entry-author-ava">
                   <img
                     src={content.authorImage}
@@ -58,12 +58,12 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
                 {content.author}
               </a>
               <div className="flex items-center justify-between w-28">
-                <a className="text-sm" href="#">
+                <a aria-label="date" className="text-sm" href="#">
                   {content.date}
                 </a>
                 <span className="mx-1 border-r-2 border-gray-200 h-6"></span>
                 <Link href="#comments" passHref>
-                  <a className="text-sm flex items-center">
+                  <a aria-label="comment" className="text-sm flex items-center">
                     <Icons
                       className="mx-2 text-red-500"
                       size={20}
@@ -84,7 +84,7 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
           <div className="card w-full border-2 border-gray-100 p-6 rounded-lg">
             {content.image && (
               <Link href="/blog-single" passHref>
-                <a className="blog-entry-thumb">
+                <a aria-label="blog image post" className="blog-entry-thumb">
                   <img
                     className="rounded-t-lg"
                     src={content.image}
@@ -96,13 +96,14 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
             <div className="card-body">
               <h2 className="text-lg font-bold">
                 <Link href="/blog-single" passHref>
-                  <a>{content.title}</a>
+                  <a aria-label={content.title}>{content.title}</a>
                 </Link>
               </h2>
               <p className="text-md">{content.text}</p>
               <div className="flex my-2">
                 {content.tags.map((tag) => (
                   <a
+                  aria-label={tag}
                     key={tag}
                     className="border-2 border-gray-100 p-2 text-sm hover:text-white hover:bg-red-500 rounded-md mx-2"
                     href="#"
@@ -113,7 +114,7 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
               </div>
             </div>
             <div className="border-t-2 border-gray-100 mt-6 pt-2 flex items-center justify-between">
-              <a className="flex items-center " href="#">
+              <a aria-label={`${content.author} image`} className="flex items-center " href="#">
                 <div className="blog-entry-author-ava">
                   <img
                     src={content.authorImage}
@@ -124,12 +125,12 @@ export default function BlogArticleExcerpt({ content }: blogExcerpt) {
                 {content.author}
               </a>
               <div className="flex items-center justify-between w-28">
-                <a className="text-sm" href="#">
+                <a aria-label="date" className="text-sm" href="#">
                   {content.date}
                 </a>
                 <span className="mx-1 border-r-2 border-gray-200 h-6"></span>
                 <Link href="#comments" passHref>
-                  <a className="text-sm flex items-center">
+                  <a aria-label="comment" className="text-sm flex items-center">
                     <Icons
                       className="mx-2 text-red-500"
                       size={20}

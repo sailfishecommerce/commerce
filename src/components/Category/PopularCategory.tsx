@@ -28,6 +28,7 @@ function PopularCategoryComponent({ category }: PopularCategoryProps) {
     <div className="popularCategory w-full md:w-1/2 lg:w-1/3 px-1 mx-0">
       <Link href={`/shop/product-type/${category.slug}`} passHref>
         <a
+        aria-label={category.name}
           onClick={() => selectedFooterCategory(category.name)}
           className="imgLink flex w-full flex-col text-center text-decoration-none"
         >

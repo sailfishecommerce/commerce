@@ -33,7 +33,7 @@ export function TagsList({
         {items?.length > 0 ? (
           items.map((item: { label: string; value: string; count: number }) => (
             <div key={item.label} className="accordion-item my-4">
-              <a onClick={(e) => refineSearch(e, item)}>
+              <a href="#" aria-label={item.label} onClick={(e) => refineSearch(e, item)}>
                 {isFromSearch ? (
                   <Highlight attribute="label" hit={item} />
                 ) : (

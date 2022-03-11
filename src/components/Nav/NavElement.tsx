@@ -12,7 +12,7 @@ export function NavToggler() {
     dispatch(updateMobileMenu("mobileNav"));
   }
   return (
-    <button onClick={toggleModileMenuHandler} className="mb-0 mt-2">
+    <button onClick={toggleModileMenuHandler} aria-label="expand menu" className="mb-0 mt-2">
       <Tooltip text="Expand menu">
         <AiOutlineMenu className="hover:text-red-500" size={20} />
       </Tooltip>

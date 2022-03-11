@@ -16,7 +16,7 @@ interface Props extends BottomTabItemViewProps {
 function BottomTabCartItem({ cart, icon, title, link }) {
   return (
     <Link href={link} passHref>
-      <a className="relative flex flex-col justify-center w-1/4 items-center">
+      <a aria-label={title} className="relative flex flex-col justify-center w-1/4 items-center">
         <div className="cart flex relative w-1/3">
           {icon}
           {cart && (
@@ -47,6 +47,7 @@ function BottomTabItemView({
       {link ? (
         <Link href={link} passHref>
           <a
+            aria-label={title}
             className={`flex focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
           >
             {icon}
@@ -55,6 +56,7 @@ function BottomTabItemView({
         </Link>
       ) : (
         <a
+          aria-label={title}
           onClick={onToggle}
           className={`flex focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
         >

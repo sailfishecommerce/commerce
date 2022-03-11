@@ -17,7 +17,7 @@ export default function CategoryMobileDropdown() {
         : livehealthyCategories(categories.results).map((category: any) => (
             <li key={category.name} className="p-2 border-b">
               <Link href={`/collections/${category.slug}`} passHref>
-                <a onClick={() => selectedFooterCategory(category.name)}>
+                <a aria-label={category.name} onClick={() => selectedFooterCategory(category.name)}>
                   {category.name}
                 </a>
               </Link>

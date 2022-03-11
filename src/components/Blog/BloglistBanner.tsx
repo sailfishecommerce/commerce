@@ -9,12 +9,12 @@ export default function BloglistBanner() {
             <ol className="breadcrumb flex-lg-nowrap justify-center justify-content-lg-start">
               <li className="breadcrumb-item">
                 <Link href="/" passHref>
-                  <a className="text-nowrap">Home</a>
+                  <a aria-label="home" className="text-nowrap">Home</a>
                 </Link>
               </li>
               <li className="breadcrumb-item text-nowrap">
                 <Link href="/blog" passHref>
-                  <a className="text-nowrap">Blog</a>
+                  <a aria-label="blog" className="text-nowrap">Blog</a>
                 </Link>
               </li>
               <li

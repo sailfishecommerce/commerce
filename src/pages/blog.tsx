@@ -24,7 +24,7 @@ export default function Blog() {
               <ol className="flex lg:flex-nowrap justify-center lg:justify-content-start">
                 <li className="hover:text-red-500">
                   <Link href="/index" passHref>
-                    <a className="flex items-center">
+                    <a aria-label="home" className="flex items-center">
                       <HiHome className="mx-1" />
                       Home
                     </a>
@@ -32,7 +32,7 @@ export default function Blog() {
                 </li>
                 <li className="mx-2">&gt;</li>
                 <li className="text-gray-500">
-                  <a href="#">Blog</a>
+                  <a aria-label="blog" href="#">Blog</a>
                 </li>
               </ol>
             </nav>

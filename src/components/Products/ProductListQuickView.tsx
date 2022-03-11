@@ -22,6 +22,7 @@ export default function ProductListQuickView({ product }: ProductProps) {
     <div className="flex mt-4 items-center justify-between">
       <ProductListForm product={product} />
       <a
+        aria-label={`Quick view of ${product.name}`}
         className="hover:text-red-500 border flex items-center border-red-500 rounded-md px-2 p-1 cursor-pointer"
         onClick={quickViewHandler}
         data-bs-toggle="quickViewModal"

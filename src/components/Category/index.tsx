@@ -31,7 +31,7 @@ export default function Category({ category }: CategoryProps): JSX.Element {
     <div className="category">
       {category?.images && (
         <Link href={`/shop/product-type/${category.slug}`} passHref>
-          <a className={`${styles.categoryLink} m-auto flex justify-center`}>
+          <a aria-label={category.name} className={`${styles.categoryLink} m-auto flex justify-center`}>
             <Image
               height={imageSize.height}
               width={imageSize.width}
@@ -48,7 +48,7 @@ export default function Category({ category }: CategoryProps): JSX.Element {
       <div className="card-body py-2">
         <h3 className="product-title fs-sm">
           <Link href={`/shop/${category.slug}`} passHref>
-            <a className="hover:text-red-500">{category.name}</a>
+            <a aria-label={category.name} className="hover:text-red-500">{category.name}</a>
           </Link>
         </h3>
         <RatingStar rate={5} />

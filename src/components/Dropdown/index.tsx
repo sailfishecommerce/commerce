@@ -50,6 +50,7 @@ function DropdownComponent({
           type="button"
           id="dropdownMenuButton1"
           aria-expanded="false"
+          aria-label={`${dropdownText}`}
         >
           {dropdownText}
           <DropdownCaret />

@@ -42,7 +42,7 @@ export default function RewardCard({ card }: Props) {
             <p className="text-center">
               Already have an account ?{" "}
               <Link href="/my-account" passHref>
-                <a className="text-red-500">Sign in</a>
+                <a aria-label="sign in" className="text-red-500">Sign in</a>
               </Link>
             </p>
           </div>

@@ -19,10 +19,10 @@ export default function ProductListView({ product }: any) {
   }
   return (
     <div className="card-body py-2 w-full">
-      <a className="text-lg md:text-2xl font-medium mb-1">{product.vendor}</a>
+      <a aria-label={product.vendor} className="text-lg md:text-2xl font-medium mb-1">{product.vendor}</a>
       <h3 className="text-md md:text-xl font-normal">
         <Link href={`/products/${product.slug}`} passHref>
-          <a onClick={productViewedHandler}>{product.name}</a>
+          <a aria-label={product.name} onClick={productViewedHandler}>{product.name}</a>
         </Link>
       </h3>
       <div className="flex justify-between">

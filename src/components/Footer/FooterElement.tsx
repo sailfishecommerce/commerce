@@ -21,6 +21,7 @@ function FooterWidgetLink({
           <li key={index} className="widget-list-item">
             <Link href={slug(contentLink)} passHref>
               <a
+                aria-label={contentLink.name}
                 onClick={onClickFunc}
                 className="widget-list-link hover:text-white"
               >

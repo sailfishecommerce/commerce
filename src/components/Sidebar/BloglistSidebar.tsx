@@ -36,7 +36,11 @@ export default function BloglistSidebar() {
               <p className="fs-sm text-gray-500">
                 Hurry up to reserve your spot
               </p>
-              <a className="btn btn-primary btn-shadow btn-sm" href="#">
+              <a
+                aria-label="contact us"
+                className="btn btn-primary btn-shadow btn-sm"
+                href="#"
+              >
                 Contact us
               </a>
             </div>

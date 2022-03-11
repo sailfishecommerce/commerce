@@ -30,7 +30,7 @@ export default function MobileNav({onClose}) {
             className={`menu-list p-2 border-b border-gray-100 ${style(menu)}`}
           >
             <Link href={menu.link} passHref>
-              <a onClick={onClose} className="nav-link hover:text-red-500">
+              <a aria-label={menu.name} onClick={onClose} className="nav-link hover:text-red-500">
                 {menu.name}
               </a>
             </Link>

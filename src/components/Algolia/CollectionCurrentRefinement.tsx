@@ -14,6 +14,7 @@ const CollectionRefinements = ({ items, refine, createURL }: any) => {
                     {item.items.map((nested: any) => (
                       <li key={nested.label}>
                         <a
+                        aria-label="selected menu filter"
                           href={createURL(nested.value)}
                           onClick={(event) => {
                             event.preventDefault();

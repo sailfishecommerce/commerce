@@ -33,11 +33,16 @@ export default function PartnerOutlet() {
                       <div className="flex flex-col">
                         <span className="text-md">{content.action}</span>
                         {content.action === "Find us" ? (
-                          <a className="text-sm md:text-md" href="#">
+                          <a
+                            aria-label="reach us"
+                            className="text-sm md:text-md"
+                            href="#"
+                          >
                             {content.text}
                           </a>
                         ) : content.action === "Call us" ? (
                           <a
+                            aria-label="phone number"
                             className="text-sm md:text-md"
                             href={`tel:${content.text.replace(" ", "")}`}
                           >
@@ -45,6 +50,7 @@ export default function PartnerOutlet() {
                           </a>
                         ) : (
                           <a
+                            aria-label="email"
                             className="text-sm md:text-md"
                             href={`mailto:${content.text}`}
                           >

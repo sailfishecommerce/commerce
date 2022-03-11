@@ -43,7 +43,10 @@ function TrendingProductsCatalog() {
           </div>
           <div className="my-4 flex justify-center m-auto">
             <Link href="/shop" passHref>
-              <a className="bg-red-500 items-center flex text-center p-2 border-2 rounded-lg text-white hover:border-red-500 hover:bg-white hover:text-red-500">
+              <a
+                aria-label="more products"
+                className="bg-red-500 items-center flex text-center p-2 border-2 rounded-lg text-white hover:border-red-500 hover:bg-white hover:text-red-500"
+              >
                 More products
                 <AiOutlineArrowRight className="ml-1" />
               </a>

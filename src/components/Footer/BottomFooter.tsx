@@ -16,7 +16,13 @@ export default function BottomFooter() {
         </div>
         <div className="pb-4 text-gray-400 text-center lg:text-left text-xs">
           © All rights reserved. Made by{" "}
-          <a className="text-red-500" href="#" target="_blank" rel="noreferrer">
+          <a
+            aria-label="Bandicoot Studios"
+            className="text-red-500"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
             Bandicoot Studio
           </a>
         </div>

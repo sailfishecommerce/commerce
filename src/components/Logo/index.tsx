@@ -8,7 +8,7 @@ interface Props {
 export default function Logo({ className }) {
   return (
     <Link href="/" passHref>
-      <a className={`${className} xl:w-1/6 w-1/3`}>
+      <a aria-label="welcome to livehealthy - logo" className={`${className} xl:w-1/6 w-1/3`}>
         <Image
           src="/logo.webp"
           alt="Bandicoot"

@@ -38,6 +38,7 @@ function MarketplaceCategoriesList({
           items.map((item) => (
             <div key={item.label} className="accordion-item my-4">
               <a
+                aria-label={item.label}
                 href={createURL(item.value)}
                 onClick={(e) => refineSearch(e, item)}
               >

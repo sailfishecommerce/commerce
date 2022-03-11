@@ -9,7 +9,7 @@ export function TrendingBlogPost() {
       {blogContentData.trendingPost.map((content) => (
         <div key={content.title} className="flex items-center mb-3">
           <Link href="/blog-single" passHref>
-            <a className="flex-shrink-0">
+            <a aria-label={content.title} className="flex-shrink-0">
               <img
                 className="rounded"
                 src={content.image}
@@ -21,12 +21,16 @@ export function TrendingBlogPost() {
           <div className="ps-3">
             <h6 className="blog-entry-title fs-sm mb-0">
               <Link href="/blog-single" passHref>
-                <a>{content.title}</a>
+                <a aria-label={content.title}>{content.title}</a>
               </Link>
             </h6>
             <span className="fs-ms text-gray-500">
               by{" "}
-              <a href="#" className="blog-entry-meta-link">
+              <a
+                aria-label={content.author}
+                href="#"
+                className="blog-entry-meta-link"
+              >
                 {content.author}
               </a>
             </span>
@@ -42,7 +46,7 @@ export function PopularTags() {
     <div className="widget pb-grid-gutter mx-lg-2">
       <h3 className="widget-title">Popular tags</h3>
       {blogContentData.popularTags.map((tag) => (
-        <a key={tag} className="btn-tag mx-2 mb-2" href="#">
+        <a aria-label={tag} key={tag} className="btn-tag mx-2 mb-2" href="#">
           #{tag}
         </a>
       ))}
@@ -60,6 +64,7 @@ export function BlogCategories() {
             <a
               className="widget-list-link flex justify-between items-center"
               href="#"
+              aria-label={category.name}
             >
               <span>{category.name}</span>
               <span className="fs-xs text-gray-500 ms-3">{category.count}</span>

@@ -21,6 +21,7 @@ function ModalHeader({ productToView }) {
           data-bs-toggle="tooltip"
           data-bs-placement="right"
           title="Go to product page"
+          aria-label={productToView.name}
         >
           {productToView.name}
           <i className="ci-arrow-right fs-lg ms-2"></i>

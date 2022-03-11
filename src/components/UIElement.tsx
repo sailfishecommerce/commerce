@@ -29,9 +29,9 @@ export function Button({
       aria-label="button"
     >
       {loading && (
-        <a>
+        <span>
           <SpinnerRoller />
-        </a>
+        </span>
       )}
       <p className={`mb-0 text-truncate ${loadingState}`}>
         {loading ? "Submitting ..." : text}

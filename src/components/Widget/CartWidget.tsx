@@ -30,7 +30,7 @@ export default function CartWidget({ cart, className }: CartWidgetProps) {
       </button>
       <div className="flex items-center">
         <Link href={`/products/${cart.product.slug}`} passHref>
-          <a className="flex-shrink-0">
+          <a aria-label={cart.product.name} className="flex-shrink-0">
             <Image
               src={cart.product.images[0].file.url.split(";")[0]}
               alt={cart.product.name}
@@ -42,7 +42,9 @@ export default function CartWidget({ cart, className }: CartWidgetProps) {
         <div className="px-2 hover:text-red-500">
           <h6 className={`widget-product-title ${className} text-sm`}>
             <Link href={`/products/${cart.product.slug}`} passHref>
-              <a className="w-full">{cart.product.name}</a>
+              <a aria-label={cart.product.name} className="w-full">
+                {cart.product.name}
+              </a>
             </Link>
           </h6>
           <div className="flex items-center">

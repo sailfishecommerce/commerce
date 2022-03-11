@@ -16,7 +16,7 @@ function OrderSummaryItem({ item }: any) {
   return (
     <div className="flex items-center py-2 border-b">
       <Link href={`/products/${item.product.slug}`} passHref>
-        <a className="d-block flex-shrink-0">
+        <a aria-label={item.product.name} className="d-block flex-shrink-0">
           <img
             src={item.product.images[0].file.url}
             alt={item.product.name}
@@ -27,7 +27,7 @@ function OrderSummaryItem({ item }: any) {
       <div className="ps-2">
         <h6 className="widget-product-title">
           <Link href={`/products/${item.product.slug}`} passHref>
-            <a>{item.product.name}</a>
+            <a aria-label={item.product.name}>{item.product.name}</a>
           </Link>
         </h6>
         <div className="widget-product-meta flex align-items-baseline">

@@ -62,7 +62,7 @@ export default function ProductDetail({ product }: Props) {
           href={`/shop/vendors/${replaceSpaceWithHypen(product.vendor)}`}
           passHref
         >
-          <a className="underline px-0 text-blue-500 hover:text-red-500">
+          <a  aria-label={product.vendor} className="underline px-0 text-blue-500 hover:text-red-500">
             + All {product.vendor} products
           </a>
         </Link>

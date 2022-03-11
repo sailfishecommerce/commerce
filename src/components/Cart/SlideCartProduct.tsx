@@ -36,7 +36,7 @@ export default function SlideCartProduct({
         </button>
         <div className="flex items-center">
           <Link href={`/products/${item.product.slug}`} passHref>
-            <a className="flex-shrink-0">
+            <a aria-label={item.product?.name} className="flex-shrink-0">
               <img
                 src={item.product?.images[0].file.url.split(";")[0]}
                 alt={item.product?.name}
@@ -48,7 +48,7 @@ export default function SlideCartProduct({
             <div className="name-group flex flex-col">
               <h5 className="widget-product-title">
                 <Link href={`/products/${item.product.slug}`} passHref>
-                  <a>{item.product.name}</a>
+                  <a aria-label={item.product.name}>{item.product.name}</a>
                 </Link>
               </h5>
               {item.product?.attributes?.box && (

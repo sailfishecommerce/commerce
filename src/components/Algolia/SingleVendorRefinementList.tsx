@@ -59,7 +59,7 @@ export function SingleVendorList({
                   href={`/shop/vendors/${replaceSpaceWithHypen(item.label)}`}
                   passHref
                 >
-                  <a className={`my-4 ${selectedVendor(item.label)}`}>
+                  <a aria-label={item.label} className={`my-4 ${selectedVendor(item.label)}`}>
                     {isFromSearch ? (
                       <Highlight attribute="label" hit={item} />
                     ) : (

@@ -5,6 +5,9 @@ import { BsCartPlusFill } from "react-icons/bs";
 
 import { productType, productOptions } from "@/types";
 import { ProductQuantityCounter } from "@/components/Products/ProductView";
+import useProductOptions from "@/hooks/useProductOptions";
+import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
+import useShoppingCart from "@/hooks/useShoppingCart";
 
 const ProductBoxTable: any = dynamic((): any =>
   import("@/components/Products/ProductView").then((mod) => mod.ProductBoxTable)
@@ -26,9 +29,6 @@ const ProductColorOption: any = dynamic((): any =>
   )
 );
 
-import useProductOptions from "@/hooks/useProductOptions";
-import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
-import useShoppingCart from "@/hooks/useShoppingCart";
 
 interface ProductFormType {
   product: productType;

@@ -44,7 +44,7 @@ function CategoriesList({
                   href={`/shop/${replaceSpaceWithHypen(item.value)}`}
                   passHref
                 >
-                  <a className="cat-link">
+                  <a aria-label="category" className="cat-link">
                     {isFromSearch ? (
                       <Highlight attribute="label" hit={item} />
                     ) : (

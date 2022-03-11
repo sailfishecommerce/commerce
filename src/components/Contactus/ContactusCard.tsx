@@ -12,7 +12,11 @@ export default function ContactusCard() {
             key={content.icon}
             className="md:w-1/3 w-5/6 mx-auto my-4 border-2 border-gray-100 mx-2 p-6 py-12 rounded-md"
           >
-            <a className="card h-100" href={content.anchor}>
+            <a
+              aria-label={content.title}
+              className="card h-100"
+              href={content.anchor}
+            >
               <div className="card-body text-center">
                 <Icons
                   icon={content.icon}
@@ -48,6 +52,7 @@ export default function ContactusCard() {
                         {content.group.text1} :
                       </span>
                       <a
+                        aria-label="phone number"
                         className="mx-1"
                         href={`"tel:${content.group.phoneNumber1.replace(
                           " ",
@@ -64,6 +69,7 @@ export default function ContactusCard() {
                         {content.group.text2} :
                       </span>
                       <a
+                        aria-label="phone number"
                         className="mx-1"
                         href={`"tel:${content.group.phoneNumber2.replace(
                           " ",
@@ -86,6 +92,7 @@ export default function ContactusCard() {
                         {content.group.text1}:
                       </span>
                       <a
+                        aria-label="email"
                         className="mx-1"
                         href={`mailto:${content.group.email1}`}
                       >
@@ -99,6 +106,7 @@ export default function ContactusCard() {
                         {content.group.text2}:
                       </span>
                       <a
+                        aria-label="email us"
                         className="mx-1"
                         href={`mailto:${content.group.email2}`}
                       >

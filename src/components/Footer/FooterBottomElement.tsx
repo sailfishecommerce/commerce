@@ -73,7 +73,7 @@ export function FooterBottomWidgets() {
               key={content.name}
               className="mr-4 text-gray-400 text-sm sm:text-xs hover:text-red-500"
             >
-              <a target="_blank" href={content.link}>
+              <a aria-label={content.name} target="_blank" href={content.link}>
                 {content.name}
               </a>
             </li>

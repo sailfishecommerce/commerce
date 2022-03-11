@@ -80,6 +80,7 @@ export function ClearCart() {
   return (
     <div className="flex mt-4 mb-0">
       <button
+      aria-label="clear cart"
         onClick={() => deleteCart.mutate(cart.id)}
         className="btn-link btn-danger rounded-2 px-2 py-1 m-auto justify-content-center flex items-center remove"
       >

@@ -39,8 +39,8 @@ function BlogGridSliderComponent() {
           <SplideSlide key={content.title}>
             <article className="w-full relative flex flex-col">
               <Link href={content.link} passHref>
-                <a className="blog-entry-thumb mb-3 relative flex">
-                  <button className="w-24 flex justify-center items-center rounded-md bg-gray-200 p-1 hover:bg-gray-600 hover:text-white absolute right-8 top-8">
+                <a aria-label="date" className="blog-entry-thumb mb-3 relative flex">
+                  <button aria-label="date" className="w-24 flex justify-center items-center rounded-md bg-gray-200 p-1 hover:bg-gray-600 hover:text-white absolute right-8 top-8">
                     <GiAlarmClock className="mr-1" />
                     {content.date}
                   </button>
@@ -55,18 +55,18 @@ function BlogGridSliderComponent() {
                 <div className="flex justify-between mb-2 pt-1">
                   <h2 className="text-xl">
                     <Link href={content.link} passHref>
-                      <a>{content.title}</a>
+                      <a aria-label="title">{content.title}</a>
                     </Link>
                   </h2>
                   <Link href="/blog-single-sidebar#comments" passHref>
-                    <a className="flex items-center">
+                    <a aria-label="comment" className="flex items-center">
                       <BiMessageRoundedDots className="mx-2" />
                       {content.comment}
                     </a>
                   </Link>
                 </div>
                 <div className="flex items-center">
-                  <a className="flex items-center text-sm" href="#">
+                  <a aria-label="author" className="flex items-center text-sm" href="#">
                     <img
                       src={content.authorImage}
                       className="rounded-full mr-2"
@@ -78,7 +78,7 @@ function BlogGridSliderComponent() {
                   <div className="flex items-center text-sm">
                     <span className="mr-1">in</span>
                     {content.category.map((category) => (
-                      <a href="#" key={category} className="text-sm mx-1">
+                      <a aria-label="category" href="#" key={category} className="text-sm mx-1">
                         {category}
                       </a>
                     ))}

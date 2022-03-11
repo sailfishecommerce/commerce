@@ -25,7 +25,10 @@ export default function Error404() {
           <div className="row">
             <div className="col-sm-4 mb-3">
               <Link href="/" passHref>
-                <a className="card h-100 border-0 shadow-sm">
+                <a
+                  aria-label="go to homepage"
+                  className="card h-100 border-0 shadow-sm"
+                >
                   <div className="card-body">
                     <div className="flex items-center">
                       <i className="ci-home text-primary h4 mb-0"></i>
@@ -41,7 +44,11 @@ export default function Error404() {
               </Link>
             </div>
             <div className="col-sm-4 mb-3">
-              <a className="card h-100 border-0 shadow-sm" href="#">
+              <a
+                aria-label="search"
+                className="card h-100 border-0 shadow-sm"
+                href="#"
+              >
                 <div className="card-body">
                   <div className="flex items-center">
                     <i className="ci-search text-success h4 mb-0"></i>
@@ -57,7 +64,7 @@ export default function Error404() {
             </div>
             <div className="col-sm-4 mb-3">
               <Link href="/help-topics" passHref>
-                <a className="card h-100 border-0 shadow-sm">
+                <a aria-label="support center" className="card h-100 border-0 shadow-sm">
                   <div className="card-body">
                     <div className="flex items-center">
                       <i className="ci-help text-info h4 mb-0"></i>

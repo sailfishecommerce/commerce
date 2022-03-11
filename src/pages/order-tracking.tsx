@@ -63,7 +63,12 @@ export default function OrderTracking() {
             </label>
           </div>
           <Link href="/shop" passHref>
-            <a className="btn btn-primary btn-sm mt-2">To Continue Shopping</a>
+            <a
+              aria-label="continue shopping"
+              className="btn btn-primary btn-sm mt-2"
+            >
+              To Continue Shopping
+            </a>
           </Link>
         </div>
       </div>

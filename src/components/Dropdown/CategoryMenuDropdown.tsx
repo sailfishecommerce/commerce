@@ -32,6 +32,7 @@ function CategoryDropdownList({ category, categories }: Props) {
         <div className="widget widget-links">
           <Link href={`/collections/product-type/${category.slug}`} passHref>
             <a
+              aria-label="category"
               onClick={() => linkHandler(category)}
               className="categoryImg d-flex flex-column overflow-hidden rounded-3 mb-3"
             >
@@ -50,7 +51,9 @@ function CategoryDropdownList({ category, categories }: Props) {
             {displayThreeSubCat.map((cat) => (
               <li key={cat.id} className="widget-list-item mb-1">
                 <Link href={`/collections/product-type/${cat.slug}`} passHref>
-                  <a className="widget-list-link">{cat.name}</a>
+                  <a aria-label={cat.name} className="widget-list-link">
+                    {cat.name}
+                  </a>
                 </Link>
               </li>
             ))}

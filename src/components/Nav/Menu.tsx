@@ -58,7 +58,7 @@ export default function Menu() {
                   className={`nav-item w-1/3 mx-2 flex flex-col dropdown ${style}`}
                 >
                   <Link href={menu.link} passHref>
-                    <a className="nav-link hover:text-red-500">{menu.name}</a>
+                    <a aria-label={menu.name} className="nav-link hover:text-red-500">{menu.name}</a>
                   </Link>
                 </li>
               );

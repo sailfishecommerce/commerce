@@ -55,7 +55,7 @@ export default function AccountSigninForm() {
                     </label>
                   </div>
                   <Link href="/account-password-recovery" passHref>
-                    <a className="nav-link-inline fs-sm">Forgot password?</a>
+                    <a aria-label="forgot password?" className="nav-link-inline fs-sm">Forgot password?</a>
                   </Link>
                 </div>
                 <hr className="mt-4" />

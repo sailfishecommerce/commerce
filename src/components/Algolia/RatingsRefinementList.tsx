@@ -16,6 +16,7 @@ export default function RatingsRefinementList({
       {items.map((item: { label: number; count: number }, index: number) => (
         <div className="my-1 flex items-center justify-between" key={index}>
           <a
+            aria-label={item.label}
             onClick={() => refineSearch(item)}
             className="btn btn-link m-0 p-0"
           >

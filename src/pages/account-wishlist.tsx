@@ -20,12 +20,12 @@ export default function AccountWishlist() {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-light flex-lg-nowrap justify-center justify-content-lg-start">
                 <li className="breadcrumb-item">
-                  <a className="text-nowrap" href="index">
+                  <a aria-label="home" className="text-nowrap" href="index">
                     <i className="ci-home"></i>Home
                   </a>
                 </li>
                 <li className="breadcrumb-item text-nowrap">
-                  <a href="#">Account</a>
+                  <a aria-label="account" href="#">Account</a>
                 </li>
                 <li
                   className="breadcrumb-item text-nowrap active"
@@ -53,7 +53,7 @@ export default function AccountWishlist() {
                 List of items you added to wishlist:
               </h6>
               <Link href="/account-signin" passHref>
-                <a className="btn btn-primary btn-sm">
+                <a aria-label="sign out" className="btn btn-primary btn-sm">
                   <i className="ci-sign-out mx-2"></i>Sign out
                 </a>
               </Link>

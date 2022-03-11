@@ -21,6 +21,7 @@ const CustomCurrentRefinements = ({ items, refine, createURL }: any) => {
                 {item.items.map((nested: any) => (
                   <li key={nested.label}>
                     <a
+                    aria-label="current filter"
                       href={createURL(nested.value)}
                       onClick={(event) => {
                         event.preventDefault();

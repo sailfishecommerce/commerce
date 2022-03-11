@@ -20,6 +20,10 @@ export default function ProductList({ product }: ProductProps) {
     itemViewed("product_viewed", [product.objectID]);
   }
 
+  const imageAlt = product?.image_alt_text
+    ? product?.image_alt_text[0]
+    : product.name;
+
   return (
     <div className="product-list w-full mb-4 px-4 py-2 hover:shadow-lg border-b-2 justify-center">
       <span className="bg-red-500 shadow-lg text-white p-2 mx-1 rounded-lg">
@@ -38,6 +42,7 @@ export default function ProductList({ product }: ProductProps) {
       <div className="flex flex-col md:flex-row items-center">
         <Link href={`/products/${product.slug}`} passHref>
           <a
+            aria-label={imageAlt}
             onClick={productViewedHandler}
             className="product-list-thumb h-1/3 md:h-full"
           >
@@ -45,11 +50,7 @@ export default function ProductList({ product }: ProductProps) {
               height={300}
               width={300}
               src={product.images[0]?.file?.url}
-              alt={
-                product?.image_alt_text
-                  ? product?.image_alt_text[0]
-                  : product.name
-              }
+              alt={imageAlt}
               className="productImage"
               placeholder="blur"
               blurDataURL={product.images[0]?.file?.url}

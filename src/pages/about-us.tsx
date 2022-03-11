@@ -33,6 +33,7 @@ export default function About() {
                     <h6 className="font-bold pt-1 mb-1">{team.name}</h6>
                     <p className="text-md">{team.role}</p>
                     <a
+                      aria-label="email"
                       className="hover:text-red-500 flex items-center"
                       href={`mailto:${team.email}`}
                     >

@@ -48,7 +48,7 @@ export default function RewardView({ content }: Props) {
         <p className="signin text-center">
           Already have an account?{" "}
           <Link href="/">
-            <a className="signin-text text-red-500 font-bold">Sign in</a>
+            <a aria-label="sign in" className="signin-text text-red-500 font-bold">Sign in</a>
           </Link>
         </p>
       </div>

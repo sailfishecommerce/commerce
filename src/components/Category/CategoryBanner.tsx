@@ -11,7 +11,7 @@ export default function CategoryBanner() {
               Explore our collections
             </h3>
             <Link href="/shop" passHref>
-              <a className="text-white ml-8 mt-4 text-lg hover:text-red-500">
+              <a aria-label="get started now" className="text-white ml-8 mt-4 text-lg hover:text-red-500">
                 Get started now
                 <i className="ci-arrow-right fs-xs align-middle ms-1"></i>
               </a>
@@ -19,7 +19,7 @@ export default function CategoryBanner() {
           </div>
         </div>
         <Link href="/shop" passHref>
-          <a className="d-none d-md-block mt-auto">
+          <a aria-label="shop" className="d-none d-md-block mt-auto">
             <Image
               className="categoryBanner"
               src="/sliders/featured_category_image.webp"

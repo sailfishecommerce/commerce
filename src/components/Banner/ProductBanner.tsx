@@ -20,7 +20,7 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
             <ol className="flex mx-auto text-xs md:text-lg text-white justify-center lg:justify-end w-full">
               <li>
                 <Link href="/" passHref>
-                  <a className="hover:text-red-500">
+                  <a aria-label="home" className="hover:text-red-500">
                     <i className="ci-home"></i>Home
                   </a>
                 </Link>
@@ -30,7 +30,9 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
               </li>
               <li>
                 <Link href="/shop" passHref>
-                  <a className="hover:text-red-500">Shop</a>
+                  <a aria-label="shop" className="hover:text-red-500">
+                    Shop
+                  </a>
                 </Link>
               </li>
               {product ? (
@@ -45,7 +47,7 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
                       )}`}
                       passHref
                     >
-                      <a className="hover:text-red-500">{product.vendor}</a>
+                      <a aria-label={product.vendor} className="hover:text-red-500">{product.vendor}</a>
                     </Link>
                   </li>
                   <li className="mx-2">

@@ -202,7 +202,7 @@ export function SearchInput() {
         name="search"
         placeholder="Search"
       />
-      <button type="submit" className="absolute right-2 top-3 mr-4">
+      <button aria-label="search" type="submit" className="absolute right-2 top-3 mr-4">
         <svg
           className="text-black h-6 w-6 fill-current"
           xmlns="http://www.w3.org/2000/svg"

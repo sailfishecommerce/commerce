@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import productReview from "@/json/product-review.json";
 import RatingStar from "@/components/Rating/RatingStar";
 

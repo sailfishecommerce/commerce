@@ -18,14 +18,14 @@ export default function CheckoutBanner({
             <ol className="breadcrumb breadcrumb-light flex-lg-nowrap justify-center justify-content-lg-start">
               <li className="breadcrumb-item">
                 <Link href="/" passHref>
-                  <a className="text-nowrap">
+                  <a aria-label="Home" className="text-nowrap">
                     <i className="ci-home"></i>Home
                   </a>
                 </Link>
               </li>
               <li className="breadcrumb-item text-nowrap">
                 <Link href="/shop" passHref>
-                  <a>Shop</a>
+                  <a aria-label="shop">Shop</a>
                 </Link>
               </li>
               <li

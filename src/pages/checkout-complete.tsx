@@ -70,10 +70,10 @@ export default function CheckoutComplete() {
                 order.
               </p>
               <Link href="/shop" passHref>
-                <a className="btn btn-secondary mt-3 me-3">Go back shopping</a>
+                <a aria-label="go back shopping" className="btn btn-secondary mt-3 me-3">Go back shopping</a>
               </Link>
               <Link href="/order-tracking" passHref>
-                <a className="btn btn-primary mt-3">
+                <a aria-label="track order" className="btn btn-primary mt-3">
                   <i className="ci-location"></i>&nbsp;Track order
                 </a>
               </Link>

@@ -187,14 +187,26 @@ export function ShareProductLink() {
   return (
     <div className="flex items-center">
       <label className="mr-2">Share:</label>
-      <a className="flex items-center hover:text-blue-500" href="#">
+      <a
+        aria-label="visit us on twitter"
+        className="flex items-center hover:text-blue-500"
+        href="#"
+      >
         <BsTwitter className="mx-1" /> Twitter
       </a>
-      <a className="flex items-center mx-2 hover:text-blue-500" href="#">
+      <a
+        aria-label="visit us on instagram"
+        className="flex items-center mx-2 hover:text-blue-500"
+        href="#"
+      >
         <BsInstagram className="mx-1" />
         Instagram
       </a>
-      <a className="flex items-center hover:text-blue-500" href="#">
+      <a
+        aria-label="visit us on facebook"
+        className="flex items-center hover:text-blue-500"
+        href="#"
+      >
         <BsFacebook className="mx-1" />
         Facebook
       </a>

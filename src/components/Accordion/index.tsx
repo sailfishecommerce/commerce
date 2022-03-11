@@ -48,6 +48,7 @@ export default function Accordion({
       "
             type="button"
             data-bs-toggle="collapse"
+            aria-label={title}
             data-bs-target="#collapseOne"
             aria-expanded="true"
             aria-controls="collapseOne"

@@ -38,6 +38,7 @@ export default function DashboardSidebar() {
             className="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0"
             href="#account-menu"
             data-bs-toggle="collapse"
+            aria-label="account menu"
             aria-expanded="false"
           >
             <i className="ci-menu mx-2"></i>Account menu
@@ -55,7 +56,7 @@ export default function DashboardSidebar() {
                 {sidebarContent.content.map((content: contentType) => (
                   <li key={content.name} className="border-b-4 mb-0">
                     <Link href={content.link} passHref>
-                      <a className="nav-link-style flex items-center px-4 py-3">
+                      <a aria-label={content.name} className="nav-link-style flex items-center px-4 py-3">
                         <i className={` ${content.icon} opacity-60 mx-2`}></i>
                         {content.name}
                         <span className="fs-sm text-gray-500 ms-auto">

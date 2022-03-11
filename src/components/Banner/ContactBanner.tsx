@@ -10,7 +10,7 @@ export default function ContactBanner() {
             <ol className="flex lg:flex-nowrap justify-center">
               <li className="hover:text-red-500 text-gray-500">
                 <Link href="/" passHref>
-                  <a className="flex items-center">
+                  <a aria-label="home" className="flex items-center">
                     <HiHome className="mx-1" />
                     Home
                   </a>

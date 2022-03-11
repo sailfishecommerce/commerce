@@ -13,6 +13,7 @@ export default function DropdownItem({
   return (
     <li>
       <a
+        aria-label="dropdown"
         onClick={onClick}
         className={`
               ${className}

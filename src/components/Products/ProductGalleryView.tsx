@@ -94,6 +94,7 @@ export default function ProductGalleryView({ product }: Props) {
             )}`}
             onClick={() => updateActiveImage(index)}
             key={index}
+            aria-label={product.image_alt_text[index]}
           >
             <Image
               height={imageView.height}

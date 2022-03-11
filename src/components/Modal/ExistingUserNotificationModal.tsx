@@ -45,6 +45,7 @@ export default function ExistingUserNotificationModal({ show, onHide, data }) {
       <p className="text-center">
         Please
         <a
+          aria-label="login"
           onClick={loginHandler}
           className="btn-link font-bold text-decoration-underline ms-1 me-1 cursor-pointer"
         >
@@ -54,6 +55,7 @@ export default function ExistingUserNotificationModal({ show, onHide, data }) {
       </p>
       <p className="text-center">
         <a
+          aria-label="forgot password"
           onClick={forgotPassword}
           className="btn-link font-bold text-decoration-underline cursor-pointer"
         >

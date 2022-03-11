@@ -51,6 +51,7 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
                   passHref
                 >
                   <a
+                    aria-label={hit.name}
                     onClick={() =>
                       clickedItemAfterSearch(
                         hit.__queryID,

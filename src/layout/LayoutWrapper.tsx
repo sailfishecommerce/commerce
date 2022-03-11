@@ -29,7 +29,6 @@ const QuickViewModal = dynamic(
   () => import("@/components/Modal/QuickViewModal")
 );
 
-
 export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
   const { toggleCart } = useCart();
   const tabWidth = useMediaQuery("(max-width:768px)");
@@ -79,6 +78,7 @@ export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
       </div>
       {showPointer && (
         <a
+          aria-label="go up"
           href="#head"
           data-aos="fade-right-up"
           className="goUp position-fixed flex"
