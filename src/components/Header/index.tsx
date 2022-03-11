@@ -1,14 +1,18 @@
 import { memo } from "react";
+
+import Menu from "@/components/Nav/Menu";
 import Topbar from "@/components/Header/Topbar";
 import Nav from "@/components/Nav";
-import Menu from "@/components/Nav/Menu";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 function HeaderComponent() {
+  const tabWidth = useMediaQuery("(max-width:768px)");
+
   return (
     <header className="header">
       <Topbar />
       <Nav />
-      <Menu />
+      {!tabWidth && <Menu />}
     </header>
   );
 }

@@ -38,7 +38,7 @@ function NavMenuComponent() {
   }
   return (
     <>
-      <div className="flex items-center lg:mr-2 mt-2 justify-between w-full px-4 lg:w-4/12">
+      <div className="flex items-center lg:mr-2 mt-2 justify-between w-1/2 px-4 lg:w-4/12">
         <NavToggler />
         {status === "error" ? (
           "unable to fetch user details"

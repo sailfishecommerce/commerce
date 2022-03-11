@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
-import { BsCart4 } from "react-icons/bs";
 import { useState } from "react";
-import FormattedPrice from "@/components/Price/FormattedPrice";
+
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 interface NavbarDropdownProps {
   toggleSlideCartMobile: () => void;
@@ -17,38 +17,28 @@ const HeaderCartDropdown = dynamic(
   () => import("@/components/Dropdown/CartDropdown")
 );
 
+const NavCartView = dynamic(() => import("@/components/Cart/NavCartView"));
+const NavCartViewMobile = dynamic(
+  () => import("@/components/Cart/NavCartViewMobile")
+);
+
 export default function NavbarDropdown({
   toggleSlideCartMobile,
   cart,
 }: NavbarDropdownProps) {
   const [dropdownStatus, setDropdownStatus] = useState(false);
+  const tabWidth = useMediaQuery("(max-width:768px)");
 
   function onClickHandler() {
     setDropdownStatus(!dropdownStatus);
   }
   return (
-    <div className="relative bg-gray-50 hover:bg-gray-100 shadow-lg cursor-pointer rounded-lg p-2 md:p-4 flex items-center w-3/8 lg:w-1/2">
-      <div onClick={onClickHandler} className="flex price-overview flex-col">
-        <span className="text-xs md:text-md text-center font-bold">
-          My Cart
-        </span>
-        {cart?.grandTotal ? (
-          <a className="flex items-center">
-            <div className="cart-icon relative flex flex-col mr-2">
-              <span className="absolute top-0 right-0 -mt-2 text-white justify-center bg-red-500 rounded-full h-4 w-4 flex items-center">
-                {cart?.items?.length}
-              </span>
-              <BsCart4 className="mx-2 my-0" size={26} />
-            </div>
-            <FormattedPrice
-              className="font-bold w-full"
-              price={cart?.grandTotal}
-            />
-          </a>
-        ) : (
-          <FormattedPrice price={0} />
-        )}
-      </div>
+    <>
+      {tabWidth ? (
+        <NavCartViewMobile cart={cart} onClickHandler={onClickHandler} />
+      ) : (
+        <NavCartView cart={cart} onClickHandler={onClickHandler} />
+      )}
       {dropdownStatus && cart?.items.length > 0 && (
         <div className="absolute md:top-20 top-16 right-5 md:right-0 flex items-center justify-center w-full bg-white shadow-lg z-40">
           <HeaderCartDropdown
@@ -57,6 +47,6 @@ export default function NavbarDropdown({
           />
         </div>
       )}
-    </div>
+    </>
   );
 }
