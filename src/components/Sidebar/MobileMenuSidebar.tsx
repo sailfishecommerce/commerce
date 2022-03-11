@@ -18,10 +18,10 @@ export default function MobileMenuSidebar() {
 
   const menuText = mobileMenu === "filterNav" ? "Filters" : "Menu";
   return (
-    <div className="fixed top-0 flex flex-col border-r w-11/12 h-full left-0 bg-white z-50">
+    <div className="fixed top-0 flex flex-col border-r w-11/12 h-full left-0 bg-white z-40">
       <div className="content relative w-full h-full px-4">
         <div className="menu-bar h-12 px-4 my-4 border flex items-center shadow-md justify-between mb-4">
-          <h4>{menuText}</h4>
+          <h4 className="font-bold">{menuText}</h4>
           <MdCancel
             onClick={onCloseSidebar}
             className="text-red-500"

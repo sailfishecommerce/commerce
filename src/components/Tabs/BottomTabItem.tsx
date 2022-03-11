@@ -6,6 +6,7 @@ interface BottomTabItemViewProps {
   link?: string;
   title: string;
   icon: JSX.Element;
+  onToggle?: () => void;
 }
 
 interface Props extends BottomTabItemViewProps {
@@ -34,7 +35,12 @@ function BottomTabCartItem({ cart, icon, title, link }) {
   );
 }
 
-function BottomTabItemView({ icon, title, link }: BottomTabItemViewProps) {
+function BottomTabItemView({
+  icon,
+  title,
+  link,
+  onToggle,
+}: BottomTabItemViewProps) {
   const bordered = title === "Menu" ? "border-x" : "";
   return (
     <>
@@ -49,6 +55,7 @@ function BottomTabItemView({ icon, title, link }: BottomTabItemViewProps) {
         </Link>
       ) : (
         <a
+          onClick={onToggle}
           className={`flex focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
         >
           {icon}
@@ -59,9 +66,7 @@ function BottomTabItemView({ icon, title, link }: BottomTabItemViewProps) {
   );
 }
 
-export function BottomTabItem({ link, title, icon, cart }: Props) {
-  const bordered = title === "Menu" ? "border-x" : "";
-
+export function BottomTabItem({ link, title, icon, cart, onToggle }: Props) {
   return (
     <>
       {cart ? (
@@ -69,7 +74,7 @@ export function BottomTabItem({ link, title, icon, cart }: Props) {
       ) : link ? (
         <BottomTabItemView icon={icon} title={title} link={link} />
       ) : (
-        <BottomTabItemView icon={icon} title={title} />
+        <BottomTabItemView icon={icon} title={title} onToggle={onToggle} />
       )}
     </>
   );

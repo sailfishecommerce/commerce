@@ -8,6 +8,7 @@ import useScroll from "@/hooks/useScroll";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { toggleAuthModal } from "@/redux/ui-slice";
 import useModal from "@/hooks/useModal";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import LayoutMetatag from "@/components/Metatag/LayoutMetatag";
 import displayAppModal from "@/lib/displayAppModal";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,10 +29,10 @@ const QuickViewModal = dynamic(
   () => import("@/components/Modal/QuickViewModal")
 );
 
-// MobileMenuSidebar
 
 export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
   const { toggleCart } = useCart();
+  const tabWidth = useMediaQuery("(max-width:768px)");
   const { modal, onHideModal } = useModal();
   const { scroll } = useScroll();
   const UI = useAppSelector((state) => state.UI);
@@ -68,7 +69,7 @@ export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
       {modal && displayAppModal(modal, onHideModal)}
       {loading && <SpinnerOverlay />}
       {loadingState && <LoadingBar />}
-      {UI.displayMobileMenu && <MobileMenuSidebar />}
+      {UI.displayMobileMenu && tabWidth && <MobileMenuSidebar />}
       <NextNProgress color="red" options={{ showSpinner: false }} />
       <ToastContainer />
 
