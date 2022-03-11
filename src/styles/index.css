@@ -14,13 +14,10 @@
   display: none;
 }
 ul.splide__pagination {
-  height: 70px;
+  height: 10px;
   margin-top: -10px;
 }
 
-.splide__track {
-  margin-right: 30px;
-}
 /* homepage slider */
 .carousel .splide__track {
   margin: 0px;
@@ -36,6 +33,13 @@ ul.splide__pagination {
 
 .related-products .splide__track {
   margin-right: unset;
+}
+
+.splide__pagination li button.splide__pagination__page.is-active {
+  background: red;
+}
+.splide__pagination li button {
+  margin: 0px 5px;
 }
 
 /* style scrollbar */
@@ -254,6 +258,11 @@ span.ais-Menu-label {
 
 .blogGrid .splide__track {
   margin-right: unset;
+}
+
+/* quick view modal */
+.quickView-description.description h2 {
+  font-weight: bold;
 }
 
 /* media query */

@@ -33,7 +33,7 @@ export default function ProductDetail({ product }: Props) {
         onHide={toggleModal}
         productName={product.name}
       />
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center mb-2 w-full">        
         <div className="flex items-center flex-col md:flex-row">
           <span className="text-blue-800 font-bold text-xl mx-1">
             <FormattedPrice

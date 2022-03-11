@@ -92,7 +92,7 @@ export default function ProductGalleryView({ product, isModal }: Props) {
       <div className="product-gallery-thumblist flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5">
         {images?.map((image: any, index) => (
           <a
-            className={`items-center justify-center ${imageSize} flex hover:border-gray-300 px-2 hover:border-2 ${activethumbnailImg(
+            className={`items-center justify-center ${imageSize} flex  px-2 hover:border-2 ${activethumbnailImg(
               index
             )}`}
             onClick={() => updateActiveImage(index)}

@@ -12,6 +12,7 @@ interface QuickViewModalProps {
     active: boolean;
     productToView: any;
   };
+  isMobile?: boolean;
 }
 
 function ModalHeader({ productToView }) {
@@ -21,7 +22,7 @@ function ModalHeader({ productToView }) {
         data-bs-toggle="tooltip"
         data-bs-placement="right"
         title="Go to product page"
-        className="flex items-center text-red-500 font-bold"
+        className="flex items-center text-red-500 font-bold hover:text-red-400"
         aria-label={productToView.name}
       >
         {productToView.name}
@@ -31,7 +32,10 @@ function ModalHeader({ productToView }) {
   );
 }
 
-export default function QuickViewModal({ product }: QuickViewModalProps) {
+export default function QuickViewModal({
+  product,
+  isMobile,
+}: QuickViewModalProps) {
   const dispatch = useAppDispatch();
   const { productToView } = product;
 
@@ -46,7 +50,7 @@ export default function QuickViewModal({ product }: QuickViewModalProps) {
       header={<ModalHeader productToView={productToView} />}
     >
       <div className="flex">
-        <ProductGallery product={productToView} isModal />
+        <ProductGallery product={productToView} isModal={isMobile} />
         <ProductdetailsView product={product} />
       </div>
       <style jsx>
