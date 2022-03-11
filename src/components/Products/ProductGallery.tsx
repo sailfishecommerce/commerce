@@ -7,9 +7,10 @@ import { productType } from "@/types";
 interface Props {
   product: productType;
   quickView?: boolean;
+  isModal?: boolean;
 }
 
-export default function ProductGallery({ product }: Props) {
+export default function ProductGallery({ product, isModal }: Props) {
   return (
     <>
       <Head>
@@ -24,7 +25,7 @@ export default function ProductGallery({ product }: Props) {
         id="lightgalleryScript"
       />
       <div className="w-full lg:w-2/3 lg:pr-0 lg:pt-4">
-        <ProductGalleryView product={product} />
+        <ProductGalleryView product={product} isModal />
       </div>
     </>
   );

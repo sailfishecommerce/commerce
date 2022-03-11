@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import dynamic from "next/dynamic";
 import { memo } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { toggleAuthModal, toggleSlideCart } from "@/redux/ui-slice";
@@ -43,7 +44,7 @@ function NavMenuComponent() {
         {status === "error" ? (
           "unable to fetch user details"
         ) : status === "loading" ? (
-          "loading..."
+          <AiOutlineUser />
         ) : userDetails !== null ? (
           <AuthorizedView userLogout={userLogout} userDetail={userDetails} />
         ) : (

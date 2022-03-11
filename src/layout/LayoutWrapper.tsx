@@ -60,7 +60,7 @@ export default function LayoutWrapper({ children }: PropsWithChildren<{}>) {
       <div data-aos="fade-up" id="head" />
       {slideCart && <SlideCart toggle={toggleCart} />}
       {UI?.quickViewModal?.active && (
-        <QuickViewModal product={UI.quickViewModal} />
+        <QuickViewModal product={UI.quickViewModal} isMobile={tabWidth} />
       )}
       {UI?.displayAuthModal && (
         <AuthModal onHide={toggleAuthModalHandler} show={UI.displayAuthModal} />

@@ -1,3 +1,4 @@
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 
 import Modal from "@/components/Modal";
@@ -15,19 +16,18 @@ interface QuickViewModalProps {
 
 function ModalHeader({ productToView }) {
   return (
-    <h6 className="modal-title product-title">
-      <Link href={`/products/${productToView.slug}`} passHref>
-        <a
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          title="Go to product page"
-          aria-label={productToView.name}
-        >
-          {productToView.name}
-          <i className="ci-arrow-right fs-lg ms-2"></i>
-        </a>
-      </Link>
-    </h6>
+    <Link href={`/products/${productToView.slug}`} passHref>
+      <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Go to product page"
+        className="flex items-center text-red-500 font-bold"
+        aria-label={productToView.name}
+      >
+        {productToView.name}
+        <IoIosArrowForward />
+      </a>
+    </Link>
   );
 }
 
@@ -45,8 +45,10 @@ export default function QuickViewModal({ product }: QuickViewModalProps) {
       modalHandler={quickViewHandler}
       header={<ModalHeader productToView={productToView} />}
     >
-      <ProductGallery product={productToView} />
-      <ProductdetailsView product={product} />
+      <div className="flex">
+        <ProductGallery product={productToView} isModal />
+        <ProductdetailsView product={product} />
+      </div>
       <style jsx>
         {`
           .description {

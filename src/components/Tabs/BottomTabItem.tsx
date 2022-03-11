@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { cartType } from "@/types";
 import FormattedPrice from "@/components/Price/FormattedPrice";
@@ -6,6 +5,7 @@ import FormattedPrice from "@/components/Price/FormattedPrice";
 interface BottomTabItemViewProps {
   link?: string;
   title: string;
+  route?: string;
   icon: JSX.Element;
   onToggle?: () => void;
 }
@@ -44,10 +44,12 @@ function BottomTabItemView({
   title,
   link,
   onToggle,
+  route,
 }: BottomTabItemViewProps) {
   const bordered = title === "Menu" ? "border-x" : "";
-  const router = useRouter();
-  const activeTab = router.pathname.includes(link) ? "text-red-500" : "";
+  const filterBorder = title === "Filter" ? "border-r" : "";
+
+  const activeTab = route?.includes(link) ? "text-red-500" : "";
   return (
     <>
       {link ? (
@@ -64,7 +66,7 @@ function BottomTabItemView({
         <a
           aria-label={title}
           onClick={onToggle}
-          className={`flex ${activeTab} focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
+          className={`flex ${activeTab} ${filterBorder} focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
         >
           {icon}
           <p className="mb-0 text-sm">{title}</p>
@@ -74,15 +76,32 @@ function BottomTabItemView({
   );
 }
 
-export function BottomTabItem({ link, title, icon, cart, onToggle }: Props) {
+export function BottomTabItem({
+  link,
+  title,
+  icon,
+  cart,
+  onToggle,
+  route,
+}: Props) {
   return (
     <>
       {cart ? (
         <BottomTabCartItem cart={cart} icon={icon} title={title} link={link} />
       ) : link ? (
-        <BottomTabItemView icon={icon} title={title} link={link} />
+        <BottomTabItemView
+          icon={icon}
+          title={title}
+          route={route}
+          link={link}
+        />
       ) : (
-        <BottomTabItemView icon={icon} title={title} onToggle={onToggle} />
+        <BottomTabItemView
+          route={route}
+          icon={icon}
+          title={title}
+          onToggle={onToggle}
+        />
       )}
     </>
   );

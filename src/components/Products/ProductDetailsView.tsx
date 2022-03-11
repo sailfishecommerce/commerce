@@ -8,7 +8,7 @@ import discountPrice from "@/lib/discountPrice";
 export default function ProductdetailsView({ product }: any) {
   const { productToView } = product;
   return (
-    <div className="col-lg-5 pt-4 pt-lg-0">
+    <div className="w-3/5 pt-4 pt-lg-0">
       <div className="product-details ms-auto pb-3">
         <div className="flex justify-between items-center mb-2">
           <Rating product={productToView} />
