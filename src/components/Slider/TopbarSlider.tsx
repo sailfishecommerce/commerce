@@ -15,7 +15,7 @@ function TopbarSliderComponent() {
           type: "loop",
           height: "3rem",
           direction: "ttb",
-          autoplay: false,
+          autoplay: true,
         }}
       >
         {sliderArray.map((content: any, index: number) => (

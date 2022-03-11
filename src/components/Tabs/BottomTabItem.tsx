@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { cartType } from "@/types";
 import FormattedPrice from "@/components/Price/FormattedPrice";
@@ -16,7 +17,10 @@ interface Props extends BottomTabItemViewProps {
 function BottomTabCartItem({ cart, icon, title, link }) {
   return (
     <Link href={link} passHref>
-      <a aria-label={title} className="relative flex flex-col justify-center w-1/4 items-center">
+      <a
+        aria-label={title}
+        className="relative flex flex-col justify-center w-1/4 items-center"
+      >
         <div className="cart flex relative w-1/3">
           {icon}
           {cart && (
@@ -42,13 +46,15 @@ function BottomTabItemView({
   onToggle,
 }: BottomTabItemViewProps) {
   const bordered = title === "Menu" ? "border-x" : "";
+  const router = useRouter();
+  const activeTab = router.pathname.includes(link) ? "text-red-500" : "";
   return (
     <>
       {link ? (
         <Link href={link} passHref>
           <a
             aria-label={title}
-            className={`flex focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
+            className={`flex ${activeTab} focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
           >
             {icon}
             <p className="mb-0 text-sm">{title}</p>
@@ -58,7 +64,7 @@ function BottomTabItemView({
         <a
           aria-label={title}
           onClick={onToggle}
-          className={`flex focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
+          className={`flex ${activeTab} focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
         >
           {icon}
           <p className="mb-0 text-sm">{title}</p>
