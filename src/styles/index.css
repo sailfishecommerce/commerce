@@ -10,6 +10,10 @@
   display: none;
 }
 
+.header-slider ul.splide__pagination {
+  display: none;
+}
+
 .shopByBrand ul.splide__pagination {
   display: none;
 }
@@ -264,6 +268,9 @@ span.ais-Menu-label {
 .quickView-description.description h2 {
   font-weight: bold;
 }
+.description.quickView-description {
+  display: none;
+}
 
 /* media query */
 @media (min-width: 768px) {
@@ -272,6 +279,11 @@ span.ais-Menu-label {
   }
   .item.slider-container {
     width: 400px;
+  }
+  .product-gallery-thumblist {
+    height: 700px;
+    flex-wrap: unset;
+    overflow-y: auto;
   }
 }
 

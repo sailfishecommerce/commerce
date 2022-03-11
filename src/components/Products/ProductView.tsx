@@ -6,6 +6,7 @@ import {
   BsInstagram,
   BsTwitter,
 } from "react-icons/bs";
+import { AiFillLock } from "react-icons/ai";
 
 import useShoppingCart from "@/hooks/useShoppingCart";
 import { productType } from "@/types";
@@ -20,7 +21,7 @@ export function PaymentNote() {
         alt="we are accept visa, mastercard cards and bank transfers"
       />
       <div className="secured-by flex items-center mt-2">
-        <i className="fas fa-lock mx-2"></i>
+        <AiFillLock />
         <p className="text-gray-500 mx-2 mb-0">
           Transactions secured by Stripe & Airwallex
         </p>

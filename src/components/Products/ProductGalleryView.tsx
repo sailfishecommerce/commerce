@@ -18,7 +18,7 @@ export default function ProductGalleryView({ product, isModal }: Props) {
   const [activeImage, setActiveImage] = useState(0);
   const mobileView = useMediaQuery("(max-width:768px)");
 
-  const imageSize = isModal ? "w-full" : "w-1/3";
+  const imageSize = isModal ? "w-1/3 lg:w-full " : "w-1/3";
 
   const imageView = mobileView
     ? {
@@ -89,7 +89,7 @@ export default function ProductGalleryView({ product, isModal }: Props) {
           />
         )}
       </div>
-      <div className="product-gallery-thumblist flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5">
+      <div className="product-gallery-thumblist flex hidden md:flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5">
         {images?.map((image: any, index) => (
           <a
             className={`items-center justify-center ${imageSize} flex  px-2 hover:border-2 ${activethumbnailImg(

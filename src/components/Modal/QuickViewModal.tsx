@@ -1,4 +1,4 @@
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 
 import Modal from "@/components/Modal";
@@ -49,7 +49,7 @@ export default function QuickViewModal({
       modalHandler={quickViewHandler}
       header={<ModalHeader productToView={productToView} />}
     >
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <ProductGallery product={productToView} isModal={isMobile} />
         <ProductdetailsView product={product} />
       </div>

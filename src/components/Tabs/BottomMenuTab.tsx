@@ -6,7 +6,7 @@ import { GoSettings } from "react-icons/go";
 import { useAppDispatch } from "@/redux/store";
 import useCart from "@/hooks/useCart";
 import { BottomTabItem } from "./BottomTabItem";
-import { toggleMobileMenu } from "@/redux/ui-slice";
+import { toggleMobileMenu, updateMobileMenu } from "@/redux/ui-slice";
 
 export default function BottomTab() {
   const { useCartData } = useCart();
@@ -18,6 +18,11 @@ export default function BottomTab() {
     dispatch(toggleMobileMenu());
   }
 
+  function toggleFilterMenuHandler() {
+    dispatch(toggleMobileMenu());
+    dispatch(updateMobileMenu("filterNav"));
+  }
+
   return (
     <div className="mobile-bottom-menu fixed bottom-0 w-full py-3 px-2 bg-white z-40 border-gray-200 border-t">
       <div className="flex items-center justify-around w-full">
@@ -25,6 +30,7 @@ export default function BottomTab() {
           <BottomTabItem
             route={router.pathname}
             title="Filter"
+            onToggle={toggleFilterMenuHandler}
             icon={<GoSettings />}
           />
         )}

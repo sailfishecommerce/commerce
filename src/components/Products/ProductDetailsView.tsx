@@ -8,15 +8,19 @@ export default function ProductdetailsView({ product }: any) {
   console.log("product", product);
   const { productToView } = product;
   return (
-    <div className="w-3/5 pt-4 pt-lg-0">
+    <div className="w-full md:w-3/5 pt-4 pt-lg-0">
       <div className="product-details ms-auto pb-3">
         <div className="flex justify-between items-center mb-2">
           <Rating product={productToView} />
         </div>
         <div className="price-group mb-2 flex justify-between items-center">
           <div className="flex price items-center">
-            <div className="text-accent mx-2 fs-lg">
-              <FormattedPrice price={productToView.price} isProduct />
+            <div className="mx-0 md:mx-2">
+              <FormattedPrice
+                price={productToView.price}
+                isProduct
+                className="text-2xl"
+              />
             </div>
             {product.rrp && (
               <del>

@@ -79,13 +79,15 @@ export default function ShopView({ vendor, menu }: ShopViewProps) {
         distinct
         enablePersonalization={true}
       />
-      <div className="w-full flex bg-gray-700 justify-between h-52">
-        <div className="container m-auto mb-3 mb-lg-0 pt-lg-2 flex flex-col h-32 relative">
-          <nav className="w-full items-start  justify-start flex bg-gray-700 ">
+      <div className="w-full flex bg-gray-700 justify-between h-44 lg:h-52">
+        <div className="container m-auto mb-3 mb-lg-0 pt-lg-2 flex flex-col md:h-32 relative">
+          <nav className="w-full items-start justify-start flex bg-gray-700 ">
             <ol className="text-white flex items-center md:items-start mx-auto md:mx-0 justify-center lg:justify-start">
               <li className="mb-0">
                 <Link href="/" passHref>
-                  <a aria-label="home" className="hover:text-red-500">Home</a>
+                  <a aria-label="home" className="hover:text-red-500">
+                    Home
+                  </a>
                 </Link>
               </li>
               <li className="mx-2">

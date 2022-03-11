@@ -3,6 +3,8 @@ import { updateProductView } from "@/redux/shop-slice";
 import AlgoliaSortby from "@/components/Algolia/AlgoliaSortby";
 import { IoGridOutline } from "react-icons/io5";
 import { AiOutlineBars } from "react-icons/ai";
+
+
 export default function ShopBannerToolbar() {
   const dispatch = useAppDispatch();
   const { productView } = useAppSelector((state) => state.shop);
