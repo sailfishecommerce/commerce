@@ -11,7 +11,7 @@ const MobileCategoryList = dynamic(
   () => import("@/components/Dropdown/CategoryMobileDropdown")
 );
 
-export default function MobileNav() {
+export default function MobileNav({onClose}) {
   const router = useRouter();
   const [toggleCollection, setToggleCollection] = useState(false);
 
@@ -27,14 +27,16 @@ export default function MobileNav() {
         {menuLink.map((menu) => (
           <li
             key={menu.link}
-            className={`menu-list border-b border-gray-100 ${style(menu)}`}
+            className={`menu-list p-2 border-b border-gray-100 ${style(menu)}`}
           >
             <Link href={menu.link} passHref>
-              <a className="nav-link hover:text-red-500">{menu.name}</a>
+              <a onClick={onClose} className="nav-link hover:text-red-500">
+                {menu.name}
+              </a>
             </Link>
           </li>
         ))}
-        <li className="menu-list border-b border-gray-100 dropdown">
+        <li className="menu-list p-2 dropdown">
           <span
             className="nav-link hover:text-red-500 flex items-center"
             onClick={onCollectionMenuHandler}

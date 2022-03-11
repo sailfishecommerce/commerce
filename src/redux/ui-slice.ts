@@ -79,6 +79,7 @@ export const {
   authModalForm,
   updateLoadingAction,
   quickViewModal,
+  toggleMobileMenu,
   updateMobileMenu,
   toggleAuthModal,
   toggleAppModal,
