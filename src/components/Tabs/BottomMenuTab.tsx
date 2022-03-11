@@ -5,8 +5,10 @@ import { useAppDispatch } from "@/redux/store";
 import useCart from "@/hooks/useCart";
 import { BottomTabItem } from "./BottomTabItem";
 import { toggleMobileMenu } from "@/redux/ui-slice";
+import { useRouter } from "next/router";
 
 export default function BottomTab() {
+  const router = useRouter();
   const { useCartData } = useCart();
   const { data: cart } = useCartData();
 

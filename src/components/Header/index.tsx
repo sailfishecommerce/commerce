@@ -9,7 +9,7 @@ function HeaderComponent() {
   const tabWidth = useMediaQuery("(max-width:768px)");
 
   return (
-    <header className="header">
+    <header className="header shadow-lg">
       <Topbar />
       <Nav />
       {!tabWidth && <Menu />}
