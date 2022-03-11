@@ -10,6 +10,9 @@
   display: none;
 }
 
+.shopByBrand ul.splide__pagination {
+  display: none;
+}
 ul.splide__pagination {
   height: 70px;
   margin-top: -10px;

@@ -14,7 +14,7 @@ function ShopByBrandComponent() {
     : { height: 60, width: 200 };
 
   return (
-    <section className="bg-white py-6 flex flex-col justify-center items-center w-full">
+    <section className="shopByBrand bg-white py-6 flex flex-col justify-center items-center w-full">
       <h2 className="text-center mb-4 text-2xl capitalize">Shop by brand</h2>
       <Splide
         className="container flex h-32 items-center"

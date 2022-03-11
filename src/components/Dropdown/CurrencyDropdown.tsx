@@ -32,7 +32,7 @@ function CurrencyDropdownComponent({ className }: Props) {
             alt="en"
           />
         </div>
-        <p className="m-0 text-xs md:text-sm md:ml-4">{`En / ${currency}`}</p>
+        <p className="m-0 text-xs md:text-sm md:ml-4 font-bold">{`En / ${currency}`}</p>
       </div>
     );
   }

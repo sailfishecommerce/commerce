@@ -28,7 +28,7 @@ function SliderItem({ item }): JSX.Element {
         <div className="sliderItem w-full h-full">
           <div className="container m-auto flex flex-col lg:flex-row items-center h-full">
             <div
-              className={`${styles.imageContainer} w-1/2 lg:order-2 lg:mx-4 flex-shrink-0 justify-between items-center lg:ps-4`}
+              className={`${styles.imageContainer} w-1/2 h-1/4 lg:h-4/5 lg:order-2 lg:mx-4 flex-shrink-0 justify-between items-center lg:ps-4`}
             >
               <Image
                 src={item.sliderImg}
