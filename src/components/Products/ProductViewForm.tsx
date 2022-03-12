@@ -1,4 +1,7 @@
 import { memo, useCallback } from "react";
+import { BsCart4 } from "react-icons/bs";
+import { AiOutlineEye } from "react-icons/ai";
+
 import { ProductProps } from "@/types";
 import useAlgoliaEvents from "@/hooks/useAlgoliaEvents";
 import useShoppingCart from "@/hooks/useShoppingCart";
@@ -102,10 +105,10 @@ function ProductViewFormComonent({
                 </select>
                 <button
                   aria-label="Add to Cart"
-                  className="text-sm"
+                  className="text-sm flex items-center bg-red-500 hover:bg-red-400 text-white rounded-lg p-2 m-1"
                   type="submit"
                 >
-                  <i className="ci-cart fs-sm me-1"></i>
+                  <BsCart4 className="mr-1" />
                   Add to Cart
                 </button>
               </div>
@@ -114,10 +117,10 @@ function ProductViewFormComonent({
         ) : (
           <button
             aria-label="Add to Cart"
-            className="bg-red-500 hover:bg-red-400 text-white rounded-lg p-2 m-1 text-sm"
+            className="bg-red-500 flex items-center hover:bg-red-400 text-white rounded-lg p-2 m-1 text-sm"
             type="submit"
           >
-            <i className="ci-cart fs-sm me-1"></i>
+            <BsCart4 className="mr-1" />
             Add to Cart
           </button>
         )}
@@ -125,11 +128,11 @@ function ProductViewFormComonent({
       <div className="text-center">
         <button
           aria-label="Product Quick View"
-          className="hover:text-red-500 text-sm"
+          className="hover:text-red-500 text-sm flex items-center my-2"
           onClick={algoliaViewHandler}
           data-bs-toggle="quickViewModal"
         >
-          <i className="ci-eye align-middle me-1"></i>
+          <AiOutlineEye className="mr-1" />
           Quick view
         </button>
       </div>

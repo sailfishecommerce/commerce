@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { memo, PropsWithChildren, useState } from "react";
-
-const DropdownCaret = dynamic(
-  () => import("@/components/Dropdown/DropdownCaret")
-);
+import { AiFillCaretDown } from "react-icons/ai";
 
 interface Props {
   dropdownText: string | JSX.Element;
@@ -53,7 +49,7 @@ function DropdownComponent({
           aria-label={`${dropdownText}`}
         >
           {dropdownText}
-          <DropdownCaret />
+          <AiFillCaretDown className="ml-2" />
         </button>
         {active && (
           <ul
