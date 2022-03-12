@@ -10,6 +10,7 @@ interface Props {
   category: categoryType;
   categories: categoryType[];
 }
+
 function CategoryDropdownList({ category, categories }: Props) {
   const subCategories = categories.filter((cats) => cats.topId === category.id);
   const displayThreeSubCat = subCategories.slice(0, 3);
@@ -79,7 +80,11 @@ function CategoryDropdownList({ category, categories }: Props) {
   );
 }
 
-export default function CategoryDropdown() {
+interface categoryDropdownProps {
+  onHover: (state: boolean) => void;
+}
+
+export default function CategoryDropdown({ onHover }: categoryDropdownProps) {
   const [categories, status] = useCategoryData();
 
   const topCategories = categories?.results?.filter(
@@ -89,7 +94,11 @@ export default function CategoryDropdown() {
   const firstCategories = topCategories?.slice(9, 17);
 
   return (
-    <div className="dropdown-menu p-2 w-3/4 absolute z-40 flex border top-8 bg-white flex-col rounded-lg">
+    <div
+      onMouseEnter={() => onHover(true)}
+      onMouseLeave={() => onHover(false)}
+      className="dropdown-menu p-2 w-3/4 absolute z-40 flex border top-6 bg-white flex-col rounded-lg"
+    >
       {status === "error" ? (
         "unable to fetch categories"
       ) : status === "loading" ? (

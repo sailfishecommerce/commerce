@@ -14,19 +14,15 @@ const CategoryDropdown = dynamic(
 );
 
 export default function BottomNav() {
+  const [hoverCollection, setHoverCollection] = useState(false);
   const { userDetail }: any = useAppSelector((state) => state.auth);
   const router = useRouter();
-  const [toggleCollection, setToggleCollection] = useState(false);
   const tabWidth = useMediaQuery("(max-width:768px)");
-
-  function onCollectionMenuHandler() {
-    setToggleCollection(!toggleCollection);
-  }
 
   return (
     <div className="flex items-center w-full h-12 border-t" id="navbarCollapse">
       {tabWidth && (
-        <small className="ms-0 my-2 text-danger fw-bold">
+        <small className="mx-0 my-2 text-danger font-bold">
           Hello, {userDetail.name ? userDetail.name : "Guest"}
         </small>
       )}
@@ -35,7 +31,8 @@ export default function BottomNav() {
           <li className="nav-item dropdown relative">
             <span
               className="nav-link hover:text-red-500 flex items-center"
-              onClick={onCollectionMenuHandler}
+              onMouseEnter={() => setHoverCollection(true)}
+              onMouseLeave={() => setHoverCollection(false)}
               data-bs-toggle="dropdown"
             >
               <IoGridOutline className="mx-1" />
@@ -50,7 +47,7 @@ export default function BottomNav() {
             return (
               <li
                 key={menu.link}
-                className={`nav-item w-1/3 mx-2 flex flex-col dropdown ${style}`}
+                className={`nav-item w-1/3 mx-6 flex flex-col dropdown ${style}`}
               >
                 <Link href={menu.link} passHref>
                   <a
@@ -64,7 +61,7 @@ export default function BottomNav() {
             );
           })}
         </ul>
-        <CategoryDropdown />
+        {hoverCollection && <CategoryDropdown onHover={setHoverCollection} />}
       </div>
     </div>
   );
