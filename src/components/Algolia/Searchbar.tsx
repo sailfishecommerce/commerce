@@ -31,39 +31,23 @@ function SearchBarComponent() {
   }
 
   return (
-    <>
-      <AlgoliaInstantSearch>
-        <Configure clickAnalytics distinct enablePersonalization />
-        <div className="searchBox relative w-5/12">
-          <div className={inputContainerClassName}>
-            <SearchBox
-              translations={{
-                placeholder: "Search for over 10,000 products...",
-              }}
-              className="mx-auto"
-              autoFocus={false}
-              showLoadingIndicator
-              onChange={showSearchResult}
-            />
-          </div>
-          {searching && <SearchbarHits />}
+    <AlgoliaInstantSearch>
+      <Configure clickAnalytics distinct enablePersonalization />
+      <div className="flex flex-col relative w-5/12">
+        <div className={inputContainerClassName}>
+          <SearchBox
+            translations={{
+              placeholder: "Search for over 10,000 products...",
+            }}
+            className="mx-auto"
+            autoFocus={false}
+            showLoadingIndicator
+            onChange={showSearchResult}
+          />
         </div>
-      </AlgoliaInstantSearch>
-      <style jsx>
-        {`
-          .searchBox {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-          }
-          @media (max-width: 768px) {
-            .searchBox {
-              width: 100%;
-            }
-          }
-        `}
-      </style>
-    </>
+      </div>
+      {searching && <SearchbarHits />}
+    </AlgoliaInstantSearch>
   );
 }
 

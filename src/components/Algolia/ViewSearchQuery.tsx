@@ -27,9 +27,9 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
   }
 
   return (
-    <div className="w-full flex searchbarhit absolute bg-white shadow-lg z-20 top-12 px-6 py-4">
-      <div className="w-1/4">
-        <h6 className="text-lg font-medium">Popular Suggestions</h6>
+    <div className="w-3/5 flex searchbarhit absolute bg-white border left-36 h-full rounded-xl shadow-lg z-20 top-20 px-6 py-4">
+      <div className="w-1/5 border-r">
+        <h6 className="text-lg font-medium px-2">Popular Suggestions</h6>
         {hits.length > 0 && (
           <button
             aria-label="view all searched product"
@@ -40,12 +40,12 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
           </button>
         )}
       </div>
-      <div className="w-3/4">
-        <h6 className="text-xl font-medium">Products</h6>
+      <div className="w-4/5">
+        <h6 className="text-xl text-center font-medium">Products</h6>
         {formattedHit.length > 1 ? (
-          <ul className="ais-Hits-list flex flex-wrap">
+          <ul className="ais-Hits-list grid grid-cols-2 pl-4">
             {formattedHit.map((hit, index) => (
-              <li className="ais-Hits-item" key={index}>
+              <li className="ais-Hits-item w-1/2 h-1/2 my-3" key={index}>
                 <Link
                   href={`/products/${hit.slug}?query-id=${hit.__queryID}`}
                   passHref
@@ -60,25 +60,25 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
                         "product clicked after a search"
                       )
                     }
-                    className="hit flex items-center my-0 py-1 hover:text-red-500"
+                    className="hit flex w-full items-center my-0 py-1 hover:text-red-500"
                   >
                     <div className="hit-image pr-2">
                       <Image
                         src={hit.images[0]?.file?.url}
                         alt={hit.name}
                         className="productImage"
-                        height={70}
+                        height={100}
                         width={100}
                         placeholder="blur"
                         blurDataURL={hit.images[0]?.file?.url}
                         loading="lazy"
                       />
                     </div>
-                    <div className="hit-content flex">
-                      <h6 className=" font-medum">
+                    <div className="hit-content ml-3 flex">
+                      <h6 className="font-bold">
                         <Highlight attribute="name" hit={hit} />
                       </h6>
-                      <div className="price fw-bold"> ${hit.price}</div>
+                      <div className="price font-bold"> ${hit.price}</div>
                     </div>
                   </a>
                 </Link>

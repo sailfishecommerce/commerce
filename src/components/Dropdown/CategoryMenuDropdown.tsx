@@ -27,14 +27,14 @@ function CategoryDropdownList({ category, categories }: Props) {
   }
 
   return (
-    <div className="categoryDropdownList">
+    <div className="flex w-1/4">
       <div className="mega-dropdown-column pt-3 pt-sm-4 px-2 px-lg-3">
         <div className="widget widget-links">
           <Link href={`/collections/product-type/${category.slug}`} passHref>
             <a
               aria-label="category"
               onClick={() => linkHandler(category)}
-              className="categoryImg d-flex flex-column overflow-hidden rounded-3 mb-3"
+              className="categoryImg flex flex-col overflow-hidden rounded-3 mb-3"
             >
               <Image
                 src={category?.images[0].file.url}
@@ -62,11 +62,7 @@ function CategoryDropdownList({ category, categories }: Props) {
       </div>
       <style jsx>
         {`
-          .categoryImg img {
-            height: 160px;
-            width: 100%;
-          }
-          .categoryImg img:hover {
+          .widget.widget-links a:hover {
             -webkit-transform: scale(1.03);
             -moz-transform: scale(1.03);
             -ms-transform: scale(1.03);
@@ -76,20 +72,6 @@ function CategoryDropdownList({ category, categories }: Props) {
           }
           .widget:hover h6 {
             color: #fb696a;
-          }
-          @media (max-width: 768px) {
-            .categoryDropdownList {
-              margin: 0px !important;
-            }
-            .categoryDropdownList img {
-              display: none;
-            }
-            .mega-dropdown-column {
-              padding: 0px !important;
-            }
-            .categoryImg {
-              margin: 0px !important;
-            }
           }
         `}
       </style>
@@ -104,46 +86,27 @@ export default function CategoryDropdown() {
     (category: categoryType) => !category.topId
   );
 
-  const firstCategories = topCategories?.slice(9, 13);
-  const secondCategories = topCategories?.slice(13, 17);
-
-  function displayCategories(categorySet: categoryType[]) {
-    return (
-      <>
-        {status === "error" ? (
-          "unable to fetch categories"
-        ) : status === "loading" ? (
-          "loading categories"
-        ) : (
-          <div className="flex flex-wrap hidden">
-            {categories
-              ? categorySet.map((category: categoryType) => (
-                  <CategoryDropdownList
-                    key={category.id}
-                    category={category}
-                    categories={categories?.results}
-                  />
-                ))
-              : ""}
-          </div>
-        )}
-        <style jsx>
-          {`
-            @media (max-width: 768px) {
-              .categorySet {
-                flex-direction: column;
-              }
-            }
-          `}
-        </style>
-      </>
-    );
-  }
+  const firstCategories = topCategories?.slice(9, 17);
 
   return (
-    <div className="dropdown-menu px-2 pb-4 w-full flex flex-col hidden">
-      {displayCategories(firstCategories)}
-      {displayCategories(secondCategories)}
+    <div className="dropdown-menu p-2 w-3/4 absolute z-40 flex border top-8 bg-white flex-col rounded-lg">
+      {status === "error" ? (
+        "unable to fetch categories"
+      ) : status === "loading" ? (
+        "loading categories"
+      ) : (
+        <div className="flex flex-wrap w-full mx-auto justify-center">
+          {categories
+            ? firstCategories.map((category: categoryType) => (
+                <CategoryDropdownList
+                  key={category.id}
+                  category={category}
+                  categories={categories?.results}
+                />
+              ))
+            : ""}
+        </div>
+      )}
     </div>
   );
 }
