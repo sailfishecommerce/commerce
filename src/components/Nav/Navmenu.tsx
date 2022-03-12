@@ -30,7 +30,6 @@ function NavMenuComponent() {
   const dispatch = useAppDispatch();
 
   const tabWidth = useMediaQuery("(max-width:768px)");
-  console.log("scrollUp", scrollUp);
   const { data: cart } = useCartData();
 
   function toggleAuthModalHandler() {

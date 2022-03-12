@@ -28,16 +28,16 @@ function ProductViewFormComonent({
 
   const { addItemToCart, loadingState } = useShoppingCart();
 
-  const algoliaViewHandler = useCallback(() => {
+  const quickViewHandler = () => {
     dispatch(quickViewModal(product));
-    if (algoliaEvent === "search") {
-      convertedItemAfterSearch("quick_view_after_search", product.__queryID, [
-        product.objectID,
-      ]);
-    } else {
-      algoliaQuickViewEvent(product);
-    }
-  }, [algoliaEvent]);
+    // if (algoliaEvent === "search") {
+    //   convertedItemAfterSearch("quick_view_after_search", product.__queryID, [
+    //     product.objectID,
+    //   ]);
+    // } else {
+    //   algoliaQuickViewEvent(product);
+    // }
+  };
 
   function onSubmitHandler(e: any) {
     e.preventDefault();
@@ -129,7 +129,7 @@ function ProductViewFormComonent({
         <button
           aria-label="Product Quick View"
           className="hover:text-red-500 text-sm flex items-center my-2"
-          onClick={algoliaViewHandler}
+          onClick={quickViewHandler}
           data-bs-toggle="quickViewModal"
         >
           <AiOutlineEye className="mr-1" />

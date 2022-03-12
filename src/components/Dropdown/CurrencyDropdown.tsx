@@ -18,8 +18,6 @@ function CurrencyDropdownComponent({ className }: Props) {
   const { selectCurrencies } = useCurrency();
   const { currencyList } = useCurrencies();
 
-  console.log("currencyList", currencyList);
-
   const { currency } = useAppSelector((state) => state.currencyLanguage);
 
   function DropdownText() {

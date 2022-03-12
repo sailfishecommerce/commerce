@@ -11,7 +11,7 @@ const isDev = process.env.NODE_ENV !== "production";
 module.exports = withBundleAnalyzer({
   images: {
     domains: ["cdn.schema.io"],
-    formats:["image/webp"]
+    formats: ["image/webp"],
   },
   optimization: {
     mergeDuplicateChunks: true,
@@ -60,6 +60,7 @@ module.exports = withBundleAnalyzer({
               "https://pci-api-demo.airwallex.com",
               "https://maps.googleapis.com",
               "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
+              "https://insights.algolia.io",
             ],
             "connect-src": [
               "'self'",
@@ -72,6 +73,7 @@ module.exports = withBundleAnalyzer({
               "https://maps.googleapis.com",
               "https://pci-api-demo.airwallex.com",
               "https://pci-api-demo.airwallex.com/api/v1/checkout/collectv2",
+              "https://insights.algolia.io",
             ],
             "font-src": [
               "'self'",

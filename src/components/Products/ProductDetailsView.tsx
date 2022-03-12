@@ -36,7 +36,7 @@ export default function ProductdetailsView({ product }: any) {
         </div>
         <ProductForm product={productToView} />
         <div
-          className="description quickView-description"
+          className="description quickView-description hidden md:flex"
           dangerouslySetInnerHTML={{
             __html: productToView["description"],
           }}

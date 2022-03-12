@@ -50,7 +50,7 @@ export default function QuickViewModal({
       header={<ModalHeader productToView={productToView} />}
     >
       <div className="flex flex-col md:flex-row">
-        <ProductGallery product={productToView} isModal={isMobile} />
+        <ProductGallery product={productToView} isMobile={isMobile} />
         <ProductdetailsView product={product} />
       </div>
       <style jsx>

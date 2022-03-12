@@ -268,9 +268,6 @@ span.ais-Menu-label {
 .quickView-description.description h2 {
   font-weight: bold;
 }
-.description.quickView-description {
-  display: none;
-}
 
 /* media query */
 @media (min-width: 768px) {

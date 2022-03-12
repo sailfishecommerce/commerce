@@ -10,15 +10,16 @@ import "react-image-lightbox/style.css";
 
 interface Props {
   product: productType;
-  isModal?: boolean;
+  isMobile?: boolean;
 }
 
-export default function ProductGalleryView({ product, isModal }: Props) {
+export default function ProductGalleryView({ product, isMobile }: Props) {
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const mobileView = useMediaQuery("(max-width:768px)");
 
-  const imageSize = isModal ? "w-1/3 lg:w-full " : "w-1/3";
+  const imageSize = isMobile ? "w-1/3 lg:w-full" : "w-1/3 lg:w-full";
+  const thumblistClass = isMobile ? "mobile" : "desktop"
 
   const imageView = mobileView
     ? {
@@ -89,10 +90,10 @@ export default function ProductGalleryView({ product, isModal }: Props) {
           />
         )}
       </div>
-      <div className="product-gallery-thumblist flex hidden md:flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5">
+      <div className={`product-gallery-thumblist ${thumblistClass} flex hidden md:flex flex-wrap w-full lg:flex-col lg:order-1 lg:w-1/5`}>
         {images?.map((image: any, index) => (
           <a
-            className={`items-center justify-center ${imageSize} flex  px-2 hover:border-2 ${activethumbnailImg(
+            className={`items-center justify-center ${imageSize} flex px-2 hover:border-2 ${activethumbnailImg(
               index
             )}`}
             onClick={() => updateActiveImage(index)}
