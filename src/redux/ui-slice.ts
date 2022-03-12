@@ -9,6 +9,7 @@ const uiSlice = createSlice({
     mobileMenu: "mobileNav",
     displayMobileMenu: false,
     modal: false,
+    showNav: false,
     authModal: "AUTHFORM",
     displayModal: {
       active: false,
@@ -55,6 +56,9 @@ const uiSlice = createSlice({
     updateMobileMenu(state, action) {
       state.mobileMenu = action.payload;
     },
+    toggleNav(state) {
+      state.showNav = !state.showNav;
+    },
     toggleMobileMenu(state) {
       state.displayMobileMenu = !state.displayMobileMenu;
     },
@@ -73,6 +77,7 @@ const uiSlice = createSlice({
 });
 
 export const {
+  toggleNav,
   toggleSlideCart,
   toggleSidebarRight,
   toggleModal,

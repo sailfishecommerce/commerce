@@ -27,7 +27,7 @@ export default function Tooltip({ children, text }: PropsWithChildren<Props>) {
         onMouseLeave={hideTip}
       >
         {children}
-        {active && <div className="Tooltip-Tip top">{text}</div>}
+        {active && <div className="Tooltip-Tip top hidden md:flex">{text}</div>}
       </div>
       <style jsx>
         {`

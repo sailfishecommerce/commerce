@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/hooks/useRedux";
 import { toggleAuthModal, toggleSlideCart } from "@/redux/ui-slice";
 import { useAccount, useAuth, useMediaQuery, useCart } from "@/hooks";
 import { NavToggler } from "@/components/Nav/NavElement";
+import useNavStyle from "@/hooks/useNavStyle";
 
 const NavbarDropdown = dynamic(
   () => import("@/components/Dropdown/NavbarDropdown")
@@ -23,11 +24,13 @@ const NotAuthorizedView = dynamic(
 function NavMenuComponent() {
   const { useCartData } = useCart();
   const { userLogout } = useAuth();
+  const { scrollUp } = useNavStyle();
   const { getUserAccount } = useAccount();
   const { data: userDetails, status } = useQuery("userdetails", getUserAccount);
   const dispatch = useAppDispatch();
-  const tabWidth = useMediaQuery("(max-width:768px)");
 
+  const tabWidth = useMediaQuery("(max-width:768px)");
+  console.log("scrollUp", scrollUp);
   const { data: cart } = useCartData();
 
   function toggleAuthModalHandler() {
@@ -40,7 +43,7 @@ function NavMenuComponent() {
   return (
     <>
       <div className="flex items-center lg:mr-2 mt-2 justify-between w-2/5 md:px-4 lg:w-4/12">
-        <NavToggler />
+        {scrollUp && <NavToggler />}
         {status === "error" ? (
           "unable to fetch user details"
         ) : status === "loading" ? (

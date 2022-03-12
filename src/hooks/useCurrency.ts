@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { QueryClient } from "react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useAppSelector } from "@/hooks/useRedux";
 import useSwell from "@/hooks/useSwell";
@@ -49,11 +49,13 @@ export function useCurrencies() {
   const [currencyList, setCurrencyList] = useState<any>(null);
   const { listEnabledCurrencies } = useCurrency();
 
-  if (currencyList === null) {
-    getCurrencies(listEnabledCurrencies)
-      .then((response) => setCurrencyList(response))
-      .catch((error) => setCurrencyList(error));
-  }
+  useEffect(() => {
+    if (currencyList === null) {
+      getCurrencies(listEnabledCurrencies)
+        .then((response) => setCurrencyList(response))
+        .catch((error) => setCurrencyList(error));
+    }
+  }, []);
 
   return { currencyList };
 }

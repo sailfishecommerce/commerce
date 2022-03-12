@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { useCurrencies } from "@/hooks/useCurrency";
 import { LineLoader } from "@/components/Loader/ProductsLoader";
 import { useAppSelector } from "@/hooks/useRedux";
@@ -9,14 +11,14 @@ interface formattedPriceProps {
   className?: string;
 }
 
-export default function FormattedPrice({
+function FormattedPriceComponent({
   price,
   isProduct,
   className,
 }: formattedPriceProps): JSX.Element {
   const { currencyList } = useCurrencies();
   const { currency } = useAppSelector((state) => state.currencyLanguage);
-
+  console.log("currencyList", currencyList);
   return (
     <>
       {currencyList === undefined ? (
@@ -35,3 +37,7 @@ export default function FormattedPrice({
     </>
   );
 }
+
+const FormattedPrice = memo(FormattedPriceComponent);
+
+export default FormattedPrice;

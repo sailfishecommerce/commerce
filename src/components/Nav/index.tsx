@@ -1,20 +1,20 @@
-import useScroll from "@/hooks/useScroll";
-import Logo from "@/components/Logo";
-import Navmenu from "@/components/Nav/Navmenu";
-import SearchBar from "@/components/Algolia/Searchbar";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import TopNav from "@/components/Nav/TopNav";
+import BottomNav from "@/components/Nav/BottomNav";
+import { useAppSelector } from "@/hooks/useRedux";
+import useNavStyle from "@/hooks/useNavStyle";
 
 export default function Nav() {
-  const { scroll } = useScroll();
-  const scrollUp = Number(scroll) > 400 ? true : false;
-  const navStyle = scrollUp ? "navbar-sticky navbar-stuck" : "navbar-sticky";
-  const largerDeviceWidth = useMediaQuery("(min-width:768px)");
+  const {navStyle} = useNavStyle();
+  const tabWidth = useMediaQuery("(max-width:768px)");
+  const { showNav } = useAppSelector((state) => state.UI);
 
   return (
-    <nav className="nav container mx-auto flex items-center justify-between border-b bg-white py-4">
-      <Logo className="lg:w-3/12" />
-      {largerDeviceWidth && <SearchBar />}
-      <Navmenu />
+    <nav className={`w-full bg-white ${navStyle}`}>
+      <div className="container mx-auto flex flex-col items-center justify-between border-b bg-white py-4">
+        <TopNav />
+        {!tabWidth && showNav && <BottomNav />}
+      </div>
     </nav>
   );
 }

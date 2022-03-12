@@ -1,20 +1,18 @@
 import { AiOutlineUser, AiOutlineMenu } from "react-icons/ai";
 
 import Tooltip from "@/components/Tooltip";
-import { useAppDispatch } from "@/redux/store";
-import { toggleMobileMenu, updateMobileMenu } from "@/redux/ui-slice";
+import useNav from "@/hooks/useNav";
 
 export function NavToggler() {
-  const dispatch = useAppDispatch();
+  const onToggleNav = useNav();
 
-  function toggleModileMenuHandler() {
-    dispatch(toggleMobileMenu());
-    dispatch(updateMobileMenu("mobileNav"));
-  }
   return (
-    <button onClick={toggleModileMenuHandler} aria-label="expand menu" className="mb-0 mt-2">
+    <button
+      onClick={onToggleNav}
+      className="mb-0 mt-2"
+    >
       <Tooltip text="Expand menu">
-        <AiOutlineMenu className="hover:text-red-500" size={20} />
+      <AiOutlineMenu className="hover:text-red-500" size={20} />
       </Tooltip>
     </button>
   );
