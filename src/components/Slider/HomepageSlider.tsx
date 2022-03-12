@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Image from "next/image";
 import { memo } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-import Image from "@/components/Image";
 import sliderContent from "@/json/homepage-slider.json";
 import styles from "@/styles/HomepageSlider.module.css";
 
@@ -37,7 +37,7 @@ function SliderItem({ item }): JSX.Element {
                 width={imgSize.width}
                 layout="responsive"
                 priority={true}
-                size="true"
+                sizes="30vw"
               />
             </div>
             <div className="w-full md:w-1/2 items-center lg:items-start text-white flex flex-col py-5 md:px-1 lg:px-4 lg:mb-5 lg:order-1">

@@ -11,6 +11,7 @@ const isDev = process.env.NODE_ENV !== "production";
 module.exports = withBundleAnalyzer({
   images: {
     domains: ["cdn.schema.io"],
+    formats:["image/webp"]
   },
   optimization: {
     mergeDuplicateChunks: true,
