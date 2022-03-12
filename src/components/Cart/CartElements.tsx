@@ -25,15 +25,12 @@ export function CartControl({ item }: cartControlProps) {
   return (
     <div>
       <div className="flex items-center">
-        <label
-          htmlFor="itemQuantity"
-          className="itemQuantity fw-normal me-1 text-gray-500"
-        >
+        <label htmlFor="itemQuantity" className="itemQuantity text-gray-800 mr-2">
           Quantity:
         </label>
         <input
           onClick={updateItemQuantity}
-          className="form-control my-2 py-1 text-center text-dark"
+          className="border border-gray-200 px-1 rounded-md h-8 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none py-1 text-center text-dark"
           type="number"
           id="itemQuantity"
           min={minValue}
@@ -80,11 +77,11 @@ export function ClearCart() {
   return (
     <div className="flex mt-4 mb-0">
       <button
-      aria-label="clear cart"
+        aria-label="clear cart"
         onClick={() => deleteCart.mutate(cart.id)}
-        className="btn-link btn-danger rounded-2 px-2 py-1 m-auto justify-content-center flex items-center remove"
+        className="bg-red-500 rounded-md items-center text-white px-2 py-1 m-auto justify-center flex items-center"
       >
-        <MdOutlineDelete fontSize={25} className="mr-2" />
+        <MdOutlineDelete fontSize={25} className="mr-2 text-white" />
         <p className="mb-0">Clear Cart</p>
       </button>
       <style jsx>
@@ -126,7 +123,7 @@ export function CartDiscount({ cartItem }: any) {
       <style jsx>{`
         @media (max-width: 768px) {
           input.discountInput {
-            padding: 10px !important;
+            padding: 10px;
             font-size: 12px;
           }
         }

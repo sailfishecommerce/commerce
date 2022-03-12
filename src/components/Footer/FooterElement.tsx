@@ -22,7 +22,7 @@ function FooterWidgetLink({
             <Link href={slug(contentLink)} passHref>
               <a
                 aria-label={contentLink.name}
-                onClick={onClickFunc}
+                // onClick={onClickFunc}
                 className="widget-list-link hover:text-white"
               >
                 {contentLink.name}

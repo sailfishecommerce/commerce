@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GiShoppingCart } from "react-icons/gi";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { displayCheckoutModalAction } from "@/redux/ui-slice";
@@ -35,9 +36,9 @@ export default function SlideCart(props: slideCartProps) {
           className="overlay slidecartOverlay w-3/4 h-screen cursor-pointer"
         />
         <div
-          // data-aos="fade-left"
-          // data-aos-duration="500"
-          // data-aos-easing="ease-in-back"
+          data-aos="fade-left"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-back"
           className={`cart bg-white fixed flex flex-col right-0 ${cartStyle} px-2`}
         >
           {cart?.items?.length > 0 ? (
@@ -56,7 +57,7 @@ export default function SlideCart(props: slideCartProps) {
                 <CartDiscount cartItem={0} />
                 <ClearCart />
                 <div className="mt-6">
-                  <h5 className="mt-5 mb-2 subtotal flex items-center">
+                  <h5 className="mt-5 mb-2 subtotal justify-center flex items-center">
                     Subtotal:{" "}
                     <span className="mx-2">
                       {cart ? <FormattedPrice price={cart.subTotal} /> : "0.00"}
@@ -69,19 +70,23 @@ export default function SlideCart(props: slideCartProps) {
                     aria-label="Proceed to Checkout"
                     disabled={disableBtn}
                     onClick={toggleCheckoutModal}
-                    className="w-100 proceedBtn"
+                    className="w-100 border-2 font-bold hover:bg-red-500 border-red-500 mx-auto p-2 rounded-md justify-center flex items-center"
                     type="button"
                   >
-                    <img alt="checkout icon" src="/icons/checkoutIcon.svg" />{" "}
+                    <GiShoppingCart className="mr-2" size={20} />
                     <span className="mx-2">PROCEED TO CHECKOUT</span>
                   </button>
                 </Link>
               </div>
             </div>
           ) : (
-            <div className="emptyCart text-center flex flex-col justify-content-center items-center">
-              <i className="fas fa-shopping-cart my-2 fa-3x rounded-full bg-gray-200 text-red-400 flex text-white"></i>
-              <p className="font-bold text-2xl">Your cart is empty </p>
+            <div className="emptyCart text-center flex justify-center items-center">
+              <span className="flex flex-col items-center">
+                <GiShoppingCart className="mr-2" size={32} />
+                <p className="font-bold text-md md:text-2xl mb-0">
+                  Your cart is empty{" "}
+                </p>
+              </span>
             </div>
           )}
         </div>
@@ -143,7 +148,7 @@ export default function SlideCart(props: slideCartProps) {
               width: 25%;
             }
             .cart {
-              width: 75%;
+              width: 85%;
             }
             .slidecart {
               z-index: 2000;

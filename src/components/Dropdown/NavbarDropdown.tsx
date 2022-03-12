@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
+import useCart from "@/hooks/useCart";
 
 interface NavbarDropdownProps {
-  toggleSlideCartMobile: () => void;
   cart:
     | {
         items: any[];
@@ -22,12 +22,10 @@ const NavCartViewMobile = dynamic(
   () => import("@/components/Cart/NavCartViewMobile")
 );
 
-export default function NavbarDropdown({
-  toggleSlideCartMobile,
-  cart,
-}: NavbarDropdownProps) {
+export default function NavbarDropdown({ cart }: NavbarDropdownProps) {
   const [dropdownStatus, setDropdownStatus] = useState(false);
   const tabWidth = useMediaQuery("(max-width:768px)");
+  const { toggleCart } = useCart();
 
   function onClickHandler() {
     setDropdownStatus(!dropdownStatus);
@@ -35,12 +33,12 @@ export default function NavbarDropdown({
   return (
     <>
       {tabWidth ? (
-        <NavCartViewMobile cart={cart} onClickHandler={onClickHandler} />
+        <NavCartViewMobile cart={cart} onClickHandler={toggleCart} />
       ) : (
         <NavCartView cart={cart} onClickHandler={onClickHandler} />
       )}
-      {dropdownStatus && cart?.items.length > 0 && (
-        <div className="absolute md:top-20 top-16 right-5 md:right-0 flex items-center justify-center w-full bg-white shadow-lg z-40">
+      {!tabWidth && dropdownStatus && cart?.items.length > 0 && (
+        <div className="absolute md:top-24 top-16 right-5 md:-right-10 flex items-center justify-center w-1/4 z-40">
           <HeaderCartDropdown
             cart={cart}
             className="bg-white shadow-lg px-2 md:px-4 rounded-md "

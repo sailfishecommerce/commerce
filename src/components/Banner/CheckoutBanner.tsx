@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { AiOutlineHome } from "react-icons/ai";
 
 interface CheckoutBannerProps {
   title: string;
@@ -19,7 +19,8 @@ export default function CheckoutBanner({
               <li className="breadcrumb-item">
                 <Link href="/" passHref>
                   <a aria-label="Home" className="text-nowrap">
-                    <i className="ci-home"></i>Home
+                    <AiOutlineHome className="mr-2" />
+                    Home
                   </a>
                 </Link>
               </li>

@@ -1,12 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { MdCancel } from "react-icons/md";
 
 import { CartControl } from "@/components/Cart/CartElements";
 import FormattedPrice from "@/components/Price/FormattedPrice";
-
-import { cartType } from "@/types";
-// import { removeVboutCartItem } from "@/hooks/useVbout";
 import useShoppingCart from "@/hooks/useShoppingCart";
+import { cartType } from "@/types";
 
 interface SlideCartProductProps {
   item: cartType;
@@ -24,15 +22,15 @@ export default function SlideCartProduct({
   }
 
   return (
-    <div className="slide-cart border-bottom p-2 position-relative row">
-      <div className="widget-cart-item py-1">
+    <div className="slide-cart border-b p-2 relative">
+      <div className="widget-cart-item py-1 relative">
         <button
-          className="btn-close text-danger ms-3"
+          className="text-red-500 absolute top-6 right-2"
           type="button"
           onClick={removeItemFromCart}
           aria-label="remove"
         >
-          <span>&times;</span>
+          <MdCancel size={32} />
         </button>
         <div className="flex items-center">
           <Link href={`/products/${item.product.slug}`} passHref>
@@ -44,11 +42,16 @@ export default function SlideCartProduct({
               />
             </a>
           </Link>
-          <div className="ps-2">
+          <div className="px-2">
             <div className="name-group flex flex-col">
               <h5 className="widget-product-title">
                 <Link href={`/products/${item.product.slug}`} passHref>
-                  <a aria-label={item.product.name}>{item.product.name}</a>
+                  <a
+                    aria-label={item.product.name}
+                    className="text-sm md:text-md font-bold"
+                  >
+                    {item.product.name}
+                  </a>
                 </Link>
               </h5>
               {item.product?.attributes?.box && (
@@ -62,7 +65,7 @@ export default function SlideCartProduct({
                 <span className="text-accent mx-2">
                   <FormattedPrice price={item.price} />
                 </span>
-                <span className="text-gray-500">x {item.quantity}</span>
+                <span className="text-gray-800">x {item.quantity}</span>
                 <span className="mx-1">= </span>
                 <span className="text-accent mx-2">
                   <FormattedPrice price={item.priceTotal} />

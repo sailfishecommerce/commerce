@@ -27,10 +27,10 @@ export default function TopFooter() {
     });
   }
 
-  function categoryEvents(contentLink: contentLinkType) {
-    vboutCategoryViewHandler(contentLink);
-    itemViewed("category_viewed", [contentLink.id]);
-  }
+  // function categoryEvents(contentLink: contentLinkType) {
+  //   vboutCategoryViewHandler(contentLink);
+  //   itemViewed("category_viewed", [contentLink.id]);
+  // }
 
   return (
     <div className="w-full bg-gray-700 justify-center flex py-6 px-6 lg:px-0">
@@ -40,14 +40,14 @@ export default function TopFooter() {
             <FooterLink
               key={index}
               content={content}
-              onClickHandler={categoryEvents}
+              // onClickHandler={categoryEvents}
               multiple
             />
           ) : (
             <FooterLink
               key={index}
               content={content}
-              onClickHandler={selectedFooterCategory}
+              // onClickHandler={selectedFooterCategory}
             />
           );
         })}

@@ -33,7 +33,7 @@ function SearchBarComponent() {
   return (
     <AlgoliaInstantSearch>
       <Configure clickAnalytics distinct enablePersonalization />
-      <div className="flex flex-col relative w-5/12">
+      <div className="flex flex-col relative md:w-5/12 w-full">
         <div className={inputContainerClassName}>
           <SearchBox
             translations={{

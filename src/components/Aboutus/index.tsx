@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface contentProps {
   content: {
@@ -24,7 +25,13 @@ export default function Aboutus({ content }: contentProps) {
   return (
     <section className="flex flex-col md:flex-row items-center">
       <div className={`w-full md:w-1/2 bg-position-center ${imageOrder}`}>
-        <img src={content.image} alt="about-us at livehealthy" />
+        <Image
+          src={content.image}
+          alt="about-us at livehealthy"
+          height={100}
+          width={200}          
+          layout="responsive"
+        />
       </div>
       <div className={`w-full md:w-1/2 py-5 px-4 lg:px-24  ${textOrder}`}>
         <div className="content-text mx-auto lg:py-5">
@@ -33,7 +40,7 @@ export default function Aboutus({ content }: contentProps) {
           {content.buttons?.map((button) => (
             <Link key={button.color} href={button.link} passHref>
               <button
-              aria-label='about-us'
+                aria-label="about-us"
                 className={`btn p-2 px-4 rounded-md h-10 text-white ${button.color} shadow-lg`}
               >
                 {button.text}

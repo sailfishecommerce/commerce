@@ -269,6 +269,11 @@ span.ais-Menu-label {
   font-weight: bold;
 }
 
+.product-gallery-thumblist.desktop {
+  height: 400px;
+  overflow-y: auto;
+}
+
 /* media query */
 @media (min-width: 768px) {
   .related-products ul.splide__list {

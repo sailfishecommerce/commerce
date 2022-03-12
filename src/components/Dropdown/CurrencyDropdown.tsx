@@ -24,13 +24,7 @@ function CurrencyDropdownComponent({ className }: Props) {
     return (
       <div className="items-center flex">
         <div className={className}>
-          <Image
-            className="mr-2"
-            src="/flags/en.webp"
-            width={30}
-            height={30}
-            alt="en"
-          />
+          <Image src="/flags/en.webp" width={30} height={30} alt="en" layout="fixed" />
         </div>
         <p className="m-0 text-xs md:text-sm md:ml-4 font-bold">{`En / ${currency}`}</p>
       </div>
