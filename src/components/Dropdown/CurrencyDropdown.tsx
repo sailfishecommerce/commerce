@@ -2,7 +2,10 @@ import Image from "next/image";
 import { memo } from "react";
 
 import Dropdown from "@/components/Dropdown";
+import Dropup from "@/components/Dropup";
 import DropdownItem from "@/components/Dropdown/DropdownItem";
+import DropupItem from "@/components/Dropup/DropupItem";
+
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { updateCurrency } from "@/redux/currency-language-slice";
 import useCurrency, { useCurrencies } from "@/hooks/useCurrency";
@@ -10,9 +13,10 @@ import { useToast } from "@/hooks";
 
 interface Props {
   className?: string;
+  up?: boolean;
 }
 
-function CurrencyDropdownComponent({ className }: Props) {
+function CurrencyDropdownComponent({ className, up }: Props) {
   const dispatch = useAppDispatch();
   const { isLoading, isSuccessful, hasError } = useToast();
   const { selectCurrencies } = useCurrency();
@@ -24,7 +28,13 @@ function CurrencyDropdownComponent({ className }: Props) {
     return (
       <div className="items-center flex">
         <div className={className}>
-          <Image src="/flags/en.webp" width={30} height={30} alt="en" layout="fixed" />
+          <Image
+            src="/flags/en.webp"
+            width={30}
+            height={30}
+            alt="en"
+            layout="fixed"
+          />
         </div>
         <p className="m-0 text-xs md:text-sm md:ml-4 font-bold">{`En / ${currency}`}</p>
       </div>
@@ -45,19 +55,40 @@ function CurrencyDropdownComponent({ className }: Props) {
       });
   }
 
+  function DropdownElement() {
+    return (
+      <Dropdown dropdownText={<DropdownText />}>
+        {currencyList &&
+          currencyList?.map((item, index) => (
+            <DropdownItem onClick={selectCurrency} key={index}>
+              {item.symbol} {item.code}
+            </DropdownItem>
+          ))}
+      </Dropdown>
+    );
+  }
+
+  function DropupElement() {
+    return (
+      <Dropup dropupText={<DropdownText />}>
+        {currencyList &&
+          currencyList?.map((item, index) => (
+            <DropupItem onClick={selectCurrency} key={index}>
+              {item.symbol} {item.code}
+            </DropupItem>
+          ))}
+      </Dropup>
+    );
+  }
+
   return currencyList === undefined ? (
     <p>unable to load currencies</p>
   ) : currencyList === null ? (
     <p>loading currencies...</p>
+  ) : up ? (
+    <DropupElement />
   ) : (
-    <Dropdown dropdownText={<DropdownText />}>
-      {currencyList &&
-        currencyList?.map((item, index) => (
-          <DropdownItem onClick={selectCurrency} key={index}>
-            {item.symbol} {item.code}
-          </DropdownItem>
-        ))}
-    </Dropdown>
+    <DropdownElement />
   );
 }
 

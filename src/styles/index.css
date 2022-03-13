@@ -304,4 +304,9 @@ span.ais-Menu-label {
   .categorySlider ul.splide__list {
     height: 350px;
   }
+
+  .search-results ul.ais-Hits-list {
+    height: 400px;
+    overflow-y: auto;
+  }
 }

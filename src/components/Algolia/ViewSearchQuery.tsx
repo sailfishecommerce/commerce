@@ -27,9 +27,11 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
   }
 
   return (
-    <div className="w-3/5 flex searchbarhit absolute bg-white border left-36 h-full rounded-xl shadow-lg z-20 top-20 px-6 py-4">
-      <div className="w-1/5 border-r">
-        <h6 className="text-lg font-medium px-2">Popular Suggestions</h6>
+    <div className="w-full md:w-3/5 flex flex-col md:flex-row searchbarhit absolute bg-white border left-0 md:left-36 h-full rounded-xl shadow-lg z-20 top-36 md:top-20 px-3 md:px-6 py-4">
+      <div className="w-full mx-auto flex flex-col justify-center lg:w-1/5 md:border-r">
+        <h6 className="text-lg text-center font-medium px-2">
+          Popular Suggestions
+        </h6>
         {hits.length > 0 && (
           <button
             aria-label="view all searched product"
@@ -40,12 +42,15 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
           </button>
         )}
       </div>
-      <div className="w-4/5">
+      <div className="w-full md:w-4/5 search-results">
         <h6 className="text-xl text-center font-medium">Products</h6>
         {formattedHit.length > 1 ? (
-          <ul className="ais-Hits-list grid grid-cols-2 pl-4">
+          <ul className="ais-Hits-list flex flex-col md:grid grid-cols-2 pl-4">
             {formattedHit.map((hit, index) => (
-              <li className="ais-Hits-item w-1/2 h-1/2 my-3" key={index}>
+              <li
+                className="ais-Hits-item w-1/2 h-1/2 my-6 md:my-3"
+                key={index}
+              >
                 <Link
                   href={`/products/${hit.slug}?query-id=${hit.__queryID}`}
                   passHref

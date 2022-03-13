@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { IoGridOutline } from "react-icons/io5";
+import { AiFillCaretDown } from "react-icons/ai";
 
 import SearchBar from "@/components/Algolia/Searchbar";
 import menuLink from "@/json/menu.json";
@@ -11,7 +12,7 @@ const MobileCategoryList = dynamic(
   () => import("@/components/Dropdown/CategoryMobileDropdown")
 );
 
-export default function MobileNav({onClose}) {
+export default function MobileNav({ onClose }) {
   const router = useRouter();
   const [toggleCollection, setToggleCollection] = useState(false);
 
@@ -30,7 +31,11 @@ export default function MobileNav({onClose}) {
             className={`menu-list p-2 border-b border-gray-100 ${style(menu)}`}
           >
             <Link href={menu.link} passHref>
-              <a aria-label={menu.name} onClick={onClose} className="nav-link hover:text-red-500">
+              <a
+                aria-label={menu.name}
+                onClick={onClose}
+                className="nav-link hover:text-red-500"
+              >
                 {menu.name}
               </a>
             </Link>
@@ -43,7 +48,7 @@ export default function MobileNav({onClose}) {
             data-bs-toggle="dropdown"
           >
             <IoGridOutline className="mx-1" />
-            Collections
+            Collections <AiFillCaretDown />
           </span>
           {toggleCollection && <MobileCategoryList />}
         </li>

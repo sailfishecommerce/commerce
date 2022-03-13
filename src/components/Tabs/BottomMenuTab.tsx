@@ -14,13 +14,11 @@ export default function BottomTab() {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  function onCloseSidebar() {
-    dispatch(toggleMobileMenu());
-  }
+  type navbarType = "mobileNav" | "filterNav";
 
-  function toggleFilterMenuHandler() {
+  function onCloseSidebar(navType: navbarType) {
     dispatch(toggleMobileMenu());
-    dispatch(updateMobileMenu("filterNav"));
+    dispatch(updateMobileMenu(navType));
   }
 
   return (
@@ -30,7 +28,7 @@ export default function BottomTab() {
           <BottomTabItem
             route={router.pathname}
             title="Filter"
-            onToggle={toggleFilterMenuHandler}
+            onToggle={() => onCloseSidebar("filterNav")}
             icon={<GoSettings />}
           />
         )}
@@ -43,7 +41,7 @@ export default function BottomTab() {
         <BottomTabItem
           title="Menu"
           icon={<TiThMenu />}
-          onToggle={onCloseSidebar}
+          onToggle={() => onCloseSidebar("mobileNav")}
         />
         <BottomTabItem
           link="/checkout"
