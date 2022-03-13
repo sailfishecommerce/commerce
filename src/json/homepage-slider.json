@@ -1,23 +1,26 @@
 [
   {
-    "bgColor": "#3aafd2",
-    "sliderTitle": "Huge Summer Collection",
-    "sliderCaption": "Has just arrived!",
-    "sliderDescription": "Swimwear, Tops, Shorts, Sunglasses & much more...",
-    "sliderImg": "/sliders/01.webp"
+    "bgColor": "#D2AC99",
+    "sliderTitle": "Personal Care Products",
+    "sliderCaption": "Get Quality",
+    "sliderDescription": "Buy Tampons, Baby Formula, Oral Hygiene & Dental Care...",
+    "sliderImg": "/sliders/swisse_boost.webp",
+    "sliderImg2": "/sliders/swisse_boost_2.webp"
   },
   {
-    "bgColor": "#f5b1b0",
-    "sliderTitle": "Women Sportswear Sale",
+    "bgColor": "#A7A5A6",
+    "sliderTitle": "Get Quality Beauty Cosmetics from",
     "sliderCaption": "Hurry up! Limited time offer.",
-    "sliderDescription": "Sneakers, Kids, Sweatshirts, Hoodies & much more...",
-    "sliderImg": "/sliders/02.webp"
+    "sliderDescription": "Thin Lizzy, Avene, Sukin, Sally Hansen, Revlon Cosmetics...",
+    "sliderImg": "/sliders/thin_lizzy.webp",
+    "sliderImg2": "/sliders/avene.webp"
   },
   {
-    "bgColor": "#eba170",
-    "sliderTitle": "New Men Accessories",
-    "sliderCaption": "Complete your look with",
-    "sliderDescription": "Hats & Caps, Sunglasses, Bags & much more...",
-    "sliderImg": "/sliders/03.webp"
+    "bgColor": "#cb5f9eb3",
+    "sliderTitle": "Hair Quickly with",
+    "sliderCaption": "Grow and Nuture your",
+    "sliderDescription": "1000Hour, Revlon Hair, Restoria, Clairol hair products...",
+    "sliderImg": "/sliders/1000hrs_hair.webp",
+    "sliderImg2": "/sliders/revlon.webp"
   }
 ]

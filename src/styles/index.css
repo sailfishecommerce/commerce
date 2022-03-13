@@ -27,6 +27,27 @@ ul.splide__pagination {
   margin: 0px;
 }
 
+/* .homepage-carousel ul.splide__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.homepage-carousel .splide__track {
+  height: 100%;
+  width: 100%;
+} */
+
+.homepage-carousel .splide__track {
+  height: 100%;
+  width: 100%;
+}
+
+.homepage-carousel .splide__slide {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .header-slider .splide__track {
   margin-right: unset;
 }

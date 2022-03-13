@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
-import { memo } from "react";
+import { memo, useState } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
 import "@splidejs/splide/dist/css/splide.min.css";
@@ -11,6 +11,9 @@ import styles from "@/styles/HomepageSlider.module.css";
 
 function SliderItem({ item }): JSX.Element {
   const mobileView = useMediaQuery("(max-width:768px)");
+  const [inHover, setHover] = useState(false);
+
+  const productImage = inHover ? item.sliderImg2 : item.sliderImg;
 
   const imgSize = mobileView
     ? {
@@ -18,8 +21,8 @@ function SliderItem({ item }): JSX.Element {
         width: 300,
       }
     : {
-        height: 300,
-        width: 400,
+        height: 500,
+        width: 600,
       };
 
   return (
@@ -28,16 +31,17 @@ function SliderItem({ item }): JSX.Element {
         <div className="sliderItem w-full h-full">
           <div className="container m-auto flex flex-col lg:flex-row items-center h-full">
             <div
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
               className={`${styles.imageContainer} w-1/2 h-1/4 lg:h-4/5 lg:order-2 lg:mx-4 flex-shrink-0 justify-between items-center lg:ps-4`}
             >
               <Image
-                src={item.sliderImg}
+                src={productImage}
                 alt={item.sliderTitle}
                 height={imgSize.height}
                 width={imgSize.width}
-                layout="responsive"
                 priority={true}
-                sizes="30vw"
+                className="rounded-lg"
               />
             </div>
             <div className="w-full md:w-1/2 items-center lg:items-start text-white flex flex-col py-5 md:px-1 lg:px-4 lg:mb-5 lg:order-1">
@@ -74,7 +78,7 @@ function HomepageSliderComponent() {
       <section className={`${styles.carousel} carousel mb-4 lg:mb-5 w-100`}>
         <Splide
           options={{
-            autoplay: true,
+            autoplay: false,
             type: "loop",
           }}
           className={styles.slider}
@@ -86,7 +90,7 @@ function HomepageSliderComponent() {
       </section>
       <style jsx>{`
         .carousel {
-          background-color: #3aafd2;
+          background-color: #d2ac99;
         }
       `}</style>
     </>

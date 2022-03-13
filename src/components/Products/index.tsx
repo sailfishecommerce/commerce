@@ -90,7 +90,11 @@ function ProductComponent({
           )}
         </div>
         <Link href={linkURL} passHref>
-          <a aria-label={imageAlt} onClick={algoliaClickedProductAfterSearch} className="productLink">
+          <a
+            aria-label={imageAlt}
+            onClick={algoliaClickedProductAfterSearch}
+            className="productLink"
+          >
             <div
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
@@ -114,7 +118,12 @@ function ProductComponent({
             href={`/shop/vendors/${replaceSpaceWithHypen(product.vendor)}`}
             passHref
           >
-            <a aria-label={product.vendor} className="text-sm hover:text-red-500">{product.vendor}</a>
+            <a
+              aria-label={product.vendor}
+              className="text-sm hover:text-red-500"
+            >
+              {product.vendor}
+            </a>
           </Link>
           <h3 className="sm:text-sm product-title sm:w-32  md:w-56 lg:w-72 text-md">
             <Link href={`/products/${product.slug}`} passHref>
