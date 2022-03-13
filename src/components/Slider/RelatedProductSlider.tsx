@@ -16,7 +16,7 @@ function RelatedProductSliderComponent({
       <h4 className="text-center text-2xl font-bold mb-4">Related Products</h4>
       <Splide
         options={{
-          autoplay: true,
+          autoplay: false,
           perPage: 5,
           type: "loop",
           breakpoints: {

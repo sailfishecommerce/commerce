@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { AiOutlineHome } from "react-icons/ai";
 
 import { replaceSpaceWithHypen } from "@/lib/formatString";
 import { productType } from "@/types";
@@ -17,11 +18,12 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
       <div className="container flex-col md:flex-row mx-auto items-center -mt-14 flex justify-between">
         <div className="lg:order-2 mb-3 lg:mb-0 lg:pt-2 w-full md:w-1/2">
           <nav aria-label="w-full text-left">
-            <ol className="flex mx-auto text-xs md:text-lg text-white justify-center lg:justify-end w-full">
+            <ol className="flex flex-wrap md:flex-row mx-auto text-xs md:text-lg text-white justify-center lg:justify-end w-full">
               <li>
                 <Link href="/" passHref>
-                  <a aria-label="home" className="hover:text-red-500">
-                    <i className="ci-home"></i>Home
+                  <a aria-label="home" className="hover:text-red-500 flex items-center">
+                    <AiOutlineHome className="mr-1" />
+                    Home
                   </a>
                 </Link>
               </li>
@@ -47,7 +49,12 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
                       )}`}
                       passHref
                     >
-                      <a aria-label={product.vendor} className="hover:text-red-500">{product.vendor}</a>
+                      <a
+                        aria-label={product.vendor}
+                        className="hover:text-red-500"
+                      >
+                        {product.vendor}
+                      </a>
                     </Link>
                   </li>
                   <li className="mx-2">
@@ -77,7 +84,7 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
           </nav>
         </div>
         <div className="lg:order-1 text-center text-xs md:text-lg md:text-left md:w-1/2 w-full">
-          <h1 className={`${titleClassName} text-white mb-0 text-xl`}>
+          <h1 className={`${titleClassName} text-lg text-white mb-0 md:text-xl`}>
             {productName}
           </h1>
         </div>

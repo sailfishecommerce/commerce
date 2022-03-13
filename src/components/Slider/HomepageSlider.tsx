@@ -14,7 +14,7 @@ function SliderItem({ item }): JSX.Element {
 
   const imgSize = mobileView
     ? {
-        height: 250,
+        height: 240,
         width: 300,
       }
     : {

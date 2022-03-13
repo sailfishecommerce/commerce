@@ -18,7 +18,7 @@ function CategoriesSliderComponent() {
         <LoadCategory arrayType={2} gridStyle="w-1/2 m-auto" />
       ) : (
         <Splide
-          className="lg:px-12 px-4"
+          className="lg:px-12 px-4 categorySlider"
           options={{
             type: "loop",
             perPage: 2,

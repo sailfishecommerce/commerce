@@ -290,14 +290,18 @@ span.ais-Menu-label {
 }
 
 @media (max-width: 768px) {
-  .related-products ul.splide__list {
-    height: 230px;
-  }
   .carousel-container .carousel-inner .track {
     display: flex;
     width: 350px;
   }
   .header-slider ul.splide__pagination {
     display: none;
+  }
+  .related-products .splide__track ul.splide__list {
+    height: 280px;
+  }
+
+  .categorySlider ul.splide__list {
+    height: 350px;
   }
 }

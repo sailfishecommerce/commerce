@@ -49,11 +49,11 @@ export function LineLoader(props: any) {
 export default function LoadProducts() {
   const mobileWidth = useMediaQuery("(max-width:768px)");
 
-  const mobileStyle = mobileWidth ? "w-1/2" : "w-1/4 px-2";
+  const mobileStyle = mobileWidth ? "w-1/2 px-1" : "w-1/4 px-2";
 
   const productsArray = new Array(8).fill(0);
   return (
-    <div className="container flex flex-wrap">
+    <div className="container flex flex-wrap px-1">
       {productsArray.map((_, index: number) => (
         <div key={index} className={mobileStyle}>
           <ProductLoader />
