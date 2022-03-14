@@ -27,7 +27,6 @@ function TopbarSliderComponent() {
                 width={50}
                 src={content.icon}
                 alt={content.text}
-                layout="fixed"
               />
               {/* </div> */}
               <p className="text-white font-bold text-center my-0 mb-0 mx-0 md:mx-2 text-sm md:text-sm ">
