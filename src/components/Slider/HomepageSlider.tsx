@@ -29,11 +29,11 @@ function SliderItem({ item }): JSX.Element {
     <>
       <SplideSlide>
         <div className="sliderItem w-full h-full">
-          <div className="container m-auto flex flex-col lg:flex-row items-center h-full">
+          <div className="container m-auto flex flex-col justify-center lg:flex-row items-center h-full">
             <div
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              className={`${styles.imageContainer} w-1/2 h-1/4 lg:h-4/5 lg:order-2 lg:mx-4 flex-shrink-0 justify-between items-center lg:ps-4`}
+              className={`${styles.imageContainer} w-full md:w-1/2 h-1/4 lg:h-4/5 lg:order-2 lg:mx-4 flex flex-col md:flex-row justify-between items-center lg:ps-4`}
             >
               <Image
                 src={productImage}
