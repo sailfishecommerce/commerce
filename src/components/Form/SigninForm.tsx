@@ -26,27 +26,31 @@ export default function SigninForm() {
     >
       {(formik) => (
         <form
-          className="needs-validation tab-pane fade show active"
+          className="w-full"
           autoComplete="off"
           noValidate
           onSubmit={formik.handleSubmit}
           id="signin-tab"
         >
           {authContent.signIn.map((content, index) => (
-            <div key={index} className="row">
+            <div key={index} className="flex flex-col w-100">
               {displayFormElement(content, formik)}
             </div>
           ))}
           <div className="mb-3 flex flex-wrap justify-between">
             <Link href="/account-password-recovery" passHref>
-              <a aria-label="forgot password?" onClick={toggleAuthmodal} className="fs-sm text-danger">
+              <a
+                aria-label="forgot password?"
+                onClick={toggleAuthmodal}
+                className="fs-sm text-red-500"
+              >
                 Forgot password?
               </a>
             </Link>
           </div>
           <button
             aria-label="Sign in"
-            className="bg-red-500 hover:bg-red-400 text-white px-3 py-2 w-100"
+            className="bg-red-500 mx-auto rounded-md hover:bg-red-400 text-white px-3 py-2 flex"
             type="submit"
           >
             Sign in

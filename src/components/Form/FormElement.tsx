@@ -55,7 +55,7 @@ export function Input({ content, formik, className }: Props) {
       ) : (
         <div className="password-toggle">
           <input
-            className="form-control"
+            className="w-full border border-gray-200 px-2 rounded-md h-10 focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
             type={passwordInputType}
             name={content.name}
             placeholder={content.placeholder}

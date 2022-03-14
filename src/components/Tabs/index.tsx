@@ -26,6 +26,8 @@ export default function Tabs({
   const [openTab, setOpenTab] = useState(0);
   const tabContentArray = new Array(numberOfTabs).fill(0);
 
+  console.log("openTab", openTab);
+
   function tabHandler(e, index) {
     e.preventDefault();
     setOpenTab(index);
@@ -72,17 +74,17 @@ export default function Tabs({
               >
                 <a
                   className={
-                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                    "text-sm font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                     (openTab === 1
-                      ? "text-white bg-" + color + "-600"
-                      : "text-" + color + "-600 bg-white")
+                      ? "text-white bg-red-500"
+                      : "text-white bg-red-500")
                   }
                   onClick={(e) => tabHandler(e, index)}
                   data-toggle="tab"
                   href={`#link${index}`}
                   role="tablist"
                 >
-                  {displayIcons} {tabTitle}
+                  {displayIcons()} {tabTitle}
                 </a>
               </li>
             ))}

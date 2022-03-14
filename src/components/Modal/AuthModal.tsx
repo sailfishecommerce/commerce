@@ -5,6 +5,7 @@ import Modal from "@/components/Modal";
 import Tabs from "@/components/Tabs";
 import SignupForm from "@/components/Form/SignupForm";
 import SigninForm from "@/components/Form/SigninForm";
+import Tabtemp from "../Tabs/Tabtemp";
 
 interface Props {
   show: boolean;
@@ -16,7 +17,7 @@ export default function AuthModal({ show, onHide }: Props) {
 
   return (
     <Modal modal={show} modalHandler={onHide}>
-      <Tabs
+      {/* <Tabs
         numberOfTabs={2}
         tabTitles={tabTitles}
         tabContent1={<SignupForm />}
@@ -24,7 +25,8 @@ export default function AuthModal({ show, onHide }: Props) {
         color="red"
         icon1={<GiPadlock className="mx-1" />}
         icon2={<BiLogIn className="mx-1" />}
-      />
+      /> */}
+      <Tabtemp />
     </Modal>
   );
 }

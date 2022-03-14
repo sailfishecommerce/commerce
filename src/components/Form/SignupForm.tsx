@@ -21,7 +21,7 @@ export default function SignupForm() {
     >
       {(formik) => (
         <form
-          className="needs-validation tab-pane fade"
+          className="w-full"
           autoComplete="off"
           onSubmit={formik.handleSubmit}
           noValidate
@@ -29,22 +29,22 @@ export default function SignupForm() {
         >
           {authContent.signUp.map((content: any, index) => {
             return content?.length ? (
-              <div key={index} className="row">
+              <div key={index} className="flex flex-wrap">
                 {content.map((inputContent: any, index: number) => (
-                  <div key={index} className="col-lg-6 col-sm-12">
+                  <div key={index} className="w-full md:w-1/2">
                     {displayFormElement(inputContent, formik)}
                   </div>
                 ))}
               </div>
             ) : (
-              <div key={index} className="row">
+              <div key={index} className="flex flex-col">
                 {displayFormElement(content, formik)}
               </div>
             );
           })}
           <button
             aria-label="Sign up"
-            className="btn btn-primary btn-shadow d-block w-100"
+            className="bg-red-500 hover:bg-red-400  mx-auto rounded-md text-white p-2 shadow-lg flex justify-center"
             type="submit"
             disabled={formik.isSubmitting}
           >
