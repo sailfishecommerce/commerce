@@ -17,21 +17,21 @@ function CategoryDropdownList({ category, categories }: Props) {
   const selectedFooterCategory = useMarketplaceCategory();
 
   function linkHandler(category: any) {
-    addCategoryView({
-      id: category.id,
-      categoryId: category.slug,
-      categoryName: category.name,
-      categoryLink: `collections/product-type/${category.slug}`,
-      categoryImage: category.images[0]?.file?.url,
-    });
     selectedFooterCategory(category.name);
+    // addCategoryView({
+    //   id: category.id,
+    //   categoryId: category.slug,
+    //   categoryName: category.name,
+    //   categoryLink: `shop/product-type/${category.slug}`,
+    //   categoryImage: category.images[0]?.file?.url,
+    // });
   }
 
   return (
     <div className="flex w-1/4">
       <div className="mega-dropdown-column pt-3 pt-sm-4 px-2 px-lg-3">
         <div className="widget widget-links">
-          <Link href={`/collections/product-type/${category.slug}`} passHref>
+          <Link href={`/shop/product-type/${category.slug}`} passHref>
             <a
               aria-label="category"
               onClick={() => linkHandler(category)}
@@ -51,7 +51,7 @@ function CategoryDropdownList({ category, categories }: Props) {
           <ul className="widget-list">
             {displayThreeSubCat.map((cat) => (
               <li key={cat.id} className="widget-list-item mb-1">
-                <Link href={`/collections/product-type/${cat.slug}`} passHref>
+                <Link href={`/shop/product-type/${cat.slug}`} passHref>
                   <a aria-label={cat.name} className="widget-list-link">
                     {cat.name}
                   </a>

@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import { updateProductView } from "@/redux/shop-slice";
-import AlgoliaSortby from "@/components/Algolia/AlgoliaSortby";
 import { IoGridOutline } from "react-icons/io5";
 import { AiOutlineBars } from "react-icons/ai";
 
+import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { updateProductView } from "@/redux/shop-slice";
+import AlgoliaSortby from "@/components/Algolia/AlgoliaSortby";
 
 export default function ShopBannerToolbar() {
   const dispatch = useAppDispatch();

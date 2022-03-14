@@ -46,7 +46,7 @@ export default function SigninForm() {
           </div>
           <button
             aria-label="Sign in"
-            className="btn btn-primary btn-shadow d-block w-100"
+            className="bg-red-500 hover:bg-red-400 text-white px-3 py-2 w-100"
             type="submit"
           >
             Sign in

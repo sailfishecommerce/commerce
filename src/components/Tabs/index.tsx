@@ -59,7 +59,7 @@ export default function Tabs({
 
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap w-full">
         <div className="w-full">
           <ul
             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"

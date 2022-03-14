@@ -27,8 +27,8 @@ export default function ViewSearchQuery({ hits }: SearchHitsProps) {
   }
 
   return (
-    <div className="w-full md:w-3/5 flex flex-col md:flex-row searchbarhit absolute bg-white border left-0 md:left-36 h-full rounded-xl shadow-lg z-20 top-36 md:top-20 px-3 md:px-6 py-4">
-      <div className="w-full mx-auto flex flex-col justify-center lg:w-1/5 md:border-r">
+    <div className="w-full md:w-3/5 flex flex-col md:flex-row searchbarhit absolute bg-white border left-0 md:left-36 h-full md:h-96 rounded-xl shadow-lg z-20 top-36 md:top-20 px-3 md:px-6 py-4">
+      <div className="w-full mx-auto flex flex-col justify-center md:justify-start px-2 lg:w-1/5 md:border-r">
         <h6 className="text-lg text-center font-medium px-2">
           Popular Suggestions
         </h6>

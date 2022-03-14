@@ -36,7 +36,6 @@ module.exports = withBundleAnalyzer({
       deepmerge: path.resolve(__dirname, "node_modules/deepmerge"),
       "@babel/runtime": path.resolve(__dirname, "node_modules/@babel/runtime"),
     };
-
     return config;
   },
   async headers() {
@@ -54,6 +53,7 @@ module.exports = withBundleAnalyzer({
             ],
             "default-src": [
               "'self'",
+              "https://api.vbout.com",
               "https://sailfish-e-commerce-limited.swell.store",
               "https://en.trustmate.io",
               "https://cdn.jsdelivr.net",
@@ -64,6 +64,7 @@ module.exports = withBundleAnalyzer({
             ],
             "connect-src": [
               "'self'",
+              "https://api.vbout.com",
               "https://sailfish-e-commerce-limited.swell.store",
               "https://czt5ma7jlj-1.algolianet.com",
               "https://czt5ma7jlj-2.algolianet.com",
@@ -85,6 +86,7 @@ module.exports = withBundleAnalyzer({
               "'unsafe-inline'",
               "'unsafe-eval'",
               "'nonce-QRTYPCVBFGXZ'",
+              "https://api.vbout.com",
               "https://en.trustmate.io",
               "https://js.stripe.com/v3/",
               "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js",

@@ -5,7 +5,8 @@
     "sliderCaption": "Get Quality",
     "sliderDescription": "Buy Tampons, Baby Formula, Oral Hygiene & Dental Care...",
     "sliderImg": "/sliders/swisse_boost.webp",
-    "sliderImg2": "/sliders/swisse_boost_2.webp"
+    "sliderImg2": "/sliders/swisse_boost_2.webp",
+    "priority": true
   },
   {
     "bgColor": "#A7A5A6",
@@ -13,7 +14,8 @@
     "sliderCaption": "Hurry up! Limited time offer.",
     "sliderDescription": "Thin Lizzy, Avene, Sukin, Sally Hansen, Revlon Cosmetics...",
     "sliderImg": "/sliders/thin_lizzy.webp",
-    "sliderImg2": "/sliders/avene.webp"
+    "sliderImg2": "/sliders/avene.webp",
+    "priority": false
   },
   {
     "bgColor": "#cb5f9eb3",
@@ -21,6 +23,7 @@
     "sliderCaption": "Grow and Nuture your",
     "sliderDescription": "1000Hour, Revlon Hair, Restoria, Clairol hair products...",
     "sliderImg": "/sliders/1000hrs_hair.webp",
-    "sliderImg2": "/sliders/revlon.webp"
+    "sliderImg2": "/sliders/revlon.webp",
+    "priority": false
   }
 ]

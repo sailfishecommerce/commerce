@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -14,11 +13,12 @@ export function SingleVendorList({
   refine,
   searchForItems,
 }: any) {
-  const { pathname, asPath }: any = useRouter();
   const router = useRouter();
+  // const { pathname, asPath }: any = useRouter();
 
-  const vendor = asPath.includes("/vendor") && asPath.split("/vendor/")[1];
-
+  const vendor =
+    router?.asPath.includes("/vendors") && router?.asPath.split("/vendors/")[1];
+  console.log("vendor", vendor);
   useEffect(() => {
     if (vendor) {
       refine(vendor);
@@ -26,8 +26,10 @@ export function SingleVendorList({
   }, []);
 
   const selectedVendor = (item: string) => {
-    pathname.includes(item) ? "font-bold text-danger" : "";
+    router?.pathname.includes(item) ? "font-bold text-danger" : "";
   };
+
+  console.log("items", items);
 
   function searchItems(e: any) {
     searchForItems(e.currentTarget.value);
@@ -35,7 +37,7 @@ export function SingleVendorList({
 
   return (
     <div className="mb-4 pb-4 border-b-4">
-      <h3 className="mb-2 text-xl font-medium">Vendors</h3>
+      <h3 className="mb-2 text-xl font-medium">EEVendors</h3>
       <div className="relative flex mb-1">
         <input
           className="border-2 w-full h-10 focus:border-red-500 border-gray-200 rounded-lg px-4 text-sm mb-2"
@@ -59,7 +61,10 @@ export function SingleVendorList({
                   href={`/shop/vendors/${replaceSpaceWithHypen(item.label)}`}
                   passHref
                 >
-                  <a aria-label={item.label} className={`my-4 ${selectedVendor(item.label)}`}>
+                  <a
+                    aria-label={item.label}
+                    className={`my-4 ${selectedVendor(item.label)}`}
+                  >
                     {isFromSearch ? (
                       <Highlight attribute="label" hit={item} />
                     ) : (
@@ -115,6 +120,4 @@ export function SingleVendorList({
     </div>
   );
 }
-
-export const SingleVendorRefinementList: any =
-  connectRefinementList(SingleVendorList);
+export const VendorRefinementList = connectRefinementList(SingleVendorList);

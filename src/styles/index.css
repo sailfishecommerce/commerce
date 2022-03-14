@@ -44,8 +44,8 @@ ul.splide__pagination {
 }
 
 .homepage-carousel .splide__slide {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header-slider .splide__track {
@@ -175,6 +175,11 @@ ul.ais-RefinementList-list .ais-RefinementList-count {
 
 .ais-RefinementList-checkbox {
   margin: 0px 5px 0px 0px;
+}
+
+.refinement ul.ais-RefinementList-list {
+  max-height: 350px;
+  overflow: auto;
 }
 
 .ais-RefinementList-labelText {

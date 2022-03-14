@@ -8,6 +8,13 @@ interface Props {
 
 export default function CustomMenu({ title, attribute }: Props) {
   const { defaultMenuRefinement } = useAppSelector((state) => state.algolia);
+  console.log(
+    "defaultMenuRefinement",
+    defaultMenuRefinement,
+    "attribute",
+    attribute
+  );
+  const defaultRefinementLowercase = defaultMenuRefinement?.toLowerCase();
   return (
     <>
       <div className="menu">
@@ -16,10 +23,11 @@ export default function CustomMenu({ title, attribute }: Props) {
           <Menu
             searchable={true}
             attribute={attribute}
-            defaultRefinement={defaultMenuRefinement}
+            showMoreLimit={20}
+            defaultRefinement={defaultRefinementLowercase}
           />
         ) : (
-          <Menu searchable={true} attribute={attribute} />
+          <Menu searchable={true} showMoreLimit={20} attribute={attribute} />
         )}
       </div>
     </>

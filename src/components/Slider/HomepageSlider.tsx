@@ -40,7 +40,7 @@ function SliderItem({ item }): JSX.Element {
                 alt={item.sliderTitle}
                 height={imgSize.height}
                 width={imgSize.width}
-                priority={true}
+                priority={item.priority}
                 className="rounded-lg"
               />
             </div>
