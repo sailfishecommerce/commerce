@@ -15,13 +15,12 @@ export default function RatingsRefinementList({
       <h3 className="widget-title">Ratings</h3>
       {items.map((item: { label: number; count: number }, index: number) => (
         <div className="my-1 flex items-center justify-between" key={index}>
-          <a
-            aria-label={`${item.label}`}
+          <div
             onClick={() => refineSearch(item)}
             className="btn btn-link m-0 p-0"
           >
             <RatingStar rate={item.label} />
-          </a>
+          </div>
           <span className="mx-2 badge bg-danger">{item.count}</span>
         </div>
       ))}

@@ -63,14 +63,14 @@ function BottomTabItemView({
           </a>
         </Link>
       ) : (
-        <a
+        <div
           aria-label={title}
           onClick={onToggle}
           className={`flex ${activeTab} ${filterBorder} focus:text-red-500 flex-col justify-center w-1/4 items-center ${bordered}`}
         >
           {icon}
           <p className="mb-0 text-sm">{title}</p>
-        </a>
+        </div>
       )}
     </>
   );

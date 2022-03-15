@@ -6,7 +6,6 @@ export type ProductsShowcaseProps = {
   title?: string;
   indexId?: string;
   className?: string;
-  hitComponent: React.ComponentType<any>;
   [index: string]: any;
 };
 
@@ -28,11 +27,7 @@ export default function ProductShowcase({
               {title}
             </h2>
           )}
-          <InfiniteProductHits
-            hitComponent={hitComponent}
-            animation={false}
-            gridClassName="grid-cols-2 laptop:grid-cols-6"
-          />
+          <InfiniteProductHits />
         </div>
       </section>
     </Index>
