@@ -42,7 +42,6 @@ function SliderItem({ item }): JSX.Element {
                 width={imgSize.width}
                 priority={item.priority}
                 className="rounded-lg"
-                layout="responsive"
               />
             </div>
             <div className="w-full md:w-1/2 items-center lg:items-start text-white flex flex-col py-5 md:px-1 lg:px-4 lg:mb-5 lg:order-1">
