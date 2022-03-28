@@ -70,7 +70,7 @@ export default function SlideCart(props: slideCartProps) {
                     aria-label="Proceed to Checkout"
                     disabled={disableBtn}
                     onClick={toggleCheckoutModal}
-                    className="w-100 border-2 font-bold hover:bg-red-500 border-red-500 mx-auto p-2 rounded-md justify-center flex items-center"
+                    className="w-100 border-2 font-bold hover:bg-red-500 border-red-500 hover:text-white mx-auto p-2 rounded-md justify-center flex items-center"
                     type="button"
                   >
                     <GiShoppingCart className="mr-2" size={20} />

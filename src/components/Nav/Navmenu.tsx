@@ -32,6 +32,8 @@ function NavMenuComponent() {
   const tabWidth = useMediaQuery("(max-width:768px)");
   const { data: cart } = useCartData();
 
+  console.log("cart", cart);
+
   function toggleAuthModalHandler() {
     dispatch(toggleAuthModal());
   }
@@ -39,7 +41,7 @@ function NavMenuComponent() {
   return (
     <>
       <div className="flex items-center lg:mr-2 mt-2 justify-between w-2/5 md:px-4 lg:w-4/12">
-        {!tabWidth ? scrollUp && <NavToggler /> : <NavToggler />}
+        {!tabWidth && scrollUp && <NavToggler />}
         {status === "error" ? (
           "unable to fetch user details"
         ) : status === "loading" ? (

@@ -1,18 +1,32 @@
 import { AiOutlineUser, AiOutlineMenu } from "react-icons/ai";
-
+import { useAppDispatch } from "@/redux/store";
+import {
+  toggleMobileMenu,
+  updateMobileMenu,
+  toggleNav,
+} from "@/redux/ui-slice";
+import { useMediaQuery } from "@/hooks";
 import Tooltip from "@/components/Tooltip";
-import useNav from "@/hooks/useNav";
 
 export function NavToggler() {
-  const onToggleNav = useNav();
+  const tabWidth = useMediaQuery("(max-width:768px)");
+  const dispatch = useAppDispatch();
+
+  function showNavMenuDesktop() {
+    dispatch(toggleNav());
+  }
+
+  function toggleMobileMenuHandler() {
+    dispatch(toggleMobileMenu());
+    dispatch(updateMobileMenu("mobileNav"));
+  }
+
+  const onToggleNav = tabWidth ? toggleMobileMenuHandler : showNavMenuDesktop;
 
   return (
-    <button
-      onClick={onToggleNav}
-      className="mb-0 mt-2"
-    >
+    <button onClick={showNavMenuDesktop} className="mb-0 mt-2">
       <Tooltip text="Expand menu">
-      <AiOutlineMenu className="hover:text-red-500" size={20} />
+        <AiOutlineMenu className="hover:text-red-500" size={20} />
       </Tooltip>
     </button>
   );

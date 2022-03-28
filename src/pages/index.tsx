@@ -1,10 +1,10 @@
 import Applayout from "@/layout/Applayout";
 import TrendingProducts from "@/components/Products/TrendingProducts";
-import BlogBanner from "@/components/Blog/BlogBanner";
 import PopularCategories from "@/components/Category/PopularCategories";
 import HomepageSlider from "@/components/Slider/HomepageSlider";
-import ShopByBrand from "@/components/Slider/ShopByBrandSlider";
 import ShopFromCategories from "@/components/Category/ShopFromCategories";
+import ShopByBrand from "@/components/Slider/ShopByBrandSlider";
+import BlogBanner from "@/components/Blog/BlogBanner";
 
 export default function Home() {
   return (
