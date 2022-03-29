@@ -6,16 +6,19 @@ import PaymentWithStripe from "@/components/Stripe/PaymentWithStripe";
 
 export default function SelectPaymentMethod() {
   return (
-    <div className="flex w-full lg:w-1/4 md:w-1/2">
+    <div className="flex w-full flex-col">
       <div className="payment-methods flex items-center justify-between">
         <h3 className="font-medium">3. SELECT PAYMENT METHOD</h3>{" "}
-        <Image
-          src="/stripe.png"
-          alt="stripe"
-          height={70}
-          width={100}
-          title="stripe"
-        />
+        <div className="w-1/4 mb-2">
+          <Image
+            src="/stripe.png"
+            alt="stripe"
+            height={40}
+            width={120}
+            title="stripe"
+            layout="responsive"
+          />
+        </div>
       </div>
       <>
         <PaymentWithStripe title="Stripe" />

@@ -4,7 +4,7 @@ import ProductBanner from "@/components/Banner/ProductBanner";
 import CheckoutWelcomeBanner from "@/components/Banner/CheckoutWelcomeBanner";
 import CheckoutForm from "@/components/Form/CheckoutForm";
 import useMediaQuery from "@/hooks/useMediaQuery";
-
+import CheckoutCustomer from '@/components/Checkout'
 import useCart from "@/hooks/useCart";
 import SpinnerRipple from "@/components/Loader/SpinnerLoader";
 
@@ -20,7 +20,8 @@ export default function Checkout() {
   return (
     <Applayout title="Checkout your order">
       <ProductBanner breadcrumb="Checkout" />
-      <div className="container checkout-page-content flex mx-auto">
+      <CheckoutCustomer />
+      {/* <div className="container checkout-page-content flex mx-auto">
         <div className="w-full md:w-2/3 flex flex-col bg-white -mt-24 p-4 rounded-lg">
           <CheckoutWelcomeBanner />
           <CheckoutForm />
@@ -34,7 +35,7 @@ export default function Checkout() {
             </div>
           )
         )}
-      </div>
+      </div> */}
       <style jsx>{`
         .checkout-page-content {
           min-height: 500px;
