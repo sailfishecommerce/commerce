@@ -14,8 +14,8 @@ export default function ProductBanner({ product, breadcrumb }: Props) {
   const productName = product ? product.name : breadcrumb;
   const titleClassName = breadcrumb ? "lg:text-2xl font-bold" : "";
   return (
-    <div className="w-full bg-gray-700 h-60 items-center flex">
-      <div className="container flex-col md:flex-row mx-auto items-center -mt-14 flex justify-between">
+    <div className="w-full bg-gray-700 h-24 items-center flex">
+      <div className="container flex-col md:flex-row mx-auto items-center flex justify-between">
         <div className="lg:order-2 mb-3 lg:mb-0 lg:pt-2 w-full md:w-1/2">
           <nav aria-label="w-full text-left">
             <ol className="flex flex-wrap md:flex-row mx-auto text-xs md:text-lg text-white justify-center lg:justify-end w-full">

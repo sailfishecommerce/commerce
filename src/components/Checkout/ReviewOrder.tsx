@@ -8,7 +8,7 @@ export default function ReviewOrder() {
   const { data: cart } = useCartData();
   const cartItem = cart?.items?.length > 1 ? "ITEMS" : "ITEM";
   return (
-    <div className="bg-white rounded-md w-full lg:w-1/3 md:w-1/2 p-4">
+    <div className="bg-white rounded-md w-full lg:w-1/4 md:w-1/2 p-4">
       <h6>
         <span className="font-medium">1. REVIEW YOUR ORDER </span> (
         {cart?.items?.length} | {cartItem} )
