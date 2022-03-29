@@ -130,7 +130,7 @@ function AirwallexCardElement({
       <div className={`field-container ${fieldContainerStyle}`}>
         <div
           id="airwallexCard"
-          className="border border-gray-200 px-2 rounded-md h-10 items-center focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
+          className="border border-gray-200 p-2 rounded-md h-10 items-center focus:text-gray-700 focus:bg-white focus:border-red-500 focus:outline-none"
         />
         <button
           className="bg-red-500 flex justify-center items-center border-2 border-red-500 hover:text-red-500 text-white w-1/4 md:w-1/6 h-8 hover:bg-transparent  mx-auto my-2 rounded"
