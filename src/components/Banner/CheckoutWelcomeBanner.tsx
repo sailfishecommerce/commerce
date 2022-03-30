@@ -1,10 +1,7 @@
-import { useAccount } from "@/hooks";
-import { useQuery } from "react-query";
+import useUserDetails from "@/hooks/useUserDetails";
 
 export default function CheckoutWelcomeBanner() {
-  const { getUserAccount } = useAccount();
-
-  const { data: userDetails, status } = useQuery("userdetails", getUserAccount);
+  const [userDetails, status] = useUserDetails();
 
   return (
     <div className="flex justify-between items-center bg-gray-100 p-4 rounded-md mb-4">

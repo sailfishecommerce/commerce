@@ -13,14 +13,11 @@ function DropdownComponent({
 }: PropsWithChildren<Props>) {
   const [active, setActive] = useState(false);
 
-  function onClickHandler() {
-    setActive(!active);
-  }
   return (
     <div className="flex justify-center">
       <div className="dropdown relative">
         <button
-          onClick={onClickHandler}
+          onMouseEnter={() => setActive(!active)}
           className={`${className} px-2 ml-2 lg:px-4
           py-2          
           text-white
@@ -40,6 +37,7 @@ function DropdownComponent({
           duration-150
           ease-in-out
           flex
+          z-50
           items-center
           whitespace-nowrap
         `}
@@ -58,10 +56,11 @@ function DropdownComponent({
           absolute
           bg-white
           text-base
-          z-50
+          z-40
           float-left
           py-2
           list-none
+          top-10
           text-left
           rounded-lg
           shadow-lg

@@ -13,15 +13,11 @@ export default function index({
 }: PropsWithChildren<Props>) {
   const [active, setActive] = useState(false);
 
-  console.log("active index", active);
-  function onClickHandler() {
-    setActive(!active);
-  }
   return (
     <div className="flex justify-center">
       <div className="dropup relative">
         <button
-          onClick={onClickHandler}
+          onMouseEnter={() => setActive(!active)}
           className={`
           dropdown-toggle ${className} px-2 ml-2 lg:px-4
           py-2          

@@ -96,7 +96,7 @@ export default function CategoryDropdown({ onHover }: categoryDropdownProps) {
   return (
     <div
       onMouseEnter={() => onHover(true)}
-      onMouseLeave={() => onHover(false)}
+      onMouseOut={() => onHover(false)}
       className="dropdown-menu p-2 w-3/4 absolute z-40 flex border top-6 bg-white flex-col rounded-lg"
     >
       {status === "error" ? (

@@ -1,15 +1,12 @@
 import axios from "axios";
-import { useQuery } from "react-query";
 
-import useSwellProducts from "./useSwellProducts";
 import useCategory from "@/hooks/useCategory";
+import useAllProducts from "./useAllProducts";
 
 export default function useAlgoliaIndex() {
-  const { allProducts } = useSwellProducts();
+  const [data, status] = useAllProducts();
   const { allCategories } = useCategory();
   const categories = allCategories();
-
-  const { data, status } = useQuery("allProducts", allProducts);
 
   function addProductToAlgoliaIndex() {
     axios

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import useSwell from "@/hooks/useSwell";
 
 type filterType = {
@@ -61,6 +61,7 @@ export default function useSwellProducts() {
 }
 
 export function useLiveHealthyProduct(): any {
+  const queryClient = useQueryClient();
   function fetchLiveHealthyProducts() {
     return axios.get("/api/get-livehealthy-product");
   }
@@ -68,7 +69,9 @@ export function useLiveHealthyProduct(): any {
     data: liveHealthyProduct,
     status: liveHealthyProductStatus,
     error: liveHealthyProductError,
-  } = useQuery("fetchLiveHealthyProducts", fetchLiveHealthyProducts);
+  } = useQuery("fetchLiveHealthyProducts", fetchLiveHealthyProducts, {
+    placeholderData: () => queryClient.getQueryData("fetchLiveHealthyProducts"),
+  });
 
   return {
     liveHealthyProduct,

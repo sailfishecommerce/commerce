@@ -1,12 +1,11 @@
 import dynamic from "next/dynamic";
-import { useQuery } from "react-query";
 
-import useSwellProducts from "@/hooks/useSwellProducts";
 import ProductDescription from "@/components/Products/ProductDescription";
 import ProductGalleryDetails from "@/components/Products/ProductGalleryDetails";
 import RelatedProductSlider from "@/components/Slider/RelatedProductSlider";
 import SpinnerRipple from "@/components/Loader/SpinnerLoader";
 import ProductMainBanner from "@/components/Banner/ProductBanner";
+import useCategoryProducts from "@/hooks/useCategoryProducts";
 
 const ProductReviews = dynamic(
   () => import("@/components/Products/ProductReviews")
@@ -17,10 +16,8 @@ interface ProductOverviewProps {
 }
 
 export default function ProductOverview({ pageProduct }: ProductOverviewProps) {
-  const { getProductsInCategory } = useSwellProducts();
-  const { data, status } = useQuery("getProductsInCategory", () =>
-    getProductsInCategory(pageProduct.product_type)
-  );
+  const [data, status] = useCategoryProducts(pageProduct);
+
   return (
     <>
       <ProductMainBanner product={pageProduct} />

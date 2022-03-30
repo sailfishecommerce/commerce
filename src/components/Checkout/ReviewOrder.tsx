@@ -10,23 +10,24 @@ export default function ReviewOrder() {
   return (
     <div className="bg-white rounded-md w-full lg:w-1/4 md:w-1/2 p-4">
       <h6>
-        <span className="font-medium">1. REVIEW YOUR ORDER </span> (
+        <span className="font-medium mr-2">1. REVIEW YOUR ORDER </span> (
         {cart?.items?.length} | {cartItem} )
       </h6>
       <div className="subtotal flex items-center justify-between">
-        <h4>SUBTOTAL</h4> <FormattedPrice price={cart?.subTotal} />
+        <h4 className="font-bold">SUBTOTAL</h4>
+        <FormattedPrice className="font-bold" price={cart?.subTotal} />
       </div>
       <div className="select-delivery">
-        <h6>Select delivery</h6>
-        <div className="delivery-type border border-gray-100 p-2 bg-pink-200">
-          <h6>FREE</h6>
+        <h6 className="font-medium mb-2">Select delivery</h6>
+        <div className="delivery-type flex items-center justify-between border border-gray-100 p-4 bg-gray-100">
+          <h6 className="text-sm">FREE</h6>
           <div className="type flex flex-col">
-            <h6>Express</h6>
-            <p className="font-medium text-gray-600">
+            <h6 className="font-bold">Express</h6>
+            <p className="font-medium text-gray-400 text-sm">
               (3 - 5 business days, tracking)
             </p>
           </div>
-          <BsFillCheckCircleFill fill="text-orange-500" />
+          <BsFillCheckCircleFill fill="orange" />
         </div>
       </div>
     </div>
