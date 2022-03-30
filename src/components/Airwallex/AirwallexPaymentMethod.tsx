@@ -5,7 +5,7 @@ import { useAppSelector } from "@/hooks/useRedux";
 import Accordion from "@/components/Accordion";
 import { BsCreditCard } from "react-icons/bs";
 
-export default function AirwallexPaymentMethod() {
+export default function AirwallexPaymentMethod({ isGray }) {
   const { useCartData } = useCart();
   const { paymentForm }: any = useAppSelector((state) => state.payment);
   const { data: cart } = useCartData();
@@ -25,7 +25,8 @@ export default function AirwallexPaymentMethod() {
     <Accordion
       stage={2}
       icon={<BsCreditCard size={32} />}
-      title="Pay with Airwallex"
+      isGray={isGray}
+      title="Pay with Airwallex"      
     >
       <span className="font-medium">Airwallex</span> - the safer, easier way to
       pay

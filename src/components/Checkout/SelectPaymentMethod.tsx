@@ -21,9 +21,9 @@ export default function SelectPaymentMethod() {
         </div>
       </div>
       <>
-        <PaymentWithStripe title="Stripe" />
-        <AirwallexPaymentMethod />
-        <BankTransferPaymentMethod />
+        <PaymentWithStripe title="Stripe" isGray={false} />
+        <AirwallexPaymentMethod isGray={false} />
+        <BankTransferPaymentMethod isGray={false} />
       </>
     </div>
   );

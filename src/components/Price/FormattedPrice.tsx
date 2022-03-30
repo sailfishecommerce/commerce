@@ -19,8 +19,6 @@ function FormattedPriceComponent({
   const { currencyList } = useCurrencies();
   const { currency } = useAppSelector((state) => state.currencyLanguage);
 
-  console.log("currencyList", currencyList);
-
   return (
     <>
       {currencyList === undefined ? (

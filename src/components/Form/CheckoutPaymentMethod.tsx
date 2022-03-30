@@ -26,9 +26,12 @@ export default function CheckoutPaymentMethod() {
       stage={2}
       title=" Choose payment method"
     >
-      <PaymentWithStripe title="Pay with Credit Card (powered by Stripe)" />
-      <AirwallexPaymentMethod />
-      <BankTransferPaymentMethod />
+      <PaymentWithStripe
+        title="Pay with Credit Card (powered by Stripe)"
+        isGray
+      />
+      <AirwallexPaymentMethod isGray />
+      <BankTransferPaymentMethod isGray />
     </Accordion>
   );
 }

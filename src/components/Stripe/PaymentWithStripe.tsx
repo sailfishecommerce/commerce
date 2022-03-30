@@ -3,11 +3,12 @@ import { FaCcStripe } from "react-icons/fa";
 import StripePaymentMethod from "@/components/Stripe/StripePaymentMethod";
 import Accordion from "@/components/Accordion";
 
-export default function PaymentWithStripe({title}) {
+export default function PaymentWithStripe({ title, isGray }) {
   return (
     <Accordion
       stage={1}
       title={title}
+      isGray={isGray}
       icon={<FaCcStripe size={32} />}
     >
       <div className="body-title flex items-center justify-between mb-2">

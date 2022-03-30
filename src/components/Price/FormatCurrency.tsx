@@ -16,9 +16,11 @@ export default function FormatCurrency({
   currency,
   className,
 }: formatCurrencyProps): JSX.Element {
-  const selectedCurrency = currencies?.filter(
-    (currencyP: { code: string }) => currencyP.code === currency
-  );
+  const selectedCurrency = currencies
+    ? currencies?.filter(
+        (currencyP: { code: string }) => currencyP.code === currency
+      )
+    : [{ code: "USD", symbol: "$" }];
   const nPrice = Number(price);
   const priceRate = nPrice * selectedCurrency[0].rate;
 

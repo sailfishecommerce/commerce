@@ -53,7 +53,7 @@ export default function LoadProducts() {
 
   const productsArray = new Array(8).fill(0);
   return (
-    <div className="container flex flex-wrap px-1">
+    <div className="container flex flex-wrap px-1 mt-4">
       {productsArray.map((_, index: number) => (
         <div key={index} className={mobileStyle}>
           <ProductLoader />

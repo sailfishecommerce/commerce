@@ -5,6 +5,7 @@ interface Props {
   stage: number;
   icon?: JSX.Element;
   isOpen?: boolean;
+  isGray?: boolean;
 }
 
 export default function Accordion({
@@ -13,9 +14,12 @@ export default function Accordion({
   children,
   icon,
   isOpen,
+  isGray,
 }: PropsWithChildren<Props>) {
   const initialAccordionState = isOpen ? isOpen : false;
   const [showContent, setShowContent] = useState(initialAccordionState);
+
+  const colorMode = isGray ? "bg-gray-200" : "bg-white rounded-md";
 
   function onClickHandler() {
     setShowContent(!showContent);
@@ -29,7 +33,7 @@ export default function Accordion({
           id="headingOne"
         >
           <button
-            className="
+            className={`
         accordion-button
         hover:text-red-500        
         relative
@@ -39,13 +43,13 @@ export default function Accordion({
         py-4
         px-5
         text-base text-gray-800 text-left
-        bg-gray-200
+        ${colorMode}
         border
         border-gray-400
         rounded-none
         transition
         focus:outline-none
-      "
+      `}
             type="button"
             data-bs-toggle="collapse"
             aria-label={title}

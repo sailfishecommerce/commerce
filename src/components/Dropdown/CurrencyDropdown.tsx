@@ -22,6 +22,9 @@ function CurrencyDropdownComponent({ className, up }: Props) {
   const { selectCurrencies } = useCurrency();
   const { currencyList } = useCurrencies();
 
+  const currencyListArray =
+    currencyList?.length > 1 ? currencyList : [{ symbol: "$", code: "USD" }];
+
   const { currency } = useAppSelector((state) => state.currencyLanguage);
 
   function DropdownText() {
@@ -59,7 +62,7 @@ function CurrencyDropdownComponent({ className, up }: Props) {
     return (
       <Dropdown dropdownText={<DropdownText />}>
         {currencyList &&
-          currencyList?.map((item, index) => (
+          currencyListArray.map((item, index) => (
             <DropdownItem onClick={selectCurrency} key={index}>
               {item.symbol} {item.code}
             </DropdownItem>
