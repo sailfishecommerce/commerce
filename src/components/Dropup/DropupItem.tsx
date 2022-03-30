@@ -15,10 +15,10 @@ export default function DropupItem({
         aria-label="dropup"
         onClick={onClick}
         className="
-              dropdown-item
+             dropdown-item
               text-sm
-              py-2
-              px-4
+              py-1
+              px-2
               font-normal
               block
               w-full

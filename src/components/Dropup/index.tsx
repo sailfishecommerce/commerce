@@ -13,6 +13,7 @@ export default function index({
 }: PropsWithChildren<Props>) {
   const [active, setActive] = useState(false);
 
+  console.log("active index", active);
   function onClickHandler() {
     setActive(!active);
   }
@@ -22,8 +23,7 @@ export default function index({
         <button
           onClick={onClickHandler}
           className={`
-          dropdown-toggle ${className}
-          px-2 ml-2 lg:px-4
+          dropdown-toggle ${className} px-2 ml-2 lg:px-4
           py-2          
           bg-red-600
           text-white
@@ -55,13 +55,13 @@ export default function index({
         {active && (
           <ul
             className="
-          dropdown-menu
+           dropdown-menu
           min-w-max
-          absolute
-          hidden
+          absolute          
           bg-white
           text-base
           z-50
+          -top-24
           float-left
           py-2
           list-none
@@ -69,7 +69,6 @@ export default function index({
           rounded-lg
           shadow-lg
           mt-1
-          hidden
           m-0
           bg-clip-padding
           border-none

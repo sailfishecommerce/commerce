@@ -19,8 +19,8 @@ export default function DropdownItem({
               ${className}
               dropdown-item
               text-sm
-              py-2
-              px-4
+              py-1
+              px-2
               font-normal
               block
               w-full
