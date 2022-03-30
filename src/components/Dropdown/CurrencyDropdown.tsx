@@ -21,7 +21,7 @@ function CurrencyDropdownComponent({ className, up }: Props) {
   const { isLoading, isSuccessful, hasError } = useToast();
   const { selectCurrencies } = useCurrency();
   const { currencyList } = useCurrencies();
-
+  console.log("currencyList", currencyList);
   const currencyListArray =
     currencyList?.length > 1
       ? currencyList
