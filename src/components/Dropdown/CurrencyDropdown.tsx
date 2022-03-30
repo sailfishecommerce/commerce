@@ -26,8 +26,18 @@ function CurrencyDropdownComponent({ className, up }: Props) {
     currencyList?.length > 1
       ? currencyList
       : [
-          { symbol: "$", code: "USD" },
-          { symbol: "$", code: "HKD" },
+           {
+            code: "USD",
+            rate: 1,
+            name: "US Dollar",
+            symbol: "$",
+          },
+          {
+            code: "HKD",
+            rate: 7.82717,
+            name: "Hong Kong Dollar",
+            symbol: "$",
+          },
         ];
 
   const { currency } = useAppSelector((state) => state.currencyLanguage);
