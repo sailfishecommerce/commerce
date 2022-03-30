@@ -23,7 +23,12 @@ function CurrencyDropdownComponent({ className, up }: Props) {
   const { currencyList } = useCurrencies();
 
   const currencyListArray =
-    currencyList?.length > 1 ? currencyList : [{ symbol: "$", code: "USD" }];
+    currencyList?.length > 1
+      ? currencyList
+      : [
+          { symbol: "$", code: "USD" },
+          { symbol: "$", code: "HKD" },
+        ];
 
   const { currency } = useAppSelector((state) => state.currencyLanguage);
 
@@ -61,12 +66,11 @@ function CurrencyDropdownComponent({ className, up }: Props) {
   function DropdownElement() {
     return (
       <Dropdown dropdownText={<DropdownText />}>
-        {currencyList &&
-          currencyListArray.map((item, index) => (
-            <DropdownItem onClick={selectCurrency} key={index}>
-              {item.symbol} {item.code}
-            </DropdownItem>
-          ))}
+        {currencyListArray.map((item, index) => (
+          <DropdownItem onClick={selectCurrency} key={index}>
+            {item.symbol} {item.code}
+          </DropdownItem>
+        ))}
       </Dropdown>
     );
   }
@@ -74,12 +78,11 @@ function CurrencyDropdownComponent({ className, up }: Props) {
   function DropupElement() {
     return (
       <Dropup dropupText={<DropdownText />}>
-        {currencyList &&
-          currencyList?.map((item, index) => (
-            <DropupItem onClick={selectCurrency} key={index}>
-              {item.symbol} {item.code}
-            </DropupItem>
-          ))}
+        {currencyListArray.map((item, index) => (
+          <DropupItem onClick={selectCurrency} key={index}>
+            {item.symbol} {item.code}
+          </DropupItem>
+        ))}
       </Dropup>
     );
   }

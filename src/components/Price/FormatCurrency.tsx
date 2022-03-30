@@ -16,6 +16,7 @@ export default function FormatCurrency({
   currency,
   className,
 }: formatCurrencyProps): JSX.Element {
+  console.log("typeof currencies", typeof currencies);
   const selectedCurrency = currencies
     ? currencies?.filter(
         (currencyP: { code: string }) => currencyP.code === currency

@@ -12,13 +12,13 @@ export function FooterSocialIcons() {
   return (
     <div className="mb-3 flex items-center justify-between">
       {footerBottomContent.social.map((data, index) => (
-        <span key={`${data.name}-${index}`}>
+        <a href={`#${data.name}`} key={`${data.name}-${index}`}>
           <Icons
             icon={data.name}
             className="hover:text-red-500 text-white ml-2"
             size={25}
           />
-        </span>
+        </a>
       ))}
     </div>
   );
@@ -32,7 +32,7 @@ export function FooterBottomSocials() {
         <Image
           src="/cards-alt.webp"
           width={200}
-          height={35}
+          height={30}
           alt="Payment methods"
         />
       </div>
@@ -56,7 +56,7 @@ export function FooterBottomSocials() {
 export function FooterBottomWidgets() {
   return (
     <>
-      <div className="flex flex-col w-full lg:w-2/5 items-center">
+      <div className="flex flex-col w-full lg:w-2/5 items-center lg:items-start">
         <div className="flex justify-center lg:justify-start items-center mb-4 w-full md:w-3/5 lg:w-full">
           <Logo />
           <CurrencyDropdown className="ml-2" up />
@@ -67,13 +67,13 @@ export function FooterBottomWidgets() {
           preferred choice of Hong Kongers for importing high-quality Australian
           goods.
         </p>
-        <ul className="flex flex-wrap my-2 mx-auto md:mx-0 justify-center md:justify-start">
+        <ul className="flex my-2 lg:mx-0 mx-auto md:mx-0">
           {footerBottomContent.pageLinks.map((content) => (
             <li
               key={content.name}
               className="mr-4 text-gray-400 text-sm sm:text-xs hover:text-red-500"
             >
-              <a aria-label={content.name} target="_blank" href={content.link}>
+              <a aria-label={content.name} href={`#-${content.name}`}>
                 {content.name}
               </a>
             </li>

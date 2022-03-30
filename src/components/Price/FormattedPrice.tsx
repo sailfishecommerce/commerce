@@ -26,13 +26,15 @@ function FormattedPriceComponent({
       ) : currencyList === null ? (
         <LineLoader />
       ) : (
-        <FormatCurrency
-          price={price}
-          isProduct={isProduct}
-          currencies={currencyList}
-          currency={currency}
-          className={className}
-        />
+        currencyList.length > 1 && (
+          <FormatCurrency
+            price={price}
+            isProduct={isProduct}
+            currencies={currencyList}
+            currency={currency}
+            className={className}
+          />
+        )
       )}
     </>
   );
