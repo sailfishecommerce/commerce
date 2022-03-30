@@ -57,7 +57,7 @@ export default function SelectCountries({
         font-normal
         text-gray-700
         bg-white bg-clip-padding bg-no-repeat
-        border border-solid border-gray-300
+        border border-gray-200
         rounded
         transition
         ease-in-out

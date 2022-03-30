@@ -24,6 +24,7 @@ export default function Select({ content, formik }: SelectProps) {
         className="form-select appearance-none
         block
         w-full
+        border border-gray-200 
         px-3
         py-1.5
         text-base

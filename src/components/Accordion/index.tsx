@@ -25,8 +25,8 @@ export default function Accordion({
     setShowContent(!showContent);
   }
   return (
-    <div className="accordion mb-2" id="accordionExample">
-      <div className="accordion-item bg-white border border-gray-200">
+    <div className="accordion" id="accordionExample">
+      <div className="accordion-item bg-white border-b border-gray-200">
         <h2
           className="accordion-header mb-0"
           onClick={onClickHandler}
