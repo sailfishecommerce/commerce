@@ -5,7 +5,7 @@ export default function OrderSummary() {
   const { useCartData } = useCart();
   const { data: cart } = useCartData();
   return (
-    <div className="rounded-md pt-4">
+    <div className="rounded-md pt-4 bg-white rounded-md p-4 my-2 h-full">
       <h4 className="font-medium">ORDER SUMMARY</h4>
       <ul>
         {cart?.items.map((item) => (
@@ -40,7 +40,9 @@ export default function OrderSummary() {
       </div>
       <div className="email flex items-center my-1">
         <input type="checkbox" className="mr-2 mt-2 mb-0" />{" "}
-        <p className="mb-0">Email me about new products, deals and surprise treats</p>
+        <p className="mb-0">
+          Email me about new products, deals and surprise treats
+        </p>
       </div>
       <button className="w-full p-3 text-xl mt-1 my-3 bg-orange-500 text-white text-center hover:bg-orange-700 font-bold shadow-lg rounded-md">
         COMPLETE ORDER
