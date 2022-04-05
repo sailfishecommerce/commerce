@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const selectOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 export default function ReviewOrderlist({ content }) {
   return (
     <div className="flex items-center hover:bg-gray-100 border border-b border-gray-100 justify-between p-4">
@@ -15,12 +17,11 @@ export default function ReviewOrderlist({ content }) {
         </span>
         <div className="quantity">
           <span className="font-medium">Qty: </span>{" "}
-          <input
-            className="w-12 border border-gray-200 rounded-md text-center font-bold"
-            type="text"
-            value={content.quantity}
-            readOnly
-          />
+          <select className="w-12 border border-gray-100 p-1 mx-1 text-center font-bold">
+            {selectOptions.map((item) => (
+              <option value={item}>{item}</option>
+            ))}
+          </select>
         </div>
       </div>
       <style jsx>

@@ -26,6 +26,13 @@
           "inputType": "email"
         },
         {
+          "name": "Phone number",
+          "label": "Phone number *",
+          "id": "phonenumber",
+          "type": "input",
+          "inputType": "number"
+        },
+        {
           "name": "companyName",
           "id": "checkout-companyName",
           "label": "Company's name *",

@@ -14,8 +14,8 @@ export default function DeliveryAddress() {
 
   return (
     <div className="w-full bg-white h-full md:w-1/2 lg:w-1/3 p-4 mx-4 rounded-md">
-      <h3>2. DELIVERY ADDRESS</h3>
-      <p>All fields required</p>
+      <h3 className="font-medium mr-2">2. DELIVERY ADDRESS</h3>
+      <p className="mb-4 text-sm">All fields required</p>
 
       <div className="delivery-form">
         <Formik

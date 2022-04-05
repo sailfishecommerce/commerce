@@ -10,7 +10,7 @@ export default function ReviewOrder() {
   const cartItem = cart?.items?.length > 1 ? "ITEMS" : "ITEM";
   return (
     <div className="bg-white rounded-md w-full lg:h-full lg:w-1/4 md:w-1/2 p-4">
-      <h6>
+      <h6 className="mb-2">
         <span className="font-medium mr-2">1. REVIEW YOUR ORDER </span> (
         {cart?.items?.length} | {cartItem} )
       </h6>
