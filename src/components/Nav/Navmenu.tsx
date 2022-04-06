@@ -32,8 +32,6 @@ function NavMenuComponent() {
   const tabWidth = useMediaQuery("(max-width:768px)");
   const { data: cart } = useCartData();
 
-  console.log("cart", cart);
-
   function toggleAuthModalHandler() {
     dispatch(toggleAuthModal());
   }
